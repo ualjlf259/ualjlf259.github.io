@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nakama Blog — Análisis profundo de anime y manga: One Piece, Hunter x Hunter, Vinland Saga, Shingeki no Kyojin y más.">
+  <title>Nakama Blog — Anime & Manga</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <!-- ── Archivos de idioma externos ── -->
+  <script src="locales/es.js"></script>
+  <script src="locales/en.js"></script>
+  <script src="locales/fr.js"></script>
+  <script src="locales/ja.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#">NAKAMA<span>.</span>BLOG</a>
+  <ul class="nav-links">
+    <li><a href="#articulos" data-i18n="nav_articles">Artículos</a></li>
+    <li><a href="#ranking" data-i18n="nav_ranking">Ranking</a></li>
+    <li><a href="#sobre-mi" data-i18n="nav_about">Sobre mí</a></li>
+  </ul>
+  <div style="display: flex; gap: 1rem; align-items: center;">
+    <!-- ── Selector de tema ── -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema" style="background:none; border:none; color:var(--text); cursor:pointer; padding: 0.38rem; display: flex; align-items: center; transition: color 0.2s;">
+      <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+    <!-- ── Selector de idioma (dropdown) ── -->
+    <div class="lang-dropdown" id="lang-dropdown" aria-label="Cambiar idioma">
+    <button class="lang-toggle" id="lang-toggle" aria-haspopup="listbox" aria-expanded="false">
+      <!-- Icono globo -->
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <line x1="2" y1="12" x2="22" y2="12"/>
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+      </svg>
+      <span class="lang-flag" id="lang-flag">🇪🇸</span>
+      <span class="lang-label" id="lang-label">Español</span>
+      <!-- Chevron -->
+      <svg class="chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+        <polyline points="6 9 12 15 18 9"/>
+      </svg>
+    </button>
+    <div class="lang-menu" role="listbox" id="lang-menu">
+      <button class="lang-option active" data-lang="es" role="option" aria-selected="true">
+        <span class="opt-flag">🇪🇸</span>
+        <span class="opt-name">Español</span>
+        <span class="opt-check"></span>
+      </button>
+      <button class="lang-option" data-lang="en" role="option" aria-selected="false">
+        <span class="opt-flag">🇬🇧</span>
+        <span class="opt-name">English</span>
+        <span class="opt-check"></span>
+      </button>
+      <button class="lang-option" data-lang="fr" role="option" aria-selected="false">
+        <span class="opt-flag">🇫🇷</span>
+        <span class="opt-name">Français</span>
+        <span class="opt-check"></span>
+      </button>
+      <div class="lang-divider"></div>
+      <button class="lang-option" data-lang="ja" role="option" aria-selected="false">
+        <span class="opt-flag">🇯🇵</span>
+        <span class="opt-name">日本語</span>
+        <span class="opt-check"></span>
+      </button>
+    </div>
+  </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <p class="hero-eyebrow">Análisis, pasión y cultura del anime</p>
+  <h1>El Mundo<br>del <em>Anime</em></h1>
+  <p class="hero-sub">Análisis, reflexiones y pasión por One Piece, Hunter x Hunter, Vinland Saga y todo el universo del manga.</p>
+  <div class="hero-cta" style="position:relative;z-index:2;">
+    <a href="#articulos" class="btn btn-primary">Leer artículos</a>
+    <button id="btn-roulette" class="btn btn-roulette">🎲 Sorpréndeme</button>
+    <a href="#sobre-mi" class="btn btn-outline">Sobre mí</a>
+  </div>
+  <div class="scroll-hint">Scroll</div>
+</header>
+
+<div class="featured-wrap">
+  <div class="featured-banner">
+    <span class="featured-badge">DESTACADO</span>
+    <div class="featured-content">
+      <span class="featured-tag">One Piece · Análisis profundo</span>
+      <h2>Por Qué One Piece es la Mayor Obra Literaria que Ha Creado el Ser Humano</h2>
+      <p>25 años de construcción de mundo, personajes con alma y una narrativa que habla de esclavitud, racismo y poder. Un análisis sin spoilers para los que aún no han empezado.</p>
+      <button class="btn btn-primary" onclick="openArticle('op-obra')">Leer ahora</button>
+    </div>
+    <div class="featured-visual">⚓</div>
+  </div>
+</div>
+
+<main id="articulos" role="main">
+  <div class="section-wrap">
+    <div class="section-header">
+      <h2 data-i18n="articles_title">Artículos</h2>
+      <span data-i18n="articles_sub">— análisis &amp; reflexiones</span>
+    </div>
+
+    <!-- Search & Filter bar -->
+    <div class="search-filters-bar">
+      <div class="search-wrap">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="search-input" placeholder="Buscar artículos…" autocomplete="off" aria-label="Buscar artículos">
+      </div>
+      <div class="filter-chips" id="filter-chips">
+        <button class="chip active" data-filter="all" data-i18n="filter_all">Todos</button>
+        <button class="chip" data-filter="One Piece">One Piece</button>
+        <button class="chip" data-filter="Hunter x Hunter">Hunter x Hunter</button>
+        <button class="chip" data-filter="Vinland Saga">Vinland Saga</button>
+        <button class="chip" data-filter="Shingeki no Kyojin">SNK</button>
+        <button class="chip" data-filter="Naruto">Naruto</button>
+        <button class="chip" data-filter="Death Note">Death Note</button>
+        <button class="chip" data-filter="Jujutsu Kaisen">JJK</button>
+        <button class="chip" data-filter="Boku no Hero">Boku no Hero</button>
+        <button class="chip" data-filter="Dragon Ball">Dragon Ball</button>
+        <button class="chip" data-filter="Berserk">Berserk</button>
+        <button class="chip" data-filter="Oyasumi Punpun">Oyasumi Punpun</button>
+        <button class="chip" data-filter="Chainsaw Man">Chainsaw Man</button>
+        <button class="chip" data-filter="Kimetsu no Yaiba">Kimetsu no Yaiba</button>
+      </div>
+    </div>
+
+    <div class="articles-grid" id="articles-grid">
+      <p id="no-results" data-i18n="no_results">No se encontraron artículos para "<span id="no-results-term"></span>"</p>
+
+      <a class="card" href="article.html?id=op-esclavitud" data-category="One Piece" data-title="La Esclavitud en One Piece: El Tema que Nadie Esperaba en un Manga" data-id="op-esclavitud">
+        <div class="card-thumb op"><img src="img/articles/one-piece-portada.jpg" alt="One Piece portada" class="card-thumb-img"></div>
+        <div class="card-body">
+          <span class="card-tag">One Piece</span>
+          <h3>La Esclavitud en One Piece: El Tema que Nadie Esperaba en un Manga</h3>
+          <p>Oda lleva décadas hablando de colonialismo y esclavitud con más honestidad que muchos libros de historia.</p>
+          <div class="card-meta"><span>9 min lectura</span><span>Sociedad</span></div>
+        </div>
+      </a>
+
+      <a class="card" href="article.html?id=hxh-capitalismo" data-category="Hunter x Hunter" data-title="El Arco de la Hormiga Quimera: Una Crítica al Capitalismo y la Humanidad" data-id="hxh-capitalismo">
+        <div class="card-thumb hxh"><img src="img/articles/hunter-x-hunter-portada.jpg" alt="Hunter x Hunter portada" class="card-thumb-img"></div>
+        <div class="card-body">
+          <span class="card-tag">Hunter x Hunter</span>
+          <h3>El Arco de la Hormiga Quimera: Una Crítica al Capitalismo y la Humanidad</h3>
+          <p>Togashi usa hormigas gigantes para preguntarnos qué nos hace humanos. Y la respuesta incomoda.</p>
+          <div class="card-meta"><span>11 min lectura</span><span>Filosofía</span></div>
+        </div>
+      </a>
+
+      <a class="card" href="article.html?id=vinland-guerra" data-category="Vinland Saga" data-title="Vinland Saga: El Manga que Más Honestamente Ha Retratado la Guerra" data-id="vinland-guerra">
+        <div class="card-thumb vs">🪓</div>
+        <div class="card-body">
+          <span class="card-tag">Vinland Saga</span>
+          <h3>Vinland Saga: El Manga que Más Honestamente Ha Retratado la Guerra</h3>
+          <p>No hay héroes ni villanos. Solo personas rotas por la violencia. Yukimura creó algo único.</p>
+          <div class="card-meta"><span>10 min lectura</span><span>Análisis</span></div>
+        </div>
+      </a>
+
+      <a class="card" href="article.html?id=aot-libertad" data-category="Shingeki no Kyojin" data-title="Libertad y Prisión: Shingeki no Kyojin como Metáfora Política" data-id="aot-libertad">
+        <div class="card-thumb aot">⚔️</div>
+        <div class="card-body">
+          <span class="card-tag">Shingeki no Kyojin</span>
+          <h3>Libertad y Prisión: Shingeki no Kyojin como Metáfora Política</h3>
+          <p>¿Y si los muros no son para protegerte, sino para controlarte? AOT habla de Israel, Palestina y mucho más.</p>
+          <div class="card-meta"><span>13 min lectura</span><span>Política</span></div>
+        </div>
+      </a>
+
+      <a class="card" href="article.html?id=naruto-ciclo-odio" data-category="Naruto" data-title="El Ciclo del Odio en Naruto: ¿Por Qué No Podemos Parar las Guerras?" data-id="naruto-ciclo-odio">
+        <div class="card-thumb nar"><img src="img/articles/Naruto-portada.jpg" alt="Naruto portada" class="card-thumb-img"></div>
+        <div class="card-body">
+          <span class="card-tag">Naruto</span>
+          <h3>El Ciclo del Odio en Naruto: ¿Por Qué No Podemos Parar las Guerras?</h3>
+          <p>Pain le hace a Naruto la pregunta que los políticos llevan siglos evitando responder.</p>
+          <div class="card-meta"><span>10 min lectura</span><span>Sociedad</span></div>
+        </div>
+      </a>
+
+      <a class="card" href="article.html?id=death-note-justicia" data-category="Death Note" data-title="Death Note y la Justicia: ¿Quién Tiene Derecho a Decidir Quién Vive?" data-id="death-note-justicia">
+        <div class="card-thumb dn">📓</div>
+        <div class="card-body">
+          <span class="card-tag">Death Note</span>
+          <h3>Death Note y la Justicia: ¿Quién Tiene Derecho a Decidir Quién Vive?</h3>
+          <p>Light Yagami es el villano, sí. Pero sus preguntas sobre el sistema judicial siguen sin respuesta.</p>
+          <div class="card-meta"><span>8 min lectura</span><span>Filosofía</span></div>
+        </div>
+      </a>
+
+      <a class="card" href="article.html?id=jjk-maldicion" data-category="Jujutsu Kaisen" data-title="Las Maldiciones de JJK son Nuestras Emociones: Una Lectura Psicológica" data-id="jjk-maldicion">
+        <div class="card-thumb jjk">👁️</div>
+        <div class="card-body">
+          <span class="card-tag">Jujutsu Kaisen</span>
+          <h3>Las Maldiciones de JJK son Nuestras Emociones: Una Lectura Psicológica</h3>
+          <p>En JJK los monstruos nacen del miedo, la vergüenza y el dolor humano. No es casualidad.</p>
+          <div class="card-meta"><span>7 min lectura</span><span>Psicología</span></div>
+        </div>
+      </a>
+
+      <a class="card" href="article.html?id=mha-heroes" data-category="Boku no Hero" data-title="¿Qué Significa Ser un Héroe? Boku no Hero y la Trampa del Mérito" data-id="mha-heroes">
+        <div class="card-thumb mha">💥</div>
+        <div class="card-body">
+          <span class="card-tag">Boku no Hero</span>
+          <h3>¿Qué Significa Ser un Héroe? Boku no Hero y la Trampa del Mérito</h3>
+          <p>En un mundo donde el poder lo es todo, BnHA pregunta si una sociedad basada en el mérito es justa.</p>
+          <div class="card-meta"><span>8 min lectura</span><span>Sociedad</span></div>
+        </div>
+      </a>
+
+      <a class="card" href="article.html?id=db-esfuerzo" data-category="Dragon Ball" data-title="Dragon Ball y el Culto al Esfuerzo: Cuándo Trabajar Duro Ya No Basta" data-id="db-esfuerzo">
+        <div class="card-thumb db">🐉</div>
+        <div class="card-body">
+          <span class="card-tag">Dragon Ball</span>
+          <h3>Dragon Ball y el Culto al Esfuerzo: Cuándo Trabajar Duro Ya No Basta</h3>
+          <p>Goku siempre gana con entrenamiento. Pero en la vida real, eso no siempre funciona.</p>
+          <div class="card-meta"><span>7 min lectura</span><span>Reflexión</span></div>
+        </div>
+      </a>
+
+      <a class="card" href="article.html?id=berserk-nihilismo" data-category="Berserk" data-title="Berserk: El Claroscuro del Alma Humana y la Rebelión contra el Destino" data-id="berserk-nihilismo">
+        <div class="card-thumb ber"><img src="img/articles/berserk-portada.jpg" alt="Berserk portada" class="card-thumb-img"></div>
+        <div class="card-body">
+          <span class="card-tag">Berserk</span>
+          <h3>Berserk: El Claroscuro del Alma Humana y la Rebelión contra el Destino</h3>
+          <p>La obra maestra de Kentaro Miura es un tratado monumental sobre el existencialismo y el peso de la causalidad.</p>
+          <div class="card-meta"><span>14 min lectura</span><span>Análisis</span></div>
+        </div>
+      </a>
+
+      <a class="card" href="article.html?id=punpun-psicologia" data-category="Oyasumi Punpun" data-title="Oyasumi Punpun: La Desoladora Verdad de Crecer en la Narrativa Visual de Asano" data-id="punpun-psicologia">
+        <div class="card-thumb pun"><img src="img/articles/punpun-portada.jpg" alt="Punpun portada" class="card-thumb-img"></div>
+        <div class="card-body">
+          <span class="card-tag">Oyasumi Punpun</span>
+          <h3>Oyasumi Punpun: La Desoladora Verdad de Crecer en la Narrativa Visual de Asano</h3>
+          <p>Un descenso psicológico a los abismos de la alienación y la pérdida de la inocencia a través de la lente única de Asano.</p>
+          <div class="card-meta"><span>11 min lectura</span><span>Psicología</span></div>
+        </div>
+      </a>
+
+      <a class="card" href="article.html?id=chainsaw-caos" data-category="Chainsaw Man" data-title="Chainsaw Man: El Caos Narrativo y la Deconstrucción del Héroe Shonen" data-id="chainsaw-caos">
+        <div class="card-thumb csm"><img src="img/articles/chainsaw-portada.jpg" alt="Chainsaw Man portada" class="card-thumb-img"></div>
+        <div class="card-body">
+          <span class="card-tag">Chainsaw Man</span>
+          <h3>Chainsaw Man: El Caos Narrativo y la Deconstrucción del Héroe Shonen</h3>
+          <p>Denji no quiere salvar el mundo, solo quiere tocar unos pechos y desayunar tostadas. Fujimoto destroza el viaje del héroe.</p>
+          <div class="card-meta"><span>9 min lectura</span><span>Deconstrucción</span></div>
+        </div>
+      </a>
+
+      <a class="card" href="article.html?id=kimetsu-ukiyo" data-category="Kimetsu no Yaiba" data-title="Kimetsu no Yaiba: La Estructura Clásica Elevada por el Arte Ukiyo-e" data-id="kimetsu-ukiyo">
+        <div class="card-thumb kny"><img src="img/articles/kimetsu-portada.jpg" alt="Kimetsu no Yaiba portada" class="card-thumb-img"></div>
+        <div class="card-body">
+          <span class="card-tag">Kimetsu no Yaiba</span>
+          <h3>Kimetsu no Yaiba: La Estructura Clásica Elevada por el Arte Ukiyo-e</h3>
+          <p>Una trama conservadora disfrazada de obra maestra gracias a un dinamismo visual sin precedentes en la animación moderna.</p>
+          <div class="card-meta"><span>10 min lectura</span><span>Estética</span></div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</main>
+
+<div class="ranking-section" id="ranking">
+  <div class="ranking-inner">
+    <div class="section-header">
+      <h2>Mi Ranking Personal</h2>
+      <span>— 100% subjetivo y sin disculpas</span>
+    </div>
+    <div class="ranking-list">
+      <div class="ranking-item"><span class="rank-num rank-1">1</span><span class="rank-emoji">⚓</span><div class="rank-info"><strong>One Piece</strong><span>Eiichiro Oda · 1997 – presente · La obra cumbre de la humanidad</span></div><div class="rank-bar-wrap"><div class="rank-bar" style="width:100%"></div></div></div>
+      <div class="ranking-item"><span class="rank-num rank-2">2</span><span class="rank-emoji">✨</span><div class="rank-info"><strong>Hunter x Hunter</strong><span>Yoshihiro Togashi · 1998 – presente · El shonen más inteligente jamás escrito</span></div><div class="rank-bar-wrap"><div class="rank-bar" style="width:91%"></div></div></div>
+      <div class="ranking-item"><span class="rank-num rank-3">3</span><span class="rank-emoji">🪓</span><div class="rank-info"><strong>Vinland Saga</strong><span>Makoto Yukimura · 2005 – presente · La épica más honesta sobre la violencia</span></div><div class="rank-bar-wrap"><div class="rank-bar" style="width:85%"></div></div></div>
+      <div class="ranking-item"><span class="rank-num rank-other">4</span><span class="rank-emoji">⚔️</span><div class="rank-info"><strong>Shingeki no Kyojin</strong><span>Hajime Isayama · 2013 – 2023 · La narrativa política más impactante del anime moderno</span></div><div class="rank-bar-wrap"><div class="rank-bar" style="width:80%"></div></div></div>
+      <div class="ranking-item"><span class="rank-num rank-other">5</span><span class="rank-emoji">🍃</span><div class="rank-info"><strong>Naruto / Shippuden</strong><span>Masashi Kishimoto · 1999 – 2014 · La infancia de toda una generación</span></div><div class="rank-bar-wrap"><div class="rank-bar" style="width:74%"></div></div></div>
+      <div class="ranking-item"><span class="rank-num rank-other">6</span><span class="rank-emoji">📓</span><div class="rank-info"><strong>Death Note</strong><span>Tsugumi Ohba · 2003 – 2006 · El thriller psicológico perfecto del manga</span></div><div class="rank-bar-wrap"><div class="rank-bar" style="width:68%"></div></div></div>
+      <div class="ranking-item"><span class="rank-num rank-other">7</span><span class="rank-emoji">👁️</span><div class="rank-info"><strong>Jujutsu Kaisen</strong><span>Gege Akutami · 2018 – 2024 · La nueva generación del shonen de acción</span></div><div class="rank-bar-wrap"><div class="rank-bar" style="width:62%"></div></div></div>
+      <div class="ranking-item"><span class="rank-num rank-other">8</span><span class="rank-emoji">💥</span><div class="rank-info"><strong>Boku no Hero Academia</strong><span>Kōhei Horikoshi · 2014 – 2024 · El anime de superhéroes con corazón</span></div><div class="rank-bar-wrap"><div class="rank-bar" style="width:56%"></div></div></div>
+      <div class="ranking-item"><span class="rank-num rank-other">9</span><span class="rank-emoji">🐉</span><div class="rank-info"><strong>Dragon Ball</strong><span>Akira Toriyama · 1984 – 1995 · El padre de todos los shonen de aventuras</span></div><div class="rank-bar-wrap"><div class="rank-bar" style="width:50%"></div></div></div>
+    </div>
+  </div>
+</div>
+
+<section id="sobre-mi">
+  <div class="section-wrap">
+    <div class="section-header">
+      <h2>Sobre Mí</h2>
+      <span>— el ser humano detrás del blog</span>
+    </div>
+    <div class="about-box">
+      <!-- Avatar: Luffy SVG ilustrativo inline -->
+      <div class="about-avatar">
+        <svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" width="96" height="96" style="display:block;" aria-label="Avatar de Jose Jesus Lopez Fernandez" role="img">
+          <circle cx="48" cy="48" r="48" fill="#1255a0"/>
+          <ellipse cx="48" cy="80" rx="26" ry="20" fill="#e63946"/>
+          <rect x="40" y="59" width="16" height="10" rx="3" fill="#f4c580"/>
+          <ellipse cx="48" cy="45" rx="22" ry="24" fill="#f4c580"/>
+          <ellipse cx="48" cy="25" rx="30" ry="7" fill="#d4a520"/>
+          <ellipse cx="48" cy="19" rx="18" ry="10" fill="#e8b830"/>
+          <ellipse cx="48" cy="25" rx="30" ry="3.5" fill="none" stroke="#e63946" stroke-width="4"/>
+          <circle cx="38" cy="46" r="4" fill="#1a1a1a"/>
+          <circle cx="58" cy="46" r="4" fill="#1a1a1a"/>
+          <circle cx="39.5" cy="44.5" r="1.2" fill="white"/>
+          <circle cx="59.5" cy="44.5" r="1.2" fill="white"/>
+          <line x1="34" y1="50" x2="40" y2="53" stroke="#c0504d" stroke-width="1.8" stroke-linecap="round"/>
+          <ellipse cx="48" cy="52" rx="3" ry="2" fill="#e8a56a"/>
+          <path d="M37 57 Q48 68 59 57" fill="none" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="about-text-content">
+        <h3>Jose Jesus Lopez Fernandez</h3>
+        <p>Estudiante universitario con una firme convicción: el anime, cuando alcanza su mayor expresión, trasciende el entretenimiento para convertirse en literatura, filosofía y documento social. Este blog es el espacio donde esas ideas toman forma — análisis escritos con rigor, pasión y la perspectiva de alguien que ha crecido acompañado de estas historias.</p>
+        <p>Si el objetivo del arte es hacernos mejores personas al obligarnos a ver el mundo desde otros ojos, pocas obras lo consiguen con tanta profundidad como One Piece, Vinland Saga o Hunter x Hunter. Aquí intento articular por qué esas historias importan más allá de la pantalla.</p>
+        <p>Apasionado del análisis narrativo, la crítica sociopolítica en la ficción y la historia medieval vikinga.</p>
+        <p style="margin-top:1.2rem;"><a href="https://github.com/ualjlf259" style="color:var(--gold);text-decoration:none;font-size:.85rem;letter-spacing:.05em;font-weight:600;">→ GitHub: ualjlf259</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Hecho con ❤️ y demasiadas horas de anime por <strong>Jose Jesus Lopez Fernandez</strong> · <strong>NAKAMA.BLOG</strong></p>
+  <p style="margin-top:.4rem;font-size:.75rem;opacity:.4;">© 2026 · ualjlf259.github.io</p>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal-overlay" onclick="closeOnOverlay(event)">
+  <div class="modal" id="modal-box">
+    <button class="modal-close" onclick="closeArticle()" aria-label="Cerrar artículo">✕</button>
+    <span class="modal-tag" id="modal-tag"></span>
+    <h2 id="modal-title"></h2>
+    <div class="modal-meta" id="modal-meta"></div>
+    <!-- Imagen principal del artículo -->
+    <div id="modal-img-top"></div>
+    <div class="modal-body" id="modal-body"></div>
+    <div class="modal-share-row" id="modal-share-row">
+      <span class="share-label" data-i18n="share_label">Compartir</span>
+      <a class="share-btn tw" id="share-tw" href="#" target="_blank" rel="noopener">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.253 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
+        X / Twitter
+      </a>
+      <a class="share-btn wa" id="share-wa" href="#" target="_blank" rel="noopener">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.998 2C6.477 2 2 6.477 2 12.001a9.994 9.994 0 001.388 5.094L2 22l5.042-1.362A9.956 9.956 0 0011.998 22C17.523 22 22 17.523 22 12.001 22 6.477 17.523 2 11.998 2z"/></svg>
+        WhatsApp
+      </a>
+      <button class="share-btn cp" id="share-cp" onclick="copyArticleLink()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+        <span data-i18n="share_copy">Copiar enlace</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ROULETTE MODAL -->
+<div class="modal-overlay" id="roulette-overlay" onclick="closeRouletteOnOverlay(event)">
+  <div class="modal" id="roulette-box" style="text-align:center; max-width: 650px; padding: 3rem 2rem;">
+    <button class="modal-close" onclick="closeRoulette()" aria-label="Cerrar ruleta">✕</button>
+    <h2 class="roulette-title">✨ DESCUBRE TU PRÓXIMO ANIME ✨</h2>
+    <div class="roulette-wrapper">
+      <div class="roulette-pointer">▼</div>
+      <div class="roulette-container">
+        <div class="roulette-wheel" id="roulette-wheel"></div>
+      </div>
+    </div>
+    <button id="btn-spin" class="btn-spin">GIRAR</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

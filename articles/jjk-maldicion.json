@@ -1,0 +1,50 @@
+{
+  "id": "jjk-maldicion",
+  "category": "Jujutsu Kaisen",
+  "mins": 7,
+  "thumb": {
+    "class": "jjk",
+    "type": "emoji",
+    "value": "👁️"
+  },
+  "title": {
+    "es": "Las Maldiciones de JJK son Nuestras Emociones: Una Lectura Psicológica",
+    "en": "JJK Curses Are Our Emotions: A Psychological Reading",
+    "fr": "Les Malédictions de JJK sont Nos Émotions : Une Lecture Psychologique",
+    "ja": "JJKの呪いは私たちの感情：心理学的考察"
+  },
+  "desc": {
+    "es": "En JJK los monstruos nacen del miedo, la vergüenza y el dolor humano. No es casualidad.",
+    "en": "In JJK monsters are born from human fear, shame and pain. It's no coincidence.",
+    "fr": "Dans JJK les monstres naissent de la peur, de la honte et de la douleur humaine. Ce n'est pas un hasard.",
+    "ja": "JJKの怪物は人間の恐怖、羞恥心、苦痛から生まれる。これは偶然ではない。"
+  },
+  "tag": {
+    "es": "Jujutsu Kaisen · Psicología",
+    "en": "Jujutsu Kaisen · Psychology",
+    "fr": "Jujutsu Kaisen · Psychologie",
+    "ja": "呪術廻戦 · 心理学"
+  },
+  "meta": {
+    "es": "7 min lectura · Psicología · Jose Jesus Lopez Fernandez",
+    "en": "7 min read · Psychology · Jose Jesus Lopez Fernandez",
+    "fr": "7 min de lecture · Psychologie · Jose Jesus Lopez Fernandez",
+    "ja": "7分読む · 心理学 · Jose Jesus Lopez Fernandez"
+  },
+  "label": {
+    "es": "Psicología",
+    "en": "Psychology",
+    "fr": "Psychologie",
+    "ja": "心理学"
+  },
+  "image": "img/articles/jjk-maldicion-top.jpg",
+  "image_caption": "Ryomen Sukuna: la maldición nacida de siglos de miedo humano.",
+  "image_mid": "img/articles/jjk-maldicion-mid.jpg",
+  "image_mid_caption": "Gojo Satoru: el hombre más poderoso del mundo, y el más solo.",
+  "content": {
+    "es": "<p>En el mundo de Jujutsu Kaisen, las maldiciones — los monstruos que amenazan a la humanidad — nacen de las emociones negativas humanas: el miedo, el odio, la vergüenza, el dolor. No son criaturas externas al ser humano: son proyecciones de lo que llevamos dentro. Y esa premisa, aparentemente fantástica, es uno de los conceptos psicológicos más precisos que ha utilizado un manga de acción.</p>\n\n      <h3>Las Emociones que No Nombramos se Convierten en Monstruos</h3>\n      <p>En psicología existe el concepto de \"sombra\" — la parte de nosotros mismos que reprimimos porque la sociedad nos ha enseñado que es inaceptable. La rabia, los celos, el miedo, el deseo. Lo que no integramos no desaparece: se queda ahí, en los rincones, y eventualmente actúa por su cuenta. Las maldiciones de JJK funcionan exactamente igual. Cuanto más poderosa es la emoción no procesada de una comunidad, más poderosa es la maldición que genera.</p>\n      {{MID_IMG}}\n\n      <h3>Yuji Itadori y la Aceptación de la Muerte</h3>\n      <p>El arco emocional de Yuji es el de alguien que tiene que aprender a vivir con la muerte — propia y ajena — sin que eso lo destruya. Su abuelo le dice en el lecho de muerte que \"muera rodeado de gente\". Es una frase sencilla que Yuji tardará toda la serie en entender.</p>\n      <blockquote>\"No importa cómo vivas. Lo que importa es que cuando mueras, no estés solo.\"<cite>— Wasuke Itadori</cite></blockquote>\n      <p>Esta obsesión con la muerte digna es parte de la cultura japonesa, pero también habla de algo universal: el miedo a que nuestra vida no haya importado a nadie.</p>\n\n      <h3>Gojo Satoru: El Peligro de la Omnipotencia</h3>\n      <p>Gojo es el personaje más poderoso de JJK, y también el más solo. Su poder lo separa del mundo — literalmente no puede ver el mundo como los demás. Es una metáfora perfecta de cómo la capacidad extrema puede aislar: los más capaces a menudo son los menos comprendidos, y esa soledad genera su propia forma de oscuridad.</p>\n      {{MID_IMG}}\n\n      <h3>Mahito y la Crueldad como Filosofía</h3>\n      <p>Mahito es quizás el villano más perturbador de JJK porque no actúa por odio ni por ambición: actúa por curiosidad. Para él, los humanos son interesantes precisamente porque sufren. Es la personificación de la indiferencia — y eso es mucho más aterrador que cualquier villano que odie activamente. Mahito es lo que quedaría si elimináramos la empatía por completo.</p>",
+    "en": "<p>In the world of Jujutsu Kaisen, curses — the monsters that threaten humanity — are born from negative human emotions: fear, hatred, shame, pain. They are not creatures external to human beings; they are projections of what we carry inside. And that premise, seemingly fantastical, is one of the most precise psychological concepts ever used by an action manga.</p>\n        <h3>The Emotions We Don't Name Become Monsters</h3>\n        <p>In psychology there is the concept of the \"shadow\" — the part of ourselves we repress because society has taught us it is unacceptable: rage, jealousy, fear, desire. What we don't integrate doesn't disappear; it stays in the corners, and eventually acts on its own. The curses of JJK work exactly the same way. The more powerful the unprocessed emotion of a community, the more powerful the curse it generates.</p>\n        {{MID_IMG}}\n        <h3>Yuji Itadori and the Acceptance of Death</h3>\n        <p>Yuji's emotional arc is that of someone who must learn to live with death — his own and others' — without being destroyed by it. His grandfather tells him on his deathbed to \"die surrounded by people.\" It is a simple phrase that Yuji will spend the entire series understanding.</p>\n        <blockquote>\"It doesn't matter how you live. What matters is that when you die, you're not alone.\"<cite>— Wasuke Itadori</cite></blockquote>\n        <p>This obsession with a dignified death is part of Japanese culture, but it also speaks to something universal: the fear that our life will not have mattered to anyone.</p>\n        <h3>Gojo Satoru: The Danger of Omnipotence</h3>\n        <p>Gojo is the most powerful character in JJK, and also the loneliest. His power separates him from the world — he literally cannot see the world as others do. It is a perfect metaphor for how extreme capability can isolate: the most capable are often the least understood, and that solitude generates its own form of darkness.</p>\n        {{MID_IMG}}\n        <h3>Mahito and Cruelty as Philosophy</h3>\n        <p>Mahito is perhaps the most disturbing villain in JJK because he doesn't act out of hatred or ambition — he acts out of curiosity. For him, humans are interesting precisely because they suffer. He is the personification of indifference — and that is far more terrifying than any villain who actively hates. Mahito is what would remain if we eliminated empathy entirely.</p>",
+    "fr": "<p>Dans le monde de Jujutsu Kaisen, les malédictions — les monstres qui menacent l'humanité — naissent des émotions négatives humaines : la peur, la haine, la honte, la douleur. Ce ne sont pas des créatures extérieures à l'être humain : elles sont des projections de ce que nous portons en nous.</p>\n        <h3>Les Émotions qu'on Ne Nomme pas Deviennent des Monstres</h3>\n        <p>En psychologie, il existe le concept d'\"ombre\" — la partie de nous-mêmes que nous réprimons parce que la société nous a appris qu'elle est inacceptable. Ce que nous n'intégrons pas ne disparaît pas : il reste là, dans les coins, et finit par agir seul. Les malédictions de JJK fonctionnent exactement de la même manière.</p>\n        {{MID_IMG}}\n        <h3>Yuji Itadori et l'Acceptation de la Mort</h3>\n        <p>Son grand-père lui dit sur son lit de mort de \"mourir entouré de gens\". C'est une phrase simple que Yuji mettra toute la série à comprendre.</p>\n        <blockquote>« Peu importe comment tu vis. Ce qui importe, c'est que lorsque tu meurs, tu ne sois pas seul. »<cite>— Wasuke Itadori</cite></blockquote>\n        <h3>Gojo Satoru : Le Danger de l'Omnipotence</h3>\n        <p>Gojo est le personnage le plus puissant de JJK, et aussi le plus seul. Son pouvoir le sépare du monde. C'est une métaphore parfaite de la façon dont la capacité extrême peut isoler.</p>\n        {{MID_IMG}}\n        <h3>Mahito et la Cruauté comme Philosophie</h3>\n        <p>Mahito est peut-être le méchant le plus troublant de JJK parce qu'il n'agit pas par haine ni par ambition — il agit par curiosité. Pour lui, les humains sont intéressants précisément parce qu'ils souffrent. Il est la personnification de l'indifférence.</p>",
+    "ja": "<p>呪術廻戦の世界では、呪い——人類を脅かす怪物——は人間の負の感情から生まれる：恐怖、憎しみ、恥、痛み。それらは人間の外側の生き物ではない：私たちの内部に抱えているものの投影だ。</p>\n        <h3>名前を付けない感情は怪物になる</h3>\n        <p>心理学には「影」という概念がある——社会が受け入れがたいと教えたために抑圧する自分自身の部分。統合しないものは消えない：隅に留まり、最終的に独自に行動する。JJKの呪いはまったく同じように機能する。</p>\n        {{MID_IMG}}\n        <h3>虎杖悠仁と死の受容</h3>\n        <p>祖父は臨終の床で「大勢に囲まれて死ね」と言う。虎杖がシリーズ全体をかけて理解する単純なフレーズだ。</p>\n        <blockquote>「お前がどう生きるかはどうでもいい。重要なのは、死ぬ時に一人ではないということだ。」<cite>— 虎杖倭助</cite></blockquote>\n        <h3>五条悟：全能の危険</h3>\n        <p>五条はJJK最も強力なキャラクターで、最も孤独でもある。その力は彼を世界から切り離す——文字通り、他の人と同じように世界を見ることができない。極端な能力がいかに孤立させるかの完璧なメタファーだ。</p>\n        {{MID_IMG}}\n        <h3>真人と哲学としての残酷さ</h3>\n        <p>真人はおそらくJJK最も不安をかき立てる悪役だ、なぜなら憎しみや野心からではなく好奇心から行動するから。彼にとって人間は苦しむからこそ興味深い。それは無関心の擬人化だ——積極的に憎むどんな悪役よりもはるかに恐ろしい。</p>"
+  }
+}

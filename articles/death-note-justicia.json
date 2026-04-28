@@ -1,0 +1,50 @@
+{
+  "id": "death-note-justicia",
+  "category": "Death Note",
+  "mins": 8,
+  "thumb": {
+    "class": "dn",
+    "type": "emoji",
+    "value": "📓"
+  },
+  "title": {
+    "es": "Death Note y la Justicia: ¿Quién Tiene Derecho a Decidir Quién Vive?",
+    "en": "Death Note and Justice: Who Has the Right to Decide Who Lives?",
+    "fr": "Death Note et la Justice : Qui a le Droit de Décider qui Vit ?",
+    "ja": "デスノートと正義：誰が誰の命を決める権利を持つのか？"
+  },
+  "desc": {
+    "es": "Light Yagami es el villano, sí. Pero sus preguntas sobre el sistema judicial siguen sin respuesta.",
+    "en": "Light Yagami is the villain, yes. But his questions about the justice system remain unanswered.",
+    "fr": "Light Yagami est le méchant, certes. Mais ses questions sur le système judiciaire restent sans réponse.",
+    "ja": "夜神月は悪役だ、確かに。しかし司法制度に関する彼の疑問はまだ答えが出ていない。"
+  },
+  "tag": {
+    "es": "Death Note · Filosofía",
+    "en": "Death Note · Philosophy",
+    "fr": "Death Note · Philosophie",
+    "ja": "デスノート · 哲学"
+  },
+  "meta": {
+    "es": "8 min lectura · Filosofía · Jose Jesus Lopez Fernandez",
+    "en": "8 min read · Philosophy · Jose Jesus Lopez Fernandez",
+    "fr": "8 min de lecture · Philosophie · Jose Jesus Lopez Fernandez",
+    "ja": "8分読む · 哲学 · Jose Jesus Lopez Fernandez"
+  },
+  "label": {
+    "es": "Filosofía",
+    "en": "Philosophy",
+    "fr": "Philosophie",
+    "ja": "哲学"
+  },
+  "image": "img/articles/death-note-justicia-top.jpg",
+  "image_caption": "Light Yagami: el genio que confundió el poder con la justicia.",
+  "image_mid": "img/articles/death-note-justicia-mid.jpg",
+  "image_mid_caption": "L: el argumento más poderoso contra la justicia unilateral.",
+  "content": {
+    "es": "<p>Death Note es, en su superficie, un thriller psicológico sobre un estudiante brillante que encuentra un cuaderno que mata a cualquiera cuyo nombre se escriba en él. Pero debajo de las estratagemas y los contraespionajes, Death Note hace una pregunta filosófica que lleva siglos sin respuesta satisfactoria: ¿quién tiene autoridad para juzgar y ejecutar a otro ser humano?</p>\n\n      <h3>Light No Es Solo un Villano</h3>\n      <p>El mayor error que se puede cometer al analizar Death Note es ver a Light Yagami simplemente como un psicópata megalómano. Sus primeras acciones tienen una lógica que muchos compartirían: usa el cuaderno para matar asesinos, violadores, criminales que el sistema judicial ha fallado en castigar. La pregunta que Ohba plantea es incómoda: si pudieras eliminar a los peores criminales del mundo sin riesgo para ti mismo, ¿lo harías?</p>\n      {{MID_IMG}}\n\n      <h3>El Sistema Judicial como Tema</h3>\n      <p>Death Note es también una crítica implícita a los sistemas de justicia modernos. Los criminales que Light elimina al principio son aquellos que, en muchos casos, ya habían sido juzgados culpables pero cuyas condenas eran insuficientes. El mensaje no es que Light tenga razón — sino que el sistema que critica también falla.</p>\n      <blockquote>\"Yo soy Kira. Y lo que estoy haciendo es correcto.\"<cite>— Light Yagami</cite></blockquote>\n      <p>La caída de Light no viene de que su lógica sea incoherente — viene de que el poder sin control corrompe siempre. Empieza matando criminales. Termina matando a cualquiera que se interponga en su camino. Es la historia de todas las utopías que se convierten en tiranías.</p>\n\n      <h3>L y Near: Dos Visiones de la Justicia</h3>\n      <p>Tanto L como Near representan la justicia institucional — imperfecta, lenta, burocrática — frente al juicio unilateral de Kira. Y ninguno de los dos es moralmente impecable. L usa métodos ilegales. Near manipula a sus propios aliados. Pero ambos comparten una convicción: ningún individuo, por brillante que sea, tiene derecho a decidir quién vive y quién muere. Death Note no resuelve el dilema. Ninguna buena filosofía lo hace. Solo nos obliga a pensar.</p>\n      {{MID_IMG}}",
+    "en": "<p>Death Note is, on its surface, a psychological thriller about a brilliant student who finds a notebook that kills anyone whose name is written in it. But beneath the stratagems and counter-intelligence, Death Note poses a philosophical question that has gone without a satisfactory answer for centuries: who has the authority to judge and execute another human being?</p>\n        <h3>Light Is Not Simply a Villain</h3>\n        <p>The greatest mistake one can make when analysing Death Note is to see Light Yagami as simply a megalomaniacal psychopath. His first actions have a logic many would share: he uses the notebook to kill murderers, rapists and criminals the justice system has failed to punish. The uncomfortable question Ohba poses is: if you could eliminate the worst criminals in the world without risk to yourself, would you?</p>\n        {{MID_IMG}}\n        <h3>The Justice System as Theme</h3>\n        <p>Death Note is also an implicit critique of modern justice systems. The criminals Light eliminates at first are those who, in many cases, have already been found guilty but whose sentences were insufficient. The message is not that Light is right — but that the system he criticises also fails.</p>\n        <blockquote>\"I am Kira. And what I'm doing is right.\"<cite>— Light Yagami</cite></blockquote>\n        <p>Light's downfall does not come from his logic being incoherent — it comes from the fact that power without accountability always corrupts. He starts by killing criminals. He ends by killing anyone who stands in his way. It is the story of every utopia that becomes a tyranny.</p>\n        <h3>L and Near: Two Visions of Justice</h3>\n        <p>Both L and Near represent institutional justice — imperfect, slow, bureaucratic — against Kira's unilateral judgement. And neither is morally spotless. L uses illegal methods. Near manipulates his own allies. But both share one conviction: no individual, however brilliant, has the right to decide who lives and who dies. Death Note does not resolve the dilemma. No good philosophy does. It only forces us to think.</p>\n        {{MID_IMG}}",
+    "fr": "<p>Death Note pose une question philosophique qui est sans réponse satisfaisante depuis des siècles : qui a l'autorité pour juger et exécuter un autre être humain ?</p>\n        <h3>Light n'est pas Simplement un Méchant</h3>\n        <p>La plus grande erreur qu'on puisse faire en analysant Death Note est de voir Light Yagami simplement comme un psychopathe mégalomane. Ses premières actions ont une logique que beaucoup partageraient : il utilise le carnet pour tuer des meurtriers, des violeurs, des criminels que le système judiciaire a manqué de punir.</p>\n        {{MID_IMG}}\n        <h3>Le Système Judiciaire comme Thème</h3>\n        <p>Death Note est aussi une critique implicite des systèmes judiciaires modernes. Le message n'est pas que Light a raison — mais que le système qu'il critique échoue également.</p>\n        <blockquote>« Je suis Kira. Et ce que je fais est juste. »<cite>— Light Yagami</cite></blockquote>\n        <p>La chute de Light ne vient pas de ce que sa logique soit incohérente — elle vient du fait que le pouvoir sans contrôle corrompt toujours.</p>\n        <h3>L et Near : Deux Visions de la Justice</h3>\n        <p>L comme Near représentent la justice institutionnelle — imparfaite, lente, bureaucratique — face au jugement unilatéral de Kira. Death Note ne résout pas le dilemme. Aucune bonne philosophie ne le fait. Il nous oblige seulement à réfléchir.</p>\n        {{MID_IMG}}",
+    "ja": "<p>デスノートは表面上、名前を書かれた者を殺すノートを見つけた優秀な学生についての心理スリラーだ。しかしその深部では何世紀も満足な答えのない哲学的な問いを投げかける：誰が他の人間を裁き、処刑する権威を持つのか？</p>\n        <h3>ライトは単なる悪役ではない</h3>\n        <p>デスノートを分析する際の最大の誤りは夜神ライトを単なる誇大妄想的な精神病者として見ることだ。彼の最初の行動には多くの人が共感するだろう論理がある：司法制度が罰することに失敗した殺人犯、強姦犯、犯罪者を殺すためにノートを使う。</p>\n        {{MID_IMG}}\n        <h3>テーマとしての司法制度</h3>\n        <p>デスノートはまた現代の司法制度への暗黙の批判でもある。メッセージはライトが正しいということではなく——彼が批判するシステムもまた失敗しているということだ。</p>\n        <blockquote>「僕はキラだ。そして僕のしていることは正しい。」<cite>— 夜神月</cite></blockquote>\n        <p>ライトの転落は彼の論理が一貫していないことから来るのではなく——制御なき権力は常に腐敗するという事実から来る。</p>\n        <h3>LとニアーTwo：二つの正義の視点</h3>\n        <p>Lもニアーもキラの一方的な判断に対する制度的な正義を表す——不完全で、遅く、官僚的な。そして誰も道徳的に申し分ない訳ではない。デスノートはジレンマを解決しない。優れた哲学がそうでないように。考えるよう強いるだけだ。</p>\n        {{MID_IMG}}"
+  }
+}

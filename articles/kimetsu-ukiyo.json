@@ -1,0 +1,51 @@
+{
+  "id": "kimetsu-ukiyo",
+  "category": "Kimetsu no Yaiba",
+  "mins": 10,
+  "thumb": {
+    "class": "kny",
+    "type": "img",
+    "src": "img/articles/kimetsu-portada.jpg",
+    "alt": "Kimetsu no Yaiba portada"
+  },
+  "title": {
+    "es": "Kimetsu no Yaiba: La Estructura Clásica Elevada por el Arte Ukiyo-e",
+    "en": "Kimetsu no Yaiba: Classic Structure Elevated by Ukiyo-e Art",
+    "fr": "Kimetsu no Yaiba : La Structure Classique Élevée par l'Art Ukiyo-e",
+    "ja": "鬼滅の刃：浮世絵の芸術によって昇華された古典的構造"
+  },
+  "desc": {
+    "es": "Una trama conservadora disfrazada de obra maestra gracias a un dinamismo visual sin precedentes en la animación moderna.",
+    "en": "A conservative plot disguised as a masterpiece thanks to unprecedented visual dynamism in modern animation.",
+    "fr": "Une intrigue conservatrice déguisée en chef-d'œuvre grâce à un dynamisme visuel sans précédent dans l'animation moderne.",
+    "ja": "現代アニメーションにおけるかつてない視覚的な躍動感によって、傑作に昇華された保守的な物語。"
+  },
+  "tag": {
+    "es": "Kimetsu no Yaiba · Estética",
+    "en": "Kimetsu no Yaiba · Aesthetics",
+    "fr": "Kimetsu no Yaiba · Esthétique",
+    "ja": "鬼滅の刃 · 美学"
+  },
+  "meta": {
+    "es": "10 min lectura · Estética · Jose Jesus Lopez Fernandez",
+    "en": "10 min read · Aesthetics · Jose Jesus Lopez Fernandez",
+    "fr": "10 min de lecture · Esthétique · Jose Jesus Lopez Fernandez",
+    "ja": "10分読む · 美学 · ホセ・ヘスス・ロペス・フェルナンデス"
+  },
+  "label": {
+    "es": "Estética",
+    "en": "Aesthetics",
+    "fr": "Esthétique",
+    "ja": "美学"
+  },
+  "image": "img/articles/kimetsu-portada.jpg",
+  "image_caption": "Kimetsu no Yaiba — Koyoharu Gotouge. La danza de las hojas y la sangre.",
+  "image_mid": null,
+  "image_mid_caption": null,
+  "content": {
+    "es": "<p>Frente al nihilismo posmoderno de obras contemporáneas, <i>Kimetsu no Yaiba</i> de Koyoharu Gotouge optó por el camino diametralmente opuesto: la pureza estructural del monomito clásico. Sin embargo, su éxito masivo no radica en la complejidad de su guion, sino en la maestría de su ejecución estética.</p>\n      <h3>La Herencia del Ukiyo-e en el Dinamismo Visual</h3>\n      <p>La adaptación al anime catapultó la obra al incorporar elementos del <i>ukiyo-e</i> (estampas japonesas tradicionales) en los efectos de las técnicas de respiración. Las olas de Katsushika Hokusai cobraron vida en la katana de Tanjiro. Este contraste entre el hiperrealismo de los fondos y los trazados gruesos y estilizados de los elementos elementales crea un lenguaje visual propio que rompe con la monotonía del género.</p>\n      <img src=\"img/articles/kimetsu-portada.jpg\" alt=\"La respiración del agua de Tanjiro\" class=\"article-img-inline-img\" style=\"float:right; width:38%; max-width:320px; margin: 0.4rem 0 1.4rem 2rem; border-radius: 8px; object-fit: contain;\">\n      <h3>Un Cuento de Hadas Sintoísta</h3>\n      <p>Estructuralmente, es una obra extremadamente conservadora. Tanjiro Kamado es la encarnación del altruismo, la empatía y la resiliencia pura, carente de la ambigüedad moral de otros protagonistas. Los demonios funcionan como alegorías directas de la pérdida de humanidad y las enfermedades sociales del Japón del periodo Taisho, anclados en la mitología sintoísta.</p>\n      <blockquote>\"Los fuertes deben proteger a los débiles. Ese es mi deber.\"<cite>— Kyojuro Rengoku</cite></blockquote>\n      <p><i>Kimetsu no Yaiba</i> no inventa nada nuevo, pero perfecciona la rueda. Toma la tragedia, el folclore y la épica de espadas y los eleva mediante una estética tan apabullante que convierte una historia de venganza clásica en una experiencia sensorial arrolladora.</p>",
+    "en": "<p>In contrast to the postmodern nihilism of contemporary works, Koyoharu Gotouge's <i>Kimetsu no Yaiba</i> chose the diametrically opposite path: the structural purity of the classic monomyth. However, its massive success lies not in the complexity of its script, but in the mastery of its aesthetic execution.</p>\n        <h3>The Heritage of Ukiyo-e in Visual Dynamism</h3>\n        <p>The anime adaptation catapulted the work by incorporating elements of <i>ukiyo-e</i> (traditional Japanese woodblock prints) into the breathing technique effects. Katsushika Hokusai's waves came to life on Tanjiro's katana. This contrast between the hyperrealism of the backgrounds and the thick, stylized strokes of the elemental powers creates a unique visual language that breaks the monotony of the genre.</p>\n        <img src=\"img/articles/kimetsu-portada.jpg\" alt=\"Tanjiro's water breathing\" class=\"article-img-inline-img\" style=\"float:right; width:38%; max-width:320px; margin: 0.4rem 0 1.4rem 2rem; border-radius: 8px; object-fit: contain;\">\n        <h3>A Shinto Fairy Tale</h3>\n        <p>Structurally, it is an extremely conservative work. Tanjiro Kamado is the embodiment of altruism, empathy, and pure resilience, lacking the moral ambiguity of other protagonists. The demons function as direct allegories for the loss of humanity and the social diseases of Taisho-era Japan, anchored in Shinto mythology.</p>\n        <blockquote>\"The strong must protect the weak. That is my duty.\"<cite>— Kyojuro Rengoku</cite></blockquote>\n        <p><i>Kimetsu no Yaiba</i> does not invent anything new, but it perfects the wheel. It takes tragedy, folklore, and sword-swinging epics and elevates them through such overwhelming aesthetics that it turns a classic revenge story into a sweeping sensory experience.</p>",
+    "fr": "<p>Face au nihilisme postmoderne des œuvres contemporaines, <i>Kimetsu no Yaiba</i> de Koyoharu Gotouge a choisi la voie diamétralement opposée : la pureté structurelle du monomythe classique. Cependant, son succès massif ne réside pas dans la complexité de son scénario, mais dans la maîtrise de son exécution esthétique.</p>\n        <h3>L'Héritage de l'Ukiyo-e dans le Dynamisme Visuel</h3>\n        <p>L'adaptation en anime a catapulté l'œuvre en incorporant des éléments de l'<i>ukiyo-e</i> (estampes japonaises traditionnelles) dans les effets des techniques de respiration. Les vagues de Katsushika Hokusai ont pris vie sur le katana de Tanjiro. Ce contraste entre l'hyperréalisme des décors et les traits épais et stylisés des éléments crée un langage visuel propre qui rompt avec la monotonie du genre.</p>\n        <img src=\"img/articles/kimetsu-portada.jpg\" alt=\"La respiration de l'eau de Tanjiro\" class=\"article-img-inline-img\" style=\"float:right; width:38%; max-width:320px; margin: 0.4rem 0 1.4rem 2rem; border-radius: 8px; object-fit: contain;\">\n        <h3>Un Conte de Fées Shintoïste</h3>\n        <p>Structurellement, c'est une œuvre extrêmement conservatrice. Tanjiro Kamado est l'incarnation de l'altruisme, de l'empathie et de la résilience pure, dépourvu de l'ambiguïté morale des autres protagonistes. Les démons fonctionnent comme des allégories directes de la perte d'humanité et des maux sociaux du Japon de l'ère Taisho, ancrés dans la mythologie shintoïste.</p>\n        <blockquote>\"Les forts doivent protéger les faibles. C'est mon devoir.\"<cite>— Kyojuro Rengoku</cite></blockquote>\n        <p><i>Kimetsu no Yaiba</i> n'invente rien de nouveau, mais perfectionne la roue. Il prend la tragédie, le folklore et l'épopée des épées pour les élever grâce à une esthétique si époustouflante qu'elle transforme une histoire de vengeance classique en une expérience sensorielle bouleversante.</p>",
+    "ja": "<p>現代作品のポストモダン的なニヒリズムとは対照的に、吾峠呼世晴の『鬼滅の刃』は、古典的なモノミスの構造的な純粋さという、正反対の道を選びました。しかし、その大成功は脚本の複雑さにあるのではなく、美的表現の卓越性にあります。</p>\n        <h3>視覚的な躍動感における浮世絵の遺産</h3>\n        <p>アニメ化は、呼吸法のエフェクトに<i>浮世絵</i>（日本の伝統的な木版画）の要素を取り入れることで、作品を飛躍させました。葛飾北斎の波が炭治郎の刀に命を吹き込んだのです。背景のハイパーリアリズムと、自然要素の太く様式化された線のこの対比は、ジャンルの単調さを打ち破る独自の視覚言語を生み出しています。</p>\n        <img src=\"img/articles/kimetsu-portada.jpg\" alt=\"炭治郎の水の呼吸\" class=\"article-img-inline-img\" style=\"float:right; width:38%; max-width:320px; margin: 0.4rem 0 1.4rem 2rem; border-radius: 8px; object-fit: contain;\">\n        <h3>神道的なおとぎ話</h3>\n        <p>構造的に、これは非常に保守的な作品です。竈門炭治郎は利他主義、共感、そして純粋な回復力の化身であり、他の主人公のような道徳的な曖昧さがありません。鬼は、人間性の喪失や大正時代の日本の社会問題の直接的な寓意として機能し、神道神話に根ざしています。</p>\n        <blockquote>「強き者は弱き者を助け守る。それが私の責務だ。」<cite>— 煉獄杏寿郎</cite></blockquote>\n        <p>『鬼滅の刃』は何も新しいものを発明していませんが、車輪を完成させています。悲劇、民間伝承、剣劇の叙事詩を取り入れ、圧倒的な美学を通してそれらを昇華させることで、古典的な復讐の物語を圧倒的な感覚的体験へと変貌させています。</p>"
+  }
+}

@@ -1,0 +1,429 @@
+[
+  {
+    "id": "op-esclavitud",
+    "category": "One Piece",
+    "mins": 9,
+    "thumb": {
+      "class": "op",
+      "type": "img",
+      "src": "img/articles/one-piece-portada.jpg",
+      "alt": "One Piece portada"
+    },
+    "title": {
+      "es": "La Esclavitud en One Piece: El Tema que Nadie Esperaba en un Manga",
+      "en": "Slavery in One Piece: The Theme Nobody Expected in a Manga",
+      "fr": "L'Esclavage dans One Piece : Le Thème que Personne n'Attendait dans un Manga",
+      "ja": "ワンピースの奴隷制：誰も予想しなかった漫画のテーマ"
+    },
+    "desc": {
+      "es": "Oda lleva décadas hablando de colonialismo y esclavitud con más honestidad que muchos libros de historia.",
+      "en": "Oda has spent decades speaking about colonialism and slavery with more honesty than many history books.",
+      "fr": "Oda parle du colonialisme et de l'esclavage avec plus d'honnêteté que bien des livres d'histoire.",
+      "ja": "尾田は多くの歴史書よりも正直に、植民地主義と奴隷制について何十年も語り続けている。"
+    },
+    "label": {
+      "es": "Sociedad",
+      "en": "Society",
+      "fr": "Société",
+      "ja": "社会"
+    }
+  },
+  {
+    "id": "hxh-capitalismo",
+    "category": "Hunter x Hunter",
+    "mins": 11,
+    "thumb": {
+      "class": "hxh",
+      "type": "img",
+      "src": "img/articles/hunter-x-hunter-portada.jpg",
+      "alt": "Hunter x Hunter portada"
+    },
+    "title": {
+      "es": "El Arco de la Hormiga Quimera: Una Crítica al Capitalismo y la Humanidad",
+      "en": "The Chimera Ant Arc: A Critique of Capitalism and Humanity",
+      "fr": "L'Arc des Fourmis Chimères : Une Critique du Capitalisme et de l'Humanité",
+      "ja": "キメラアント編：資本主義と人類への批判"
+    },
+    "desc": {
+      "es": "Togashi usa hormigas gigantes para preguntarnos qué nos hace humanos. Y la respuesta incomoda.",
+      "en": "Togashi uses giant ants to ask us what makes us human. The answer is uncomfortable.",
+      "fr": "Togashi utilise des fourmis géantes pour nous demander ce qui nous rend humains. La réponse est inconfortable.",
+      "ja": "冨樫は巨大な蟻を使って、何が私たちを人間にするのかを問いかける。その答えは不快だ。"
+    },
+    "label": {
+      "es": "Filosofía",
+      "en": "Philosophy",
+      "fr": "Philosophie",
+      "ja": "哲学"
+    }
+  },
+  {
+    "id": "vinland-guerra",
+    "category": "Vinland Saga",
+    "mins": 12,
+    "thumb": {
+      "class": "vs",
+      "type": "emoji",
+      "value": "🪓"
+    },
+    "title": {
+      "es": "Vinland Saga: El Manga que Más Honestamente Ha Retratado la Guerra",
+      "en": "Vinland Saga: The Manga That Most Honestly Portrayed War",
+      "fr": "Vinland Saga : Le Manga qui a le Plus Honnêtement Dépeint la Guerre",
+      "ja": "ヴィンランド・サガ：最も誠実に戦争を描いた漫画"
+    },
+    "desc": {
+      "es": "No hay héroes ni villanos. Solo personas rotas por la violencia. Yukimura creó algo único.",
+      "en": "No heroes, no villains. Only people broken by violence. Yukimura created something unique.",
+      "fr": "Pas de héros ni de méchants. Seulement des personnes brisées par la violence. Yukimura a créé quelque chose d'unique.",
+      "ja": "英雄も悪役もいない。暴力によって壊された人々だけ。幸村は何か唯一無二のものを生み出した。"
+    },
+    "label": {
+      "es": "Análisis",
+      "en": "Analysis",
+      "fr": "Analyse",
+      "ja": "分析"
+    }
+  },
+  {
+    "id": "aot-libertad",
+    "category": "Shingeki no Kyojin",
+    "mins": 13,
+    "thumb": {
+      "class": "aot",
+      "type": "emoji",
+      "value": "⚔️"
+    },
+    "title": {
+      "es": "Libertad y Prisión: Shingeki no Kyojin como Metáfora Política",
+      "en": "Freedom and Prison: Shingeki no Kyojin as Political Metaphor",
+      "fr": "Liberté et Prison : Shingeki no Kyojin comme Métaphore Politique",
+      "ja": "自由と牢獄：政治的メタファーとしての進撃の巨人"
+    },
+    "desc": {
+      "es": "¿Y si los muros no son para protegerte, sino para controlarte? AOT habla de Israel, Palestina y mucho más.",
+      "en": "What if the walls aren't there to protect you, but to control you? AOT talks about Israel, Palestine and much more.",
+      "fr": "Et si les murs n'étaient pas là pour vous protéger, mais pour vous contrôler ? AOT parle d'Israël, de Palestine et bien plus.",
+      "ja": "もし壁があなたを守るためではなく、制御するためにあるとしたら？AoTはイスラエル、パレスチナなど多くを語る。"
+    },
+    "label": {
+      "es": "Política",
+      "en": "Politics",
+      "fr": "Politique",
+      "ja": "政治"
+    }
+  },
+  {
+    "id": "naruto-ciclo-odio",
+    "category": "Naruto",
+    "mins": 10,
+    "thumb": {
+      "class": "nar",
+      "type": "img",
+      "src": "img/articles/Naruto-portada.jpg",
+      "alt": "Naruto portada"
+    },
+    "title": {
+      "es": "El Ciclo del Odio en Naruto: ¿Por Qué No Podemos Parar las Guerras?",
+      "en": "The Cycle of Hatred in Naruto: Why Can't We Stop Wars?",
+      "fr": "Le Cycle de la Haine dans Naruto : Pourquoi Ne Pouvons-Nous Pas Arrêter les Guerres ?",
+      "ja": "NARUTOにおける憎しみのサイクル：なぜ戦争を止められないのか？"
+    },
+    "desc": {
+      "es": "Pain le hace a Naruto la pregunta que los políticos llevan siglos evitando responder.",
+      "en": "Pain asks Naruto the question that politicians have been avoiding for centuries.",
+      "fr": "Pain pose à Naruto la question que les politiciens évitent depuis des siècles.",
+      "ja": "ペインはナルトに、政治家たちが何世紀も避けてきた質問をする。"
+    },
+    "label": {
+      "es": "Sociedad",
+      "en": "Society",
+      "fr": "Société",
+      "ja": "社会"
+    }
+  },
+  {
+    "id": "death-note-justicia",
+    "category": "Death Note",
+    "mins": 8,
+    "thumb": {
+      "class": "dn",
+      "type": "emoji",
+      "value": "📓"
+    },
+    "title": {
+      "es": "Death Note y la Justicia: ¿Quién Tiene Derecho a Decidir Quién Vive?",
+      "en": "Death Note and Justice: Who Has the Right to Decide Who Lives?",
+      "fr": "Death Note et la Justice : Qui a le Droit de Décider qui Vit ?",
+      "ja": "デスノートと正義：誰が誰の命を決める権利を持つのか？"
+    },
+    "desc": {
+      "es": "Light Yagami es el villano, sí. Pero sus preguntas sobre el sistema judicial siguen sin respuesta.",
+      "en": "Light Yagami is the villain, yes. But his questions about the justice system remain unanswered.",
+      "fr": "Light Yagami est le méchant, certes. Mais ses questions sur le système judiciaire restent sans réponse.",
+      "ja": "夜神月は悪役だ、確かに。しかし司法制度に関する彼の疑問はまだ答えが出ていない。"
+    },
+    "label": {
+      "es": "Filosofía",
+      "en": "Philosophy",
+      "fr": "Philosophie",
+      "ja": "哲学"
+    }
+  },
+  {
+    "id": "jjk-maldicion",
+    "category": "Jujutsu Kaisen",
+    "mins": 7,
+    "thumb": {
+      "class": "jjk",
+      "type": "emoji",
+      "value": "👁️"
+    },
+    "title": {
+      "es": "Las Maldiciones de JJK son Nuestras Emociones: Una Lectura Psicológica",
+      "en": "JJK Curses Are Our Emotions: A Psychological Reading",
+      "fr": "Les Malédictions de JJK sont Nos Émotions : Une Lecture Psychologique",
+      "ja": "JJKの呪いは私たちの感情：心理学的考察"
+    },
+    "desc": {
+      "es": "En JJK los monstruos nacen del miedo, la vergüenza y el dolor humano. No es casualidad.",
+      "en": "In JJK monsters are born from human fear, shame and pain. It's no coincidence.",
+      "fr": "Dans JJK les monstres naissent de la peur, de la honte et de la douleur humaine. Ce n'est pas un hasard.",
+      "ja": "JJKの怪物は人間の恐怖、羞恥心、苦痛から生まれる。これは偶然ではない。"
+    },
+    "label": {
+      "es": "Psicología",
+      "en": "Psychology",
+      "fr": "Psychologie",
+      "ja": "心理学"
+    }
+  },
+  {
+    "id": "mha-heroes",
+    "category": "Boku no Hero",
+    "mins": 8,
+    "thumb": {
+      "class": "mha",
+      "type": "emoji",
+      "value": "💥"
+    },
+    "title": {
+      "es": "¿Qué Significa Ser un Héroe? Boku no Hero y la Trampa del Mérito",
+      "en": "What Does It Mean to Be a Hero? Boku no Hero and the Merit Trap",
+      "fr": "Qu'est-ce qu'Être un Héros ? Boku no Hero et le Piège du Mérite",
+      "ja": "ヒーローであることの意味は？僕のヒーローとメリットの罠"
+    },
+    "desc": {
+      "es": "En un mundo donde el poder lo es todo, BnHA pregunta si una sociedad basada en el mérito es justa.",
+      "en": "In a world where power is everything, BnHA asks whether a merit-based society is fair.",
+      "fr": "Dans un monde où le pouvoir est tout, BnHA demande si une société basée sur le mérite est juste.",
+      "ja": "力がすべての世界で、BnHAは実力主義社会が公正かどうかを問う。"
+    },
+    "label": {
+      "es": "Sociedad",
+      "en": "Society",
+      "fr": "Société",
+      "ja": "社会"
+    }
+  },
+  {
+    "id": "db-esfuerzo",
+    "category": "Dragon Ball",
+    "mins": 7,
+    "thumb": {
+      "class": "db",
+      "type": "emoji",
+      "value": "🐉"
+    },
+    "title": {
+      "es": "Dragon Ball y el Culto al Esfuerzo: Cuándo Trabajar Duro Ya No Basta",
+      "en": "Dragon Ball and the Cult of Effort: When Working Hard Is Not Enough",
+      "fr": "Dragon Ball et le Culte de l'Effort : Quand Travailler Dur Ne Suffit Plus",
+      "ja": "ドラゴンボールと努力崇拝：頑張るだけでは足りない時"
+    },
+    "desc": {
+      "es": "Goku siempre gana con entrenamiento. Pero en la vida real, eso no siempre funciona.",
+      "en": "Goku always wins through training. But in real life, that doesn't always work.",
+      "fr": "Goku gagne toujours en s'entraînant. Mais dans la vraie vie, ça ne marche pas toujours comme ça.",
+      "ja": "悟空は常に修行で勝つ。しかし現実ではそれが常に機能するわけではない。"
+    },
+    "label": {
+      "es": "Reflexión",
+      "en": "Reflection",
+      "fr": "Réflexion",
+      "ja": "考察"
+    }
+  },
+  {
+    "id": "berserk-nihilismo",
+    "category": "Berserk",
+    "mins": 14,
+    "thumb": {
+      "class": "ber",
+      "type": "img",
+      "src": "img/articles/berserk-portada.jpg",
+      "alt": "Berserk portada"
+    },
+    "title": {
+      "es": "Berserk: El Claroscuro del Alma Humana y la Rebelión contra el Destino",
+      "en": "Berserk: The Chiaroscuro of the Human Soul and the Rebellion Against Destiny",
+      "fr": "Berserk : Le Clair-obscur de l'Âme Humaine et la Rébellion Contre le Destin",
+      "ja": "ベルセルク：人間の魂の明暗と運命への反逆"
+    },
+    "desc": {
+      "es": "La obra maestra de Kentaro Miura es un tratado monumental sobre el existencialismo y el peso de la causalidad.",
+      "en": "Kentaro Miura's masterpiece is a monumental treatise on existentialism and the weight of causality.",
+      "fr": "Le chef-d'œuvre de Kentaro Miura est un traité monumental sur l'existentialisme et le poids de la causalité.",
+      "ja": "三浦建太郎の最高傑作は、実存主義と因果律の重みについての記念碑的な論文である。"
+    },
+    "label": {
+      "es": "Análisis",
+      "en": "Analysis",
+      "fr": "Analyse",
+      "ja": "分析"
+    }
+  },
+  {
+    "id": "punpun-psicologia",
+    "category": "Oyasumi Punpun",
+    "mins": 11,
+    "thumb": {
+      "class": "pun",
+      "type": "img",
+      "src": "img/articles/punpun-portada.jpg",
+      "alt": "Punpun portada"
+    },
+    "title": {
+      "es": "Oyasumi Punpun: La Desoladora Verdad de Crecer en la Narrativa Visual de Asano",
+      "en": "Oyasumi Punpun: The Desolating Truth of Growing Up in Asano's Visual Narrative",
+      "fr": "Oyasumi Punpun : La Vérité Désolante de Grandir dans la Narration Visuelle d'Asano",
+      "ja": "おやすみプンプン：浅野の視覚的物語における成長の荒涼たる真実"
+    },
+    "desc": {
+      "es": "Un descenso psicológico a los abismos de la alienación y la pérdida de la inocencia a través de la lente única de Asano.",
+      "en": "A psychological descent into the abyss of alienation and loss of innocence through Asano's unique lens.",
+      "fr": "Une descente psychologique dans les abysses de l'aliénation et de la perte de l'innocence à travers l'objectif unique d'Asano.",
+      "ja": "浅野独自のレンズを通して描かれる、疎外感と純真さの喪失という深淵への心理的転落。"
+    },
+    "label": {
+      "es": "Psicología",
+      "en": "Psychology",
+      "fr": "Psychologie",
+      "ja": "心理学"
+    }
+  },
+  {
+    "id": "chainsaw-caos",
+    "category": "Chainsaw Man",
+    "mins": 9,
+    "thumb": {
+      "class": "csm",
+      "type": "img",
+      "src": "img/articles/chainsaw-portada.jpg",
+      "alt": "Chainsaw Man portada"
+    },
+    "title": {
+      "es": "Chainsaw Man: El Caos Narrativo y la Deconstrucción del Héroe Shonen",
+      "en": "Chainsaw Man: Narrative Chaos and the Deconstruction of the Shonen Hero",
+      "fr": "Chainsaw Man : Le Chaos Narratif et la Déconstruction du Héros Shonen",
+      "ja": "チェンソーマン：物語の混沌と少年ヒーローの脱構築"
+    },
+    "desc": {
+      "es": "Denji no quiere salvar el mundo, solo quiere tocar unos pechos y desayunar tostadas. Fujimoto destroza el viaje del héroe.",
+      "en": "Denji doesn't want to save the world, he just wants to touch boobs and eat toast. Fujimoto shatters the hero's journey.",
+      "fr": "Denji ne veut pas sauver le monde, il veut juste toucher des seins et manger des toasts. Fujimoto brise le voyage du héros.",
+      "ja": "デンジは世界を救うことではなく、胸を揉むこととトーストを食べることを望んでいます。藤本タツキはヒーローの旅を粉砕します。"
+    },
+    "label": {
+      "es": "Deconstrucción",
+      "en": "Deconstruction",
+      "fr": "Déconstruction",
+      "ja": "脱構築"
+    }
+  },
+  {
+    "id": "kimetsu-ukiyo",
+    "category": "Kimetsu no Yaiba",
+    "mins": 10,
+    "thumb": {
+      "class": "kny",
+      "type": "img",
+      "src": "img/articles/kimetsu-portada.jpg",
+      "alt": "Kimetsu no Yaiba portada"
+    },
+    "title": {
+      "es": "Kimetsu no Yaiba: La Estructura Clásica Elevada por el Arte Ukiyo-e",
+      "en": "Kimetsu no Yaiba: Classic Structure Elevated by Ukiyo-e Art",
+      "fr": "Kimetsu no Yaiba : La Structure Classique Élevée par l'Art Ukiyo-e",
+      "ja": "鬼滅の刃：浮世絵の芸術によって昇華された古典的構造"
+    },
+    "desc": {
+      "es": "Una trama conservadora disfrazada de obra maestra gracias a un dinamismo visual sin precedentes en la animación moderna.",
+      "en": "A conservative plot disguised as a masterpiece thanks to unprecedented visual dynamism in modern animation.",
+      "fr": "Une intrigue conservatrice déguisée en chef-d'œuvre grâce à un dynamisme visuel sans précédent dans l'animation moderne.",
+      "ja": "現代アニメーションにおけるかつてない視覚的な躍動感によって、傑作に昇華された保守的な物語。"
+    },
+    "label": {
+      "es": "Estética",
+      "en": "Aesthetics",
+      "fr": "Esthétique",
+      "ja": "美学"
+    }
+  },
+  {
+    "id": "mob-psycho-identidad",
+    "category": "Mob Psycho 100",
+    "mins": 10,
+    "thumb": {
+      "class": "mp",
+      "type": "emoji",
+      "value": "💯"
+    },
+    "title": {
+      "es": "Mob Psycho 100: La Inutilidad del Poder como Medida del Valor Personal",
+      "en": "Mob Psycho 100: The Futility of Power as a Measure of Personal Worth",
+      "fr": "Mob Psycho 100 : L'Inutilité du Pouvoir comme Mesure de la Valeur Personnelle",
+      "ja": "モブサイコ100：個人の価値の尺度としての力の無益さ"
+    },
+    "desc": {
+      "es": "ONE construye una psicología completa alrededor de un chico que podría destruir el mundo y solo quiere ser una buena persona.",
+      "en": "ONE builds a complete psychology around a boy who could destroy the world and only wants to be a good person.",
+      "fr": "ONE construit une psychologie complète autour d'un garçon qui pourrait détruire le monde et veut seulement être une bonne personne.",
+      "ja": "ONEは、世界を破壊できるのにただ良い人間になりたいだけの少年を中心に、完全な心理学を構築している。"
+    },
+    "label": {
+      "es": "Psicología",
+      "en": "Psychology",
+      "fr": "Psychologie",
+      "ja": "心理学"
+    }
+  },
+  {
+    "id": "vagabond-existencialismo",
+    "category": "Vagabond",
+    "mins": 13,
+    "thumb": {
+      "class": "vag",
+      "type": "emoji",
+      "value": "🗡️"
+    },
+    "title": {
+      "es": "Vagabond: La Espada como Camino hacia la Iluminación y la Búsqueda del Propósito",
+      "en": "Vagabond: The Sword as a Path Toward Enlightenment and the Search for Purpose",
+      "fr": "Vagabond : L'Épée comme Chemin vers l'Illumination et la Quête du Sens",
+      "ja": "バガボンド：悟りへの道としての剣と目的の探求"
+    },
+    "desc": {
+      "es": "Inoue convierte la biografía de Musashi en un tratado existencialista donde matar es solo el principio de la pregunta.",
+      "en": "Inoue turns Musashi's biography into an existentialist treatise where killing is only the beginning of the question.",
+      "fr": "Inoue transforme la biographie de Musashi en un traité existentialiste où tuer n'est que le début de la question.",
+      "ja": "井上は武蔵の伝記を、殺すことは問いの始まりにすぎない実存主義的な論文に変える。"
+    },
+    "label": {
+      "es": "Filosofía",
+      "en": "Philosophy",
+      "fr": "Philosophie",
+      "ja": "哲学"
+    }
+  }
+]
