@@ -4,8 +4,9 @@
   "mins": 10,
   "thumb": {
     "class": "mp",
-    "type": "emoji",
-    "value": "💯"
+    "type": "img",
+    "src": "img/articles/Mob-psycho-portada.jpg",
+    "alt": "Mob Psycho 100 portada"
   },
   "title": {
     "es": "Mob Psycho 100: La Inutilidad del Poder como Medida del Valor Personal",
@@ -37,7 +38,7 @@
     "fr": "Psychologie",
     "ja": "心理学"
   },
-  "image": "img/articles/mob-psycho-identidad-top.jpg",
+  "image": "img/articles/Mob-psycho-portada.jpg",
   "image_caption": "Shigeo Kageyama: el chico más poderoso del mundo, también el más invisible.",
   "image_mid": "img/articles/mob-psycho-identidad-mid.jpg",
   "image_mid_caption": "Reigen Arataka: el fraude que sin saberlo enseña la lección más honesta.",

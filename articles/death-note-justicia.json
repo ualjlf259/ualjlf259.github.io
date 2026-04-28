@@ -4,8 +4,9 @@
   "mins": 8,
   "thumb": {
     "class": "dn",
-    "type": "emoji",
-    "value": "📓"
+    "type": "img",
+    "src": "img/articles/Death-note-portada.jpg",
+    "alt": "Death Note portada"
   },
   "title": {
     "es": "Death Note y la Justicia: ¿Quién Tiene Derecho a Decidir Quién Vive?",
@@ -37,7 +38,7 @@
     "fr": "Philosophie",
     "ja": "哲学"
   },
-  "image": "img/articles/death-note-justicia-top.jpg",
+  "image": "img/articles/Death-note-portada.jpg",
   "image_caption": "Light Yagami: el genio que confundió el poder con la justicia.",
   "image_mid": "img/articles/death-note-justicia-mid.jpg",
   "image_mid_caption": "L: el argumento más poderoso contra la justicia unilateral.",

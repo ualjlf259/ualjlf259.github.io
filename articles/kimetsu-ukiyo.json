@@ -5,7 +5,7 @@
   "thumb": {
     "class": "kny",
     "type": "img",
-    "src": "img/articles/kimetsu-portada.jpg",
+    "src": "img/articles/Kimetsu-no-yaiba-portada.jpg",
     "alt": "Kimetsu no Yaiba portada"
   },
   "title": {
@@ -38,7 +38,7 @@
     "fr": "Esthétique",
     "ja": "美学"
   },
-  "image": "img/articles/kimetsu-portada.jpg",
+  "image": "img/articles/Kimetsu-no-yaiba-portada.jpg",
   "image_caption": "Kimetsu no Yaiba — Koyoharu Gotouge. La danza de las hojas y la sangre.",
   "image_mid": null,
   "image_mid_caption": null,

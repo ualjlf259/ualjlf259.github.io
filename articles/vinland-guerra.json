@@ -4,8 +4,9 @@
   "mins": 12,
   "thumb": {
     "class": "vs",
-    "type": "emoji",
-    "value": "🪓"
+    "type": "img",
+    "src": "img/articles/Vinland-portada.jpg",
+    "alt": "Vinland Saga portada"
   },
   "title": {
     "es": "Vinland Saga: El Manga que Más Honestamente Ha Retratado la Guerra",

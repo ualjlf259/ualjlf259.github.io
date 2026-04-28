@@ -4,8 +4,9 @@
   "mins": 13,
   "thumb": {
     "class": "vag",
-    "type": "emoji",
-    "value": "🗡️"
+    "type": "img",
+    "src": "img/articles/Vagabond-portada.jpg",
+    "alt": "Vagabond portada"
   },
   "title": {
     "es": "Vagabond: La Espada como Camino hacia la Iluminación y la Búsqueda del Propósito",
@@ -37,7 +38,7 @@
     "fr": "Philosophie",
     "ja": "哲学"
   },
-  "image": "img/articles/vagabond-existencialismo-top.jpg",
+  "image": "img/articles/Vagabond-portada.jpg",
   "image_caption": "Miyamoto Musashi: el hombre que confundió la fuerza con el camino.",
   "image_mid": "img/articles/vagabond-existencialismo-mid.jpg",
   "image_mid_caption": "El campo de arroz: la iluminación llegó cuando soltó la espada.",

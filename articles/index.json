@@ -63,8 +63,9 @@
     "mins": 12,
     "thumb": {
       "class": "vs",
-      "type": "emoji",
-      "value": "🪓"
+      "type": "img",
+      "src": "img/articles/Vinland-portada.jpg",
+      "alt": "Vinland Saga portada"
     },
     "title": {
       "es": "Vinland Saga: El Manga que Más Honestamente Ha Retratado la Guerra",
@@ -91,8 +92,9 @@
     "mins": 13,
     "thumb": {
       "class": "aot",
-      "type": "emoji",
-      "value": "⚔️"
+      "type": "img",
+      "src": "img/articles/Shingeky-no-kyojin-portada.jpg",
+      "alt": "Shingeki no Kyojin portada"
     },
     "title": {
       "es": "Libertad y Prisión: Shingeki no Kyojin como Metáfora Política",
@@ -148,8 +150,9 @@
     "mins": 8,
     "thumb": {
       "class": "dn",
-      "type": "emoji",
-      "value": "📓"
+      "type": "img",
+      "src": "img/articles/Death-note-portada.jpg",
+      "alt": "Death Note portada"
     },
     "title": {
       "es": "Death Note y la Justicia: ¿Quién Tiene Derecho a Decidir Quién Vive?",
@@ -232,8 +235,9 @@
     "mins": 7,
     "thumb": {
       "class": "db",
-      "type": "emoji",
-      "value": "🐉"
+      "type": "img",
+      "src": "img/articles/Dragon-ball-portada.jpg",
+      "alt": "Dragon Ball portada"
     },
     "title": {
       "es": "Dragon Ball y el Culto al Esfuerzo: Cuándo Trabajar Duro Ya No Basta",
@@ -261,7 +265,7 @@
     "thumb": {
       "class": "ber",
       "type": "img",
-      "src": "img/articles/berserk-portada.jpg",
+      "src": "img/articles/Berserk-portada.jpg",
       "alt": "Berserk portada"
     },
     "title": {
@@ -348,7 +352,7 @@
     "thumb": {
       "class": "kny",
       "type": "img",
-      "src": "img/articles/kimetsu-portada.jpg",
+      "src": "img/articles/Kimetsu-no-yaiba-portada.jpg",
       "alt": "Kimetsu no Yaiba portada"
     },
     "title": {
@@ -376,8 +380,9 @@
     "mins": 10,
     "thumb": {
       "class": "mp",
-      "type": "emoji",
-      "value": "💯"
+      "type": "img",
+      "src": "img/articles/Mob-psycho-portada.jpg",
+      "alt": "Mob Psycho 100 portada"
     },
     "title": {
       "es": "Mob Psycho 100: La Inutilidad del Poder como Medida del Valor Personal",
@@ -404,8 +409,9 @@
     "mins": 13,
     "thumb": {
       "class": "vag",
-      "type": "emoji",
-      "value": "🗡️"
+      "type": "img",
+      "src": "img/articles/Vagabond-portada.jpg",
+      "alt": "Vagabond portada"
     },
     "title": {
       "es": "Vagabond: La Espada como Camino hacia la Iluminación y la Búsqueda del Propósito",

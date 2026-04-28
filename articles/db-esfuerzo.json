@@ -4,8 +4,9 @@
   "mins": 7,
   "thumb": {
     "class": "db",
-    "type": "emoji",
-    "value": "🐉"
+    "type": "img",
+    "src": "img/articles/Dragon-ball-portada.jpg",
+    "alt": "Dragon Ball portada"
   },
   "title": {
     "es": "Dragon Ball y el Culto al Esfuerzo: Cuándo Trabajar Duro Ya No Basta",
@@ -37,7 +38,7 @@
     "fr": "Réflexion",
     "ja": "考察"
   },
-  "image": "img/articles/db-esfuerzo-top.jpg",
+  "image": "img/articles/Dragon-ball-portada.jpg",
   "image_caption": "Dragon Ball — Akira Toriyama. El evangelio del esfuerzo.",
   "image_mid": "img/articles/db-esfuerzo-mid.jpg",
   "image_mid_caption": "Vegeta: la lucha más honesta contra los propios límites.",

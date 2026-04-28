@@ -5,7 +5,7 @@
   "thumb": {
     "class": "ber",
     "type": "img",
-    "src": "img/articles/berserk-portada.jpg",
+    "src": "img/articles/Berserk-portada.jpg",
     "alt": "Berserk portada"
   },
   "title": {
@@ -38,7 +38,7 @@
     "fr": "Analyse",
     "ja": "分析"
   },
-  "image": "img/articles/berserk-portada.jpg",
+  "image": "img/articles/Berserk-portada.jpg",
   "image_caption": "Berserk — Kentaro Miura. El arte como reflejo del alma.",
   "image_mid": "img/articles/berserk-1.jpg",
   "image_mid_caption": "Guts: la encarnación de la rebelión contra el destino.",

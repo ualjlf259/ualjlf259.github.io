@@ -4,8 +4,9 @@
   "mins": 13,
   "thumb": {
     "class": "aot",
-    "type": "emoji",
-    "value": "⚔️"
+    "type": "img",
+    "src": "img/articles/Shingeky-no-kyojin-portada.jpg",
+    "alt": "Shingeki no Kyojin portada"
   },
   "title": {
     "es": "Libertad y Prisión: Shingeki no Kyojin como Metáfora Política",
@@ -37,7 +38,7 @@
     "fr": "Politique",
     "ja": "政治"
   },
-  "image": "img/articles/aot-libertad-top.jpg",
+  "image": "img/articles/Shingeky-no-kyojin-portada.jpg",
   "image_caption": "Los muros: la prisión que la humanidad construyó para sentirse a salvo.",
   "image_mid": "img/articles/aot-libertad-mid.jpg",
   "image_mid_caption": "El Rugido de la Tierra: consecuencia de un mundo sin diplomacia.",
