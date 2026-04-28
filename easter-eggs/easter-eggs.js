@@ -11,6 +11,8 @@
    - 4) Saiyan    : "saiyan"   → aura dorada + shake fuerte
    - 5) Joyboy    : "joyboy"   → latido de la página + risa de Nika
    - 6) Tsukuyomi : 5 clics rápidos sobre #theme-toggle → caos + genjutsu
+   - 7) Mob       : "shigeo"  → contador 0→100% + explosión psíquica
+   - 8) Gear 5    : agitar ratón/móvil → tema Joy Boy + nubes + goma
 
    Convivencia segura:
    · Todas las clases CSS llevan prefijo .ee-*
@@ -38,10 +40,11 @@
      tecla, donde k = nº de palabras secretas.
   ───────────────────────────────────────────────── */
   const KEYWORDS = {
-    tatakae : () => triggerTatakae(),
+    tatakae: () => triggerTatakae(),
     rasengan: () => triggerRasengan(),
-    saiyan  : () => triggerSaiyan(),
-    joyboy  : () => triggerJoyboy(),
+    saiyan: () => triggerSaiyan(),
+    joyboy: () => triggerJoyboy(),
+    shigeo: () => triggerMob(),
   };
   const KW_LIST = Object.keys(KEYWORDS);
   const KW_MAX_LEN = KW_LIST.reduce((m, w) => Math.max(m, w.length), 0);
@@ -253,11 +256,11 @@
      5 clics rápidos sobre #theme-toggle (≤ 2s) →
      cancela el cambio de tema y dispara el genjutsu.
   ───────────────────────────────────────────────── */
-  const TSU_CLICK_COUNT  = 5;
+  const TSU_CLICK_COUNT = 5;
   const TSU_CLICK_WINDOW = 2000;
-  const TSU_SHAKE_MS     = 1000;
-  const TSU_GENJUTSU_MS  = 7000;
-  const TSU_FLASH_MS     = 450;
+  const TSU_SHAKE_MS = 1000;
+  const TSU_GENJUTSU_MS = 7000;
+  const TSU_FLASH_MS = 450;
   let tsuClickTimes = [];
   let tsukuyomiActive = false;
 
@@ -331,20 +334,20 @@
   function positionBloodLayer(layer, btn) {
     const rect = btn.getBoundingClientRect();
     layer.style.left = (rect.left + rect.width / 2) + 'px';
-    layer.style.top  = (rect.top  + rect.height * 0.85) + 'px';
+    layer.style.top = (rect.top + rect.height * 0.85) + 'px';
   }
   function spawnBloodDrop(layer) {
     if (!layer || !layer.parentNode) return;
     const drop = document.createElement('div');
     drop.className = 'ee-blood-drop';
     const w = (3.5 + Math.random() * 2.5).toFixed(1);
-    const h = (5   + Math.random() * 4  ).toFixed(1);
-    drop.style.width  = w + 'px';
+    const h = (5 + Math.random() * 4).toFixed(1);
+    drop.style.width = w + 'px';
     drop.style.height = h + 'px';
-    drop.style.setProperty('--ee-blood-x',     (Math.random() * 14 - 7).toFixed(1) + 'px');
-    drop.style.setProperty('--ee-blood-dur',   (0.85 + Math.random() * 0.6).toFixed(2) + 's');
+    drop.style.setProperty('--ee-blood-x', (Math.random() * 14 - 7).toFixed(1) + 'px');
+    drop.style.setProperty('--ee-blood-dur', (0.85 + Math.random() * 0.6).toFixed(2) + 's');
     drop.style.setProperty('--ee-blood-delay', (Math.random() * 0.15).toFixed(2) + 's');
-    drop.style.setProperty('--ee-blood-fall',  (80 + Math.random() * 70).toFixed(0) + 'px');
+    drop.style.setProperty('--ee-blood-fall', (80 + Math.random() * 70).toFixed(0) + 'px');
     layer.appendChild(drop);
     setTimeout(() => drop.remove(), 1700);
   }
@@ -421,10 +424,343 @@
     }, CHAOS_MS + TSU_GENJUTSU_MS);
   }
 
+  /* ─────────────────────────────────────────────────
+     EASTER EGG 7 — MOB PSYCHO 100%
+  ───────────────────────────────────────────────── */
+  let mobActive = false;
+
+  function triggerMob() {
+    if (mobActive) return;
+    mobActive = true;
+
+    const overlay = document.createElement('div');
+    overlay.className = 'ee-mob-overlay';
+    overlay.setAttribute('aria-hidden', 'true');
+
+    const counter = document.createElement('div');
+    counter.className = 'ee-mob-counter';
+    counter.setAttribute('role', 'status');
+    counter.setAttribute('aria-live', 'assertive');
+
+    const eyebrow = document.createElement('div');
+    eyebrow.className = 'ee-mob-eyebrow';
+    eyebrow.textContent = 'M O B';
+
+    const pct = document.createElement('div');
+    pct.className = 'ee-mob-pct';
+    pct.textContent = '0%';
+
+    counter.appendChild(eyebrow);
+    counter.appendChild(pct);
+    overlay.appendChild(counter);
+    document.body.appendChild(overlay);
+
+    const DURATION_MS = 2200;
+    const start = performance.now();
+    let phase = 0;
+
+    function ease(t) {
+      // Construcción lenta que se dispara en los últimos instantes
+      return t < 0.75 ? t * 0.55 : 0.4125 + (t - 0.75) * (0.5875 / 0.25);
+    }
+
+    function setGlow(p) {
+      const a1 = (0.4 + p * 0.6).toFixed(2);
+      const a2 = (0.2 + p * 0.55).toFixed(2);
+      const a3 = (parseFloat(a2) * 0.6).toFixed(2);
+      const s1 = Math.round(20 + p * 80);
+      const s2 = Math.round(50 + p * 150);
+      const s3 = Math.round(100 + p * 250);
+      pct.style.textShadow =
+        '0 0 ' + s1 + 'px rgba(190,110,255,' + a1 + '),' +
+        '0 0 ' + s2 + 'px rgba(140,60,230,' + a2 + '),' +
+        '0 0 ' + s3 + 'px rgba(100,20,200,' + a3 + ')';
+      pct.style.color =
+        'rgb(' + Math.round(210 + p * 45) + ',' + Math.round(160 + p * 95) + ',255)';
+    }
+
+    function tick(now) {
+      const raw = Math.min((now - start) / DURATION_MS, 1);
+      const p = ease(raw);
+
+      if (raw < 1) {
+        pct.textContent = Math.min(Math.floor(p * 100), 99) + '%';
+        setGlow(p);
+
+        if (p >= 0.75 && phase < 2) {
+          document.body.classList.remove('ee-mob-sl');
+          document.body.classList.add('ee-mob-sh');
+          phase = 2;
+        } else if (p >= 0.4 && phase < 1) {
+          document.body.classList.add('ee-mob-sl');
+          phase = 1;
+        }
+        requestAnimationFrame(tick);
+      } else {
+        // ── LLEGÓ AL 100% ──
+        pct.textContent = '100%';
+        setGlow(1);
+        document.body.classList.remove('ee-mob-sl', 'ee-mob-sh');
+
+        setTimeout(() => {
+          counter.classList.add('ee-mob-burst');
+          overlay.classList.add('ee-mob-exploding');
+
+          // 3 anillos de choque con desfase
+          [0, 140, 300].forEach((delay, i) => {
+            const ring = document.createElement('div');
+            ring.className = 'ee-mob-ring';
+            ring.setAttribute('aria-hidden', 'true');
+            ring.style.setProperty('--ee-ring-delay', delay + 'ms');
+            ring.style.setProperty('--ee-ring-color',
+              i === 1 ? 'rgba(255,255,255,0.92)' : 'rgba(190,110,255,0.82)');
+            ring.style.setProperty('--ee-ring-dur', (0.75 + i * 0.09) + 's');
+            document.body.appendChild(ring);
+            setTimeout(() => ring.remove(), delay + 1100);
+          });
+
+          const flash = document.createElement('div');
+          flash.className = 'ee-mob-flash';
+          flash.setAttribute('aria-hidden', 'true');
+          document.body.appendChild(flash);
+
+          setTimeout(() => {
+            flash.remove();
+            overlay.remove();
+            mobActive = false;
+          }, 1400);
+        }, 380);
+      }
+    }
+
+    requestAnimationFrame(tick);
+  }
+
+  /* ─────────────────────────────────────────────────
+     EASTER EGG 8 — GEAR 5 / JOY BOY AWAKENING
+     Desktop : agitar el ratón rápidamente (≥6 reversiones en 1.5s)
+     Móvil   : sacudir el teléfono (DeviceMotion) o zig-zag táctil
+  ───────────────────────────────────────────────── */
+  let gear5Active = false;
+
+  /* — Detección de agitación del ratón (desktop) — */
+  const G5_MOUSE_REVERSALS = 6;
+  const G5_MOUSE_WINDOW    = 1500;
+  const G5_MOUSE_MIN_SEG   = 70;
+  const g5MouseHist = [];
+
+  function onMouseShake(e) {
+    if (gear5Active) return;
+    const t = Date.now();
+    g5MouseHist.push({ x: e.clientX, t });
+    while (g5MouseHist.length && t - g5MouseHist[0].t > G5_MOUSE_WINDOW) g5MouseHist.shift();
+    if (g5MouseHist.length < 5) return;
+    let reversals = 0, lastDir = 0, segX = g5MouseHist[0].x;
+    for (let i = 1; i < g5MouseHist.length; i++) {
+      const dx = g5MouseHist[i].x - g5MouseHist[i - 1].x;
+      if (Math.abs(dx) < 3) continue;
+      const dir = dx > 0 ? 1 : -1;
+      if (lastDir && dir !== lastDir && Math.abs(g5MouseHist[i].x - segX) >= G5_MOUSE_MIN_SEG) {
+        reversals++;
+        segX = g5MouseHist[i].x;
+      }
+      lastDir = dir;
+    }
+    if (reversals >= G5_MOUSE_REVERSALS) {
+      g5MouseHist.length = 0;
+      triggerGear5();
+    }
+  }
+
+  /* — Detección de sacudida por acelerómetro (móvil) — */
+  const G5_MOTION_THRESHOLD = 22;
+  const G5_MOTION_NEEDED    = 3;
+  const G5_MOTION_WINDOW    = 1000;
+  const g5MotionTimes = [];
+
+  function onDeviceShake(e) {
+    if (gear5Active) return;
+    const acc = e.accelerationIncludingGravity;
+    if (!acc) return;
+    const mag = Math.sqrt((acc.x || 0) ** 2 + (acc.y || 0) ** 2 + (acc.z || 0) ** 2);
+    if (mag > G5_MOTION_THRESHOLD) {
+      const now = Date.now();
+      g5MotionTimes.push(now);
+      while (g5MotionTimes.length && now - g5MotionTimes[0] > G5_MOTION_WINDOW) g5MotionTimes.shift();
+      if (g5MotionTimes.length >= G5_MOTION_NEEDED) {
+        g5MotionTimes.length = 0;
+        triggerGear5();
+      }
+    }
+  }
+
+  /* — Fallback táctil: zig-zag horizontal (móvil) — */
+  const G5_TOUCH_REVERSALS = 4;
+  const G5_TOUCH_WINDOW    = 1200;
+  const G5_TOUCH_MIN_SEG   = 50;
+  const g5TouchHist = [];
+
+  function onTouchZigzag(e) {
+    if (gear5Active) return;
+    const t = Date.now();
+    const x = e.touches[0].clientX;
+    g5TouchHist.push({ x, t });
+    while (g5TouchHist.length && t - g5TouchHist[0].t > G5_TOUCH_WINDOW) g5TouchHist.shift();
+    if (g5TouchHist.length < 4) return;
+    let reversals = 0, lastDir = 0, segX = g5TouchHist[0].x;
+    for (let i = 1; i < g5TouchHist.length; i++) {
+      const dx = g5TouchHist[i].x - g5TouchHist[i - 1].x;
+      if (Math.abs(dx) < 4) continue;
+      const dir = dx > 0 ? 1 : -1;
+      if (lastDir && dir !== lastDir && Math.abs(g5TouchHist[i].x - segX) >= G5_TOUCH_MIN_SEG) {
+        reversals++;
+        segX = g5TouchHist[i].x;
+      }
+      lastDir = dir;
+    }
+    if (reversals >= G5_TOUCH_REVERSALS) {
+      g5TouchHist.length = 0;
+      triggerGear5();
+    }
+  }
+
+  function attachMotionDetector() {
+    document.addEventListener('mousemove', onMouseShake);
+    document.addEventListener('touchmove', onTouchZigzag, { passive: true });
+    if (typeof DeviceMotionEvent === 'undefined') return;
+    if (typeof DeviceMotionEvent.requestPermission === 'function') {
+      // iOS 13+: necesita gesto del usuario para pedir permiso al sensor
+      document.addEventListener('touchstart', function requestOnce() {
+        DeviceMotionEvent.requestPermission()
+          .then(s => { if (s === 'granted') window.addEventListener('devicemotion', onDeviceShake); })
+          .catch(() => { /* denegado: zig-zag táctil actúa de fallback */ });
+      }, { once: true });
+    } else {
+      window.addEventListener('devicemotion', onDeviceShake);
+    }
+  }
+
+  function spawnGear5Clouds() {
+    const layer = document.createElement('div');
+    layer.className = 'ee-g5-cloud-layer';
+    layer.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(layer);
+    const clouds = [
+      { w: 220, top:  8, dur: 45, delay: -10, rtl: true,  op: 0.75 },
+      { w: 140, top: 18, dur: 32, delay: -22, rtl: false, op: 0.60 },
+      { w: 180, top: 35, dur: 55, delay:  -5, rtl: true,  op: 0.50 },
+      { w: 100, top: 12, dur: 28, delay: -15, rtl: false, op: 0.65 },
+      { w: 260, top: 55, dur: 62, delay: -30, rtl: true,  op: 0.45 },
+      { w: 130, top: 70, dur: 38, delay:  -8, rtl: false, op: 0.55 },
+      { w:  90, top: 45, dur: 26, delay: -18, rtl: true,  op: 0.50 },
+      { w: 200, top: 82, dur: 50, delay: -25, rtl: false, op: 0.40 },
+    ];
+    clouds.forEach(c => {
+      const el = document.createElement('div');
+      el.className = 'ee-g5-cloud ' + (c.rtl ? 'ee-g5-cloud--rtl' : 'ee-g5-cloud--ltr');
+      el.style.cssText =
+        'width:' + c.w + 'px;top:' + c.top + '%;opacity:' + c.op +
+        ';animation-duration:' + c.dur + 's;animation-delay:' + c.delay + 's';
+      layer.appendChild(el);
+    });
+  }
+
+  function scheduleGear5Flash() {
+    if (!gear5Active) return;
+    setTimeout(() => {
+      if (!gear5Active) return;
+      const f = document.createElement('div');
+      f.className = 'ee-g5-sparkle';
+      f.setAttribute('aria-hidden', 'true');
+      f.style.left = (8 + Math.random() * 84) + '%';
+      f.style.top  = (8 + Math.random() * 80) + '%';
+      document.body.appendChild(f);
+      setTimeout(() => f.remove(), 950);
+      scheduleGear5Flash();
+    }, 1800 + Math.random() * 4500);
+  }
+
+  const G5_TEXTS = [
+    { text: 'GEAR 5',   color: '#fbbf24', shadow: '0 0 20px rgba(251,191,36,0.9),0 0 55px rgba(251,191,36,0.55)',           size: 'clamp(1.6rem,4.5vw,2.8rem)' },
+    { text: 'JOYBOY',   color: '#fb923c', shadow: '0 0 20px rgba(251,146,60,0.9),0 0 55px rgba(251,146,60,0.55)',           size: 'clamp(1.4rem,3.5vw,2.2rem)' },
+    { text: 'NIKA',     color: '#ffffff', shadow: '0 0 25px rgba(255,200,0,1),0 0 70px rgba(255,180,0,0.7),0 0 140px rgba(255,150,0,0.4)', size: 'clamp(2rem,7vw,4.5rem)' },
+    { text: 'HAHAHAHA', color: '#fde68a', shadow: '0 0 16px rgba(253,230,138,0.88),0 0 45px rgba(253,230,138,0.5)',         size: 'clamp(1rem,2.8vw,2rem)' },
+  ];
+
+  function scheduleGear5Text() {
+    if (!gear5Active) return;
+    setTimeout(() => {
+      if (!gear5Active) return;
+      const t = G5_TEXTS[Math.floor(Math.random() * G5_TEXTS.length)];
+      const el = document.createElement('div');
+      el.className = 'ee-g5-floattext';
+      el.setAttribute('aria-hidden', 'true');
+      el.textContent = t.text;
+      el.style.left       = (5 + Math.random() * 88) + '%';
+      el.style.top        = (8 + Math.random() * 78) + '%';
+      el.style.color      = t.color;
+      el.style.fontSize   = t.size;
+      el.style.textShadow = t.shadow;
+      el.style.setProperty('--ee-g5-rot', (Math.random() * 22 - 11).toFixed(1) + 'deg');
+      const dur = Math.round(2200 + Math.random() * 1600);
+      el.style.setProperty('--ee-g5-text-dur', dur + 'ms');
+      document.body.appendChild(el);
+      setTimeout(() => el.remove(), dur + 100);
+      scheduleGear5Text();
+    }, 2200 + Math.random() * 3800);
+  }
+
+  function triggerGear5() {
+    if (gear5Active) return;
+    gear5Active = true;
+
+    document.removeEventListener('mousemove', onMouseShake);
+    document.removeEventListener('touchmove', onTouchZigzag);
+    window.removeEventListener('devicemotion', onDeviceShake);
+
+    // Sacudida de activación (+700ms más larga y más exagerada)
+    document.body.classList.add('ee-g5-awake-shake');
+    setTimeout(() => document.body.classList.remove('ee-g5-awake-shake'), 1300);
+
+    // Flash dorado — enmascara el cambio instantáneo de variables CSS
+    const awakeFlash = document.createElement('div');
+    awakeFlash.className = 'ee-g5-awake-flash';
+    awakeFlash.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(awakeFlash);
+
+    // Aplicar tema en el pico del flash (t=400ms), invisible bajo el flash dorado
+    setTimeout(() => document.body.classList.add('ee-g5-active'), 400);
+
+    // Al terminar el flash (t=1600ms): título + nubes + efecto goma + textos flotantes
+    setTimeout(() => {
+      awakeFlash.remove();
+
+      const title = document.createElement('div');
+      title.className = 'ee-g5-title';
+      title.setAttribute('aria-hidden', 'true');
+      title.innerHTML =
+        '<div class="ee-g5-title-sub">GEAR 5</div>' +
+        '<div class="ee-g5-title-main">AWAKENING</div>';
+      document.body.appendChild(title);
+      setTimeout(() => {
+        title.classList.add('is-leaving');
+        setTimeout(() => title.remove(), 600);
+      }, 2200);
+
+      spawnGear5Clouds();
+      setTimeout(scheduleGear5Flash, 800);
+      setTimeout(scheduleGear5Text, 1200);
+
+      document.querySelectorAll('.card, .btn-primary, .btn-outline, .btn-roulette, .btn-spin')
+        .forEach(el => el.classList.add('ee-g5-rubber'));
+    }, 1600);
+  }
+
   /* ── Init ──────────────────────────────────────── */
   function bootEasterEggs() {
     attachLogoListener();
     attachTsukuyomiListener();
+    attachMotionDetector();
   }
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', bootEasterEggs);
