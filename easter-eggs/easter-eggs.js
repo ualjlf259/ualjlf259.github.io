@@ -756,11 +756,247 @@
     }, 1600);
   }
 
+  /* ─────────────────────────────────────────────────
+     EASTER EGG 9 — PONEGLYPH / VOID CENTURY
+     Paso 1 : clic en .robin-key-trigger  → llave dorada
+              → guarda 'nakama_robin_key'='1' en localStorage
+     Paso 2 : (solo con llave desbloqueada)
+              clic en #poneglyph-easter-img → Void Century Mode
+  ───────────────────────────────────────────────── */
+  const ROBIN_KEY_LS = 'nakama_robin_key';
+  let robinKeyUnlocked = localStorage.getItem(ROBIN_KEY_LS) === '1';
+  let voidCenturyActive = false;
+
+  /* — Burbuja "explorar" periódica — */
+  function startBubbleCycle(wrap) {
+    const bubble = wrap.querySelector('.poneglyph-egg-bubble');
+    if (!bubble || bubble.dataset.eeCycleOn) return;
+    bubble.dataset.eeCycleOn = '1';
+    function cycle() {
+      if (!wrap.isConnected || !robinKeyUnlocked) return;
+      bubble.classList.remove('ee-bubble-visible');
+      void bubble.offsetWidth;
+      bubble.classList.add('ee-bubble-visible');
+      setTimeout(function() {
+        bubble.classList.remove('ee-bubble-visible');
+        if (wrap.isConnected) setTimeout(cycle, 5000 + Math.random() * 8000);
+      }, 3200);
+    }
+    setTimeout(cycle, 1800);
+  }
+
+  /* — Activar imagen poneglyph — */
+  function activatePoneglyphImg() {
+    var img = document.getElementById('poneglyph-easter-img');
+    if (!img || img.dataset.eeVoidBound) return;
+    img.dataset.eeVoidBound = '1';
+    var wrap = img.closest('.poneglyph-egg-wrap');
+    if (wrap) { wrap.classList.add('ee-pg-unlocked'); startBubbleCycle(wrap); }
+    img.addEventListener('click', triggerVoidCentury);
+  }
+
+  /* — Adjuntar listeners a .robin-key-trigger — */
+  function attachRobinTrigger() {
+    document.querySelectorAll('.robin-key-trigger').forEach(function(el) {
+      if (el.dataset.eeRobinBound) return;
+      el.dataset.eeRobinBound = '1';
+      el.addEventListener('click', onRobinClick);
+    });
+    if (robinKeyUnlocked) activatePoneglyphImg();
+  }
+
+  function onRobinClick() {
+    if (robinKeyUnlocked) { activatePoneglyphImg(); return; }
+    robinKeyUnlocked = true;
+    localStorage.setItem(ROBIN_KEY_LS, '1');
+    showKeyUnlockAnim(this, activatePoneglyphImg);
+  }
+
+  /* — Delegación de evento: captura clics en .robin-key-trigger sin depender del timing de render — */
+  document.addEventListener('click', function(e) {
+    var trigger = e.target.closest && e.target.closest('.robin-key-trigger');
+    if (!trigger) return;
+    if (robinKeyUnlocked) { activatePoneglyphImg(); return; }
+    robinKeyUnlocked = true;
+    localStorage.setItem(ROBIN_KEY_LS, '1');
+    showKeyUnlockAnim(trigger, activatePoneglyphImg);
+  });
+
+  /* — Toast + llave flotante al desbloquear — */
+  function showKeyUnlockAnim(trigger, onDone) {
+    var lang = (typeof currentLang !== 'undefined' && currentLang)
+      || localStorage.getItem('lang') || 'es';
+    var msgs = {
+      es: ['🗝️', 'Has desbloqueado la habilidad de leer los Poneglyphs', '— Nico Robin —'],
+      en: ['🗝️', 'You have unlocked the ability to read the Poneglyphs', '— Nico Robin —'],
+      fr: ['🗝️', 'Vous avez débloqué la capacité à lire les Ponéglyphes', '— Nico Robin —'],
+      ja: ['🗝️', 'ポーネグリフを読む能力を解放した', '— ニコ・ロビン —'],
+    };
+    var m = msgs[lang] || msgs.es;
+    var toast = document.createElement('div');
+    toast.className = 'ee-robin-toast';
+    toast.setAttribute('role', 'status');
+    toast.setAttribute('aria-live', 'polite');
+    toast.innerHTML =
+      '<div class="ee-robin-toast-icon">' + m[0] + '</div>' +
+      '<div class="ee-robin-toast-text">' +
+        '<div class="ee-robin-toast-main">' + m[1] + '</div>' +
+        '<div class="ee-robin-toast-sub">' + m[2] + '</div>' +
+      '</div>';
+    document.body.appendChild(toast);
+    if (trigger) {
+      var rect = trigger.getBoundingClientRect();
+      var key = document.createElement('div');
+      key.className = 'ee-robin-key-float';
+      key.setAttribute('aria-hidden', 'true');
+      key.textContent = '🗝️';
+      key.style.left = (rect.left + rect.width / 2) + 'px';
+      key.style.top  = rect.top + 'px';
+      document.body.appendChild(key);
+      setTimeout(function() { key.remove(); }, 1400);
+    }
+    setTimeout(function() {
+      toast.classList.add('is-leaving');
+      setTimeout(function() { toast.remove(); if (onDone) onDone(); }, 450);
+    }, 3500);
+  }
+
+  /* — Void Century Mode — */
+  var VOID_RUNES = [
+    'ᚠ','ᚢ','ᚦ','ᚨ','ᚱ','ᚲ','ᚷ','ᚹ','ᚺ','ᚾ',
+    '𐤀','𐤁','𐤂','𐤃','𐤄','𐤅','𐤆','𐤇',
+    '𒀭','𒀮','𒁁','𒁲','𒂗','𒌦','☽','✦','⊕',
+  ];
+
+  function spawnVoidRune(container) {
+    if (!container.isConnected || !voidCenturyActive) return;
+    var rune = document.createElement('div');
+    rune.className = 'ee-void-rune';
+    rune.setAttribute('aria-hidden', 'true');
+    rune.textContent = VOID_RUNES[Math.floor(Math.random() * VOID_RUNES.length)];
+    rune.style.left = (5 + Math.random() * 90) + '%';
+    var dur = (6 + Math.random() * 8).toFixed(1);
+    rune.style.setProperty('--ee-rune-dur', dur + 's');
+    rune.style.setProperty('--ee-rune-x', (Math.random() * 80 - 40).toFixed(0) + 'px');
+    rune.style.fontSize = (0.8 + Math.random() * 1.4).toFixed(1) + 'rem';
+    container.appendChild(rune);
+    setTimeout(function() { rune.remove(); }, parseFloat(dur) * 1000 + 200);
+    setTimeout(function() { spawnVoidRune(container); }, 350 + Math.random() * 700);
+  }
+
+  function triggerVoidCentury() {
+    if (voidCenturyActive) return;
+    voidCenturyActive = true;
+    var lang = (typeof currentLang !== 'undefined' && currentLang)
+      || localStorage.getItem('lang') || 'es';
+    var content = {
+      es: {
+        eyebrow: 'SIGLO VACÍO — DESCLASIFICADO',
+        title: 'La Historia que el Poder no Pudo Destruir',
+        rows: [
+          ['Biblioteca de Alejandría, ~391 d.C.', 'Incendiada por quienes temían el saber que concentraba. No destruyeron libros; destruyeron preguntas.'],
+          ['Códices Mayas, 1562', 'El obispo Diego de Landa quemó en Maní todos los manuscritos mayas que pudo reunir. «Contenían mentiras del demonio», escribió. Era astronomía, historia y matemáticas.'],
+          ['Revolución Cultural Maoísta, 1966–1976', 'Mao ordenó borrar «los cuatro viejos». Templos, archivos y libros destruidos. Una generación creció sin memoria de lo que fue su propio país.'],
+          ['Enciclopedias Soviéticas', 'Cada vez que Stalin purgaba a un camarada, los suscriptores recibían páginas de sustitución. La historia se reescribía en tiempo real.'],
+        ],
+        quote: 'El control del pasado es la forma más sofisticada de control del presente.',
+        close: 'Cerrar',
+      },
+      en: {
+        eyebrow: 'VOID CENTURY — DECLASSIFIED',
+        title: 'The History That Power Could Not Destroy',
+        rows: [
+          ['Library of Alexandria, ~391 AD', "Partially burned on orders of those who feared the knowledge it held. They didn't destroy books; they destroyed questions."],
+          ['Maya Codices, 1562', "Bishop Diego de Landa burned every Mayan manuscript he could gather in Maní. 'They contained the devil's lies,' he wrote. It was astronomy, history and mathematics."],
+          ['Maoist Cultural Revolution, 1966–1976', "Mao ordered the erasure of 'the four olds.' Temples, archives, books destroyed. A generation grew up without memory of their own country's past."],
+          ['Soviet Encyclopedias', 'Every time Stalin purged a comrade, subscribers received replacement pages. History was rewritten in real time.'],
+        ],
+        quote: 'Control of the past is the most sophisticated form of control of the present.',
+        close: 'Close',
+      },
+      fr: {
+        eyebrow: 'SIÈCLE VIDE — DÉCLASSIFIÉ',
+        title: "L'Histoire que le Pouvoir n'a Pas Pu Détruire",
+        rows: [
+          ["Bibliothèque d'Alexandrie, ~391 apr. J.-C.", 'Partiellement brûlée par ceux qui craignaient le savoir qu\'elle concentrait. Ils ne détruisaient pas des livres ; ils détruisaient des questions.'],
+          ['Codex Mayas, 1562', "L'évêque Diego de Landa brûla à Maní tous les manuscrits mayas. «Ils contenaient les mensonges du diable», écrivit-il. C'était de l'astronomie, de l'histoire et des mathématiques."],
+          ['Révolution Culturelle Maoïste, 1966–1976', "Mao ordonna d'effacer «les quatre vieilleries». Temples, archives, livres détruits. Une génération grandit sans mémoire de son propre pays."],
+          ['Encyclopédies Soviétiques', "Chaque fois que Staline purgeait un camarade, les abonnés recevaient des pages de remplacement. L'histoire était réécrite en temps réel."],
+        ],
+        quote: 'Le contrôle du passé est la forme la plus sophistiquée de contrôle du présent.',
+        close: 'Fermer',
+      },
+      ja: {
+        eyebrow: '空白の100年 — 機密解除',
+        title: '権力が破壊できなかった歴史',
+        rows: [
+          ['アレクサンドリア図書館、約391年', '集積した知識を恐れた者たちの命令で部分的に焼かれた。本を破壊したのではない——問いを破壊したのだ。'],
+          ['マヤのコデックス、1562年', 'ディエゴ・デ・ランダ司教はマニで集めたすべてのマヤ写本を焼却した。「悪魔の嘘が書かれていた」と彼は書いた。それは天文学、歴史、数学だった。'],
+          ['毛沢東の文化大革命、1966〜1976年', '「四つの古いもの」の消去が命じられた。寺院、文書館、書物が破壊され、一世代が自国の過去の記憶なしに育った。'],
+          ['ソビエトの百科事典', 'スターリンが同志を粛清するたびに購読者は差し替えページを受け取った。歴史はリアルタイムで書き換えられた。'],
+        ],
+        quote: '過去の支配は現在の支配のもっとも洗練された形態である。',
+        close: '閉じる',
+      },
+    };
+    var c = content[lang] || content.es;
+    var rows = c.rows.map(function(r) {
+      return '<div class="ee-void-row"><div class="ee-void-row-title">' + r[0] +
+             '</div><p class="ee-void-row-text">' + r[1] + '</p></div>';
+    }).join('');
+    var overlay = document.createElement('div');
+    overlay.className = 'ee-void-overlay';
+    overlay.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(overlay);
+    var runeLayer = document.createElement('div');
+    runeLayer.className = 'ee-void-rune-layer';
+    runeLayer.setAttribute('aria-hidden', 'true');
+    overlay.appendChild(runeLayer);
+    spawnVoidRune(runeLayer);
+    var modal = document.createElement('div');
+    modal.className = 'ee-void-modal';
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.innerHTML =
+      '<div class="ee-void-eyebrow">' + c.eyebrow + '</div>' +
+      '<h3 class="ee-void-title">' + c.title + '</h3>' +
+      '<div class="ee-void-rows">' + rows + '</div>' +
+      '<blockquote class="ee-void-quote">' + c.quote + '</blockquote>' +
+      '<button class="ee-void-close">' + c.close + '</button>';
+    overlay.appendChild(modal);
+    function closeVoid() {
+      overlay.classList.add('is-leaving');
+      document.removeEventListener('keydown', onVoidKey);
+      setTimeout(function() { overlay.remove(); voidCenturyActive = false; }, 450);
+    }
+    function onVoidKey(e) { if (e.key === 'Escape') closeVoid(); }
+    document.addEventListener('keydown', onVoidKey);
+    overlay.addEventListener('click', function(e) { if (e.target === overlay) closeVoid(); });
+    modal.querySelector('.ee-void-close').addEventListener('click', closeVoid);
+  }
+
+  /* — Observador del artículo (contenido dinámico / cambio de idioma) — */
+  function watchArticleBody() {
+    var articleBody = document.getElementById('article-body');
+    if (!articleBody) return;
+    var observer = new MutationObserver(function() {
+      attachRobinTrigger();
+      if (robinKeyUnlocked) activatePoneglyphImg();
+    });
+    observer.observe(articleBody, { childList: true, subtree: true });
+    attachRobinTrigger();
+    if (robinKeyUnlocked) activatePoneglyphImg();
+    // Fallbacks para casos de carga tardía o caché
+    setTimeout(function() { attachRobinTrigger(); if (robinKeyUnlocked) activatePoneglyphImg(); }, 600);
+    setTimeout(function() { attachRobinTrigger(); if (robinKeyUnlocked) activatePoneglyphImg(); }, 2000);
+  }
+
   /* ── Init ──────────────────────────────────────── */
   function bootEasterEggs() {
     attachLogoListener();
     attachTsukuyomiListener();
     attachMotionDetector();
+    watchArticleBody();
   }
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', bootEasterEggs);
