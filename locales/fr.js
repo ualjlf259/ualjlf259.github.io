@@ -16,6 +16,10 @@ window.LANG_FR = {
   btn_about: "À propos",
   btn_roulette: "🎲 Surprends-moi",
 
+  /* ── Bandeau motivationnel ── */
+  motiv_phrase: "N'abandonne jamais et poursuis tes rêves ❤️",
+  motiv_play:   "Voir la vidéo",
+
   /* ── Bandeau vedette ── */
   featured_badge: "À LA UNE",
   btn_read_now: "Lire maintenant",

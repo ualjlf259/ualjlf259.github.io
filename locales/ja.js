@@ -16,6 +16,10 @@ window.LANG_JA = {
   btn_about    : "自己紹介",
   btn_roulette : "🎲 驚かせて",
 
+  /* ── モチベーションストリップ ── */
+  motiv_phrase : "夢を諦めず、追い続けよう ❤️",
+  motiv_play   : "動画を見る",
+
   /* ── 注目バナー ── */
   featured_badge : "注目",
   btn_read_now   : "今すぐ読む",

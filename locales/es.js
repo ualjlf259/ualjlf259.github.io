@@ -16,6 +16,10 @@ window.LANG_ES = {
   btn_about: "Sobre mí",
   btn_roulette: "🎲 Sorpréndeme",
 
+  /* ── Franja motivacional ── */
+  motiv_phrase: "Nunca te rindas y persigue tus sueños ❤️",
+  motiv_play:   "Ver vídeo",
+
   /* ── Banner destacado ── */
   featured_badge: "DESTACADO",
   btn_read_now: "Leer ahora",

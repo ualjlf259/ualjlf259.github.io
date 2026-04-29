@@ -6,7 +6,7 @@
   <meta name="description" content="Nakama Blog — Análisis profundo de anime y manga: One Piece, Hunter x Hunter, Vinland Saga, Shingeki no Kyojin y más.">
   <title>Nakama Blog — Anime & Manga</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=Bebas+Neue&family=Cinzel:wght@700;900&display=swap" rel="stylesheet">
   <!-- ── Archivos de idioma externos ── -->
   <script src="locales/es.js"></script>
   <script src="locales/en.js"></script>
@@ -84,6 +84,28 @@
   </div>
   <div class="scroll-hint">Scroll</div>
 </header>
+
+<!-- Franja motivacional -->
+<div class="motiv-wrap">
+  <div class="about-video-card">
+    <div class="motiv-collage" aria-hidden="true">
+      <img src="img/articles/one-piece-portada.jpg" alt="">
+      <img src="img/articles/hunter-x-hunter-portada.jpg" alt="">
+      <img src="img/articles/Berserk-portada.jpg" alt="">
+      <img src="img/articles/Shingeky-no-kyojin-portada.jpg" alt="">
+      <img src="img/articles/Vinland-portada.jpg" alt="">
+      <img src="img/articles/Naruto-portada.jpg" alt="">
+      <img src="img/articles/Death-note-portada.jpg" alt="">
+    </div>
+    <p class="about-video-phrase" data-i18n="motiv_phrase">Nunca te rindas y persigue tus sueños ❤️</p>
+    <button class="about-video-btn" id="motiv-play-btn" aria-label="Reproducir vídeo motivacional">
+      <span class="about-video-btn-circle">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="6,3 20,12 6,21"/></svg>
+      </span>
+      <span class="about-video-btn-label" data-i18n="motiv_play">Ver vídeo</span>
+    </button>
+  </div>
+</div>
 
 <div class="featured-wrap">
   <div class="featured-banner">
@@ -293,7 +315,7 @@
       <span>— el ser humano detrás del blog</span>
     </div>
     <div class="about-box">
-      <!-- Avatar: Luffy SVG ilustrativo inline -->
+      <!-- Avatar: Luffy SVG ilustrativo inline; el círculo exterior actúa como botón de play -->
       <div class="about-avatar">
         <svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" width="96" height="96" style="display:block;" aria-label="Avatar de Jose Jesus Lopez Fernandez" role="img">
           <circle cx="48" cy="48" r="48" fill="#1255a0"/>
@@ -320,6 +342,7 @@
         <p style="margin-top:1.2rem;"><a href="https://github.com/ualjlf259" style="color:var(--gold);text-decoration:none;font-size:.85rem;letter-spacing:.05em;font-weight:600;">→ GitHub: ualjlf259</a></p>
       </div>
     </div>
+
   </div>
 </section>
 
@@ -368,6 +391,17 @@
       </div>
     </div>
     <button id="btn-spin" class="btn-spin">GIRAR</button>
+  </div>
+</div>
+
+<!-- Video Modal -->
+<div id="vmodal" class="vmodal" aria-modal="true" role="dialog" aria-label="Reproductor de vídeo" style="display:none;">
+  <div class="vmodal-backdrop" id="vmodal-backdrop"></div>
+  <div class="vmodal-box">
+    <button class="vmodal-close" id="vmodal-close" aria-label="Cerrar vídeo">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <video id="vmodal-video" controls playsinline preload="none"></video>
   </div>
 </div>
 

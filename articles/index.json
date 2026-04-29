@@ -179,8 +179,9 @@
     "mins": 7,
     "thumb": {
       "class": "jjk",
-      "type": "emoji",
-      "value": "👁️"
+      "type": "img",
+      "src": "img/articles/jujutsu-kaisen-portada.jpg",
+      "alt": "Jujutsu Kaisen portada"
     },
     "title": {
       "es": "Las Maldiciones de JJK son Nuestras Emociones: Una Lectura Psicológica",
@@ -207,8 +208,9 @@
     "mins": 8,
     "thumb": {
       "class": "mha",
-      "type": "emoji",
-      "value": "💥"
+      "type": "img",
+      "src": "img/articles/boku-no-hero-portada.jpg",
+      "alt": "Boku no Hero portada"
     },
     "title": {
       "es": "¿Qué Significa Ser un Héroe? Boku no Hero y la Trampa del Mérito",
@@ -294,7 +296,7 @@
     "thumb": {
       "class": "pun",
       "type": "img",
-      "src": "img/articles/punpun-portada.jpg",
+      "src": "img/articles/oyasumy-punpun-portada.jpg",
       "alt": "Punpun portada"
     },
     "title": {
@@ -401,6 +403,35 @@
       "en": "Psychology",
       "fr": "Psychologie",
       "ja": "心理学"
+    }
+  },
+  {
+    "id": "haikyu-equipo",
+    "category": "Haikyu!!",
+    "mins": 9,
+    "thumb": {
+      "class": "hky",
+      "type": "img",
+      "src": "img/articles/haikyu-portada.jpg",
+      "alt": "Haikyu!! portada"
+    },
+    "title": {
+      "es": "Haikyu!!: Por Qué el Deporte es el Mejor Maestro del Alma Humana",
+      "en": "Haikyu!!: Why Sports Are the Best Teacher of the Human Soul",
+      "fr": "Haikyu!! : Pourquoi le Sport est le Meilleur Maître de l'Âme Humaine",
+      "ja": "ハイキュー!!：なぜスポーツは人間の魂の最良の教師なのか"
+    },
+    "desc": {
+      "es": "Furudate transforma el voleibol en una metáfora perfecta sobre crecer, fracasar y encontrar tu lugar en el mundo.",
+      "en": "Furudate transforms volleyball into a perfect metaphor for growing up, failing and finding your place in the world.",
+      "fr": "Furudate transforme le volleyball en une métaphore parfaite sur grandir, échouer et trouver sa place dans le monde.",
+      "ja": "古舘は、バレーボールを成長し、失敗し、世界における自分の居場所を見つけることの完璧なメタファーに変える。"
+    },
+    "label": {
+      "es": "Reflexión",
+      "en": "Reflection",
+      "fr": "Réflexion",
+      "ja": "考察"
     }
   },
   {

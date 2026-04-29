@@ -16,6 +16,10 @@ window.LANG_EN = {
   btn_about    : "About me",
   btn_roulette : "🎲 Surprise me",
 
+  /* ── Motivational strip ── */
+  motiv_phrase : "Never give up and pursue your dreams ❤️",
+  motiv_play   : "Watch video",
+
   /* ── Featured banner ── */
   featured_badge : "FEATURED",
   btn_read_now   : "Read now",

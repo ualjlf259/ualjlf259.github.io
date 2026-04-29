@@ -190,19 +190,69 @@ function renderCards(index) {
     const desc  = (item.desc  && item.desc[currentLang])  || '';
     const label = (item.label && item.label[currentLang]) || '';
 
+    const playBtn = item.id === 'op-esclavitud'
+      ? `<button class="card-play-btn" aria-label="Ver vídeo"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg></button>`
+      : '';
+
     a.innerHTML = `
-      <div class="card-thumb ${thumb.class || ''}">${visual}</div>
+      <div class="card-thumb ${thumb.class || ''}">${visual}${playBtn}</div>
       <div class="card-body">
         <span class="card-tag">${item.category}</span>
         <h3>${title}</h3>
         <p>${desc}</p>
         <div class="card-meta"><span>${item.mins} ${t.read_min || ''}</span><span>${label}</span></div>
       </div>`;
+
+    if (item.id === 'op-esclavitud') {
+      a.querySelector('.card-play-btn').addEventListener('click', (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        openVideoModal('videos/video-one-piece.mp4');
+      });
+    }
+
     grid.appendChild(a);
   });
 
   filterCards();
 }
+
+/* ═══════════════════════════════════════════════════
+   VIDEO MODAL
+═══════════════════════════════════════════════════ */
+function openVideoModal(src) {
+  const modal = document.getElementById('vmodal');
+  const video = document.getElementById('vmodal-video');
+  if (!modal || !video) return;
+  video.src = src;
+  modal.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeVideoModal() {
+  const modal = document.getElementById('vmodal');
+  if (!modal) return;
+  const video = document.getElementById('vmodal-video');
+  if (video) {
+    video.pause();
+    video.removeAttribute('src');
+    video.load();
+  }
+  modal.style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+(function () {
+  const closeBtn  = document.getElementById('vmodal-close');
+  const backdrop  = document.getElementById('vmodal-backdrop');
+  const motivBtn  = document.getElementById('motiv-play-btn');
+  if (closeBtn) closeBtn.addEventListener('click', closeVideoModal);
+  if (backdrop) backdrop.addEventListener('click', closeVideoModal);
+  if (motivBtn) motivBtn.addEventListener('click', () => openVideoModal('videos/video-motivacion.mp4'));
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeVideoModal();
+  });
+})();
 
 /* ═══════════════════════════════════════════════════
    DROPDOWN DE IDIOMA
