@@ -190,7 +190,7 @@ function renderCards(index) {
     const desc  = (item.desc  && item.desc[currentLang])  || '';
     const label = (item.label && item.label[currentLang]) || '';
 
-    const videoIds = ['op-esclavitud', 'jjk-maldicion', 'mha-heroes', 'vinland-guerra'];
+    const videoIds = ['op-esclavitud', 'jjk-maldicion', 'mha-heroes', 'vinland-guerra', 'aot-libertad', 'chainsaw-caos'];
     const playBtn = videoIds.includes(item.id)
       ? `<button class="card-play-btn" aria-label="Ver vídeo"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg></button>`
       : '';
@@ -205,10 +205,12 @@ function renderCards(index) {
       </div>`;
 
     const videoMap = {
-      'op-esclavitud': 'videos/video-one-piece.mp4',
-      'jjk-maldicion': 'videos/video-jujutsu.mp4',
-      'mha-heroes':    'videos/video-boku-no-hero.mp4',
-      'vinland-guerra': 'videos/video-vinland.mp4'
+      'op-esclavitud':  'videos/video-one-piece.mp4',
+      'jjk-maldicion':  'videos/video-jujutsu.mp4',
+      'mha-heroes':     'videos/video-boku-no-hero.mp4',
+      'vinland-guerra': 'videos/video-vinland.mp4',
+      'aot-libertad':   'videos/video-shingeki.mp4',
+      'chainsaw-caos':  'videos/video-chainsaw.mp4'
     };
     if (videoMap[item.id]) {
       a.querySelector('.card-play-btn').addEventListener('click', (e) => {
