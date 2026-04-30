@@ -758,16 +758,32 @@
 
   /* ─────────────────────────────────────────────────
      EASTER EGG 9 — PONEGLYPH / VOID CENTURY
-     Paso 1 : clic en .robin-key-trigger  → llave dorada
-              → guarda 'nakama_robin_key'='1' en localStorage
-     Paso 2 : (solo con llave desbloqueada)
-              clic en #poneglyph-easter-img → Void Century Mode
+
+     FLUJO:
+       Paso 1: clic en .robin-key-trigger ("Robin")
+               → desbloquea la llave (toast + animación)
+               → estado SOLO en memoria (sin persistencia)
+       Paso 2: clic en #poneglyph-easter-img
+               · Si la llave está desbloqueada → abre Void Century Mode
+               · Si NO → muestra pista "necesitas la llave de Robin"
+
+     NOTA: F5 / cerrar pestaña → la llave se pierde y hay que volver
+           a clicar Robin. Esto es intencional para que el huevo
+           se redescubra cada visita.
+
+     ARQUITECTURA:
+       - El handler del poneglyph se monta SIEMPRE que aparece la imagen
+         (independientemente del estado de la llave). Comprueba el estado
+         en el momento del clic.
+       - El click en Robin se captura mediante delegación en `document`,
+         lo que es totalmente independiente del timing de render.
   ───────────────────────────────────────────────── */
-  const ROBIN_KEY_LS = 'nakama_robin_key';
-  let robinKeyUnlocked = localStorage.getItem(ROBIN_KEY_LS) === '1';
+  // Estado en memoria SOLO: la llave se pierde al recargar (F5) o cerrar la pestaña.
+  // Si el usuario abandona la página, debe volver a clicar Robin para desbloquear.
+  let robinKeyUnlocked = false;
   let voidCenturyActive = false;
 
-  /* — Burbuja "explorar" periódica — */
+  /* — Burbuja "explorar" periódica (solo si está desbloqueado) — */
   function startBubbleCycle(wrap) {
     const bubble = wrap.querySelector('.poneglyph-egg-bubble');
     if (!bubble || bubble.dataset.eeCycleOn) return;
@@ -785,41 +801,106 @@
     setTimeout(cycle, 1800);
   }
 
-  /* — Activar imagen poneglyph — */
-  function activatePoneglyphImg() {
-    var img = document.getElementById('poneglyph-easter-img');
-    if (!img || img.dataset.eeVoidBound) return;
-    img.dataset.eeVoidBound = '1';
-    var wrap = img.closest('.poneglyph-egg-wrap');
-    if (wrap) { wrap.classList.add('ee-pg-unlocked'); startBubbleCycle(wrap); }
-    img.addEventListener('click', triggerVoidCentury);
+  /* — Aplica el aspecto desbloqueado al wrap (sin dependencia de eventos) — */
+  function applyUnlockedVisual(wrap) {
+    if (!wrap || wrap.classList.contains('ee-pg-unlocked')) return;
+    wrap.classList.add('ee-pg-unlocked');
+    startBubbleCycle(wrap);
   }
 
-  /* — Adjuntar listeners a .robin-key-trigger — */
+  /* — Pista cuando se intenta acceder al poneglyph sin la llave — */
+  let lockHintActive = false;
+  function showLockedHint(wrap) {
+    if (!wrap || lockHintActive) return;
+    lockHintActive = true;
+    wrap.classList.add('ee-pg-shake');
+
+    var lang = (typeof currentLang !== 'undefined' && currentLang)
+      || localStorage.getItem('lang') || 'es';
+    var hints = {
+      es: '🔒 Necesitas la llave de Robin',
+      en: "🔒 You need Robin's key",
+      fr: '🔒 Il vous faut la clé de Robin',
+      ja: '🔒 ロビンの鍵が必要だ',
+    };
+    var hint = document.createElement('div');
+    hint.className = 'ee-pg-lock-hint';
+    hint.setAttribute('aria-hidden', 'true');
+    hint.textContent = hints[lang] || hints.es;
+    wrap.appendChild(hint);
+
+    setTimeout(function() {
+      wrap.classList.remove('ee-pg-shake');
+      hint.classList.add('is-leaving');
+      setTimeout(function() {
+        if (hint.parentNode) hint.remove();
+        lockHintActive = false;
+      }, 400);
+    }, 1800);
+  }
+
+  /* — Setup del poneglyph: handler ÚNICO que decide en tiempo de clic — */
+  function setupPoneglyphImg() {
+    var img = document.getElementById('poneglyph-easter-img');
+    if (!img || img.dataset.eePgBound) return;
+    img.dataset.eePgBound = '1';
+
+    var wrap = img.closest('.poneglyph-egg-wrap');
+
+    // Aplicar visual desbloqueado si la llave ya está disponible al renderizar
+    if (robinKeyUnlocked && wrap) applyUnlockedVisual(wrap);
+
+    img.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      if (robinKeyUnlocked) {
+        // Asegura visual desbloqueado por si fue renderizado tras el unlock
+        if (wrap) applyUnlockedVisual(wrap);
+        triggerVoidCentury();
+      } else {
+        showLockedHint(wrap);
+      }
+    });
+  }
+
+  /* — Click en "Robin": desbloquea la llave o, si ya estaba, refresca visual — */
+  function handleRobinClick(triggerEl) {
+    if (robinKeyUnlocked) {
+      // Ya desbloqueado: refrescar visual del poneglyph si está en el DOM
+      var img = document.getElementById('poneglyph-easter-img');
+      if (img) applyUnlockedVisual(img.closest('.poneglyph-egg-wrap'));
+      return;
+    }
+    robinKeyUnlocked = true;
+    // (sin persistencia: el estado vive solo en memoria hasta recargar)
+    showKeyUnlockAnim(triggerEl, function() {
+      var img = document.getElementById('poneglyph-easter-img');
+      if (img) applyUnlockedVisual(img.closest('.poneglyph-egg-wrap'));
+    });
+  }
+
   function attachRobinTrigger() {
     document.querySelectorAll('.robin-key-trigger').forEach(function(el) {
       if (el.dataset.eeRobinBound) return;
       el.dataset.eeRobinBound = '1';
-      el.addEventListener('click', onRobinClick);
+      el.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        handleRobinClick(el);
+      });
     });
-    if (robinKeyUnlocked) activatePoneglyphImg();
+    setupPoneglyphImg();
   }
 
-  function onRobinClick() {
-    if (robinKeyUnlocked) { activatePoneglyphImg(); return; }
-    robinKeyUnlocked = true;
-    localStorage.setItem(ROBIN_KEY_LS, '1');
-    showKeyUnlockAnim(this, activatePoneglyphImg);
-  }
-
-  /* — Delegación de evento: captura clics en .robin-key-trigger sin depender del timing de render — */
+  /* — Delegación global para .robin-key-trigger (a prueba de timing) — */
   document.addEventListener('click', function(e) {
     var trigger = e.target.closest && e.target.closest('.robin-key-trigger');
     if (!trigger) return;
-    if (robinKeyUnlocked) { activatePoneglyphImg(); return; }
-    robinKeyUnlocked = true;
-    localStorage.setItem(ROBIN_KEY_LS, '1');
-    showKeyUnlockAnim(trigger, activatePoneglyphImg);
+    // Si el listener directo ya marcó eeRobinClickHandled en el evento,
+    // saltamos para no duplicar.
+    if (e._eeRobinHandled) return;
+    e._eeRobinHandled = true;
+    handleRobinClick(trigger);
   });
 
   /* — Toast + llave flotante al desbloquear — */
@@ -895,9 +976,9 @@
         title: 'La Historia que el Poder no Pudo Destruir',
         rows: [
           ['Biblioteca de Alejandría, ~391 d.C.', 'Incendiada por quienes temían el saber que concentraba. No destruyeron libros; destruyeron preguntas.'],
-          ['Códices Mayas, 1562', 'El obispo Diego de Landa quemó en Maní todos los manuscritos mayas que pudo reunir. «Contenían mentiras del demonio», escribió. Era astronomía, historia y matemáticas.'],
-          ['Revolución Cultural Maoísta, 1966–1976', 'Mao ordenó borrar «los cuatro viejos». Templos, archivos y libros destruidos. Una generación creció sin memoria de lo que fue su propio país.'],
-          ['Enciclopedias Soviéticas', 'Cada vez que Stalin purgaba a un camarada, los suscriptores recibían páginas de sustitución. La historia se reescribía en tiempo real.'],
+          ['Manuscrito de Voynich (MS408), c. 1404–1438', 'Un códice de 240 páginas escrito en un alfabeto que nadie ha logrado descifrar en seis siglos. Plantas inexistentes, diagramas astronómicos imposibles, figuras bañándose en líquidos verdes. Custodiado en Yale, sigue siendo el único libro que el conocimiento humano se niega a admitir.'],
+          ['El Arca de la Alianza, ~587 a.C.', 'Desapareció cuando Nabucodonosor arrasó Jerusalén. Ningún ejército la capturó, ningún cronista la describe después. Etiopía afirma custodiarla en Aksum; el Vaticano calla. La reliquia más buscada de Occidente lleva 2.600 años fuera del alcance del poder.'],
+          ['Casa de la Sabiduría, Bagdad 1258', 'Cuando los mongoles tomaron la ciudad, arrojaron al Tigris tantos manuscritos que el río corrió negro de tinta durante días. Con ellos se hundió el Siglo de Oro islámico — siglos de matemática, medicina y astronomía borrados en una semana.'],
         ],
         quote: 'El control del pasado es la forma más sofisticada de control del presente.',
         close: 'Cerrar',
@@ -907,9 +988,9 @@
         title: 'The History That Power Could Not Destroy',
         rows: [
           ['Library of Alexandria, ~391 AD', "Partially burned on orders of those who feared the knowledge it held. They didn't destroy books; they destroyed questions."],
-          ['Maya Codices, 1562', "Bishop Diego de Landa burned every Mayan manuscript he could gather in Maní. 'They contained the devil's lies,' he wrote. It was astronomy, history and mathematics."],
-          ['Maoist Cultural Revolution, 1966–1976', "Mao ordered the erasure of 'the four olds.' Temples, archives, books destroyed. A generation grew up without memory of their own country's past."],
-          ['Soviet Encyclopedias', 'Every time Stalin purged a comrade, subscribers received replacement pages. History was rewritten in real time.'],
+          ['Voynich Manuscript (MS408), c. 1404–1438', "A 240-page codex written in an alphabet no one has decoded in six centuries. Plants that don't exist, impossible astronomical diagrams, figures bathing in green liquids. Held at Yale, it remains the only book human knowledge refuses to admit."],
+          ['The Ark of the Covenant, ~587 BC', "Vanished when Nebuchadnezzar razed Jerusalem. No army captured it, no chronicler describes it afterwards. Ethiopia claims to guard it in Aksum; the Vatican stays silent. The West's most hunted relic has been beyond power's reach for 2,600 years."],
+          ['House of Wisdom, Baghdad 1258', 'When the Mongols took the city, they threw so many manuscripts into the Tigris that the river ran black with ink for days. With them sank the Islamic Golden Age — centuries of mathematics, medicine and astronomy erased in a week.'],
         ],
         quote: 'Control of the past is the most sophisticated form of control of the present.',
         close: 'Close',
@@ -919,9 +1000,9 @@
         title: "L'Histoire que le Pouvoir n'a Pas Pu Détruire",
         rows: [
           ["Bibliothèque d'Alexandrie, ~391 apr. J.-C.", 'Partiellement brûlée par ceux qui craignaient le savoir qu\'elle concentrait. Ils ne détruisaient pas des livres ; ils détruisaient des questions.'],
-          ['Codex Mayas, 1562', "L'évêque Diego de Landa brûla à Maní tous les manuscrits mayas. «Ils contenaient les mensonges du diable», écrivit-il. C'était de l'astronomie, de l'histoire et des mathématiques."],
-          ['Révolution Culturelle Maoïste, 1966–1976', "Mao ordonna d'effacer «les quatre vieilleries». Temples, archives, livres détruits. Une génération grandit sans mémoire de son propre pays."],
-          ['Encyclopédies Soviétiques', "Chaque fois que Staline purgeait un camarade, les abonnés recevaient des pages de remplacement. L'histoire était réécrite en temps réel."],
+          ['Manuscrit de Voynich (MS408), v. 1404–1438', "Un codex de 240 pages écrit dans un alphabet que personne n'a déchiffré en six siècles. Plantes inexistantes, diagrammes astronomiques impossibles, figures se baignant dans des liquides verts. Conservé à Yale, c'est le seul livre que la connaissance humaine refuse encore d'admettre."],
+          ["L'Arche d'Alliance, ~587 av. J.-C.", "Disparue lorsque Nabuchodonosor rasa Jérusalem. Aucune armée ne l'a capturée, aucun chroniqueur ne la décrit ensuite. L'Éthiopie prétend la garder à Aksoum ; le Vatican se tait. La relique la plus recherchée d'Occident échappe au pouvoir depuis 2 600 ans."],
+          ['Maison de la Sagesse, Bagdad 1258', "Quand les Mongols prirent la ville, ils jetèrent tant de manuscrits dans le Tigre que le fleuve coula noir d'encre pendant des jours. Avec eux sombra l'Âge d'or islamique — des siècles de mathématiques, médecine et astronomie effacés en une semaine."],
         ],
         quote: 'Le contrôle du passé est la forme la plus sophistiquée de contrôle du présent.',
         close: 'Fermer',
@@ -931,9 +1012,9 @@
         title: '権力が破壊できなかった歴史',
         rows: [
           ['アレクサンドリア図書館、約391年', '集積した知識を恐れた者たちの命令で部分的に焼かれた。本を破壊したのではない——問いを破壊したのだ。'],
-          ['マヤのコデックス、1562年', 'ディエゴ・デ・ランダ司教はマニで集めたすべてのマヤ写本を焼却した。「悪魔の嘘が書かれていた」と彼は書いた。それは天文学、歴史、数学だった。'],
-          ['毛沢東の文化大革命、1966〜1976年', '「四つの古いもの」の消去が命じられた。寺院、文書館、書物が破壊され、一世代が自国の過去の記憶なしに育った。'],
-          ['ソビエトの百科事典', 'スターリンが同志を粛清するたびに購読者は差し替えページを受け取った。歴史はリアルタイムで書き換えられた。'],
+          ['ヴォイニッチ手稿（MS408）、1404〜1438年頃', '六世紀のあいだ誰一人として解読できなかった240ページの写本。実在しない植物、ありえない天体図、緑色の液体に浸かる人物像。イェール大学に保管され、人類の知が認めることを拒んだ唯一の書物として残る。'],
+          ['契約の箱（聖櫃）、紀元前587年頃', 'ネブカドネザルがエルサレムを焼き払ったとき消えた。捕獲した軍も、その後を記した年代記も存在しない。エチオピアはアクスムでの守護を主張し、ヴァチカンは沈黙する。西洋でもっとも探された遺物は、2600年ものあいだ権力の手の届かない場所にある。'],
+          ['知恵の館、バグダード1258年', 'モンゴル軍が都を陥落させたとき、無数の写本がティグリス川に投げ込まれ、川は数日にわたってインクで黒く染まった。それと共にイスラム黄金時代は沈み——数世紀分の数学、医学、天文学が一週間で消し去られた。'],
         ],
         quote: '過去の支配は現在の支配のもっとも洗練された形態である。',
         close: '閉じる',
@@ -975,20 +1056,27 @@
     modal.querySelector('.ee-void-close').addEventListener('click', closeVoid);
   }
 
-  /* — Observador del artículo (contenido dinámico / cambio de idioma) — */
+  /* — Observador del artículo (contenido dinámico / cambio de idioma) —
+     Monitorea tanto #article-body (article.html) como #modal-body (index.html)
+  ─────────────────────────────────────────────────────────────────────── */
+  function observeContainer(el) {
+    var obs = new MutationObserver(function() {
+      attachRobinTrigger();   // attachRobinTrigger ya llama internamente a setupPoneglyphImg
+    });
+    obs.observe(el, { childList: true, subtree: true });
+  }
+
   function watchArticleBody() {
     var articleBody = document.getElementById('article-body');
-    if (!articleBody) return;
-    var observer = new MutationObserver(function() {
-      attachRobinTrigger();
-      if (robinKeyUnlocked) activatePoneglyphImg();
-    });
-    observer.observe(articleBody, { childList: true, subtree: true });
-    attachRobinTrigger();
-    if (robinKeyUnlocked) activatePoneglyphImg();
-    // Fallbacks para casos de carga tardía o caché
-    setTimeout(function() { attachRobinTrigger(); if (robinKeyUnlocked) activatePoneglyphImg(); }, 600);
-    setTimeout(function() { attachRobinTrigger(); if (robinKeyUnlocked) activatePoneglyphImg(); }, 2000);
+    var modalBody   = document.getElementById('modal-body');
+
+    if (articleBody) observeContainer(articleBody);
+    if (modalBody)   observeContainer(modalBody);
+
+    // Fallbacks para carga tardía / caché / cambios de idioma
+    setTimeout(attachRobinTrigger, 400);
+    setTimeout(attachRobinTrigger, 900);
+    setTimeout(attachRobinTrigger, 2000);
   }
 
   /* ── Init ──────────────────────────────────────── */

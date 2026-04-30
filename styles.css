@@ -322,11 +322,13 @@
     /* ── ARTICLE IMAGES (hero + inline) ── */
     .article-img-block-hero { margin-bottom: 1.6rem; }
     .article-img-block-inline {
-      float: right;
-      width: 38%;
-      max-width: 320px;
-      margin: 0.4rem 0 1.4rem 2rem;
-      clear: right;
+      display: block;
+      width: 82%;
+      max-width: 580px;
+      margin: 2.4rem auto;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 1.6rem 0;
     }
     .article-img-block img {
       width: 100%; display: block; border-radius: 8px;
@@ -336,7 +338,7 @@
     /* Hero images: fixed height, cropped for dramatic effect */
     .article-img-hero-img  { height: 310px; object-fit: cover; margin-bottom: 0; }
     /* Inline images: full proportional view, no cropping */
-    .article-img-inline-img { height: auto; max-height: 340px; width: 100%; object-fit: contain; margin: 0; display: block; }
+    .article-img-inline-img { height: auto; max-height: 520px; width: 100%; object-fit: contain; margin: 0; display: block; }
 
     /* ── PLACEHOLDER (shown when image file is missing) ── */
     .img-ph {
@@ -346,7 +348,7 @@
       background: linear-gradient(135deg, var(--card) 0%, rgba(33,118,174,.07) 100%);
     }
     .img-ph-hero   { height: 310px; }
-    .img-ph-inline { height: 230px; margin: 1.8rem 0 0; }
+    .img-ph-inline { height: 230px; margin: 0; }
     .img-ph svg    { opacity: .25; }
     .img-ph-lbl {
       font-size: .62rem; letter-spacing: .22em; text-transform: uppercase;
@@ -409,8 +411,8 @@
       .nav-links { display: none; }
       .modal { padding: 2.5rem 1.5rem 2rem; }
       .modal-body .img-pair { grid-template-columns: 1fr; }
-      .article-img-block-inline { float: none; width: 100%; margin: 1.5rem 0; }
-      .article-img-inline-img { max-height: none; height: 230px; }
+      .article-img-block-inline { width: 100%; margin: 2rem auto; }
+      .article-img-inline-img { max-height: 420px; height: auto; }
     }
 
     /* ── LANGUAGE DROPDOWN ── */
@@ -1126,6 +1128,7 @@
   position: relative;
   z-index: 1;
   width: min(92vw, 960px);
+  min-height: clamp(200px, 51.75vw, 460px);
   background: #000;
   border-radius: 10px;
   overflow: hidden;
@@ -1166,6 +1169,121 @@
 .vmodal-close:hover {
   background: rgba(255, 255, 255, 0.2);
   transform: scale(1.1);
+}
+
+/* ═══════════════════════════════════════════════════
+   EARPHONE SPLASH
+═══════════════════════════════════════════════════ */
+.earphone-splash {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  background: #0a0a0a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  cursor: pointer;
+  user-select: none;
+  border-radius: inherit;
+}
+
+.earphone-splash.ep-hidden {
+  display: none;
+}
+
+.earphone-splash.ep-visible {
+  animation: ep-fade-in 0.35s ease forwards;
+}
+
+.earphone-splash.ep-exit {
+  animation: ep-fade-out 0.38s ease forwards;
+}
+
+@keyframes ep-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes ep-fade-out {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+.ep-earphones {
+  display: flex;
+  align-items: flex-end;
+  gap: 3rem;
+}
+
+.ep-earphone {
+  transform-origin: 50% 0%;
+  opacity: 0;
+}
+
+.ep-earphone--left {
+  animation-name: ep-drop-in, ep-sway;
+  animation-duration: 0.65s, 2.4s;
+  animation-delay: 0.25s, 0.95s;
+  animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1), ease-in-out;
+  animation-fill-mode: forwards, none;
+  animation-iteration-count: 1, infinite;
+}
+
+.ep-earphone--right {
+  animation-name: ep-drop-in, ep-sway-alt;
+  animation-duration: 0.65s, 2.4s;
+  animation-delay: 0.42s, 1.12s;
+  animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1), ease-in-out;
+  animation-fill-mode: forwards, none;
+  animation-iteration-count: 1, infinite;
+}
+
+@keyframes ep-drop-in {
+  from { opacity: 0; transform: translateY(-50px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes ep-sway {
+  0%, 100% { transform: rotate(-6deg); }
+  50%       { transform: rotate(5deg); }
+}
+
+@keyframes ep-sway-alt {
+  0%, 100% { transform: rotate(5deg); }
+  50%       { transform: rotate(-6deg); }
+}
+
+.ep-text {
+  color: rgba(255, 255, 255, 0.88);
+  font-family: 'Courier New', Courier, monospace;
+  font-size: clamp(0.48rem, 1.2vw, 0.7rem);
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: ep-text-in 1s ease 1.2s forwards;
+  white-space: nowrap;
+}
+
+@keyframes ep-text-in {
+  from { opacity: 0; letter-spacing: 0.06em; }
+  to   { opacity: 0.88; letter-spacing: 0.3em; }
+}
+
+.ep-skip {
+  position: absolute;
+  bottom: 0.85rem;
+  right: 1rem;
+  color: rgba(255, 255, 255, 0.28);
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: ep-text-in 0.5s ease 1.8s forwards;
+  pointer-events: none;
 }
 
 /* Franja motivacional */
