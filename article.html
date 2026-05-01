@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Nakama Blog — Análisis de anime y manga.">
   <title>Cargando… — Nakama Blog</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=Bebas+Neue&family=Cinzel:wght@700;900&family=Cinzel+Decorative:wght@400;700;900&family=EB+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap"
+    rel="stylesheet">
   <!-- ── Archivos de idioma externos ── -->
   <script src="locales/es.js"></script>
   <script src="locales/en.js"></script>
@@ -21,6 +24,7 @@
       margin: 0 auto;
       padding: 6rem 2rem 4rem;
     }
+
     .article-back {
       display: inline-flex;
       align-items: center;
@@ -32,98 +36,141 @@
       margin-bottom: 2rem;
       transition: color .2s;
     }
-    .article-back:hover { color: var(--bright); }
+
+    .article-back:hover {
+      color: var(--bright);
+    }
+
     .article-error {
       text-align: center;
       padding: 3rem 1rem;
       color: var(--muted);
     }
-    .article-error h2 { color: var(--bright); margin-bottom: 1rem; }
+
+    .article-error h2 {
+      color: var(--bright);
+      margin-bottom: 1rem;
+    }
+
     @media (max-width: 600px) {
-      .article-page-wrap { padding: 5rem 1.2rem 3rem; }
+      .article-page-wrap {
+        padding: 5rem 1.2rem 3rem;
+      }
     }
   </style>
 </head>
+
 <body>
 
-<nav>
-  <a class="nav-logo" href="index.html">NAKAMA<span>.</span>BLOG</a>
-  <ul class="nav-links">
-    <li><a href="index.html#articulos" data-i18n="nav_articles">Artículos</a></li>
-    <li><a href="index.html#ranking" data-i18n="nav_ranking">Ranking</a></li>
-    <li><a href="index.html#sobre-mi" data-i18n="nav_about">Sobre mí</a></li>
-  </ul>
-  <div style="display: flex; gap: 1rem; align-items: center;">
-    <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema" style="background:none; border:none; color:var(--text); cursor:pointer; padding: 0.38rem; display: flex; align-items: center; transition: color 0.2s;">
-      <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-      <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-    </button>
-    <div class="lang-dropdown" id="lang-dropdown" aria-label="Cambiar idioma">
-      <button class="lang-toggle" id="lang-toggle" aria-haspopup="listbox" aria-expanded="false">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="10"/>
-          <line x1="2" y1="12" x2="22" y2="12"/>
-          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+  <nav>
+    <a class="nav-logo" href="index.html">NAKAMA<span>.</span>BLOG</a>
+    <ul class="nav-links">
+      <li><a href="index.html#articulos" data-i18n="nav_articles">Artículos</a></li>
+      <li><a href="index.html#ranking" data-i18n="nav_ranking">Ranking</a></li>
+      <li><a href="index.html#sobre-mi" data-i18n="nav_about">Sobre mí</a></li>
+    </ul>
+    <div style="display: flex; gap: 1rem; align-items: center;">
+      <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema"
+        style="background:none; border:none; color:var(--text); cursor:pointer; padding: 0.38rem; display: flex; align-items: center; transition: color 0.2s;">
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+          <circle cx="12" cy="12" r="5" />
+          <line x1="12" y1="1" x2="12" y2="3" />
+          <line x1="12" y1="21" x2="12" y2="23" />
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+          <line x1="1" y1="12" x2="3" y2="12" />
+          <line x1="21" y1="12" x2="23" y2="12" />
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
         </svg>
-        <span class="lang-flag" id="lang-flag">🇪🇸</span>
-        <span class="lang-label" id="lang-label">Español</span>
-        <svg class="chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
-          <polyline points="6 9 12 15 18 9"/>
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
         </svg>
       </button>
-      <div class="lang-menu" role="listbox" id="lang-menu">
-        <button class="lang-option active" data-lang="es" role="option" aria-selected="true">
-          <span class="opt-flag">🇪🇸</span><span class="opt-name">Español</span><span class="opt-check"></span>
+      <div class="lang-dropdown" id="lang-dropdown" aria-label="Cambiar idioma">
+        <button class="lang-toggle" id="lang-toggle" aria-haspopup="listbox" aria-expanded="false">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <line x1="2" y1="12" x2="22" y2="12" />
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+          </svg>
+          <span class="lang-flag" id="lang-flag">🇪🇸</span>
+          <span class="lang-label" id="lang-label">Español</span>
+          <svg class="chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2.5" stroke-linecap="round">
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
         </button>
-        <button class="lang-option" data-lang="en" role="option" aria-selected="false">
-          <span class="opt-flag">🇬🇧</span><span class="opt-name">English</span><span class="opt-check"></span>
-        </button>
-        <button class="lang-option" data-lang="fr" role="option" aria-selected="false">
-          <span class="opt-flag">🇫🇷</span><span class="opt-name">Français</span><span class="opt-check"></span>
-        </button>
-        <div class="lang-divider"></div>
-        <button class="lang-option" data-lang="ja" role="option" aria-selected="false">
-          <span class="opt-flag">🇯🇵</span><span class="opt-name">日本語</span><span class="opt-check"></span>
-        </button>
+        <div class="lang-menu" role="listbox" id="lang-menu">
+          <button class="lang-option active" data-lang="es" role="option" aria-selected="true">
+            <span class="opt-flag">🇪🇸</span><span class="opt-name">Español</span><span class="opt-check"></span>
+          </button>
+          <button class="lang-option" data-lang="en" role="option" aria-selected="false">
+            <span class="opt-flag">🇬🇧</span><span class="opt-name">English</span><span class="opt-check"></span>
+          </button>
+          <button class="lang-option" data-lang="fr" role="option" aria-selected="false">
+            <span class="opt-flag">🇫🇷</span><span class="opt-name">Français</span><span class="opt-check"></span>
+          </button>
+          <div class="lang-divider"></div>
+          <button class="lang-option" data-lang="ja" role="option" aria-selected="false">
+            <span class="opt-flag">🇯🇵</span><span class="opt-name">日本語</span><span class="opt-check"></span>
+          </button>
+        </div>
       </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
-<main class="article-page-wrap">
-  <a href="index.html#articulos" class="article-back" data-i18n="back_to_articles">← Volver a artículos</a>
+  <main class="article-page-wrap">
+    <a href="index.html#articulos" class="article-back" data-i18n="back_to_articles">← Volver a artículos</a>
 
-  <article class="modal" id="article-root" style="position:static; transform:none; max-width:none; padding:0; box-shadow:none; background:transparent;">
-    <span class="modal-tag" id="article-tag"></span>
-    <h2 id="article-title">Cargando…</h2>
-    <div class="modal-meta" id="article-meta"></div>
-    <div id="article-img-top"></div>
-    <div class="modal-body" id="article-body"></div>
+    <article class="modal" id="article-root"
+      style="position:static; transform:none; max-width:none; padding:0; box-shadow:none; background:transparent;">
+      <span class="modal-tag" id="article-tag"></span>
+      <h2 id="article-title">Cargando…</h2>
+      <div class="modal-meta" id="article-meta"></div>
+      <div id="article-img-top"></div>
+      <div class="modal-body" id="article-body"></div>
 
-    <div class="modal-share-row" id="article-share-row" style="display:none;">
-      <span class="share-label" data-i18n="share_label">Compartir</span>
-      <a class="share-btn tw" id="share-tw" href="#" target="_blank" rel="noopener">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.253 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
-        X / Twitter
-      </a>
-      <a class="share-btn wa" id="share-wa" href="#" target="_blank" rel="noopener">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.998 2C6.477 2 2 6.477 2 12.001a9.994 9.994 0 001.388 5.094L2 22l5.042-1.362A9.956 9.956 0 0011.998 22C17.523 22 22 17.523 22 12.001 22 6.477 17.523 2 11.998 2z"/></svg>
-        WhatsApp
-      </a>
-      <button class="share-btn cp" id="share-cp">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
-        <span data-i18n="share_copy">Copiar enlace</span>
-      </button>
-    </div>
-  </article>
-</main>
+      <div class="modal-share-row" id="article-share-row" style="display:none;">
+        <span class="share-label" data-i18n="share_label">Compartir</span>
+        <a class="share-btn tw" id="share-tw" href="#" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.253 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z" />
+          </svg>
+          X / Twitter
+        </a>
+        <a class="share-btn wa" id="share-wa" href="#" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+            <path
+              d="M11.998 2C6.477 2 2 6.477 2 12.001a9.994 9.994 0 001.388 5.094L2 22l5.042-1.362A9.956 9.956 0 0011.998 22C17.523 22 22 17.523 22 12.001 22 6.477 17.523 2 11.998 2z" />
+          </svg>
+          WhatsApp
+        </a>
+        <button class="share-btn cp" id="share-cp">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="9" y="9" width="13" height="13" rx="2" />
+            <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" />
+          </svg>
+          <span data-i18n="share_copy">Copiar enlace</span>
+        </button>
+      </div>
+    </article>
+  </main>
 
-<footer>
-  <p>Hecho con ❤️ y demasiadas horas de anime por <strong>Jose Jesus Lopez Fernandez</strong> · <strong>NAKAMA.BLOG</strong></p>
-  <p style="margin-top:.4rem;font-size:.75rem;opacity:.4;">© 2026 · ualjlf259.github.io</p>
-</footer>
+  <footer>
+    <p>Hecho con ❤️ y demasiadas horas de anime por <strong>Jose Jesus Lopez Fernandez</strong> ·
+      <strong>NAKAMA.BLOG</strong></p>
+    <p style="margin-top:.4rem;font-size:.75rem;opacity:.4;">© 2026 · ualjlf259.github.io</p>
+  </footer>
 
-<script src="script.js"></script>
-<script src="easter-eggs/easter-eggs.js"></script>
+  <script src="script.js"></script>
+  <script src="easter-eggs/easter-eggs.js"></script>
 </body>
+
 </html>

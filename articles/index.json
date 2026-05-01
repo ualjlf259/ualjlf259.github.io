@@ -435,6 +435,35 @@
     }
   },
   {
+    "id": "black-clover-voluntad",
+    "category": "Black Clover",
+    "mins": 12,
+    "thumb": {
+      "class": "bc",
+      "type": "img",
+      "src": "img/articles/black-clover-portada.jpg",
+      "alt": "Black Clover portada"
+    },
+    "title": {
+      "es": "Black Clover – La Voluntad Inquebrantable",
+      "en": "Black Clover – The Unbreakable Will",
+      "fr": "Black Clover – La Volonté Inébranlable",
+      "ja": "ブラッククローバー – 揺るぎない意志"
+    },
+    "desc": {
+      "es": "Asta no tiene magia. Pero tiene algo que ningún grimorio puede otorgar: una voluntad que ningún límite puede romper.",
+      "en": "Asta has no magic. But he has something no grimoire can grant: a will that no limit can break.",
+      "fr": "Asta n'a pas de magie. Mais il a quelque chose qu'aucun grimoire ne peut accorder : une volonté qu'aucune limite ne peut briser.",
+      "ja": "アスタには魔法がない。しかし彼にはいかなるグリモワールも与えられないものがある：いかなる限界も打ち破れない意志。"
+    },
+    "label": {
+      "es": "Filosofía",
+      "en": "Philosophy",
+      "fr": "Philosophie",
+      "ja": "哲学"
+    }
+  },
+  {
     "id": "vagabond-existencialismo",
     "category": "Vagabond",
     "mins": 13,
