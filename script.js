@@ -5,10 +5,13 @@ const i18n = {
   es: window.LANG_ES,
   en: window.LANG_EN,
   fr: window.LANG_FR,
-  ja: window.LANG_JA
+  ja: window.LANG_JA,
+  it: window.LANG_IT,
+  de: window.LANG_DE,
+  ru: window.LANG_RU
 };
 
-const SUPPORTED_LANGS = ['es', 'en', 'fr', 'ja'];
+const SUPPORTED_LANGS = ['es', 'en', 'fr', 'ja', 'it', 'de', 'ru'];
 
 function detectInitialLang() {
   const saved = localStorage.getItem('lang');
@@ -96,21 +99,26 @@ function applyLang(lang) {
   if (rt && t.ranking_title) rt.textContent = t.ranking_title;
   const rs = document.querySelector('#ranking .section-header span');
   if (rs && t.ranking_sub) rs.textContent = t.ranking_sub;
-  const rankingEmojis = ['⚓','✨','🪓','⚔️','🍃','📓','👁️','💥','🐉'];
-  const rankBars = [100,91,85,80,74,68,62,56,50];
-  const rankClasses = ['rank-1','rank-2','rank-3','rank-other','rank-other','rank-other','rank-other','rank-other','rank-other'];
+  const rankingEmojis = ['⚓','✨','⚔️','🍀','🪓','⚡','🗡️','🍃','📓','💥','😴','🐉','👁️','🔥','🏐','🌀','⛓️'];
+  const rankBars = [100,94,88,83,79,75,71,67,63,59,55,51,48,44,41,37,33];
+  const rankClasses = ['rank-1','rank-2','rank-3','rank-4','rank-5','rank-other','rank-other','rank-other','rank-other','rank-other','rank-other','rank-other','rank-other','rank-other','rank-other','rank-other','rank-other'];
   const rankingList = document.querySelector('.ranking-list');
   if (rankingList && t.ranking_items) {
-    rankingList.innerHTML = t.ranking_items.map((item, i) => `
-      <div class="ranking-item">
-        <span class="rank-num ${rankClasses[i]}">${i+1}</span>
-        <span class="rank-emoji">${rankingEmojis[i]}</span>
+    rankingList.innerHTML = t.ranking_items.map((item, i) => {
+      const imgHtml = item.img
+        ? `<div class="rank-cover"><img src="${item.img}" alt="${item.name}" loading="lazy"></div>`
+        : `<div class="rank-cover rank-cover-placeholder">${rankingEmojis[i] || '★'}</div>`;
+      return `
+      <div class="ranking-item" style="--rank-delay:${i * 40}ms">
+        <span class="rank-num ${rankClasses[i] || 'rank-other'}">${i+1}</span>
+        ${imgHtml}
         <div class="rank-info">
           <strong>${item.name}</strong>
           <span>${item.desc}</span>
+          <div class="rank-bar-wrap"><div class="rank-bar" style="width:${rankBars[i] || 20}%"></div></div>
         </div>
-        <div class="rank-bar-wrap"><div class="rank-bar" style="width:${rankBars[i]}%"></div></div>
-      </div>`).join('');
+      </div>`;
+    }).join('');
   }
 
   // About
@@ -299,10 +307,13 @@ function closeVideoModal() {
    DROPDOWN DE IDIOMA
 ═══════════════════════════════════════════════════ */
 const langMeta = {
-  es: { flag: '🇪🇸', name: 'Español' },
-  en: { flag: '🇬🇧', name: 'English' },
-  fr: { flag: '🇫🇷', name: 'Français' },
-  ja: { flag: '🇯🇵', name: '日本語' }
+  es: { fiClass: 'fi fi-es fis', name: 'Español' },
+  en: { fiClass: 'fi fi-gb fis', name: 'English' },
+  fr: { fiClass: 'fi fi-fr fis', name: 'Français' },
+  ja: { fiClass: 'fi fi-jp fis', name: '日本語' },
+  it: { fiClass: 'fi fi-it fis', name: 'Italiano' },
+  de: { fiClass: 'fi fi-de fis', name: 'Deutsch' },
+  ru: { fiClass: 'fi fi-ru fis', name: 'Русский' }
 };
 
 const langDropdown = document.getElementById('lang-dropdown');
@@ -343,10 +354,11 @@ if (langToggle && langMenu && langDropdown) {
 function updateLangUI(lang) {
   const meta = langMeta[lang];
   if (!meta) return;
-  const flag  = document.getElementById('lang-flag');
-  const label = document.getElementById('lang-label');
-  if (flag)  flag.textContent  = meta.flag;
-  if (label) label.textContent = meta.name;
+  const flagEl = document.getElementById('lang-flag');
+  const label  = document.getElementById('lang-label');
+  // Swap the flag SVG class so the correct country flag shows
+  if (flagEl) flagEl.innerHTML = `<span class="${meta.fiClass}"></span>`;
+  if (label)  label.textContent = meta.name;
   if (langMenu) {
     langMenu.querySelectorAll('.lang-option').forEach(opt => {
       const isActive = opt.dataset.lang === lang;

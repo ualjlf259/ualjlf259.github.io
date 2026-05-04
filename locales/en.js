@@ -64,14 +64,22 @@ window.LANG_EN = {
 
   /* ── Ranking items ── */
   ranking_items: [
-    { name: "One Piece",             desc: "Eiichiro Oda · 1997 – present · The pinnacle of human storytelling" },
-    { name: "Hunter x Hunter",       desc: "Yoshihiro Togashi · 1998 – present · The most intelligent shonen ever written" },
-    { name: "Vinland Saga",          desc: "Makoto Yukimura · 2005 – present · The most honest epic about violence" },
-    { name: "Shingeki no Kyojin",    desc: "Hajime Isayama · 2013 – 2023 · The most impactful political narrative in modern anime" },
-    { name: "Naruto / Shippuden",    desc: "Masashi Kishimoto · 1999 – 2014 · The childhood of a whole generation" },
-    { name: "Death Note",            desc: "Tsugumi Ohba · 2003 – 2006 · The perfect psychological thriller of manga" },
-    { name: "Jujutsu Kaisen",        desc: "Gege Akutami · 2018 – 2024 · The new generation of action shonen" },
-    { name: "Boku no Hero Academia", desc: "Kōhei Horikoshi · 2014 – 2024 · The superhero anime with heart" },
-    { name: "Dragon Ball",           desc: "Akira Toriyama · 1984 – 1995 · The father of all adventure shonen" }
+    { name: "One Piece",             img: "img/articles/one-piece-portada.jpg",           desc: "Eiichiro Oda · 1997 – present · The pinnacle of human storytelling" },
+    { name: "Hunter x Hunter",       img: "img/articles/hunter-x-hunter-portada.jpg",     desc: "Yoshihiro Togashi · 1998 – present · The most intelligent shonen ever written" },
+    { name: "Shingeki no Kyojin",    img: "img/articles/Shingeky-no-kyojin-portada.jpg",  desc: "Hajime Isayama · 2013 – 2023 · The most impactful political narrative in modern anime" },
+    { name: "Black Clover",          img: "img/articles/black-clover-portada.jpg",         desc: "Yūki Tabata · 2015 – present · The story of someone who never gives up" },
+    { name: "Vinland Saga",          img: "img/articles/Vinland-portada.jpg",              desc: "Makoto Yukimura · 2005 – present · The most honest epic about violence" },
+    { name: "Berserk",               img: "img/articles/Berserk-portada.jpg",              desc: "Kentaro Miura · 1989 – 2021 · The masterpiece of dark manga" },
+    { name: "Vagabond",              img: "img/articles/Vagabond-portada.jpg",             desc: "Takehiko Inoue · 1998 – present · The most beautiful portrait of inner search" },
+    { name: "Naruto / Shippuden",    img: "img/articles/Naruto-portada.jpg",               desc: "Masashi Kishimoto · 1999 – 2014 · The childhood of a whole generation" },
+    { name: "Death Note",            img: "img/articles/Death-note-portada.jpg",           desc: "Tsugumi Ohba · 2003 – 2006 · The perfect psychological thriller of manga" },
+    { name: "Boku no Hero Academia", img: "img/articles/boku-no-hero-portada.jpg",         desc: "Kōhei Horikoshi · 2014 – 2024 · The superhero anime with heart" },
+    { name: "Oyasumi Punpun",        img: "img/articles/oyasumy-punpun-portada.jpg",       desc: "Inio Asano · 2007 – 2013 · The desolating truth about growing up" },
+    { name: "Dragon Ball",           img: "img/articles/Dragon-ball-portada.jpg",          desc: "Akira Toriyama · 1984 – 1995 · The father of all adventure shonen" },
+    { name: "Jujutsu Kaisen",        img: "img/articles/jujutsu-kaisen-portada.jpg",       desc: "Gege Akutami · 2018 – 2024 · The new generation of action shonen" },
+    { name: "Kimetsu no Yaiba",      img: "img/articles/Kimetsu-no-yaiba-portada.jpg",     desc: "Koyoharu Gotouge · 2016 – 2020 · Classic structure elevated by ukiyo-e art" },
+    { name: "Haikyuu!!",             img: "img/articles/haikyu-portada.jpg",               desc: "Haruichi Furudate · 2012 – 2020 · The greatest sports manga ever created" },
+    { name: "Mob Psycho 100",        img: "img/articles/Mob-psycho-portada.jpg",           desc: "ONE · 2012 – 2017 · An honest critique of the cult of power and popularity" },
+    { name: "Chainsaw Man",          img: "img/articles/chainsaw-portada.jpg",             desc: "Tatsuki Fujimoto · 2018 – present · The total deconstruction of the shonen hero" }
   ]
 };

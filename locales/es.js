@@ -64,14 +64,22 @@ window.LANG_ES = {
 
   /* ── Ranking items ── */
   ranking_items: [
-    { name: "One Piece", desc: "Eiichiro Oda · 1997 – presente · La obra cumbre de la humanidad" },
-    { name: "Hunter x Hunter", desc: "Yoshihiro Togashi · 1998 – presente · El shonen más inteligente jamás escrito" },
-    { name: "Vinland Saga", desc: "Makoto Yukimura · 2005 – presente · La épica más honesta sobre la violencia" },
-    { name: "Shingeki no Kyojin", desc: "Hajime Isayama · 2013 – 2023 · La narrativa política más impactante del anime moderno" },
-    { name: "Naruto / Shippuden", desc: "Masashi Kishimoto · 1999 – 2014 · La infancia de toda una generación" },
-    { name: "Death Note", desc: "Tsugumi Ohba · 2003 – 2006 · El thriller psicológico perfecto del manga" },
-    { name: "Jujutsu Kaisen", desc: "Gege Akutami · 2018 – 2024 · La nueva generación del shonen de acción" },
-    { name: "Boku no Hero Academia", desc: "Kōhei Horikoshi · 2014 – 2024 · El anime de superhéroes con corazón" },
-    { name: "Dragon Ball", desc: "Akira Toriyama · 1984 – 1995 · El padre de todos los shonen de aventuras" }
+    { name: "One Piece",             img: "img/articles/one-piece-portada.jpg",           desc: "Eiichiro Oda · 1997 – presente · La obra cumbre de la humanidad" },
+    { name: "Hunter x Hunter",       img: "img/articles/hunter-x-hunter-portada.jpg",     desc: "Yoshihiro Togashi · 1998 – presente · El shonen más inteligente jamás escrito" },
+    { name: "Shingeki no Kyojin",    img: "img/articles/Shingeky-no-kyojin-portada.jpg",  desc: "Hajime Isayama · 2013 – 2023 · La narrativa política más impactante del anime moderno" },
+    { name: "Black Clover",          img: "img/articles/black-clover-portada.jpg",         desc: "Yūki Tabata · 2015 – presente · La historia de quien nunca se rinde" },
+    { name: "Vinland Saga",          img: "img/articles/Vinland-portada.jpg",              desc: "Makoto Yukimura · 2005 – presente · La épica más honesta sobre la violencia" },
+    { name: "Berserk",               img: "img/articles/Berserk-portada.jpg",              desc: "Kentaro Miura · 1989 – 2021 · La obra maestra del manga oscuro" },
+    { name: "Vagabond",              img: "img/articles/Vagabond-portada.jpg",             desc: "Takehiko Inoue · 1998 – presente · El retrato más bello de la búsqueda interior" },
+    { name: "Naruto / Shippuden",    img: "img/articles/Naruto-portada.jpg",               desc: "Masashi Kishimoto · 1999 – 2014 · La infancia de toda una generación" },
+    { name: "Death Note",            img: "img/articles/Death-note-portada.jpg",           desc: "Tsugumi Ohba · 2003 – 2006 · El thriller psicológico perfecto del manga" },
+    { name: "Boku no Hero Academia", img: "img/articles/boku-no-hero-portada.jpg",         desc: "Kōhei Horikoshi · 2014 – 2024 · El anime de superhéroes con corazón" },
+    { name: "Oyasumi Punpun",        img: "img/articles/oyasumy-punpun-portada.jpg",       desc: "Inio Asano · 2007 – 2013 · La desoladora verdad de crecer" },
+    { name: "Dragon Ball",           img: "img/articles/Dragon-ball-portada.jpg",          desc: "Akira Toriyama · 1984 – 1995 · El padre de todos los shonen de aventuras" },
+    { name: "Jujutsu Kaisen",        img: "img/articles/jujutsu-kaisen-portada.jpg",       desc: "Gege Akutami · 2018 – 2024 · La nueva generación del shonen de acción" },
+    { name: "Kimetsu no Yaiba",      img: "img/articles/Kimetsu-no-yaiba-portada.jpg",     desc: "Koyoharu Gotouge · 2016 – 2020 · Estructura clásica elevada por arte ukiyo-e" },
+    { name: "Haikyuu!!",             img: "img/articles/haikyu-portada.jpg",               desc: "Haruichi Furudate · 2012 – 2020 · El mejor manga deportivo jamás creado" },
+    { name: "Mob Psycho 100",        img: "img/articles/Mob-psycho-portada.jpg",           desc: "ONE · 2012 – 2017 · Una crítica honesta al culto al poder y la popularidad" },
+    { name: "Chainsaw Man",          img: "img/articles/chainsaw-portada.jpg",             desc: "Tatsuki Fujimoto · 2018 – presente · La deconstrucción total del héroe shonen" }
   ]
 };

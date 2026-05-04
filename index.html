@@ -16,8 +16,13 @@
   <script src="locales/en.js"></script>
   <script src="locales/fr.js"></script>
   <script src="locales/ja.js"></script>
+  <script src="locales/it.js"></script>
+  <script src="locales/de.js"></script>
+  <script src="locales/ru.js"></script>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="easter-eggs/easter-eggs.css">
+  <!-- ── Flag icons (SVG real, cross-platform) ── -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css">
 </head>
 
 <body>
@@ -53,14 +58,7 @@
       <!-- ── Selector de idioma (dropdown) ── -->
       <div class="lang-dropdown" id="lang-dropdown" aria-label="Cambiar idioma">
         <button class="lang-toggle" id="lang-toggle" aria-haspopup="listbox" aria-expanded="false">
-          <!-- Icono globo -->
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10" />
-            <line x1="2" y1="12" x2="22" y2="12" />
-            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-          </svg>
-          <span class="lang-flag" id="lang-flag">🇪🇸</span>
+          <span class="lang-flag-wrap" id="lang-flag"><span class="fi fi-es fis"></span></span>
           <span class="lang-label" id="lang-label">Español</span>
           <!-- Chevron -->
           <svg class="chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -70,23 +68,38 @@
         </button>
         <div class="lang-menu" role="listbox" id="lang-menu">
           <button class="lang-option active" data-lang="es" role="option" aria-selected="true">
-            <span class="opt-flag">🇪🇸</span>
+            <span class="opt-flag"><span class="fi fi-es"></span></span>
             <span class="opt-name">Español</span>
             <span class="opt-check"></span>
           </button>
           <button class="lang-option" data-lang="en" role="option" aria-selected="false">
-            <span class="opt-flag">🇬🇧</span>
+            <span class="opt-flag"><span class="fi fi-gb"></span></span>
             <span class="opt-name">English</span>
             <span class="opt-check"></span>
           </button>
           <button class="lang-option" data-lang="fr" role="option" aria-selected="false">
-            <span class="opt-flag">🇫🇷</span>
+            <span class="opt-flag"><span class="fi fi-fr"></span></span>
             <span class="opt-name">Français</span>
+            <span class="opt-check"></span>
+          </button>
+          <button class="lang-option" data-lang="it" role="option" aria-selected="false">
+            <span class="opt-flag"><span class="fi fi-it"></span></span>
+            <span class="opt-name">Italiano</span>
+            <span class="opt-check"></span>
+          </button>
+          <button class="lang-option" data-lang="de" role="option" aria-selected="false">
+            <span class="opt-flag"><span class="fi fi-de"></span></span>
+            <span class="opt-name">Deutsch</span>
+            <span class="opt-check"></span>
+          </button>
+          <button class="lang-option" data-lang="ru" role="option" aria-selected="false">
+            <span class="opt-flag"><span class="fi fi-ru"></span></span>
+            <span class="opt-name">Русский</span>
             <span class="opt-check"></span>
           </button>
           <div class="lang-divider"></div>
           <button class="lang-option" data-lang="ja" role="option" aria-selected="false">
-            <span class="opt-flag">🇯🇵</span>
+            <span class="opt-flag"><span class="fi fi-jp"></span></span>
             <span class="opt-name">日本語</span>
             <span class="opt-check"></span>
           </button>
@@ -353,73 +366,11 @@
   <div class="ranking-section" id="ranking">
     <div class="ranking-inner">
       <div class="section-header">
-        <h2>Mi Ranking Personal</h2>
-        <span>— 100% subjetivo y sin disculpas</span>
+        <h2 data-i18n="ranking_title">Mi Ranking Personal</h2>
+        <span data-i18n="ranking_sub">— 100% subjetivo y sin disculpas</span>
       </div>
-      <div class="ranking-list">
-        <div class="ranking-item"><span class="rank-num rank-1">1</span><span class="rank-emoji">⚓</span>
-          <div class="rank-info"><strong>One Piece</strong><span>Eiichiro Oda · 1997 – presente · La obra cumbre de la
-              humanidad</span></div>
-          <div class="rank-bar-wrap">
-            <div class="rank-bar" style="width:100%"></div>
-          </div>
-        </div>
-        <div class="ranking-item"><span class="rank-num rank-2">2</span><span class="rank-emoji">✨</span>
-          <div class="rank-info"><strong>Hunter x Hunter</strong><span>Yoshihiro Togashi · 1998 – presente · El shonen
-              más inteligente jamás escrito</span></div>
-          <div class="rank-bar-wrap">
-            <div class="rank-bar" style="width:91%"></div>
-          </div>
-        </div>
-        <div class="ranking-item"><span class="rank-num rank-3">3</span><span class="rank-emoji">🪓</span>
-          <div class="rank-info"><strong>Vinland Saga</strong><span>Makoto Yukimura · 2005 – presente · La épica más
-              honesta sobre la violencia</span></div>
-          <div class="rank-bar-wrap">
-            <div class="rank-bar" style="width:85%"></div>
-          </div>
-        </div>
-        <div class="ranking-item"><span class="rank-num rank-other">4</span><span class="rank-emoji">⚔️</span>
-          <div class="rank-info"><strong>Shingeki no Kyojin</strong><span>Hajime Isayama · 2013 – 2023 · La narrativa
-              política más impactante del anime moderno</span></div>
-          <div class="rank-bar-wrap">
-            <div class="rank-bar" style="width:80%"></div>
-          </div>
-        </div>
-        <div class="ranking-item"><span class="rank-num rank-other">5</span><span class="rank-emoji">🍃</span>
-          <div class="rank-info"><strong>Naruto / Shippuden</strong><span>Masashi Kishimoto · 1999 – 2014 · La infancia
-              de toda una generación</span></div>
-          <div class="rank-bar-wrap">
-            <div class="rank-bar" style="width:74%"></div>
-          </div>
-        </div>
-        <div class="ranking-item"><span class="rank-num rank-other">6</span><span class="rank-emoji">📓</span>
-          <div class="rank-info"><strong>Death Note</strong><span>Tsugumi Ohba · 2003 – 2006 · El thriller psicológico
-              perfecto del manga</span></div>
-          <div class="rank-bar-wrap">
-            <div class="rank-bar" style="width:68%"></div>
-          </div>
-        </div>
-        <div class="ranking-item"><span class="rank-num rank-other">7</span><span class="rank-emoji">👁️</span>
-          <div class="rank-info"><strong>Jujutsu Kaisen</strong><span>Gege Akutami · 2018 – 2024 · La nueva generación
-              del shonen de acción</span></div>
-          <div class="rank-bar-wrap">
-            <div class="rank-bar" style="width:62%"></div>
-          </div>
-        </div>
-        <div class="ranking-item"><span class="rank-num rank-other">8</span><span class="rank-emoji">💥</span>
-          <div class="rank-info"><strong>Boku no Hero Academia</strong><span>Kōhei Horikoshi · 2014 – 2024 · El anime de
-              superhéroes con corazón</span></div>
-          <div class="rank-bar-wrap">
-            <div class="rank-bar" style="width:56%"></div>
-          </div>
-        </div>
-        <div class="ranking-item"><span class="rank-num rank-other">9</span><span class="rank-emoji">🐉</span>
-          <div class="rank-info"><strong>Dragon Ball</strong><span>Akira Toriyama · 1984 – 1995 · El padre de todos los
-              shonen de aventuras</span></div>
-          <div class="rank-bar-wrap">
-            <div class="rank-bar" style="width:50%"></div>
-          </div>
-        </div>
+      <div class="ranking-list" id="ranking-list">
+        <!-- populated by applyLang() in script.js -->
       </div>
     </div>
   </div>

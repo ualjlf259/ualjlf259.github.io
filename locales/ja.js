@@ -64,14 +64,22 @@ window.LANG_JA = {
 
   /* ── ランキング項目 ── */
   ranking_items: [
-    { name: "ワンピース",             desc: "尾田栄一郎 · 1997年〜現在 · 人類の最高傑作" },
-    { name: "HUNTER×HUNTER",        desc: "冨樫義博 · 1998年〜現在 · 史上最もインテリジェントな少年漫画" },
-    { name: "ヴィンランド・サガ",      desc: "幸村誠 · 2005年〜現在 · 暴力について最も誠実な叙事詩" },
-    { name: "進撃の巨人",             desc: "諫山創 · 2013〜2023年 · 現代アニメ最も衝撃的な政治的物語" },
-    { name: "NARUTO / 疾風伝",        desc: "岸本斉史 · 1999〜2014年 · 一世代全体の子供時代" },
-    { name: "デスノート",             desc: "大場つぐみ · 2003〜2006年 · 漫画の完璧な心理スリラー" },
-    { name: "呪術廻戦",              desc: "芥見下々 · 2018〜2024年 · アクション少年漫画の新世代" },
-    { name: "僕のヒーローアカデミア",  desc: "堀越耕平 · 2014〜2024年 · 心のあるスーパーヒーローアニメ" },
-    { name: "ドラゴンボール",         desc: "鳥山明 · 1984〜1995年 · すべての冒険少年漫画の父" }
+    { name: "ワンピース",              img: "img/articles/one-piece-portada.jpg",           desc: "尾田栄一郎 · 1997年〜現在 · 人類の最高傑作" },
+    { name: "HUNTER×HUNTER",         img: "img/articles/hunter-x-hunter-portada.jpg",     desc: "冨樫義博 · 1998年〜現在 · 史上最もインテリジェントな少年漫画" },
+    { name: "進撃の巨人",              img: "img/articles/Shingeky-no-kyojin-portada.jpg",  desc: "諫山創 · 2013〜2023年 · 現代アニメ最も衝撃的な政治的物語" },
+    { name: "ブラッククローバー",        img: "img/articles/black-clover-portada.jpg",         desc: "田畠裕基 · 2015年〜現在 · 諦めない者の物語" },
+    { name: "ヴィンランド・サガ",        img: "img/articles/Vinland-portada.jpg",              desc: "幸村誠 · 2005年〜現在 · 暴力について最も誠実な叙事詩" },
+    { name: "ベルセルク",              img: "img/articles/Berserk-portada.jpg",              desc: "三浦建太郎 · 1989〜2021年 · ダーク漫画の傑作" },
+    { name: "バガボンド",              img: "img/articles/Vagabond-portada.jpg",             desc: "井上雄彦 · 1998年〜現在 · 内なる探求の最も美しい肖像" },
+    { name: "NARUTO / 疾風伝",         img: "img/articles/Naruto-portada.jpg",               desc: "岸本斉史 · 1999〜2014年 · 一世代全体の子供時代" },
+    { name: "デスノート",              img: "img/articles/Death-note-portada.jpg",           desc: "大場つぐみ · 2003〜2006年 · 漫画の完璧な心理スリラー" },
+    { name: "僕のヒーローアカデミア",    img: "img/articles/boku-no-hero-portada.jpg",         desc: "堀越耕平 · 2014〜2024年 · 心のあるスーパーヒーローアニメ" },
+    { name: "おやすみプンプン",          img: "img/articles/oyasumy-punpun-portada.jpg",       desc: "浅野いにお · 2007〜2013年 · 成長の悲しい真実" },
+    { name: "ドラゴンボール",           img: "img/articles/Dragon-ball-portada.jpg",          desc: "鳥山明 · 1984〜1995年 · すべての冒険少年漫画の父" },
+    { name: "呪術廻戦",               img: "img/articles/jujutsu-kaisen-portada.jpg",       desc: "芥見下々 · 2018〜2024年 · アクション少年漫画の新世代" },
+    { name: "鬼滅の刃",               img: "img/articles/Kimetsu-no-yaiba-portada.jpg",     desc: "吾峠呼世晴 · 2016〜2020年 · 浮世絵芸術で高めたクラシック構造" },
+    { name: "ハイキュー!!",            img: "img/articles/haikyu-portada.jpg",               desc: "古舘春一 · 2012〜2020年 · 史上最高のスポーツ漫画" },
+    { name: "モブサイコ100",           img: "img/articles/Mob-psycho-portada.jpg",           desc: "ONE · 2012〜2017年 · 力と人気崇拝への正直な批評" },
+    { name: "チェンソーマン",           img: "img/articles/chainsaw-portada.jpg",             desc: "藤本タツキ · 2018年〜現在 · 少年ヒーローの完全な解体" }
   ]
 };

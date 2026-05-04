@@ -424,23 +424,156 @@
       margin-top: .45rem; letter-spacing: .04em; font-style: italic;
     }
 
-    /* RANKING */
-    .ranking-section { position: relative; z-index: 1; background: var(--ranking-bg); padding: 4rem 2rem; }
-    .ranking-inner { max-width: 1200px; margin: 0 auto; }
-    .ranking-list { display: flex; flex-direction: column; gap: .9rem; }
-    .ranking-item { display: flex; align-items: center; gap: 1.3rem; padding: 1.1rem 1.5rem; background: var(--card); border: 1px solid var(--border); border-radius: 5px; transition: border-color .2s, transform .15s; }
-    .ranking-item:hover { border-color: rgba(240,180,41,.3); transform: translateX(4px); }
-    .rank-num { font-family: 'Bebas Neue', sans-serif; font-size: 2.6rem; line-height: 1; min-width: 2.8rem; text-align: center; }
-    .rank-1 { color: var(--gold); }
-    .rank-2 { color: #c0d0e0; }
-    .rank-3 { color: #c8824a; }
+    /* ── RANKING — Premium Visual Overhaul ── */
+    .ranking-section {
+      position: relative; z-index: 1;
+      background: var(--ranking-bg);
+      padding: 5rem 2rem;
+      overflow: hidden;
+    }
+    .ranking-section::before {
+      content: '';
+      position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 60% 40% at 15% 50%, rgba(240,180,41,.04) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 85% 20%, rgba(33,118,174,.05) 0%, transparent 60%);
+    }
+    .ranking-inner { max-width: 900px; margin: 0 auto; position: relative; z-index: 1; }
+    .ranking-list { display: flex; flex-direction: column; gap: .7rem; }
+
+    @keyframes rank-slide-in {
+      from { opacity: 0; transform: translateX(-20px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+
+    .ranking-item {
+      display: grid;
+      grid-template-columns: 3.2rem 72px 1fr;
+      align-items: center;
+      gap: 1.2rem;
+      padding: .9rem 1.4rem .9rem 1rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      transition: border-color .22s, transform .18s, box-shadow .22s;
+      animation: rank-slide-in .4s ease both;
+      animation-delay: var(--rank-delay, 0ms);
+      position: relative;
+      overflow: hidden;
+    }
+    .ranking-item::before {
+      content: '';
+      position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+      background: transparent;
+      border-radius: 8px 0 0 8px;
+      transition: background .22s;
+    }
+    .ranking-item:hover { transform: translateX(5px); box-shadow: 0 8px 32px rgba(0,0,0,.3); }
+
+    /* Top 1 – Gold */
+    .ranking-item:has(.rank-1) {
+      border-color: rgba(240,180,41,.35);
+      background: linear-gradient(135deg, rgba(240,180,41,.07) 0%, var(--card) 60%);
+    }
+    .ranking-item:has(.rank-1)::before { background: var(--gold); }
+    .ranking-item:has(.rank-1):hover { border-color: rgba(240,180,41,.6); box-shadow: 0 8px 40px rgba(240,180,41,.12); }
+    /* Top 2 – Silver */
+    .ranking-item:has(.rank-2) {
+      border-color: rgba(192,208,224,.3);
+      background: linear-gradient(135deg, rgba(192,208,224,.06) 0%, var(--card) 60%);
+    }
+    .ranking-item:has(.rank-2)::before { background: #c0d0e0; }
+    .ranking-item:has(.rank-2):hover { border-color: rgba(192,208,224,.55); box-shadow: 0 8px 32px rgba(192,208,224,.08); }
+    /* Top 3 – Bronze */
+    .ranking-item:has(.rank-3) {
+      border-color: rgba(200,130,74,.3);
+      background: linear-gradient(135deg, rgba(200,130,74,.06) 0%, var(--card) 60%);
+    }
+    .ranking-item:has(.rank-3)::before { background: #c8824a; }
+    .ranking-item:has(.rank-3):hover { border-color: rgba(200,130,74,.55); box-shadow: 0 8px 32px rgba(200,130,74,.08); }
+    /* Top 4 – Amethyst */
+    .ranking-item:has(.rank-4)::before { background: #9b59b6; }
+    /* Top 5 – Emerald */
+    .ranking-item:has(.rank-5)::before { background: #2ecc71; }
+
+    /* Position number */
+    .rank-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.4rem;
+      line-height: 1;
+      text-align: center;
+      letter-spacing: .03em;
+    }
+    .rank-1 { color: var(--gold); text-shadow: 0 0 18px rgba(240,180,41,.55); }
+    .rank-2 { color: #c0d0e0; text-shadow: 0 0 14px rgba(192,208,224,.4); }
+    .rank-3 { color: #c8824a; text-shadow: 0 0 14px rgba(200,130,74,.4); }
+    .rank-4 { color: #9b59b6; }
+    .rank-5 { color: #2ecc71; }
     .rank-other { color: var(--rank-other-color); }
-    .rank-emoji { font-size: 2rem; }
-    .rank-info { flex: 1; }
-    .rank-info strong { display: block; font-family: 'Playfair Display', serif; font-size: 1.08rem; color: var(--bright); font-weight: 700; }
-    .rank-info span { font-size: .82rem; color: var(--muted); }
-    .rank-bar-wrap { width: 110px; height: 3px; background: var(--rank-bar-bg); border-radius: 2px; overflow: hidden; }
-    .rank-bar { height: 100%; background: var(--gold); border-radius: 2px; }
+
+    /* Cover thumbnail */
+    .rank-cover {
+      width: 72px; height: 50px;
+      border-radius: 5px;
+      overflow: hidden;
+      flex-shrink: 0;
+      border: 1px solid var(--border);
+      background: var(--deep);
+    }
+    .rank-cover img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .3s ease;
+    }
+    .ranking-item:hover .rank-cover img { transform: scale(1.07); }
+    .rank-cover-placeholder {
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+      background: var(--deep);
+    }
+
+    /* Info block */
+    .rank-info { flex: 1; min-width: 0; }
+    .rank-info strong {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: var(--bright);
+      font-weight: 700;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .rank-info span {
+      font-size: .78rem;
+      color: var(--muted);
+      display: block;
+      margin-bottom: .5rem;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .rank-bar-wrap {
+      height: 4px;
+      background: var(--rank-bar-bg);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-top: .1rem;
+    }
+    .rank-bar {
+      height: 100%;
+      border-radius: 4px;
+      background: linear-gradient(90deg, var(--gold) 0%, rgba(240,180,41,.5) 100%);
+      transition: width .6s cubic-bezier(.22,1,.36,1);
+    }
+    .ranking-item:has(.rank-1) .rank-bar { background: linear-gradient(90deg, var(--gold), #ffd700); }
+    .ranking-item:has(.rank-2) .rank-bar { background: linear-gradient(90deg, #c0d0e0, #a8bbd0); }
+    .ranking-item:has(.rank-3) .rank-bar { background: linear-gradient(90deg, #c8824a, #a06235); }
+
+    @media (max-width: 600px) {
+      .ranking-item { grid-template-columns: 2.6rem 56px 1fr; gap: .8rem; padding: .8rem 1rem; }
+      .rank-cover { width: 56px; height: 40px; }
+      .rank-num { font-size: 1.9rem; }
+      .rank-info strong { font-size: .9rem; }
+      .rank-info span { font-size: .72rem; }
+    }
 
     /* ABOUT */
     .about-box {
@@ -498,7 +631,18 @@
     }
     .lang-dropdown.open .lang-toggle .chevron { transform: rotate(180deg); opacity: 1; }
     .lang-toggle .lang-label { color: var(--bright); }
-    .lang-toggle .lang-flag  { font-size: 1rem; line-height: 1; }
+    /* Flag icon wrapper in the toggle button */
+    .lang-flag-wrap {
+      display: inline-flex; align-items: center; flex-shrink: 0;
+    }
+    .lang-flag-wrap .fi,
+    .lang-toggle .fi {
+      width: 1.35rem;
+      height: 1.35rem;
+      border-radius: 3px;
+      display: inline-block;
+      vertical-align: middle;
+    }
 
     .lang-menu {
       position: absolute; top: calc(100% + .5rem); right: 0;
@@ -522,7 +666,17 @@
     }
     .lang-option:hover { background: rgba(255,255,255,.05); color: var(--bright); }
     .lang-option.active { color: var(--gold); background: rgba(240,180,41,.06); }
-    .lang-option .opt-flag  { font-size: 1.1rem; line-height: 1; }
+    /* Flag icon inside each dropdown option */
+    .lang-option .opt-flag {
+      display: inline-flex; align-items: center; flex-shrink: 0;
+    }
+    .lang-option .opt-flag .fi {
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 3px;
+      display: inline-block;
+      vertical-align: middle;
+    }
     .lang-option .opt-name  { flex: 1; }
     .lang-option .opt-check {
       width: 6px; height: 6px; border-radius: 50%;

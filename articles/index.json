@@ -13,19 +13,28 @@
       "es": "La Esclavitud en One Piece: El Tema que Nadie Esperaba en un Manga",
       "en": "Slavery in One Piece: The Theme Nobody Expected in a Manga",
       "fr": "L'Esclavage dans One Piece : Le Thème que Personne n'Attendait dans un Manga",
-      "ja": "ワンピースの奴隷制：誰も予想しなかった漫画のテーマ"
+      "ja": "ワンピースの奴隷制：誰も予想しなかった漫画のテーマ",
+      "de": "Sklaverei in One Piece: Das Thema, das Niemand in einem Manga Erwartet Hatte",
+      "it": "La Schiavitù in One Piece: Il Tema che Nessuno si Aspettava in un Manga",
+      "ru": "Рабство в One Piece: Тема, которую Никто не Ожидал в Манге"
     },
     "desc": {
       "es": "Oda lleva décadas hablando de colonialismo y esclavitud con más honestidad que muchos libros de historia.",
       "en": "Oda has spent decades speaking about colonialism and slavery with more honesty than many history books.",
       "fr": "Oda parle du colonialisme et de l'esclavage avec plus d'honnêteté que bien des livres d'histoire.",
-      "ja": "尾田は多くの歴史書よりも正直に、植民地主義と奴隷制について何十年も語り続けている。"
+      "ja": "尾田は多くの歴史書よりも正直に、植民地主義と奴隷制について何十年も語り続けている。",
+      "de": "Oda spricht seit Jahrzehnten über Kolonialismus und Sklaverei ehrlicher als viele Geschichtsbücher.",
+      "it": "Oda parla da decenni di colonialismo e schiavitù con più onestà di molti libri di storia.",
+      "ru": "Ода десятилетиями говорит о колониализме и рабстве честнее, чем многие учебники истории."
     },
     "label": {
       "es": "Sociedad",
       "en": "Society",
       "fr": "Société",
-      "ja": "社会"
+      "ja": "社会",
+      "de": "Gesellschaft",
+      "it": "Società",
+      "ru": "Общество"
     }
   },
   {
@@ -42,19 +51,28 @@
       "es": "El Arco de la Hormiga Quimera: Una Crítica al Capitalismo y la Humanidad",
       "en": "The Chimera Ant Arc: A Critique of Capitalism and Humanity",
       "fr": "L'Arc des Fourmis Chimères : Une Critique du Capitalisme et de l'Humanité",
-      "ja": "キメラアント編：資本主義と人類への批判"
+      "ja": "キメラアント編：資本主義と人類への批判",
+      "de": "Der Chimären-Ameisen-Arc: Eine Kritik am Kapitalismus und der Menschheit",
+      "it": "L'Arco delle Formiche Chimera: Una Critica al Capitalismo e all'Umanità",
+      "ru": "Арка Химер-муравьёв: Критика Капитализма и Человечества"
     },
     "desc": {
       "es": "Togashi usa hormigas gigantes para preguntarnos qué nos hace humanos. Y la respuesta incomoda.",
       "en": "Togashi uses giant ants to ask us what makes us human. The answer is uncomfortable.",
       "fr": "Togashi utilise des fourmis géantes pour nous demander ce qui nous rend humains. La réponse est inconfortable.",
-      "ja": "冨樫は巨大な蟻を使って、何が私たちを人間にするのかを問いかける。その答えは不快だ。"
+      "ja": "冨樫は巨大な蟻を使って、何が私たちを人間にするのかを問いかける。その答えは不快だ。",
+      "de": "Togashi nutzt Riesenameisen, um uns zu fragen, was uns zu Menschen macht. Die Antwort ist unangenehm.",
+      "it": "Togashi usa formiche giganti per chiederci cosa ci rende umani. La risposta è scomoda.",
+      "ru": "Тогаши использует гигантских муравьёв, чтобы спросить, что делает нас людьми. Ответ неудобен."
     },
     "label": {
       "es": "Filosofía",
       "en": "Philosophy",
       "fr": "Philosophie",
-      "ja": "哲学"
+      "ja": "哲学",
+      "de": "Philosophie",
+      "it": "Filosofia",
+      "ru": "Философия"
     }
   },
   {
@@ -71,19 +89,28 @@
       "es": "Vinland Saga: El Manga que Más Honestamente Ha Retratado la Guerra",
       "en": "Vinland Saga: The Manga That Most Honestly Portrayed War",
       "fr": "Vinland Saga : Le Manga qui a le Plus Honnêtement Dépeint la Guerre",
-      "ja": "ヴィンランド・サガ：最も誠実に戦争を描いた漫画"
+      "ja": "ヴィンランド・サガ：最も誠実に戦争を描いた漫画",
+      "de": "Vinland Saga: Das Manga, das den Krieg am Ehrlichsten Porträtiert Hat",
+      "it": "Vinland Saga: Il Manga che ha Ritratto la Guerra nel Modo più Onesto",
+      "ru": "Vinland Saga: Манга, Наиболее Честно Изобразившая Войну"
     },
     "desc": {
       "es": "No hay héroes ni villanos. Solo personas rotas por la violencia. Yukimura creó algo único.",
       "en": "No heroes, no villains. Only people broken by violence. Yukimura created something unique.",
       "fr": "Pas de héros ni de méchants. Seulement des personnes brisées par la violence. Yukimura a créé quelque chose d'unique.",
-      "ja": "英雄も悪役もいない。暴力によって壊された人々だけ。幸村は何か唯一無二のものを生み出した。"
+      "ja": "英雄も悪役もいない。暴力によって壊された人々だけ。幸村は何か唯一無二のものを生み出した。",
+      "de": "Keine Helden, keine Bösewichte. Nur Menschen, die von Gewalt gebrochen wurden. Yukimura schuf etwas Einzigartiges.",
+      "it": "Nessun eroe, nessun cattivo. Solo persone spezzate dalla violenza. Yukimura ha creato qualcosa di unico.",
+      "ru": "Нет героев, нет злодеев. Только люди, сломленные насилием. Юкимура создал нечто уникальное."
     },
     "label": {
       "es": "Análisis",
       "en": "Analysis",
       "fr": "Analyse",
-      "ja": "分析"
+      "ja": "分析",
+      "de": "Analyse",
+      "it": "Analisi",
+      "ru": "Анализ"
     }
   },
   {
@@ -100,19 +127,28 @@
       "es": "Libertad y Prisión: Shingeki no Kyojin como Metáfora Política",
       "en": "Freedom and Prison: Shingeki no Kyojin as Political Metaphor",
       "fr": "Liberté et Prison : Shingeki no Kyojin comme Métaphore Politique",
-      "ja": "自由と牢獄：政治的メタファーとしての進撃の巨人"
+      "ja": "自由と牢獄：政治的メタファーとしての進撃の巨人",
+      "de": "Freiheit und Gefängnis: Shingeki no Kyojin als Politische Metapher",
+      "it": "Libertà e Prigione: Shingeki no Kyojin come Metafora Politica",
+      "ru": "Свобода и Тюрьма: Shingeki no Kyojin как Политическая Метафора"
     },
     "desc": {
       "es": "¿Y si los muros no son para protegerte, sino para controlarte? AOT habla de Israel, Palestina y mucho más.",
       "en": "What if the walls aren't there to protect you, but to control you? AOT talks about Israel, Palestine and much more.",
       "fr": "Et si les murs n'étaient pas là pour vous protéger, mais pour vous contrôler ? AOT parle d'Israël, de Palestine et bien plus.",
-      "ja": "もし壁があなたを守るためではなく、制御するためにあるとしたら？AoTはイスラエル、パレスチナなど多くを語る。"
+      "ja": "もし壁があなたを守るためではなく、制御するためにあるとしたら？AoTはイスラエル、パレスチナなど多くを語る。",
+      "de": "Was, wenn die Mauern nicht dazu da sind, euch zu schützen, sondern euch zu kontrollieren? AOT spricht über Israel, Palästina und vieles mehr.",
+      "it": "E se i muri non fossero lì per proteggerti, ma per controllarti? AOT parla di Israele, Palestina e molto altro.",
+      "ru": "Что если стены существуют не для того, чтобы защитить вас, а чтобы контролировать? AOT говорит об Израиле, Палестине и многом другом."
     },
     "label": {
       "es": "Política",
       "en": "Politics",
       "fr": "Politique",
-      "ja": "政治"
+      "ja": "政治",
+      "de": "Politik",
+      "it": "Politica",
+      "ru": "Политика"
     }
   },
   {
@@ -129,19 +165,28 @@
       "es": "El Ciclo del Odio en Naruto: ¿Por Qué No Podemos Parar las Guerras?",
       "en": "The Cycle of Hatred in Naruto: Why Can't We Stop Wars?",
       "fr": "Le Cycle de la Haine dans Naruto : Pourquoi Ne Pouvons-Nous Pas Arrêter les Guerres ?",
-      "ja": "NARUTOにおける憎しみのサイクル：なぜ戦争を止められないのか？"
+      "ja": "NARUTOにおける憎しみのサイクル：なぜ戦争を止められないのか？",
+      "de": "Der Kreislauf des Hasses in Naruto: Warum Können Wir Kriege Nicht Stoppen?",
+      "it": "Il Ciclo dell'Odio in Naruto: Perché Non Riusciamo a Fermare le Guerre?",
+      "ru": "Цикл Ненависти в Наруто: Почему мы Не Можем Остановить Войны?"
     },
     "desc": {
       "es": "Pain le hace a Naruto la pregunta que los políticos llevan siglos evitando responder.",
       "en": "Pain asks Naruto the question that politicians have been avoiding for centuries.",
       "fr": "Pain pose à Naruto la question que les politiciens évitent depuis des siècles.",
-      "ja": "ペインはナルトに、政治家たちが何世紀も避けてきた質問をする。"
+      "ja": "ペインはナルトに、政治家たちが何世紀も避けてきた質問をする。",
+      "de": "Pain stellt Naruto die Frage, die Politiker seit Jahrhunderten vermeiden zu beantworten.",
+      "it": "Pain pone a Naruto la domanda che i politici evitano da secoli.",
+      "ru": "Пейн задаёт Наруто вопрос, которого политики избегали веками."
     },
     "label": {
       "es": "Sociedad",
       "en": "Society",
       "fr": "Société",
-      "ja": "社会"
+      "ja": "社会",
+      "de": "Gesellschaft",
+      "it": "Società",
+      "ru": "Общество"
     }
   },
   {
@@ -158,19 +203,28 @@
       "es": "Death Note y la Justicia: ¿Quién Tiene Derecho a Decidir Quién Vive?",
       "en": "Death Note and Justice: Who Has the Right to Decide Who Lives?",
       "fr": "Death Note et la Justice : Qui a le Droit de Décider qui Vit ?",
-      "ja": "デスノートと正義：誰が誰の命を決める権利を持つのか？"
+      "ja": "デスノートと正義：誰が誰の命を決める権利を持つのか？",
+      "de": "Death Note und die Gerechtigkeit: Wer Hat das Recht zu Entscheiden, Wer Lebt?",
+      "it": "Death Note e la Giustizia: Chi Ha il Diritto di Decidere chi Vive?",
+      "ru": "Death Note и Справедливость: Кто Имеет Право Решать, кто Живёт?"
     },
     "desc": {
       "es": "Light Yagami es el villano, sí. Pero sus preguntas sobre el sistema judicial siguen sin respuesta.",
       "en": "Light Yagami is the villain, yes. But his questions about the justice system remain unanswered.",
       "fr": "Light Yagami est le méchant, certes. Mais ses questions sur le système judiciaire restent sans réponse.",
-      "ja": "夜神月は悪役だ、確かに。しかし司法制度に関する彼の疑問はまだ答えが出ていない。"
+      "ja": "夜神月は悪役だ、確かに。しかし司法制度に関する彼の疑問はまだ答えが出ていない。",
+      "de": "Light Yagami ist der Bösewicht, ja. Aber seine Fragen über das Justizsystem bleiben unbeantwortet.",
+      "it": "Light Yagami è il cattivo, sì. Ma le sue domande sul sistema giudiziario rimangono senza risposta.",
+      "ru": "Лайт Ягами — злодей, да. Но его вопросы о судебной системе остаются без ответа."
     },
     "label": {
       "es": "Filosofía",
       "en": "Philosophy",
       "fr": "Philosophie",
-      "ja": "哲学"
+      "ja": "哲学",
+      "de": "Philosophie",
+      "it": "Filosofia",
+      "ru": "Философия"
     }
   },
   {
@@ -187,19 +241,28 @@
       "es": "Las Maldiciones de JJK son Nuestras Emociones: Una Lectura Psicológica",
       "en": "JJK Curses Are Our Emotions: A Psychological Reading",
       "fr": "Les Malédictions de JJK sont Nos Émotions : Une Lecture Psychologique",
-      "ja": "JJKの呪いは私たちの感情：心理学的考察"
+      "ja": "JJKの呪いは私たちの感情：心理学的考察",
+      "de": "JJK-Flüche Sind Unsere Emotionen: Eine Psychologische Lektüre",
+      "it": "Le Maledizioni di JJK sono le Nostre Emozioni: Una Lettura Psicologica",
+      "ru": "Проклятия JJK — Наши Эмоции: Психологическое Прочтение"
     },
     "desc": {
       "es": "En JJK los monstruos nacen del miedo, la vergüenza y el dolor humano. No es casualidad.",
       "en": "In JJK monsters are born from human fear, shame and pain. It's no coincidence.",
       "fr": "Dans JJK les monstres naissent de la peur, de la honte et de la douleur humaine. Ce n'est pas un hasard.",
-      "ja": "JJKの怪物は人間の恐怖、羞恥心、苦痛から生まれる。これは偶然ではない。"
+      "ja": "JJKの怪物は人間の恐怖、羞恥心、苦痛から生まれる。これは偶然ではない。",
+      "de": "In JJK werden Monster aus menschlicher Angst, Scham und Schmerz geboren. Das ist kein Zufall.",
+      "it": "In JJK i mostri nascono dalla paura umana, dalla vergogna e dal dolore. Non è un caso.",
+      "ru": "В JJK монстры рождаются из человеческого страха, стыда и боли. Это не случайность."
     },
     "label": {
       "es": "Psicología",
       "en": "Psychology",
       "fr": "Psychologie",
-      "ja": "心理学"
+      "ja": "心理学",
+      "de": "Psychologie",
+      "it": "Psicologia",
+      "ru": "Психология"
     }
   },
   {
@@ -216,19 +279,28 @@
       "es": "¿Qué Significa Ser un Héroe? Boku no Hero y la Trampa del Mérito",
       "en": "What Does It Mean to Be a Hero? Boku no Hero and the Merit Trap",
       "fr": "Qu'est-ce qu'Être un Héros ? Boku no Hero et le Piège du Mérite",
-      "ja": "ヒーローであることの意味は？僕のヒーローとメリットの罠"
+      "ja": "ヒーローであることの意味は？僕のヒーローとメリットの罠",
+      "de": "Was Bedeutet es, ein Held zu Sein? Boku no Hero und die Meritokratie-Falle",
+      "it": "Cosa Significa Essere un Eroe? Boku no Hero e la Trappola del Merito",
+      "ru": "Что Значит Быть Героем? Boku no Hero и Ловушка Меритократии"
     },
     "desc": {
       "es": "En un mundo donde el poder lo es todo, BnHA pregunta si una sociedad basada en el mérito es justa.",
       "en": "In a world where power is everything, BnHA asks whether a merit-based society is fair.",
       "fr": "Dans un monde où le pouvoir est tout, BnHA demande si une société basée sur le mérite est juste.",
-      "ja": "力がすべての世界で、BnHAは実力主義社会が公正かどうかを問う。"
+      "ja": "力がすべての世界で、BnHAは実力主義社会が公正かどうかを問う。",
+      "de": "In einer Welt, in der Macht alles ist, fragt BnHA, ob eine meritokratische Gesellschaft gerecht ist.",
+      "it": "In un mondo dove il potere è tutto, BnHA chiede se una società basata sul merito sia giusta.",
+      "ru": "В мире, где власть — это всё, BnHA спрашивает, справедливо ли общество, основанное на заслугах."
     },
     "label": {
       "es": "Sociedad",
       "en": "Society",
       "fr": "Société",
-      "ja": "社会"
+      "ja": "社会",
+      "de": "Gesellschaft",
+      "it": "Società",
+      "ru": "Общество"
     }
   },
   {
@@ -245,19 +317,28 @@
       "es": "Dragon Ball y el Culto al Esfuerzo: Cuándo Trabajar Duro Ya No Basta",
       "en": "Dragon Ball and the Cult of Effort: When Working Hard Is Not Enough",
       "fr": "Dragon Ball et le Culte de l'Effort : Quand Travailler Dur Ne Suffit Plus",
-      "ja": "ドラゴンボールと努力崇拝：頑張るだけでは足りない時"
+      "ja": "ドラゴンボールと努力崇拝：頑張るだけでは足りない時",
+      "de": "Dragon Ball und der Kult der Anstrengung: Wann Harte Arbeit Nicht Mehr Ausreicht",
+      "it": "Dragon Ball e il Culto dello Sforzo: Quando Lavorare Duro Non Basta più",
+      "ru": "Dragon Ball и Культ Усилия: Когда Работать Усердно Уже Недостаточно"
     },
     "desc": {
       "es": "Goku siempre gana con entrenamiento. Pero en la vida real, eso no siempre funciona.",
       "en": "Goku always wins through training. But in real life, that doesn't always work.",
       "fr": "Goku gagne toujours en s'entraînant. Mais dans la vraie vie, ça ne marche pas toujours comme ça.",
-      "ja": "悟空は常に修行で勝つ。しかし現実ではそれが常に機能するわけではない。"
+      "ja": "悟空は常に修行で勝つ。しかし現実ではそれが常に機能するわけではない。",
+      "de": "Goku gewinnt immer durch Training. Aber im echten Leben funktioniert das nicht immer.",
+      "it": "Goku vince sempre con l'allenamento. Ma nella vita reale non funziona sempre così.",
+      "ru": "Гоку всегда побеждает благодаря тренировкам. Но в реальной жизни это работает не всегда."
     },
     "label": {
       "es": "Reflexión",
       "en": "Reflection",
       "fr": "Réflexion",
-      "ja": "考察"
+      "ja": "考察",
+      "de": "Reflexion",
+      "it": "Riflessione",
+      "ru": "Размышление"
     }
   },
   {
@@ -274,19 +355,28 @@
       "es": "Berserk: El Claroscuro del Alma Humana y la Rebelión contra el Destino",
       "en": "Berserk: The Chiaroscuro of the Human Soul and the Rebellion Against Destiny",
       "fr": "Berserk : Le Clair-obscur de l'Âme Humaine et la Rébellion Contre le Destin",
-      "ja": "ベルセルク：人間の魂の明暗と運命への反逆"
+      "ja": "ベルセルク：人間の魂の明暗と運命への反逆",
+      "de": "Berserk: Das Helldunkel der Menschlichen Seele und die Rebellion gegen das Schicksal",
+      "it": "Berserk: Il Chiaroscuro dell'Anima Umana e la Ribellione contro il Destino",
+      "ru": "Berserk: Светотень Человеческой Души и Бунт Против Судьбы"
     },
     "desc": {
       "es": "La obra maestra de Kentaro Miura es un tratado monumental sobre el existencialismo y el peso de la causalidad.",
       "en": "Kentaro Miura's masterpiece is a monumental treatise on existentialism and the weight of causality.",
       "fr": "Le chef-d'œuvre de Kentaro Miura est un traité monumental sur l'existentialisme et le poids de la causalité.",
-      "ja": "三浦建太郎の最高傑作は、実存主義と因果律の重みについての記念碑的な論文である。"
+      "ja": "三浦建太郎の最高傑作は、実存主義と因果律の重みについての記念碑的な論文である。",
+      "de": "Kentaro Miuras Meisterwerk ist ein monumentales Traktat über den Existenzialismus und das Gewicht der Kausalität.",
+      "it": "Il capolavoro di Kentaro Miura è un trattato monumentale sull'esistenzialismo e il peso della causalità.",
+      "ru": "Шедевр Кентаро Миуры — монументальный трактат об экзистенциализме и тяжести причинно-следственных связей."
     },
     "label": {
       "es": "Análisis",
       "en": "Analysis",
       "fr": "Analyse",
-      "ja": "分析"
+      "ja": "分析",
+      "de": "Analyse",
+      "it": "Analisi",
+      "ru": "Анализ"
     }
   },
   {
@@ -303,19 +393,28 @@
       "es": "Oyasumi Punpun: La Desoladora Verdad de Crecer en la Narrativa Visual de Asano",
       "en": "Oyasumi Punpun: The Desolating Truth of Growing Up in Asano's Visual Narrative",
       "fr": "Oyasumi Punpun : La Vérité Désolante de Grandir dans la Narration Visuelle d'Asano",
-      "ja": "おやすみプンプン：浅野の視覚的物語における成長の荒涼たる真実"
+      "ja": "おやすみプンプン：浅野の視覚的物語における成長の荒涼たる真実",
+      "de": "Oyasumi Punpun: Die Trostlose Wahrheit des Erwachsenwerdens in Asanos Visueller Erzählung",
+      "it": "Oyasumi Punpun: La Desolante Verità del Crescere nella Narrazione Visiva di Asano",
+      "ru": "Oyasumi Punpun: Опустошительная Правда Взросления в Визуальном Повествовании Асано"
     },
     "desc": {
       "es": "Un descenso psicológico a los abismos de la alienación y la pérdida de la inocencia a través de la lente única de Asano.",
       "en": "A psychological descent into the abyss of alienation and loss of innocence through Asano's unique lens.",
       "fr": "Une descente psychologique dans les abysses de l'aliénation et de la perte de l'innocence à travers l'objectif unique d'Asano.",
-      "ja": "浅野独自のレンズを通して描かれる、疎外感と純真さの喪失という深淵への心理的転落。"
+      "ja": "浅野独自のレンズを通して描かれる、疎外感と純真さの喪失という深淵への心理的転落。",
+      "de": "Ein psychologischer Abstieg in den Abgrund der Entfremdung und des Verlusts der Unschuld durch Asanos einzigartigen Blick.",
+      "it": "Una discesa psicologica nell'abisso dell'alienazione e della perdita dell'innocenza attraverso l'obiettivo unico di Asano.",
+      "ru": "Психологический спуск в пропасть отчуждения и утраты невинности через уникальный взгляд Асано."
     },
     "label": {
       "es": "Psicología",
       "en": "Psychology",
       "fr": "Psychologie",
-      "ja": "心理学"
+      "ja": "心理学",
+      "de": "Psychologie",
+      "it": "Psicologia",
+      "ru": "Психология"
     }
   },
   {
@@ -332,19 +431,28 @@
       "es": "Chainsaw Man: El Caos Narrativo y la Deconstrucción del Héroe Shonen",
       "en": "Chainsaw Man: Narrative Chaos and the Deconstruction of the Shonen Hero",
       "fr": "Chainsaw Man : Le Chaos Narratif et la Déconstruction du Héros Shonen",
-      "ja": "チェンソーマン：物語の混沌と少年ヒーローの脱構築"
+      "ja": "チェンソーマン：物語の混沌と少年ヒーローの脱構築",
+      "de": "Chainsaw Man: Narratives Chaos und die Dekonstruktion des Shonen-Helden",
+      "it": "Chainsaw Man: Il Caos Narrativo e la Decostruzione dell'Eroe Shonen",
+      "ru": "Chainsaw Man: Нарративный Хаос и Деконструкция Героя Сёнэна"
     },
     "desc": {
       "es": "Denji no quiere salvar el mundo, solo quiere tocar unos pechos y desayunar tostadas. Fujimoto destroza el viaje del héroe.",
       "en": "Denji doesn't want to save the world, he just wants to touch boobs and eat toast. Fujimoto shatters the hero's journey.",
       "fr": "Denji ne veut pas sauver le monde, il veut juste toucher des seins et manger des toasts. Fujimoto brise le voyage du héros.",
-      "ja": "デンジは世界を救うことではなく、胸を揉むこととトーストを食べることを望んでいます。藤本タツキはヒーローの旅を粉砕します。"
+      "ja": "デンジは世界を救うことではなく、胸を揉むこととトーストを食べることを望んでいます。藤本タツキはヒーローの旅を粉砕します。",
+      "de": "Denji will die Welt nicht retten, er will nur Brüste anfassen und Toast essen. Fujimoto zerschmettert die Heldenreise.",
+      "it": "Denji non vuole salvare il mondo, vuole solo toccare dei seni e mangiare toast. Fujimoto demolisce il viaggio dell'eroe.",
+      "ru": "Дэндзи не хочет спасать мир, он просто хочет потрогать грудь и поесть тостов. Фудзимото разрушает путь героя."
     },
     "label": {
       "es": "Deconstrucción",
       "en": "Deconstruction",
       "fr": "Déconstruction",
-      "ja": "脱構築"
+      "ja": "脱構築",
+      "de": "Dekonstruktion",
+      "it": "Decostruzione",
+      "ru": "Деконструкция"
     }
   },
   {
@@ -361,19 +469,28 @@
       "es": "Kimetsu no Yaiba: La Estructura Clásica Elevada por el Arte Ukiyo-e",
       "en": "Kimetsu no Yaiba: Classic Structure Elevated by Ukiyo-e Art",
       "fr": "Kimetsu no Yaiba : La Structure Classique Élevée par l'Art Ukiyo-e",
-      "ja": "鬼滅の刃：浮世絵の芸術によって昇華された古典的構造"
+      "ja": "鬼滅の刃：浮世絵の芸術によって昇華された古典的構造",
+      "de": "Kimetsu no Yaiba: Klassische Struktur durch Ukiyo-e-Kunst Erhoben",
+      "it": "Kimetsu no Yaiba: La Struttura Classica Elevata dall'Arte Ukiyo-e",
+      "ru": "Kimetsu no Yaiba: Классическая Структура, Возведённая Искусством Укиё-э"
     },
     "desc": {
       "es": "Una trama conservadora disfrazada de obra maestra gracias a un dinamismo visual sin precedentes en la animación moderna.",
       "en": "A conservative plot disguised as a masterpiece thanks to unprecedented visual dynamism in modern animation.",
       "fr": "Une intrigue conservatrice déguisée en chef-d'œuvre grâce à un dynamisme visuel sans précédent dans l'animation moderne.",
-      "ja": "現代アニメーションにおけるかつてない視覚的な躍動感によって、傑作に昇華された保守的な物語。"
+      "ja": "現代アニメーションにおけるかつてない視覚的な躍動感によって、傑作に昇華された保守的な物語。",
+      "de": "Eine konservative Handlung, verkleidet als Meisterwerk dank eines beispiellosen visuellen Dynamismus in der modernen Animation.",
+      "it": "Una trama conservatrice travestita da capolavoro grazie a un dinamismo visivo senza precedenti nell'animazione moderna.",
+      "ru": "Консервативный сюжет, замаскированный под шедевр благодаря беспрецедентному визуальному динамизму в современной анимации."
     },
     "label": {
       "es": "Estética",
       "en": "Aesthetics",
       "fr": "Esthétique",
-      "ja": "美学"
+      "ja": "美学",
+      "de": "Ästhetik",
+      "it": "Estetica",
+      "ru": "Эстетика"
     }
   },
   {
@@ -390,19 +507,28 @@
       "es": "Mob Psycho 100: La Inutilidad del Poder como Medida del Valor Personal",
       "en": "Mob Psycho 100: The Futility of Power as a Measure of Personal Worth",
       "fr": "Mob Psycho 100 : L'Inutilité du Pouvoir comme Mesure de la Valeur Personnelle",
-      "ja": "モブサイコ100：個人の価値の尺度としての力の無益さ"
+      "ja": "モブサイコ100：個人の価値の尺度としての力の無益さ",
+      "de": "Mob Psycho 100: Die Nutzlosigkeit von Macht als Maß des Persönlichen Werts",
+      "it": "Mob Psycho 100: L'Inutilità del Potere come Misura del Valore Personale",
+      "ru": "Mob Psycho 100: Бесполезность Силы как Меры Личной Ценности"
     },
     "desc": {
       "es": "ONE construye una psicología completa alrededor de un chico que podría destruir el mundo y solo quiere ser una buena persona.",
       "en": "ONE builds a complete psychology around a boy who could destroy the world and only wants to be a good person.",
       "fr": "ONE construit une psychologie complète autour d'un garçon qui pourrait détruire le monde et veut seulement être une bonne personne.",
-      "ja": "ONEは、世界を破壊できるのにただ良い人間になりたいだけの少年を中心に、完全な心理学を構築している。"
+      "ja": "ONEは、世界を破壊できるのにただ良い人間になりたいだけの少年を中心に、完全な心理学を構築している。",
+      "de": "ONE baut eine vollständige Psychologie um einen Jungen herum auf, der die Welt zerstören könnte und nur ein guter Mensch sein will.",
+      "it": "ONE costruisce una psicologia completa attorno a un ragazzo che potrebbe distruggere il mondo e vuole solo essere una buona persona.",
+      "ru": "ONE создаёт полную психологию вокруг мальчика, который мог бы уничтожить мир, но просто хочет быть хорошим человеком."
     },
     "label": {
       "es": "Psicología",
       "en": "Psychology",
       "fr": "Psychologie",
-      "ja": "心理学"
+      "ja": "心理学",
+      "de": "Psychologie",
+      "it": "Psicologia",
+      "ru": "Психология"
     }
   },
   {
@@ -419,19 +545,28 @@
       "es": "Haikyu!!: Por Qué el Deporte es el Mejor Maestro del Alma Humana",
       "en": "Haikyu!!: Why Sports Are the Best Teacher of the Human Soul",
       "fr": "Haikyu!! : Pourquoi le Sport est le Meilleur Maître de l'Âme Humaine",
-      "ja": "ハイキュー!!：なぜスポーツは人間の魂の最良の教師なのか"
+      "ja": "ハイキュー!!：なぜスポーツは人間の魂の最良の教師なのか",
+      "de": "Haikyu!!: Warum Sport der Beste Lehrer der Menschlichen Seele ist",
+      "it": "Haikyu!!: Perché lo Sport è il Miglior Insegnante dell'Anima Umana",
+      "ru": "Haikyu!!: Почему Спорт — Лучший Учитель Человеческой Души"
     },
     "desc": {
       "es": "Furudate transforma el voleibol en una metáfora perfecta sobre crecer, fracasar y encontrar tu lugar en el mundo.",
       "en": "Furudate transforms volleyball into a perfect metaphor for growing up, failing and finding your place in the world.",
       "fr": "Furudate transforme le volleyball en une métaphore parfaite sur grandir, échouer et trouver sa place dans le monde.",
-      "ja": "古舘は、バレーボールを成長し、失敗し、世界における自分の居場所を見つけることの完璧なメタファーに変える。"
+      "ja": "古舘は、バレーボールを成長し、失敗し、世界における自分の居場所を見つけることの完璧なメタファーに変える。",
+      "de": "Furudate verwandelt Volleyball in eine perfekte Metapher für das Aufwachsen, Scheitern und Finden des eigenen Platzes in der Welt.",
+      "it": "Furudate trasforma il volleyball in una metafora perfetta sul crescere, fallire e trovare il proprio posto nel mondo.",
+      "ru": "Фурудатэ превращает волейбол в идеальную метафору о взрослении, неудачах и поиске своего места в мире."
     },
     "label": {
       "es": "Reflexión",
       "en": "Reflection",
       "fr": "Réflexion",
-      "ja": "考察"
+      "ja": "考察",
+      "de": "Reflexion",
+      "it": "Riflessione",
+      "ru": "Размышление"
     }
   },
   {
@@ -448,19 +583,28 @@
       "es": "Black Clover – La Voluntad Inquebrantable",
       "en": "Black Clover – The Unbreakable Will",
       "fr": "Black Clover – La Volonté Inébranlable",
-      "ja": "ブラッククローバー – 揺るぎない意志"
+      "ja": "ブラッククローバー – 揺るぎない意志",
+      "de": "Black Clover – Der Unerschütterliche Wille",
+      "it": "Black Clover – La Volontà Indistruttibile",
+      "ru": "Black Clover – Несгибаемая Воля"
     },
     "desc": {
       "es": "Asta no tiene magia. Pero tiene algo que ningún grimorio puede otorgar: una voluntad que ningún límite puede romper.",
       "en": "Asta has no magic. But he has something no grimoire can grant: a will that no limit can break.",
       "fr": "Asta n'a pas de magie. Mais il a quelque chose qu'aucun grimoire ne peut accorder : une volonté qu'aucune limite ne peut briser.",
-      "ja": "アスタには魔法がない。しかし彼にはいかなるグリモワールも与えられないものがある：いかなる限界も打ち破れない意志。"
+      "ja": "アスタには魔法がない。しかし彼にはいかなるグリモワールも与えられないものがある：いかなる限界も打ち破れない意志。",
+      "de": "Asta hat keine Magie. Aber er hat etwas, das kein Grimoire gewähren kann: einen Willen, den keine Grenze brechen kann.",
+      "it": "Asta non ha magia. Ma ha qualcosa che nessun grimorio può concedere: una volontà che nessun limite può spezzare.",
+      "ru": "У Асты нет магии. Но у него есть то, что не может дать ни один гримуар: воля, которую не сломит ни один предел."
     },
     "label": {
       "es": "Filosofía",
       "en": "Philosophy",
       "fr": "Philosophie",
-      "ja": "哲学"
+      "ja": "哲学",
+      "de": "Philosophie",
+      "it": "Filosofia",
+      "ru": "Философия"
     }
   },
   {
@@ -477,19 +621,28 @@
       "es": "Vagabond: La Espada como Camino hacia la Iluminación y la Búsqueda del Propósito",
       "en": "Vagabond: The Sword as a Path Toward Enlightenment and the Search for Purpose",
       "fr": "Vagabond : L'Épée comme Chemin vers l'Illumination et la Quête du Sens",
-      "ja": "バガボンド：悟りへの道としての剣と目的の探求"
+      "ja": "バガボンド：悟りへの道としての剣と目的の探求",
+      "de": "Vagabond: Das Schwert als Weg zur Erleuchtung und die Suche nach dem Sinn",
+      "it": "Vagabond: La Spada come Cammino verso l'Illuminazione e la Ricerca dello Scopo",
+      "ru": "Vagabond: Меч как Путь к Просветлению и Поиск Смысла"
     },
     "desc": {
       "es": "Inoue convierte la biografía de Musashi en un tratado existencialista donde matar es solo el principio de la pregunta.",
       "en": "Inoue turns Musashi's biography into an existentialist treatise where killing is only the beginning of the question.",
       "fr": "Inoue transforme la biographie de Musashi en un traité existentialiste où tuer n'est que le début de la question.",
-      "ja": "井上は武蔵の伝記を、殺すことは問いの始まりにすぎない実存主義的な論文に変える。"
+      "ja": "井上は武蔵の伝記を、殺すことは問いの始まりにすぎない実存主義的な論文に変える。",
+      "de": "Inoue verwandelt Musashis Biografie in ein existenzialistisches Traktat, in dem das Töten nur der Anfang der Frage ist.",
+      "it": "Inoue trasforma la biografia di Musashi in un trattato esistenzialista dove uccidere è solo l'inizio della domanda.",
+      "ru": "Иноуэ превращает биографию Мусаси в экзистенциалистский трактат, где убийство — лишь начало вопроса."
     },
     "label": {
       "es": "Filosofía",
       "en": "Philosophy",
       "fr": "Philosophie",
-      "ja": "哲学"
+      "ja": "哲学",
+      "de": "Philosophie",
+      "it": "Filosofia",
+      "ru": "Философия"
     }
   }
 ]

@@ -64,14 +64,22 @@ window.LANG_FR = {
 
   /* ── Éléments du classement ── */
   ranking_items: [
-    { name: "One Piece", desc: "Eiichiro Oda · 1997 – présent · Le sommet de la création humaine" },
-    { name: "Hunter x Hunter", desc: "Yoshihiro Togashi · 1998 – présent · Le shonen le plus intelligent jamais écrit" },
-    { name: "Vinland Saga", desc: "Makoto Yukimura · 2005 – présent · L'épopée la plus honnête sur la violence" },
-    { name: "Shingeki no Kyojin", desc: "Hajime Isayama · 2013 – 2023 · Le récit politique le plus marquant de l'anime moderne" },
-    { name: "Naruto / Shippuden", desc: "Masashi Kishimoto · 1999 – 2014 · L'enfance d'une génération entière" },
-    { name: "Death Note", desc: "Tsugumi Ohba · 2003 – 2006 · Le thriller psychologique parfait du manga" },
-    { name: "Jujutsu Kaisen", desc: "Gege Akutami · 2018 – 2024 · La nouvelle génération du shonen d'action" },
-    { name: "Boku no Hero Academia", desc: "Kōhei Horikoshi · 2014 – 2024 · L'anime de super-héros avec du cœur" },
-    { name: "Dragon Ball", desc: "Akira Toriyama · 1984 – 1995 · Le père de tous les shonen d'aventure" }
+    { name: "One Piece",             img: "img/articles/one-piece-portada.jpg",           desc: "Eiichiro Oda · 1997 – présent · Le sommet de la création humaine" },
+    { name: "Hunter x Hunter",       img: "img/articles/hunter-x-hunter-portada.jpg",     desc: "Yoshihiro Togashi · 1998 – présent · Le shonen le plus intelligent jamais écrit" },
+    { name: "Shingeki no Kyojin",    img: "img/articles/Shingeky-no-kyojin-portada.jpg",  desc: "Hajime Isayama · 2013 – 2023 · Le récit politique le plus marquant de l'anime moderne" },
+    { name: "Black Clover",          img: "img/articles/black-clover-portada.jpg",         desc: "Yūki Tabata · 2015 – présent · L'histoire de celui qui ne renonce jamais" },
+    { name: "Vinland Saga",          img: "img/articles/Vinland-portada.jpg",              desc: "Makoto Yukimura · 2005 – présent · L'épopée la plus honnête sur la violence" },
+    { name: "Berserk",               img: "img/articles/Berserk-portada.jpg",              desc: "Kentaro Miura · 1989 – 2021 · Le chef-d'œuvre du manga sombre" },
+    { name: "Vagabond",              img: "img/articles/Vagabond-portada.jpg",             desc: "Takehiko Inoue · 1998 – présent · Le plus beau portrait de la quête intérieure" },
+    { name: "Naruto / Shippuden",    img: "img/articles/Naruto-portada.jpg",               desc: "Masashi Kishimoto · 1999 – 2014 · L'enfance d'une génération entière" },
+    { name: "Death Note",            img: "img/articles/Death-note-portada.jpg",           desc: "Tsugumi Ohba · 2003 – 2006 · Le thriller psychologique parfait du manga" },
+    { name: "Boku no Hero Academia", img: "img/articles/boku-no-hero-portada.jpg",         desc: "Kōhei Horikoshi · 2014 – 2024 · L'anime de super-héros avec du cœur" },
+    { name: "Oyasumi Punpun",        img: "img/articles/oyasumy-punpun-portada.jpg",       desc: "Inio Asano · 2007 – 2013 · La vérité désolante de grandir" },
+    { name: "Dragon Ball",           img: "img/articles/Dragon-ball-portada.jpg",          desc: "Akira Toriyama · 1984 – 1995 · Le père de tous les shonen d'aventure" },
+    { name: "Jujutsu Kaisen",        img: "img/articles/jujutsu-kaisen-portada.jpg",       desc: "Gege Akutami · 2018 – 2024 · La nouvelle génération du shonen d'action" },
+    { name: "Kimetsu no Yaiba",      img: "img/articles/Kimetsu-no-yaiba-portada.jpg",     desc: "Koyoharu Gotouge · 2016 – 2020 · Structure classique élevée par l'art ukiyo-e" },
+    { name: "Haikyuu!!",             img: "img/articles/haikyu-portada.jpg",               desc: "Haruichi Furudate · 2012 – 2020 · Le meilleur manga sportif jamais créé" },
+    { name: "Mob Psycho 100",        img: "img/articles/Mob-psycho-portada.jpg",           desc: "ONE · 2012 – 2017 · Une critique honnête du culte du pouvoir et de la popularité" },
+    { name: "Chainsaw Man",          img: "img/articles/chainsaw-portada.jpg",             desc: "Tatsuki Fujimoto · 2018 – présent · La déconstruction totale du héros shonen" }
   ]
 };
