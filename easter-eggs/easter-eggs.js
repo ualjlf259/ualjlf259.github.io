@@ -34,6 +34,17 @@
     return fallback;
   }
 
+  function unlockEgg(id) {
+    try {
+      let unlocked = JSON.parse(localStorage.getItem('ee_unlocked')) || {};
+      if (!unlocked[id]) {
+        unlocked[id] = true;
+        localStorage.setItem('ee_unlocked', JSON.stringify(unlocked));
+        document.dispatchEvent(new CustomEvent('ee_unlocked_updated'));
+      }
+    } catch (e) { console.error('ee save err', e); }
+  }
+
   /* ─────────────────────────────────────────────────
      DETECTOR DE PALABRAS — un solo listener, un solo
      buffer, diccionario palabra → handler. O(k) por
@@ -74,6 +85,7 @@
   function triggerTatakae() {
     if (tatakaeActive) return;
     tatakaeActive = true;
+    unlockEgg('tatakae');
 
     // Shake
     document.body.classList.add('ee-shake-active');
@@ -145,6 +157,7 @@
   function triggerSakura() {
     if (sakuraActive) return;
     sakuraActive = true;
+    unlockEgg('sakura');
 
     const layer = document.createElement('div');
     layer.className = 'ee-sakura-layer';
@@ -183,6 +196,7 @@
   function triggerRasengan() {
     if (rasenganActive) return;
     rasenganActive = true;
+    unlockEgg('rasengan');
 
     const orb = document.createElement('div');
     orb.className = 'ee-rasengan';
@@ -202,6 +216,7 @@
   function triggerSaiyan() {
     if (saiyanActive) return;
     saiyanActive = true;
+    unlockEgg('saiyan');
 
     document.body.classList.add('ee-saiyan-active');
 
@@ -224,6 +239,7 @@
   function triggerJoyboy() {
     if (joyboyActive) return;
     joyboyActive = true;
+    unlockEgg('joyboy');
 
     // Latido de la página (clase en <html> para evitar scrollbars al escalar)
     document.documentElement.classList.add('ee-joyboy-active');
@@ -355,6 +371,7 @@
   function triggerTsukuyomi() {
     if (tsukuyomiActive) return;
     tsukuyomiActive = true;
+    unlockEgg('tsukuyomi');
 
     const btn = document.getElementById('theme-toggle');
     const CHAOS_MS = 1400; // duración del "se ha roto la web"
@@ -432,6 +449,7 @@
   function triggerMob() {
     if (mobActive) return;
     mobActive = true;
+    unlockEgg('mob');
 
     const overlay = document.createElement('div');
     overlay.className = 'ee-mob-overlay';
@@ -713,6 +731,7 @@
   function triggerGear5() {
     if (gear5Active) return;
     gear5Active = true;
+    unlockEgg('gear5');
 
     document.removeEventListener('mousemove', onMouseShake);
     document.removeEventListener('touchmove', onTouchZigzag);
@@ -750,9 +769,6 @@
       spawnGear5Clouds();
       setTimeout(scheduleGear5Flash, 800);
       setTimeout(scheduleGear5Text, 1200);
-
-      document.querySelectorAll('.card, .btn-primary, .btn-outline, .btn-roulette, .btn-spin')
-        .forEach(el => el.classList.add('ee-g5-rubber'));
     }, 1600);
   }
 
@@ -968,6 +984,7 @@
   function triggerVoidCentury() {
     if (voidCenturyActive) return;
     voidCenturyActive = true;
+    unlockEgg('poneglyph');
     var lang = (typeof currentLang !== 'undefined' && currentLang)
       || localStorage.getItem('lang') || 'es';
     var content = {
@@ -1079,12 +1096,494 @@
     setTimeout(attachRobinTrigger, 2000);
   }
 
+  /* ─────────────────────────────────────────────────
+     EASTER EGG 10 — ARAÑA FANTASMA (Hunter x Hunter)
+     Clic en la araña nº 4 de la portada del artículo
+  ───────────────────────────────────────────────── */
+  let phantomTroupeActive = false;
+
+  function createWebBgSVG() {
+    var NS = 'http://www.w3.org/2000/svg';
+    var svg = document.createElementNS(NS, 'svg');
+    svg.setAttribute('class', 'ee-pt-web-bg');
+    svg.setAttribute('aria-hidden', 'true');
+    svg.setAttribute('viewBox', '-50 -50 100 100');
+    svg.setAttribute('preserveAspectRatio', 'xMidYMid slice');
+
+    var numLines = 16, numRings = 8, maxR = 72;
+
+    for (var i = 0; i < numLines; i++) {
+      var angle = (i / numLines) * 2 * Math.PI;
+      var line = document.createElementNS(NS, 'line');
+      line.setAttribute('x1', '0');
+      line.setAttribute('y1', '0');
+      line.setAttribute('x2', (Math.cos(angle) * maxR).toFixed(2));
+      line.setAttribute('y2', (Math.sin(angle) * maxR).toFixed(2));
+      line.setAttribute('class', 'ee-pt-web-line');
+      line.style.animationDelay = (i * 0.04).toFixed(2) + 's';
+      svg.appendChild(line);
+    }
+
+    for (var r = 1; r <= numRings; r++) {
+      var radius = (r / numRings) * maxR;
+      var pts = [];
+      for (var j = 0; j < numLines; j++) {
+        var a = (j / numLines) * 2 * Math.PI;
+        pts.push(
+          (Math.cos(a) * radius).toFixed(2) + ',' +
+          (Math.sin(a) * radius).toFixed(2)
+        );
+      }
+      var poly = document.createElementNS(NS, 'polygon');
+      poly.setAttribute('points', pts.join(' '));
+      poly.setAttribute('class', 'ee-pt-web-ring');
+      poly.style.animationDelay = (r * 0.1 + 0.2).toFixed(2) + 's';
+      svg.appendChild(poly);
+    }
+
+    return svg;
+  }
+
+  function createThreadSVG() {
+    var NS = 'http://www.w3.org/2000/svg';
+    var svg = document.createElementNS(NS, 'svg');
+    svg.setAttribute('class', 'ee-pt-thread-svg');
+    svg.setAttribute('aria-hidden', 'true');
+    svg.setAttribute('viewBox', '-200 -80 400 160');
+    svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+
+    var endpoints = [
+      [-200, -80], [0, -80], [200, -80],
+      [-200,  80], [0,  80], [200,  80],
+      [-200,   0], [200,  0],
+      [-140, -80], [140, -80], [-140, 80], [140, 80],
+    ];
+
+    endpoints.forEach(function(pt, i) {
+      var line = document.createElementNS(NS, 'line');
+      line.setAttribute('x1', '0');
+      line.setAttribute('y1', '0');
+      line.setAttribute('x2', pt[0]);
+      line.setAttribute('y2', pt[1]);
+      line.setAttribute('class', 'ee-pt-thread');
+      line.style.animationDelay = (i * 0.08).toFixed(2) + 's';
+      svg.appendChild(line);
+    });
+
+    return svg;
+  }
+
+  function triggerPhantomTroupe() {
+    if (phantomTroupeActive) return;
+    phantomTroupeActive = true;
+    unlockEgg('phantom_troupe');
+
+    var overlay = document.createElement('div');
+    overlay.className = 'ee-pt-overlay';
+    overlay.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(overlay);
+
+    overlay.appendChild(createWebBgSVG());
+
+    // Araña orbitando
+    var orbitCenter = document.createElement('div');
+    orbitCenter.className = 'ee-pt-orbit-center';
+    var spider = document.createElement('div');
+    spider.className = 'ee-pt-spider';
+    spider.textContent = '🕷️';
+    orbitCenter.appendChild(spider);
+    overlay.appendChild(orbitCenter);
+
+    // Fase 2: hilos + texto "MS 408" (aparece cuando termina la órbita, ~3.2s)
+    setTimeout(function() {
+      var textWrap = document.createElement('div');
+      textWrap.className = 'ee-pt-text-wrap';
+      textWrap.appendChild(createThreadSVG());
+
+      var msText = document.createElement('div');
+      msText.className = 'ee-pt-ms408-text';
+      msText.textContent = 'MS 408';
+      textWrap.appendChild(msText);
+
+      var cSpider = document.createElement('div');
+      cSpider.className = 'ee-pt-center-spider';
+      cSpider.textContent = '🕷️';
+      textWrap.appendChild(cSpider);
+
+      overlay.appendChild(textWrap);
+
+      // Fase 3: desvanecer (hilos ~1.2s + texto ~3s + pausa ~2s = 6.2s total desde fase 2)
+      setTimeout(function() {
+        overlay.classList.add('is-leaving');
+        setTimeout(function() {
+          overlay.remove();
+          phantomTroupeActive = false;
+        }, 700);
+      }, 6200);
+    }, 3200);
+  }
+
+  function setupSpiderHotspot(container) {
+    var img = container.querySelector('img.article-img-hero-img');
+    if (!img || img.dataset.eeSpiderBound) return;
+    if (!img.src || img.src.indexOf('hunter-x-hunter-portada') === -1) return;
+    img.dataset.eeSpiderBound = '1';
+
+    var wrap = img.parentElement;
+    if (!wrap) return;
+
+    var cs = window.getComputedStyle(wrap);
+    if (cs.position === 'static') wrap.style.position = 'relative';
+
+    var hotspot = document.createElement('div');
+    hotspot.className = 'ee-spider-hotspot';
+    hotspot.setAttribute('aria-hidden', 'true');
+    wrap.appendChild(hotspot);
+
+    hotspot.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      triggerPhantomTroupe();
+    });
+  }
+
+  function watchForHxHImage() {
+    function trySetup() {
+      ['article-img-top', 'modal-img-top'].forEach(function(id) {
+        var el = document.getElementById(id);
+        if (el) setupSpiderHotspot(el);
+      });
+    }
+    trySetup();
+    [400, 900, 2000].forEach(function(ms) { setTimeout(trySetup, ms); });
+    ['article-img-top', 'modal-img-top'].forEach(function(id) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      new MutationObserver(trySetup).observe(el, { childList: true, subtree: true });
+    });
+  }
+
+  /* ─────────────────────────────────────────────────
+     PROGRESS MODAL
+  ───────────────────────────────────────────────── */
+  const EE_I18N = {
+    es: {
+      title: "Easter Eggs",
+      desc: "Descubre los secretos ocultos en la página.",
+      discovered: "Descubiertos",
+      names: ["Tatakae", "Sakura", "Rasengan", "Super Saiyan", "Joy Boy", "Tsukuyomi Infinito", "100%", "Gear 5", "Siglo Vacío", "Araña Fantasma"],
+      hints: [
+        "Una palabra para seguir luchando.",
+        "Haz florecer rápidamente el emblema principal de la web.",
+        "La técnica giratoria de chakra del ninja rubio.",
+        "Grita el nombre de la mítica raza guerrera del universo.",
+        "El guerrero de la liberación que hace latir los tambores.",
+        "Alterna entre la luz y la oscuridad velozmente hasta atraparte en una ilusión.",
+        "El nombre real del chico con poderes psíquicos.",
+        "Agita tu mundo con fuerza para despertar el poder más ridículo.",
+        "Encuentra la llave oculta de la única superviviente de la catástrofe de Ohara y úsala para leer los Poneglyphs.",
+        "Encuentra al traidor del Gen'ei Ryodan (Brigada Fantasma). Él tiene un mensaje que darte."
+      ]
+    },
+    en: {
+      title: "Easter Eggs",
+      desc: "Discover the hidden secrets on the page.",
+      discovered: "Discovered",
+      names: ["Tatakae", "Sakura", "Rasengan", "Super Saiyan", "Joy Boy", "Infinite Tsukuyomi", "100%", "Gear 5", "Void Century", "Phantom Troupe"],
+      hints: [
+        "A word to keep fighting.",
+        "Make the main emblem of the site bloom quickly.",
+        "The spinning chakra technique of the blonde ninja.",
+        "Shout the name of the mythical warrior race of the universe.",
+        "The warrior of liberation who makes the drums beat.",
+        "Alternate between light and darkness swiftly to trap yourself in an illusion.",
+        "The real name of the boy with psychic powers.",
+        "Shake your world strongly to awaken the most ridiculous power.",
+        "Find the hidden key of the sole survivor of the Ohara catastrophe and use it to read the Poneglyphs.",
+        "Find the traitor of the Phantom Troupe (Gen'ei Ryodan). He has a message for you."
+      ]
+    },
+    fr: {
+      title: "Easter Eggs",
+      desc: "Découvrez les secrets cachés de la page.",
+      discovered: "Découverts",
+      names: ["Tatakae", "Sakura", "Rasengan", "Super Saiyan", "Joy Boy", "Tsukuyomi Infini", "100%", "Gear 5", "Siècle Vide", "Brigade Fantôme"],
+      hints: [
+        "Un mot pour continuer à se battre.",
+        "Faites fleurir rapidement l'emblème principal du site.",
+        "La technique de chakra tourbillonnant du ninja blond.",
+        "Criez le nom de la mythique race guerrière de l'univers.",
+        "Le guerrier de la libération qui fait battre les tambours.",
+        "Alternez rapidement entre la lumière et l'obscurité pour vous piéger dans une illusion.",
+        "Le vrai nom du garçon aux pouvoirs psychiques.",
+        "Secouez fortement votre monde pour éveiller le pouvoir le plus ridicule.",
+        "Trouvez la clé cachée de la seule survivante de la catastrophe d'Ohara et utilisez-la pour lire les Ponéglyphes.",
+        "Trouve le traître de la Brigade Fantôme (Gen'ei Ryodan). Il a un message pour toi."
+      ]
+    },
+    ja: {
+      title: "イースターエッグ",
+      desc: "ページに隠された秘密を発見しよう。",
+      discovered: "発見",
+      names: ["戦え", "桜", "螺旋丸", "超サイヤ人", "ジョイボーイ", "無限月読", "100%", "ギア5", "空白の100年", "幻影旅団"],
+      hints: [
+        "戦い続けるための言葉。",
+        "ウェブのメインエンブレムをすばやく咲かせよ。",
+        "金髪の忍者の回転するチャクラの技。",
+        "宇宙の神話的な戦闘種族の名前を叫べ。",
+        "太鼓を鳴らす解放の戦士。",
+        "光と闇を素早く切り替えて、幻術に囚われよ。",
+        "超能力を持つ少年の本名。",
+        "世界を強く揺さぶり、最も馬鹿げた能力を覚醒させよ。",
+        "オハラの悲劇の唯一の生存者の隠された鍵を見つけ、ポーネグリフを読むために使え。",
+        "幻影旅団（ゲンエイリョダン）の裏切り者を探せ。彼はお前に伝言がある。"
+      ]
+    },
+    it: {
+      title: "Easter Eggs",
+      desc: "Scopri i segreti nascosti nella pagina.",
+      discovered: "Scoperti",
+      names: ["Tatakae", "Sakura", "Rasengan", "Super Saiyan", "Joy Boy", "Tsukuyomi Infinito", "100%", "Gear 5", "Secolo Vuoto", "Brigata Fantasma"],
+      hints: [
+        "Una parola per continuare a combattere.",
+        "Fai fiorire rapidamente l'emblema principale del sito.",
+        "La tecnica di chakra rotante del ninja biondo.",
+        "Urla il nome della mitica razza guerriera dell'universo.",
+        "Il guerriero della liberazione che fa battere i tamburi.",
+        "Alterna rapidamente tra luce e oscurità per intrappolarti in un'illusione.",
+        "Il vero nome del ragazzo con poteri psichici.",
+        "Scuoti fortemente il tuo mondo per risvegliare il potere più ridicolo.",
+        "Trova la chiave nascosta dell'unica sopravvissuta alla catastrofe di Ohara e usala per leggere i Poneglyph.",
+        "Trova il traditore della Brigata Fantasma (Gen'ei Ryodan). Ha un messaggio per te."
+      ]
+    },
+    de: {
+      title: "Easter Eggs",
+      desc: "Entdecke die verborgenen Geheimnisse der Seite.",
+      discovered: "Entdeckt",
+      names: ["Tatakae", "Sakura", "Rasengan", "Super Saiyajin", "Joy Boy", "Unendliches Tsukuyomi", "100%", "Gear 5", "Leeres Jahrhundert", "Phantom-Truppe"],
+      hints: [
+        "Ein Wort, um weiterzukämpfen.",
+        "Bringe das Hauptemblem der Website schnell zum Blühen.",
+        "Die rotierende Chakra-Technik des blonden Ninjas.",
+        "Schreie den Namen der mythischen Kriegerrasse des Universums.",
+        "Der Krieger der Befreiung, der die Trommeln schlagen lässt.",
+        "Wechsle schnell zwischen Licht und Dunkelheit, um dich in einer Illusion zu fangen.",
+        "Der wahre Name des Jungen mit den psychischen Kräften.",
+        "Schüttle deine Welt kräftig, um die lächerlichste Kraft zu erwecken.",
+        "Finde den versteckten Schlüssel der einzigen Überlebenden der Ohara-Katastrophe und nutze ihn, um die Poneglyphen zu lesen.",
+        "Finde den Verräter der Phantom-Truppe (Gen'ei Ryodan). Er hat eine Nachricht für dich."
+      ]
+    },
+    ru: {
+      title: "Пасхалки",
+      desc: "Откройте скрытые секреты на странице.",
+      discovered: "Открыто",
+      names: ["Tatakae", "Sakura", "Rasengan", "Супер Сайян", "Джой Бой", "Бесконечное Цукуёми", "100%", "5 Гир", "Пустое Столетие", "Призрачная бригада"],
+      hints: [
+        "Слово, чтобы продолжать сражаться.",
+        "Быстро заставь расцвести главную эмблему сайта.",
+        "Вращающаяся техника чакры светловласого ниндзя.",
+        "Выкрикни название мифической расы воинов вселенной.",
+        "Воин освобождения, заставляющий бить барабаны.",
+        "Быстро чередуйте свет и тьму, чтобы попасть в иллюзию.",
+        "Настоящее имя мальчика с экстрасенсорными способностями.",
+        "Сильно потряси свой мир, чтобы пробудить самую нелепую силу.",
+        "Найдите спрятанный ключ единственной выжившей в катастрофе на Охаре и используйте его, чтобы прочесть Понеглифы.",
+        "Найди предателя Призрачной бригады (Gen'ei Ryodan). У него есть послание для тебя."
+      ]
+    },
+    pt: {
+      title: "Easter Eggs",
+      desc: "Descubra os segredos ocultos na página.",
+      discovered: "Descobertos",
+      names: ["Tatakae", "Sakura", "Rasengan", "Super Saiyajin", "Joy Boy", "Tsukuyomi Infinito", "100%", "Gear 5", "Século Perdido", "Tropa Fantasma"],
+      hints: [
+        "Uma palavra para continuar lutando.",
+        "Faça o emblema principal do site florescer rapidamente.",
+        "A técnica de chakra giratória do ninja loiro.",
+        "Grite o nome da mítica raça guerreira do universo.",
+        "O guerreiro da libertação que faz os tambores baterem.",
+        "Alterne rapidamente entre luz e escuridão até se prender em uma ilusão.",
+        "O verdadeiro nome do garoto com poderes psíquicos.",
+        "Agite fortemente o seu mundo para despertar o poder mais ridículo.",
+        "Encontre a chave oculta da única sobrevivente da catástrofe de Ohara e use-a para ler os Poneglyphs.",
+        "Encontre o traidor da Tropa Fantasma (Gen'ei Ryodan). Ele tem uma mensagem para você."
+      ]
+    }
+  };
+
+  const EGG_IDS = ['tatakae', 'sakura', 'rasengan', 'saiyan', 'joyboy', 'tsukuyomi', 'mob', 'gear5', 'poneglyph', 'phantom_troupe'];
+  let eeModalBackdrop = null;
+
+  function buildProgressModal() {
+    if (eeModalBackdrop) return;
+    
+    eeModalBackdrop = document.createElement('div');
+    eeModalBackdrop.className = 'ee-progress-backdrop';
+    eeModalBackdrop.innerHTML = `
+      <div class="ee-progress-modal" role="dialog" aria-modal="true" aria-labelledby="ee-modal-title">
+        <button class="ee-modal-close" aria-label="Cerrar">&times;</button>
+        <h2 id="ee-modal-title">Easter Eggs</h2>
+        <p id="ee-modal-desc"></p>
+        <div class="ee-progress-bar-container">
+          <div class="ee-progress-fill"></div>
+        </div>
+        <span class="ee-progress-count"></span>
+        <ul class="ee-list"></ul>
+      </div>
+    `;
+    document.body.appendChild(eeModalBackdrop);
+
+    eeModalBackdrop.querySelector('.ee-modal-close').addEventListener('click', closeProgressModal);
+    eeModalBackdrop.addEventListener('click', (e) => {
+      if (e.target === eeModalBackdrop) closeProgressModal();
+    });
+  }
+
+  function renderProgress() {
+    buildProgressModal();
+    const lang = (typeof currentLang !== 'undefined' && currentLang) || localStorage.getItem('lang') || 'es';
+    const loc = EE_I18N[lang] || EE_I18N['es'];
+
+    document.getElementById('ee-modal-title').textContent = loc.title;
+    document.getElementById('ee-modal-desc').textContent = loc.desc;
+
+    let unlocked = {};
+    try {
+      unlocked = JSON.parse(localStorage.getItem('ee_unlocked')) || {};
+    } catch(e) {}
+
+    let discovered = 0;
+    const listEl = eeModalBackdrop.querySelector('.ee-list');
+    listEl.innerHTML = '';
+
+    EGG_IDS.forEach((id, idx) => {
+      const isUn = unlocked[id];
+      if (isUn) discovered++;
+      const li = document.createElement('li');
+      li.className = 'ee-list-item' + (isUn ? ' is-unlocked' : '');
+      li.innerHTML = `
+        <div class="ee-list-icon">${isUn ? '✅' : '❓'}</div>
+        <div class="ee-list-content">
+          <h4 class="ee-list-title">${isUn ? loc.names[idx] : '???'}</h4>
+          <p class="ee-list-hint">${loc.hints[idx]}</p>
+        </div>
+      `;
+      listEl.appendChild(li);
+    });
+
+    eeModalBackdrop.querySelector('.ee-progress-fill').style.width = (discovered / EGG_IDS.length * 100) + '%';
+    eeModalBackdrop.querySelector('.ee-progress-count').textContent = discovered + '/' + EGG_IDS.length + ' ' + loc.discovered;
+  }
+
+  function openProgressModal() {
+    renderProgress();
+    eeModalBackdrop.classList.add('is-visible');
+  }
+
+  function closeProgressModal() {
+    if (eeModalBackdrop) {
+      eeModalBackdrop.classList.remove('is-visible');
+    }
+  }
+
+  function attachProgressBtn() {
+    const btns = document.querySelectorAll('#ee-progress-btn');
+    btns.forEach(btn => {
+      if (!btn.dataset.eeBtnBound) {
+        btn.dataset.eeBtnBound = '1';
+        btn.addEventListener('click', openProgressModal);
+      }
+    });
+  }
+
+  // Update modal automatically if open when a new egg is found
+  document.addEventListener('ee_unlocked_updated', () => {
+    if (eeModalBackdrop && eeModalBackdrop.classList.contains('is-visible')) {
+      renderProgress();
+    }
+  });
+
+  /* ─────────────────────────────────────────────────
+     CUMPLEAÑOS DE LUFFY — 5 de mayo (automático)
+     No cuenta como easter egg ni aparece en el modal.
+  ───────────────────────────────────────────────── */
+  function checkLuffyBirthday() {
+    var now = new Date();
+    if (now.getMonth() !== 4 || now.getDate() !== 5) return;
+
+    var layer = document.createElement('div');
+    layer.className = 'ee-luffy-hat-layer';
+    layer.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(layer);
+
+    var vw = window.innerWidth;
+    for (var i = 0; i < 35; i++) {
+      var hat = document.createElement('div');
+      hat.className = 'ee-luffy-hat';
+      hat.textContent = '👒';
+      hat.style.left = (Math.random() * vw) + 'px';
+      hat.style.fontSize = (14 + Math.random() * 18) + 'px';
+      hat.style.setProperty('--ee-hat-drift', (Math.random() * 200 - 100) + 'px');
+      hat.style.animationDuration = (4 + Math.random() * 4) + 's';
+      hat.style.animationDelay = (Math.random() * 3.5) + 's';
+      layer.appendChild(hat);
+    }
+    setTimeout(function() { layer.remove(); }, 10000);
+
+    setTimeout(function() {
+      var lang = (typeof currentLang !== 'undefined' && currentLang)
+        || localStorage.getItem('lang') || 'es';
+
+      var tx = {
+        es: { laugh: '¡SHISHISHI!',  date: '5 de mayo',   sub: 'Feliz cumpleaños,',      name: 'Monkey D. Luffy', quote: '¡Seré el Rey de los Piratas!' },
+        en: { laugh: 'SHISHISHI!',   date: 'May 5th',      sub: 'Happy birthday,',         name: 'Monkey D. Luffy', quote: 'I\'m gonna be King of the Pirates!' },
+        fr: { laugh: 'SHISHISHI!',   date: '5 mai',        sub: 'Joyeux anniversaire,',    name: 'Monkey D. Luffy', quote: 'Je serai le Roi des Pirates !' },
+        ja: { laugh: 'シシシシ！',    date: '5月5日',       sub: 'お誕生日おめでとう、',    name: 'モンキー・D・ルフィ', quote: '海賊王に、おれはなる！' },
+        it: { laugh: 'SHISHISHI!',   date: '5 maggio',     sub: 'Buon compleanno,',        name: 'Monkey D. Luffy', quote: 'Diventerò il Re dei Pirati!' },
+        de: { laugh: 'SHISHISHI!',   date: '5. Mai',       sub: 'Alles Gute zum Geburtstag,', name: 'Monkey D. Luffy', quote: 'Ich werde der Piratenkönig!' },
+        ru: { laugh: 'ШИШИШИ!',      date: '5 мая',        sub: 'С днём рождения,',        name: 'Манки Д. Луффи', quote: 'Я стану королём пиратов!' },
+        pt: { laugh: 'SHISHISHI!',   date: '5 de maio',    sub: 'Feliz aniversário,',      name: 'Monkey D. Luffy', quote: 'Eu vou ser o Rei dos Piratas!' },
+      };
+      var c = tx[lang] || tx.es;
+
+      var backdrop = document.createElement('div');
+      backdrop.className = 'ee-luffy-backdrop';
+      backdrop.setAttribute('aria-hidden', 'true');
+
+      var card = document.createElement('div');
+      card.className = 'ee-luffy-card';
+      card.innerHTML =
+        '<div class="ee-luffy-hat-big">👒</div>' +
+        '<div class="ee-luffy-laugh">' + c.laugh + '</div>' +
+        '<div class="ee-luffy-sub">' + c.date + ' — ' + c.sub + '</div>' +
+        '<div class="ee-luffy-name">' + c.name + '</div>' +
+        '<div class="ee-luffy-divider"></div>' +
+        '<p class="ee-luffy-quote">“' + c.quote + '”</p>';
+
+      backdrop.appendChild(card);
+      document.body.appendChild(backdrop);
+
+      function dismiss() {
+        backdrop.classList.add('is-leaving');
+        setTimeout(function() { backdrop.remove(); }, 500);
+      }
+
+      backdrop.addEventListener('click', dismiss);
+      setTimeout(dismiss, 6000);
+    }, 350);
+  }
+
   /* ── Init ──────────────────────────────────────── */
   function bootEasterEggs() {
     attachLogoListener();
     attachTsukuyomiListener();
     attachMotionDetector();
     watchArticleBody();
+    watchForHxHImage();
+    checkLuffyBirthday();
+    attachProgressBtn();
   }
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', bootEasterEggs);

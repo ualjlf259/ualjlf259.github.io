@@ -19,6 +19,7 @@
   <script src="locales/it.js"></script>
   <script src="locales/de.js"></script>
   <script src="locales/ru.js"></script>
+  <script src="locales/pt.js"></script>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="easter-eggs/easter-eggs.css">
   <!-- ── Flag icons (SVG real, cross-platform) ── -->
@@ -35,6 +36,11 @@
       <li><a href="#sobre-mi" data-i18n="nav_about">Sobre mí</a></li>
     </ul>
     <div style="display: flex; gap: 1rem; align-items: center;">
+      <!-- ── Easter Eggs Progress ── -->
+      <button id="ee-progress-btn" aria-label="Easter Eggs" title="Easter Eggs"
+        style="background:none; border:none; cursor:pointer; padding: 0.38rem; display: flex; align-items: center; font-size: 1.2rem; transition: transform 0.2s;">
+        🥚
+      </button>
       <!-- ── Selector de tema ── -->
       <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema"
         style="background:none; border:none; color:var(--text); cursor:pointer; padding: 0.38rem; display: flex; align-items: center; transition: color 0.2s;">
@@ -100,6 +106,11 @@
           <button class="lang-option" data-lang="ja" role="option" aria-selected="false">
             <span class="opt-flag"><span class="fi fi-jp"></span></span>
             <span class="opt-name">日本語</span>
+            <span class="opt-check"></span>
+          </button>
+          <button class="lang-option" data-lang="pt" role="option" aria-selected="false">
+            <span class="opt-flag"><span class="fi fi-pt"></span></span>
+            <span class="opt-name">Português</span>
             <span class="opt-check"></span>
           </button>
         </div>

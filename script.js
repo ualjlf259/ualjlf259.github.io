@@ -8,10 +8,11 @@ const i18n = {
   ja: window.LANG_JA,
   it: window.LANG_IT,
   de: window.LANG_DE,
-  ru: window.LANG_RU
+  ru: window.LANG_RU,
+  pt: window.LANG_PT
 };
 
-const SUPPORTED_LANGS = ['es', 'en', 'fr', 'ja', 'it', 'de', 'ru'];
+const SUPPORTED_LANGS = ['es', 'en', 'fr', 'ja', 'it', 'de', 'ru', 'pt'];
 
 function detectInitialLang() {
   const saved = localStorage.getItem('lang');
@@ -313,7 +314,8 @@ const langMeta = {
   ja: { fiClass: 'fi fi-jp fis', name: '日本語' },
   it: { fiClass: 'fi fi-it fis', name: 'Italiano' },
   de: { fiClass: 'fi fi-de fis', name: 'Deutsch' },
-  ru: { fiClass: 'fi fi-ru fis', name: 'Русский' }
+  ru: { fiClass: 'fi fi-ru fis', name: 'Русский' },
+  pt: { fiClass: 'fi fi-pt fis', name: 'Português' }
 };
 
 const langDropdown = document.getElementById('lang-dropdown');

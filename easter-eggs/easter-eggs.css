@@ -1322,11 +1322,14 @@ body.ee-g5-active::before {
   78%  { transform: scaleX(0.98) scaleY(1.02); }
   100% { transform: scaleX(1)    scaleY(1); }
 }
-.ee-g5-rubber.card:hover {
-  animation: ee-g5-rubber-card 0.55s cubic-bezier(.34, 1.56, .64, 1) both;
+body.ee-g5-active .card:hover {
+  animation: ee-g5-rubber-card 0.55s cubic-bezier(.34, 1.56, .64, 1) both !important;
 }
-.ee-g5-rubber:not(.card):hover {
-  animation: ee-g5-rubber 0.45s cubic-bezier(.34, 1.56, .64, 1) both;
+body.ee-g5-active .btn-primary:hover,
+body.ee-g5-active .btn-outline:hover,
+body.ee-g5-active .btn-roulette:hover,
+body.ee-g5-active .btn-spin:hover {
+  animation: ee-g5-rubber 0.45s cubic-bezier(.34, 1.56, .64, 1) both !important;
 }
 
 /* ─────────────────────────────────────────────────
@@ -1710,6 +1713,314 @@ body.ee-g5-active::before {
   color: #d4a853;
 }
 
+/* ─────────────────────────────────────────────────
+   EASTER EGG 10 — ARAÑA FANTASMA (Hunter x Hunter)
+   Clic en la araña nº 4 de la portada del artículo
+───────────────────────────────────────────────── */
+
+/* — Zona clickeable invisible sobre la araña — */
+.ee-spider-hotspot {
+  position: absolute;
+  right: 3%;
+  top: 42%;
+  width: 18%;
+  height: 40%;
+  cursor: crosshair;
+  z-index: 10;
+  border-radius: 50%;
+}
+
+/* — Overlay oscuro a pantalla completa — */
+@keyframes ee-pt-in  { from { opacity: 0; } to { opacity: 1; } }
+@keyframes ee-pt-out { from { opacity: 1; } to { opacity: 0; } }
+
+.ee-pt-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9992;
+  background: rgba(2, 2, 6, 0.94);
+  animation: ee-pt-in 0.4s ease-out both;
+  pointer-events: none;
+  overflow: hidden;
+}
+.ee-pt-overlay.is-leaving {
+  animation: ee-pt-out 0.7s ease-in both;
+}
+
+/* — Telaraña de fondo (SVG full-screen) — */
+.ee-pt-web-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.ee-pt-web-line {
+  stroke: rgba(150, 150, 170, 0.4);
+  stroke-width: 0.3;
+  stroke-dasharray: 150;
+  stroke-dashoffset: 150;
+  animation: ee-pt-draw-line 0.7s ease-out forwards;
+}
+.ee-pt-web-ring {
+  fill: none;
+  stroke: rgba(150, 150, 170, 0.28);
+  stroke-width: 0.22;
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+  animation: ee-pt-draw-ring 1.0s ease-out forwards;
+}
+@keyframes ee-pt-draw-line { to { stroke-dashoffset: 0; } }
+@keyframes ee-pt-draw-ring { to { stroke-dashoffset: 0; } }
+
+/* — Araña orbitando — */
+.ee-pt-orbit-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.ee-pt-spider {
+  font-size: clamp(2rem, 5vw, 3rem);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: 0 0;
+  --ee-pt-r: clamp(110px, 26vw, 200px);
+  animation: ee-pt-spider-orbit 3.2s cubic-bezier(.4, 0, .55, 1) 1 both;
+  filter: drop-shadow(0 0 8px rgba(200, 60, 60, 0.8));
+  line-height: 1;
+  will-change: transform;
+}
+
+@keyframes ee-pt-spider-orbit {
+  0%   { transform: rotate(0deg)   translateX(var(--ee-pt-r)) rotate(0deg);    opacity: 0; }
+  5%   { opacity: 1; }
+  80%  { transform: rotate(900deg) translateX(var(--ee-pt-r)) rotate(-900deg); opacity: 1; }
+  94%  { transform: rotate(900deg) translateX(10px)  rotate(-900deg);          opacity: 1; }
+  100% { transform: rotate(900deg) translateX(0px)   rotate(-900deg);          opacity: 0; }
+}
+
+/* — Fase 2: hilos + texto MS 408 — */
+.ee-pt-text-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.ee-pt-thread-svg {
+  position: absolute;
+  width: min(640px, 96vw);
+  height: min(240px, 46vh);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: visible;
+}
+
+.ee-pt-thread {
+  stroke: rgba(170, 170, 200, 0.5);
+  stroke-width: 1.2;
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  animation: ee-pt-draw-thread 1.2s ease-out forwards;
+}
+@keyframes ee-pt-draw-thread { to { stroke-dashoffset: 0; } }
+
+/* Texto "MS 408" que se revela como si lo dibujara la telaraña */
+.ee-pt-ms408-text {
+  position: relative;
+  z-index: 2;
+  font-family: 'Courier New', monospace;
+  font-size: clamp(2.8rem, 11vw, 5.5rem);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(200, 200, 230, 0.88);
+  text-stroke: 1.5px rgba(200, 200, 230, 0.88);
+  text-shadow:
+    0 0 25px rgba(200, 200, 240, 0.55),
+    0 0 60px rgba(180, 50, 50, 0.35);
+  clip-path: inset(0 100% 0 0);
+  animation: ee-pt-reveal-text 2.6s ease-out 0.4s forwards;
+  white-space: nowrap;
+}
+@keyframes ee-pt-reveal-text {
+  to { clip-path: inset(0 0% 0 0); }
+}
+
+/* — Araña pequeña que se asienta en el centro tras el texto — */
+.ee-pt-center-spider {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.3);
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  filter: drop-shadow(0 0 6px rgba(200, 50, 50, 0.85));
+  opacity: 0;
+  animation: ee-pt-center-appear 0.5s ease-out 3.4s forwards;
+  pointer-events: none;
+  z-index: 3;
+}
+@keyframes ee-pt-center-appear {
+  from { opacity: 0; transform: translate(-50%, -50%) scale(0.3); }
+  to   { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ee-spider-hotspot { cursor: pointer; }
+  .ee-pt-overlay, .ee-pt-overlay.is-leaving { animation: none; }
+  .ee-pt-web-line, .ee-pt-web-ring { animation: none; stroke-dashoffset: 0; }
+  .ee-pt-spider { animation: none; opacity: 0; }
+  .ee-pt-thread { animation: none; stroke-dashoffset: 0; }
+  .ee-pt-ms408-text { animation: none; clip-path: none; -webkit-text-stroke-color: rgba(200,200,230,0.9); }
+  .ee-pt-center-spider { animation: none; opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+/* ─────────────────────────────────────────────────
+   CUMPLEAÑOS DE LUFFY — 5 de mayo
+───────────────────────────────────────────────── */
+
+@keyframes ee-hat-fall {
+  0%   { transform: translate3d(0, -10vh, 0) rotate(0deg);                             opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { transform: translate3d(var(--ee-hat-drift, 60px), 110vh, 0) rotate(400deg);   opacity: 0; }
+}
+
+.ee-luffy-hat-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 9989;
+}
+
+.ee-luffy-hat {
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  animation-name: ee-hat-fall;
+  animation-timing-function: cubic-bezier(.45, .05, .55, .95);
+  animation-fill-mode: both;
+  will-change: transform, opacity;
+}
+
+/* — Backdrop y tarjeta — */
+@keyframes ee-luffy-card-in {
+  0%   { opacity: 0; transform: translateY(28px) scale(0.91); }
+  65%  { opacity: 1; transform: translateY(-3px) scale(1.02); }
+  100% { opacity: 1; transform: translateY(0)    scale(1); }
+}
+@keyframes ee-luffy-card-out {
+  from { opacity: 1; transform: translateY(0)    scale(1); }
+  to   { opacity: 0; transform: translateY(16px) scale(0.95); }
+}
+
+.ee-luffy-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9990;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  background: rgba(4, 8, 18, 0.55);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  cursor: pointer;
+}
+.ee-luffy-backdrop.is-leaving .ee-luffy-card {
+  animation: ee-luffy-card-out 0.5s ease-in both;
+}
+
+.ee-luffy-card {
+  width: 100%;
+  max-width: 500px;
+  padding: 2.8rem 3rem 2.4rem;
+  text-align: center;
+  background: linear-gradient(160deg, rgba(8, 16, 38, 0.97), rgba(22, 12, 4, 0.97));
+  border: 1px solid rgba(212, 168, 83, 0.45);
+  border-radius: 14px;
+  box-shadow:
+    0 25px 80px rgba(0, 0, 0, 0.7),
+    0 0 60px rgba(212, 168, 83, 0.07),
+    inset 0 1px 0 rgba(212, 168, 83, 0.1);
+  animation: ee-luffy-card-in 0.55s cubic-bezier(.16, 1, .3, 1) both;
+  pointer-events: none;
+}
+
+@keyframes ee-luffy-hat-spin {
+  from { transform: rotate(-200deg) scale(0); opacity: 0; }
+  to   { transform: rotate(0deg)   scale(1); opacity: 1; }
+}
+.ee-luffy-hat-big {
+  font-size: 3.8rem;
+  line-height: 1;
+  margin-bottom: 1.1rem;
+  display: block;
+  animation: ee-luffy-hat-spin 0.7s cubic-bezier(.34, 1.56, .64, 1) 0.15s both;
+}
+
+.ee-luffy-laugh {
+  font-family: 'Bebas Neue', 'Impact', sans-serif;
+  font-size: clamp(2rem, 8vw, 3.4rem);
+  letter-spacing: 0.08em;
+  color: #fbbf24;
+  text-shadow:
+    0 0 28px rgba(251, 191, 36, 0.65),
+    0 0 80px rgba(251, 191, 36, 0.3);
+  margin-bottom: 1.2rem;
+}
+
+.ee-luffy-sub {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(212, 168, 83, 0.72);
+  margin-bottom: 0.35rem;
+}
+
+.ee-luffy-name {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: clamp(1.3rem, 4vw, 1.9rem);
+  color: #f5e6d3;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 18px rgba(251, 191, 36, 0.18);
+}
+
+.ee-luffy-divider {
+  width: 50px;
+  height: 1px;
+  margin: 0 auto 1rem;
+  background: linear-gradient(90deg, transparent, rgba(212, 168, 83, 0.65), transparent);
+}
+
+.ee-luffy-quote {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 0.92rem;
+  color: rgba(245, 230, 211, 0.72);
+  line-height: 1.55;
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ee-luffy-hat { animation: none; opacity: 0; }
+  .ee-luffy-hat-big { animation: none; }
+  .ee-luffy-card { animation: none; }
+  .ee-luffy-backdrop.is-leaving .ee-luffy-card { animation: none; opacity: 0; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   body.ee-shake-active {
     animation: none;
@@ -1820,8 +2131,11 @@ body.ee-g5-active::before {
   .ee-g5-title { animation: none; }
   .ee-g5-cloud--rtl, .ee-g5-cloud--ltr { animation: none; opacity: 0; }
   .ee-g5-sparkle { animation: none; opacity: 0; }
-  .ee-g5-rubber.card:hover,
-  .ee-g5-rubber:not(.card):hover { animation: none; }
+  body.ee-g5-active .card:hover,
+  body.ee-g5-active .btn-primary:hover,
+  body.ee-g5-active .btn-outline:hover,
+  body.ee-g5-active .btn-roulette:hover,
+  body.ee-g5-active .btn-spin:hover { animation: none !important; }
   .ee-g5-floattext { animation: none; opacity: 0; }
 
   /* Egg 9 — Poneglyph / Void Century */
@@ -1834,3 +2148,30 @@ body.ee-g5-active::before {
   .ee-void-modal { animation: none; }
   .ee-void-rune { animation: none; opacity: 0; }
 }
+
+/* ─────────────────────────────────────────────────
+   EASTER EGGS PROGRESS MODAL
+───────────────────────────────────────────────── */
+.ee-progress-backdrop { position: fixed; inset: 0; background: rgba(4,8,18,0.85); backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); z-index: 9999; display: flex; align-items: center; justify-content: center; padding: 1rem; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+.ee-progress-backdrop.is-visible { opacity: 1; pointer-events: auto; }
+.ee-progress-modal { background: linear-gradient(160deg, #111, #1a1a1a); width: 100%; max-width: 520px; border-radius: 12px; padding: 2rem; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 20px 40px rgba(0,0,0,0.5); transform: translateY(20px) scale(0.95); transition: transform 0.3s cubic-bezier(.16,1,.3,1); max-height: 90vh; display: flex; flex-direction: column; position: relative; }
+.ee-progress-backdrop.is-visible .ee-progress-modal { transform: translateY(0) scale(1); }
+.ee-modal-close { position: absolute; top: 1rem; right: 1rem; background: none; border: none; color: var(--muted); font-size: 1.8rem; line-height: 1; cursor: pointer; transition: color 0.2s; }
+.ee-modal-close:hover { color: var(--text); }
+.ee-progress-modal h2 { margin: 0 0 0.5rem; font-family: 'Cinzel', serif; font-size: 1.8rem; color: var(--bright); }
+.ee-progress-modal p { margin: 0 0 1.5rem; font-size: 0.95rem; color: var(--muted); }
+.ee-progress-bar-container { background: rgba(255,255,255,0.05); height: 8px; border-radius: 4px; overflow: hidden; margin-bottom: 0.5rem; }
+.ee-progress-fill { height: 100%; background: linear-gradient(90deg, #ffb86b, #ff6cab); width: 0%; transition: width 0.5s ease; }
+.ee-progress-count { font-size: 0.85rem; color: var(--muted); text-align: right; margin-bottom: 1.5rem; display: block; }
+.ee-list { list-style: none; padding: 0; margin: 0; overflow-y: auto; flex-grow: 1; padding-right: 0.5rem; }
+.ee-list::-webkit-scrollbar { width: 6px; }
+.ee-list::-webkit-scrollbar-track { background: rgba(255,255,255,0.02); border-radius: 3px; }
+.ee-list::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
+.ee-list-item { padding: 1rem; margin-bottom: 0.5rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); background: rgba(255,255,255,0.02); display: flex; align-items: flex-start; gap: 0.8rem; transition: background 0.2s; }
+.ee-list-item:last-child { margin-bottom: 0; }
+.ee-list-item.is-unlocked { background: rgba(255,215,0,0.05); border-color: rgba(255,215,0,0.15); }
+.ee-list-icon { font-size: 1.4rem; line-height: 1; }
+.ee-list-content { flex: 1; }
+.ee-list-title { font-weight: 600; color: var(--bright); margin: 0 0 0.2rem; font-size: 1rem; }
+.ee-list-hint { font-size: 0.85rem; color: var(--muted); margin: 0; line-height: 1.4; }
+.ee-list-item.is-unlocked .ee-list-title { color: #fbbf24; }
