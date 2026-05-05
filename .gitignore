@@ -1,2 +1,33 @@
+# Claude Code
 .claude/
 .claude.json
+
+# Sistema operativo
+Thumbs.db
+ehthumbs.db
+desktop.ini
+.DS_Store
+
+# Editores / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs y temporales
+*.log
+*.tmp
+*.bak
+
+# Variables de entorno (preventivo)
+.env
+.env.*
+!.env.example
+
+# Node (preventivo)
+node_modules/
+package-lock.json.bak
+
+# Backups de scripts PowerShell
+*.ps1.bak
