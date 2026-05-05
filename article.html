@@ -31,9 +31,14 @@
   <script src="locales/en.js"></script>
   <script src="locales/fr.js"></script>
   <script src="locales/ja.js"></script>
+  <script src="locales/it.js"></script>
+  <script src="locales/de.js"></script>
+  <script src="locales/ru.js"></script>
   <script src="locales/pt.js"></script>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="easter-eggs/easter-eggs.css">
+  <!-- ── Flag icons (SVG real, cross-platform) ── -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css">
   <style>
     /* Página de artículo: reutiliza los estilos del modal aplicados como página */
     .article-page-wrap {
@@ -119,7 +124,7 @@
             <line x1="2" y1="12" x2="22" y2="12" />
             <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
           </svg>
-          <span class="lang-flag" id="lang-flag">🇪🇸</span>
+          <span class="lang-flag" id="lang-flag"><span class="fi fi-es"></span></span>
           <span class="lang-label" id="lang-label">Español</span>
           <svg class="chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
             stroke-width="2.5" stroke-linecap="round">
@@ -128,20 +133,44 @@
         </button>
         <div class="lang-menu" role="listbox" id="lang-menu">
           <button class="lang-option active" data-lang="es" role="option" aria-selected="true">
-            <span class="opt-flag">🇪🇸</span><span class="opt-name">Español</span><span class="opt-check"></span>
+            <span class="opt-flag"><span class="fi fi-es"></span></span>
+            <span class="opt-name">Español</span>
+            <span class="opt-check"></span>
           </button>
           <button class="lang-option" data-lang="en" role="option" aria-selected="false">
-            <span class="opt-flag">🇬🇧</span><span class="opt-name">English</span><span class="opt-check"></span>
+            <span class="opt-flag"><span class="fi fi-gb"></span></span>
+            <span class="opt-name">English</span>
+            <span class="opt-check"></span>
           </button>
           <button class="lang-option" data-lang="fr" role="option" aria-selected="false">
-            <span class="opt-flag">🇫🇷</span><span class="opt-name">Français</span><span class="opt-check"></span>
+            <span class="opt-flag"><span class="fi fi-fr"></span></span>
+            <span class="opt-name">Français</span>
+            <span class="opt-check"></span>
           </button>
-          <div class="lang-divider"></div>
+          <button class="lang-option" data-lang="it" role="option" aria-selected="false">
+            <span class="opt-flag"><span class="fi fi-it"></span></span>
+            <span class="opt-name">Italiano</span>
+            <span class="opt-check"></span>
+          </button>
+          <button class="lang-option" data-lang="de" role="option" aria-selected="false">
+            <span class="opt-flag"><span class="fi fi-de"></span></span>
+            <span class="opt-name">Deutsch</span>
+            <span class="opt-check"></span>
+          </button>
+          <button class="lang-option" data-lang="ru" role="option" aria-selected="false">
+            <span class="opt-flag"><span class="fi fi-ru"></span></span>
+            <span class="opt-name">Русский</span>
+            <span class="opt-check"></span>
+          </button>
           <button class="lang-option" data-lang="ja" role="option" aria-selected="false">
-            <span class="opt-flag">🇯🇵</span><span class="opt-name">日本語</span><span class="opt-check"></span>
+            <span class="opt-flag"><span class="fi fi-jp"></span></span>
+            <span class="opt-name">日本語</span>
+            <span class="opt-check"></span>
           </button>
           <button class="lang-option" data-lang="pt" role="option" aria-selected="false">
-            <span class="opt-flag">🇵🇹</span><span class="opt-name">Português</span><span class="opt-check"></span>
+            <span class="opt-flag"><span class="fi fi-pt"></span></span>
+            <span class="opt-name">Português</span>
+            <span class="opt-check"></span>
           </button>
         </div>
       </div>

@@ -728,7 +728,10 @@ function updateArticleSEO(data, lang) {
   };
 
   const title    = pickLang(data.title, lang);
-  const desc     = pickLang(data.desc,  lang);
+  const rawDesc  = pickLang(data.desc,  lang);
+  const desc     = (rawDesc && rawDesc.trim())
+                     ? rawDesc
+                     : (pickLang(data.tag, lang) || title);
   const imageUrl = `${SITE_URL}/${data.image}`;
   const pageUrl  = `${SITE_URL}/article.html?id=${encodeURIComponent(data.id)}`;
   const locale   = localeMap[lang] || 'es_ES';
