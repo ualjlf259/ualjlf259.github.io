@@ -771,6 +771,39 @@ function updateArticleSEO(data, lang) {
   setMeta('name', 'twitter:url',         pageUrl);
 
   document.documentElement.setAttribute('lang', lang);
+
+  // JSON-LD (Schema.org BlogPosting) — datos estructurados para Google
+  const ldData = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": title,
+    "description": desc,
+    "image": imageUrl,
+    "url": pageUrl,
+    "author": {
+      "@type": "Person",
+      "name": "Jose Jesus Lopez Fernandez"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Nakama Blog",
+      "logo": {
+        "@type": "ImageObject",
+        "url": `${SITE_URL}/favicon.svg`
+      }
+    },
+    "inLanguage": lang,
+    "mainEntityOfPage": pageUrl
+  };
+
+  let ldScript = document.getElementById('article-jsonld');
+  if (!ldScript) {
+    ldScript = document.createElement('script');
+    ldScript.type = 'application/ld+json';
+    ldScript.id = 'article-jsonld';
+    document.head.appendChild(ldScript);
+  }
+  ldScript.textContent = JSON.stringify(ldData);
 }
 
 function renderArticlePage(data) {
