@@ -436,9 +436,54 @@
       document.body.appendChild(flash);
       setTimeout(() => {
         flash.remove();
-        tsukuyomiActive = false;
+        triggerTsukuyomiBlackout(); // FASE 4: pantalla negra + vídeo
       }, TSU_FLASH_MS);
     }, CHAOS_MS + TSU_GENJUTSU_MS);
+  }
+
+  /* ── FASE 4: pantalla apagándose + vídeo ── */
+  function triggerTsukuyomiBlackout() {
+    const blackout = document.createElement('div');
+    blackout.className = 'ee-tsu-blackout';
+    blackout.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(blackout);
+
+    // Cuando la pantalla está totalmente negra, reproducir el vídeo
+    setTimeout(() => {
+      const videoWrap = document.createElement('div');
+      videoWrap.className = 'ee-tsu-video-wrap';
+
+      const video = document.createElement('video');
+      video.className = 'ee-tsu-video';
+      video.src = 'videos/easter-egg-tsukuyomi.mp4';
+      video.autoplay = true;
+      video.playsInline = true;
+      videoWrap.appendChild(video);
+      blackout.appendChild(videoWrap);
+
+      function closeAll() {
+        document.removeEventListener('keydown', onKey);
+        blackout.classList.add('is-leaving');
+        setTimeout(() => {
+          blackout.remove();
+          tsukuyomiActive = false;
+        }, 600);
+      }
+
+      function onKey(e) { if (e.key === 'Escape') closeAll(); }
+      document.addEventListener('keydown', onKey);
+      blackout.addEventListener('click', closeAll);
+      video.addEventListener('ended', closeAll);
+
+      video.play().catch(() => {
+        const btn = document.createElement('button');
+        btn.className = 'ee-tsu-play-btn';
+        btn.setAttribute('aria-label', 'Reproducir');
+        btn.textContent = '▶';
+        btn.addEventListener('click', () => { video.play(); btn.remove(); });
+        videoWrap.appendChild(btn);
+      });
+    }, 3500); // pausa larga en negro para que el usuario crea que la página se ha cargado
   }
 
   /* ─────────────────────────────────────────────────

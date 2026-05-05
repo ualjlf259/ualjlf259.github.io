@@ -917,6 +917,65 @@ body.ee-tsukuyomi-active {
   animation: ee-tsukuyomi-flash 0.45s ease-out both;
 }
 
+/* — Fase 4: pantalla apagándose + vídeo — */
+@keyframes ee-tsu-blackout-in {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes ee-tsu-blackout-out {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+.ee-tsu-blackout {
+  position: fixed;
+  inset: 0;
+  z-index: 100001;
+  background: #000;
+  animation: ee-tsu-blackout-in 0.5s ease-in both;
+}
+.ee-tsu-blackout.is-leaving {
+  animation: ee-tsu-blackout-out 0.6s ease-out both;
+}
+
+.ee-tsu-video-wrap {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.ee-tsu-video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.ee-tsu-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.12);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  width: 72px;
+  height: 72px;
+  font-size: 1.8rem;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ee-tsu-play-btn:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
 /* ─────────────────────────────────────────────────
    EASTER EGG 7 — MOB PSYCHO 100%
    Palabra clave: "shigeo"
@@ -2080,6 +2139,9 @@ body.ee-g5-active .btn-spin:hover {
     animation: none;
     opacity: 0;
   }
+
+  .ee-tsu-blackout { animation: none; }
+  .ee-tsu-blackout.is-leaving { animation: none; opacity: 0; }
 
   body.ee-tsu-violent {
     animation: none;
