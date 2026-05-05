@@ -714,6 +714,62 @@ function getQueryParam(name) {
   return new URLSearchParams(window.location.search).get(name);
 }
 
+/* ─────────────────────────────────────────────
+   SEO dinámico para article.html
+   - Actualiza meta tags Open Graph, Twitter, canonical y description
+   - Se llama cada vez que se renderiza el artículo (carga + cambio de idioma)
+   - No duplica tags: si existen, actualiza el content; si no, los crea
+───────────────────────────────────────────── */
+function updateArticleSEO(data, lang) {
+  const SITE_URL = 'https://ualjlf259.github.io';
+  const localeMap = {
+    es: 'es_ES', en: 'en_US', fr: 'fr_FR', ja: 'ja_JP',
+    de: 'de_DE', it: 'it_IT', ru: 'ru_RU', pt: 'pt_PT'
+  };
+
+  const title    = pickLang(data.title, lang);
+  const desc     = pickLang(data.desc,  lang);
+  const imageUrl = `${SITE_URL}/${data.image}`;
+  const pageUrl  = `${SITE_URL}/article.html?id=${encodeURIComponent(data.id)}`;
+  const locale   = localeMap[lang] || 'es_ES';
+
+  const setMeta = (attr, value, content) => {
+    let el = document.head.querySelector(`meta[${attr}="${value}"]`);
+    if (!el) {
+      el = document.createElement('meta');
+      el.setAttribute(attr, value);
+      document.head.appendChild(el);
+    }
+    el.setAttribute('content', content);
+  };
+
+  const setCanonical = (href) => {
+    let el = document.head.querySelector('link[rel="canonical"]');
+    if (!el) {
+      el = document.createElement('link');
+      el.setAttribute('rel', 'canonical');
+      document.head.appendChild(el);
+    }
+    el.setAttribute('href', href);
+  };
+
+  setMeta('name', 'description', desc);
+  setCanonical(pageUrl);
+
+  setMeta('property', 'og:title',       title);
+  setMeta('property', 'og:description', desc);
+  setMeta('property', 'og:image',       imageUrl);
+  setMeta('property', 'og:url',         pageUrl);
+  setMeta('property', 'og:locale',      locale);
+
+  setMeta('name', 'twitter:title',       title);
+  setMeta('name', 'twitter:description', desc);
+  setMeta('name', 'twitter:image',       imageUrl);
+  setMeta('name', 'twitter:url',         pageUrl);
+
+  document.documentElement.setAttribute('lang', lang);
+}
+
 function renderArticlePage(data) {
   if (!onArticlePage) return;
   const lang = currentLang;
@@ -733,6 +789,7 @@ function renderArticlePage(data) {
   if (g('article-body')) g('article-body').innerHTML = applyMidImg(body, midHtml);
 
   document.title = `${title} — Nakama Blog`;
+  updateArticleSEO(data, lang);
 
   const shareRow = document.getElementById('article-share-row');
   if (shareRow) shareRow.style.display = '';
