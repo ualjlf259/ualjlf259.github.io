@@ -15,10 +15,44 @@ const i18n = {
 const SUPPORTED_LANGS = ['es', 'en', 'fr', 'ja', 'it', 'de', 'ru', 'pt'];
 
 function detectInitialLang() {
+  // 1. Parámetro ?lang=XX en la URL (máxima prioridad — para SEO/hreflang)
+  const urlLang = new URLSearchParams(location.search).get('lang');
+  if (urlLang && SUPPORTED_LANGS.includes(urlLang)) return urlLang;
+  // 2. Idioma guardado en localStorage
   const saved = localStorage.getItem('lang');
   if (saved && SUPPORTED_LANGS.includes(saved)) return saved;
+  // 3. Idioma del navegador como respaldo
   const nav = (navigator.language || 'es').slice(0, 2).toLowerCase();
   return SUPPORTED_LANGS.includes(nav) ? nav : 'es';
+}
+
+/* Genera URL absoluta con o sin ?lang= según el idioma (es = default sin param) */
+function buildLangUrl(lang) {
+  const SITE_URL = 'https://ualjlf259.github.io';
+  const url = new URL(location.href, SITE_URL);
+  url.searchParams.delete('lang');
+  if (lang !== 'es') url.searchParams.set('lang', lang);
+  return SITE_URL + url.pathname + (url.search || '');
+}
+
+/* Inyecta/actualiza los <link rel="alternate" hreflang="..."> + x-default */
+function updateHreflangTags() {
+  // Quitar las que ya existan (para evitar duplicados al cambiar de idioma)
+  document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(el => el.remove());
+  // Una etiqueta por idioma
+  SUPPORTED_LANGS.forEach(lang => {
+    const link = document.createElement('link');
+    link.setAttribute('rel', 'alternate');
+    link.setAttribute('hreflang', lang);
+    link.setAttribute('href', buildLangUrl(lang));
+    document.head.appendChild(link);
+  });
+  // x-default (apunta al idioma por defecto: español)
+  const xd = document.createElement('link');
+  xd.setAttribute('rel', 'alternate');
+  xd.setAttribute('hreflang', 'x-default');
+  xd.setAttribute('href', buildLangUrl('es'));
+  document.head.appendChild(xd);
 }
 
 let currentLang = detectInitialLang();
@@ -60,6 +94,14 @@ const onIndexPage   = !!document.getElementById('articles-grid');
 function applyLang(lang) {
   currentLang = lang;
   localStorage.setItem('lang', lang);
+
+  // Actualizar URL con ?lang= (sin recargar) y refrescar hreflang
+  try {
+    const newUrl = buildLangUrl(lang);
+    history.replaceState(null, '', newUrl);
+  } catch (e) { /* no critico */ }
+  updateHreflangTags();
+
   const t = i18n[lang];
   if (!t) return;
 
@@ -733,7 +775,8 @@ function updateArticleSEO(data, lang) {
                      ? rawDesc
                      : (pickLang(data.tag, lang) || title);
   const imageUrl = `${SITE_URL}/${data.image}`;
-  const pageUrl  = `${SITE_URL}/article.html?id=${encodeURIComponent(data.id)}`;
+  const baseUrl  = `${SITE_URL}/article.html?id=${encodeURIComponent(data.id)}`;
+  const pageUrl  = lang === 'es' ? baseUrl : `${baseUrl}&lang=${lang}`;
   const locale   = localeMap[lang] || 'es_ES';
 
   const setMeta = (attr, value, content) => {
