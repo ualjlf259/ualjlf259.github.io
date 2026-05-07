@@ -1316,6 +1316,8 @@
       title: "Easter Eggs",
       desc: "Descubre los secretos ocultos en la página.",
       discovered: "Descubiertos",
+      final_title: "¡ENHORABUENA, HAS DESCUBIERTO TODOS LOS SECRETOS!",
+      claim: "Reclamar recompensa",
       names: ["Tatakae", "Sakura", "Rasengan", "Super Saiyan", "Joy Boy", "Tsukuyomi Infinito", "100%", "Gear 5", "Siglo Vacío", "Araña Fantasma"],
       hints: [
         "Una palabra para seguir luchando.",
@@ -1334,6 +1336,8 @@
       title: "Easter Eggs",
       desc: "Discover the hidden secrets on the page.",
       discovered: "Discovered",
+      final_title: "CONGRATULATIONS, YOU'VE DISCOVERED ALL THE SECRETS!",
+      claim: "Claim your reward",
       names: ["Tatakae", "Sakura", "Rasengan", "Super Saiyan", "Joy Boy", "Infinite Tsukuyomi", "100%", "Gear 5", "Void Century", "Phantom Troupe"],
       hints: [
         "A word to keep fighting.",
@@ -1352,6 +1356,8 @@
       title: "Easter Eggs",
       desc: "Découvrez les secrets cachés de la page.",
       discovered: "Découverts",
+      final_title: "FÉLICITATIONS, VOUS AVEZ DÉCOUVERT TOUS LES SECRETS !",
+      claim: "Réclamer la récompense",
       names: ["Tatakae", "Sakura", "Rasengan", "Super Saiyan", "Joy Boy", "Tsukuyomi Infini", "100%", "Gear 5", "Siècle Vide", "Brigade Fantôme"],
       hints: [
         "Un mot pour continuer à se battre.",
@@ -1370,6 +1376,8 @@
       title: "イースターエッグ",
       desc: "ページに隠された秘密を発見しよう。",
       discovered: "発見",
+      final_title: "おめでとう！すべての秘密を見つけ出した！",
+      claim: "報酬を受け取る",
       names: ["戦え", "桜", "螺旋丸", "超サイヤ人", "ジョイボーイ", "無限月読", "100%", "ギア5", "空白の100年", "幻影旅団"],
       hints: [
         "戦い続けるための言葉。",
@@ -1385,6 +1393,8 @@
       ]
     },
     it: {
+      final_title: "CONGRATULAZIONI, HAI SCOPERTO TUTTI I SEGRETI!",
+      claim: "Riscatta la ricompensa",
       title: "Easter Eggs",
       desc: "Scopri i segreti nascosti nella pagina.",
       discovered: "Scoperti",
@@ -1406,6 +1416,8 @@
       title: "Easter Eggs",
       desc: "Entdecke die verborgenen Geheimnisse der Seite.",
       discovered: "Entdeckt",
+      final_title: "GLÜCKWUNSCH, DU HAST ALLE GEHEIMNISSE ENTDECKT!",
+      claim: "Belohnung einfordern",
       names: ["Tatakae", "Sakura", "Rasengan", "Super Saiyajin", "Joy Boy", "Unendliches Tsukuyomi", "100%", "Gear 5", "Leeres Jahrhundert", "Phantom-Truppe"],
       hints: [
         "Ein Wort, um weiterzukämpfen.",
@@ -1424,6 +1436,8 @@
       title: "Пасхалки",
       desc: "Откройте скрытые секреты на странице.",
       discovered: "Открыто",
+      final_title: "ПОЗДРАВЛЯЕМ, ВЫ ОТКРЫЛИ ВСЕ СЕКРЕТЫ!",
+      claim: "Получить награду",
       names: ["Tatakae", "Sakura", "Rasengan", "Супер Сайян", "Джой Бой", "Бесконечное Цукуёми", "100%", "5 Гир", "Пустое Столетие", "Призрачная бригада"],
       hints: [
         "Слово, чтобы продолжать сражаться.",
@@ -1442,6 +1456,8 @@
       title: "Easter Eggs",
       desc: "Descubra os segredos ocultos na página.",
       discovered: "Descobertos",
+      final_title: "PARABÉNS, VOCÊ DESCOBRIU TODOS OS SEGREDOS!",
+      claim: "Resgatar recompensa",
       names: ["Tatakae", "Sakura", "Rasengan", "Super Saiyajin", "Joy Boy", "Tsukuyomi Infinito", "100%", "Gear 5", "Século Perdido", "Tropa Fantasma"],
       hints: [
         "Uma palavra para continuar lutando.",
@@ -1538,7 +1554,15 @@
     btns.forEach(btn => {
       if (!btn.dataset.eeBtnBound) {
         btn.dataset.eeBtnBound = '1';
-        btn.addEventListener('click', openProgressModal);
+        btn.addEventListener('click', function(e) {
+          if (btn.classList.contains('is-all-complete')) {
+            e.preventDefault();
+            e.stopPropagation();
+            triggerFinalReward(btn);
+            return;
+          }
+          openProgressModal();
+        });
       }
     });
   }
@@ -1548,6 +1572,8 @@
     if (eeModalBackdrop && eeModalBackdrop.classList.contains('is-visible')) {
       renderProgress();
     }
+    // Re-evaluate "all completed" state — may upgrade the egg button to golden
+    checkAllEggsComplete();
   });
 
   /* ─────────────────────────────────────────────────
@@ -1620,6 +1646,155 @@
     }, 350);
   }
 
+  /* ─────────────────────────────────────────────────
+     RECOMPENSA FINAL — Todos los easter eggs completados
+     · Cuando los 10 estén desbloqueados, el huevo del nav
+       se vuelve dorado, brilla y se agita.
+     · Click → animación de rotura → vídeo final
+       (videos/video-easter-eggs-completados.mp4)
+       que se congela en el último frame (cofre abierto).
+     · Aparece un botón de "Reclamar recompensa" → descarga.
+     · Al reclamar se persiste `ee_final_claimed=1` para
+       que el huevo dorado no vuelva a aparecer.
+  ───────────────────────────────────────────────── */
+
+  // ⚠️ TODO: ajustar a la ruta y nombre real del archivo de recompensa
+  var FINAL_REWARD_FILE     = 'rewards/recompensa.zip';
+  var FINAL_REWARD_FILENAME = 'nakama-recompensa.zip';
+
+  var finalRewardActive = false;
+
+  function checkAllEggsComplete() {
+    try {
+      if (localStorage.getItem('ee_final_claimed') === '1') return;
+      var unlocked = JSON.parse(localStorage.getItem('ee_unlocked')) || {};
+      var allDone = EGG_IDS.every(function(id) { return !!unlocked[id]; });
+      if (!allDone) return;
+      var btns = document.querySelectorAll('#ee-progress-btn');
+      btns.forEach(function(btn) {
+        if (!btn.classList.contains('is-all-complete')) {
+          btn.classList.add('is-all-complete');
+        }
+      });
+    } catch (e) { /* noop */ }
+  }
+
+  function triggerFinalReward(srcBtn) {
+    if (finalRewardActive) return;
+    finalRewardActive = true;
+
+    // Marcar como reclamado para que el huevo dorado no reaparezca
+    try { localStorage.setItem('ee_final_claimed', '1'); } catch (e) {}
+
+    // Fase 1: animación de rotura sobre el huevo
+    var btns = document.querySelectorAll('#ee-progress-btn');
+    btns.forEach(function(b) {
+      b.classList.remove('is-all-complete');
+      b.classList.add('is-breaking');
+    });
+
+    // Fase 2: tras la rotura → overlay con vídeo
+    setTimeout(function() {
+      btns.forEach(function(b) { b.classList.remove('is-breaking'); });
+      openFinalRewardOverlay();
+    }, 850);
+  }
+
+  function openFinalRewardOverlay() {
+    var lang = (typeof currentLang !== 'undefined' && currentLang)
+      || localStorage.getItem('lang') || 'es';
+    var loc = EE_I18N[lang] || EE_I18N['es'];
+    var titleLabel = loc.final_title || '¡Has descubierto todos los secretos!';
+    var claimLabel = loc.claim || 'Reclamar recompensa';
+
+    var overlay = document.createElement('div');
+    overlay.className = 'ee-final-overlay';
+    overlay.innerHTML =
+      '<button class="ee-final-close" aria-label="Cerrar">×</button>' +
+      '<div class="ee-final-stage">' +
+        '<div class="ee-final-title">' + titleLabel + '</div>' +
+        '<div class="ee-final-video-wrap">' +
+          '<video class="ee-final-video" playsinline preload="auto">' +
+            '<source src="videos/video-easter-eggs-completados.mp4" type="video/mp4">' +
+          '</video>' +
+        '</div>' +
+        '<button class="ee-final-claim" type="button">' +
+          '<span class="ee-final-claim-icon">🎁</span>' +
+          '<span class="ee-final-claim-label">' + claimLabel + '</span>' +
+        '</button>' +
+      '</div>';
+    document.body.appendChild(overlay);
+
+    var video    = overlay.querySelector('.ee-final-video');
+    var claimBtn = overlay.querySelector('.ee-final-claim');
+    var closeBtn = overlay.querySelector('.ee-final-close');
+
+    // Congelar en el último frame: pausamos justo antes de que termine
+    function freezeNearEnd() {
+      if (!video.duration) return;
+      if (video.currentTime >= video.duration - 0.08) {
+        video.pause();
+        video.removeEventListener('timeupdate', freezeNearEnd);
+        claimBtn.classList.add('is-visible');
+      }
+    }
+    video.addEventListener('timeupdate', freezeNearEnd);
+
+    // Fallback: si llega a disparar 'ended' (algunos navegadores)
+    video.addEventListener('ended', function() {
+      try {
+        if (video.duration) video.currentTime = Math.max(0, video.duration - 0.05);
+        video.pause();
+      } catch (_) {}
+      claimBtn.classList.add('is-visible');
+    });
+
+    // Intentar autoplay
+    setTimeout(function() {
+      var p = video.play();
+      if (p && typeof p.catch === 'function') {
+        p.catch(function() {
+          // Autoplay bloqueado: mostramos el botón ya y dejamos que el usuario lo dispare
+          claimBtn.classList.add('is-visible');
+        });
+      }
+    }, 120);
+
+    function closeFinalReward() {
+      overlay.classList.add('is-leaving');
+      try { video.pause(); } catch (_) {}
+      setTimeout(function() {
+        overlay.remove();
+        finalRewardActive = false;
+      }, 500);
+      document.removeEventListener('keydown', escHandler);
+    }
+
+    function escHandler(e) {
+      if (e.key === 'Escape') closeFinalReward();
+    }
+    document.addEventListener('keydown', escHandler);
+
+    closeBtn.addEventListener('click', closeFinalReward);
+
+    claimBtn.addEventListener('click', function() {
+      // Disparar la descarga
+      try {
+        var a = document.createElement('a');
+        a.href = FINAL_REWARD_FILE;
+        a.download = FINAL_REWARD_FILENAME;
+        a.rel = 'noopener';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+      } catch (e) { console.warn('ee final download err', e); }
+
+      // Cerrar el overlay tras un instante
+      claimBtn.classList.add('is-claimed');
+      setTimeout(closeFinalReward, 700);
+    });
+  }
+
   /* ── Init ──────────────────────────────────────── */
   function bootEasterEggs() {
     attachLogoListener();
@@ -1629,6 +1804,7 @@
     watchForHxHImage();
     checkLuffyBirthday();
     attachProgressBtn();
+    checkAllEggsComplete();
   }
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', bootEasterEggs);
