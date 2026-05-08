@@ -1658,9 +1658,9 @@
        que el huevo dorado no vuelva a aparecer.
   ───────────────────────────────────────────────── */
 
-  // ⚠️ TODO: ajustar a la ruta y nombre real del archivo de recompensa
-  var FINAL_REWARD_FILE     = 'rewards/recompensa.zip';
-  var FINAL_REWARD_FILENAME = 'nakama-recompensa.zip';
+  // Archivo de recompensa final (imagen con mensaje oculto vía steghide)
+  var FINAL_REWARD_FILE     = 'img/articles/leeme.jpg';
+  var FINAL_REWARD_FILENAME = 'leeme.jpg';
 
   var finalRewardActive = false;
 
