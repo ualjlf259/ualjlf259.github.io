@@ -1273,6 +1273,7 @@ body.ee-g5-awake-shake {
 
 /* — Tema Joy Boy: override de variables CSS — */
 body.ee-g5-active {
+  --ink-950: #fffde7;
   --navy: #fffde7;
   --deep: #ffffff;
   --card: #ffffff;
@@ -1284,9 +1285,15 @@ body.ee-g5-active {
   --bright: #1c0900;
   --border: rgba(245, 158, 11, 0.35);
   --nav-bg: rgba(255, 253, 231, 0.96);
+  --surface-glass: rgba(255, 253, 231, .88);
+  --surface-raised: rgba(255, 249, 215, .94);
   --ranking-bg: rgba(255, 245, 200, 0.7);
   --rank-bar-bg: rgba(245, 158, 11, 0.12);
   --rank-other-color: rgba(68, 35, 10, 0.25);
+  background:
+    radial-gradient(ellipse 80% 60% at 72% -10%, rgba(255, 210, 50, .16), transparent 60%),
+    radial-gradient(ellipse 68% 54% at 8% 12%, rgba(255, 180, 0, .12), transparent 60%),
+    linear-gradient(180deg, #fffde7 0%, #fff9e6 48%, #fffcf0 100%) fixed;
 }
 
 body.ee-g5-active::before {
@@ -1294,6 +1301,20 @@ body.ee-g5-active::before {
     radial-gradient(ellipse 90% 55% at 50% -8%, rgba(255, 210, 50, 0.28) 0%, transparent 65%),
     radial-gradient(ellipse 55% 55% at 92% 90%, rgba(255, 180, 0, 0.14) 0%, transparent 55%),
     radial-gradient(ellipse 45% 40% at 8% 88%, rgba(255, 230, 80, 0.10) 0%, transparent 50%);
+}
+
+/* — Hero en modo Gear 5: iluminar la imagen y el overlay — */
+body.ee-g5-active .hero-bg img {
+  filter: saturate(.42) brightness(1.14) contrast(.9) hue-rotate(8deg);
+  opacity: .28;
+}
+
+body.ee-g5-active .hero-bg-overlay {
+  background:
+    linear-gradient(90deg, rgba(255, 253, 231, .94) 0%, rgba(255, 253, 231, .78) 38%, rgba(255, 253, 231, .42) 72%, rgba(255, 253, 231, .52) 100%),
+    linear-gradient(180deg, rgba(255, 253, 231, .22) 0%, rgba(255, 253, 231, .06) 55%, transparent 100%),
+    radial-gradient(ellipse 52% 70% at 62% 38%, rgba(255, 200, 50, .22), transparent 68%),
+    radial-gradient(ellipse 46% 62% at 76% 18%, rgba(255, 150, 30, .18), transparent 70%);
 }
 
 /* — Tarjeta de título "GEAR 5 AWAKENING" — */

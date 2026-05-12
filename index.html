@@ -73,15 +73,13 @@
       <li><a href="#ranking" data-i18n="nav_ranking">Ranking</a></li>
       <li><a href="#sobre-mi" data-i18n="nav_about">Sobre mí</a></li>
     </ul>
-    <div style="display: flex; gap: 1rem; align-items: center;">
+    <div class="nav-controls">
       <!-- ── Easter Eggs Progress ── -->
-      <button id="ee-progress-btn" aria-label="Easter Eggs" title="Easter Eggs"
-        style="background:none; border:none; cursor:pointer; padding: 0.38rem; display: flex; align-items: center; font-size: 1.2rem; transition: transform 0.2s;">
+      <button id="ee-progress-btn" aria-label="Easter Eggs" title="Easter Eggs">
         🥚
       </button>
       <!-- ── Selector de tema ── -->
-      <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema"
-        style="background:none; border:none; color:var(--text); cursor:pointer; padding: 0.38rem; display: flex; align-items: center; transition: color 0.2s;">
+      <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema">
         <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
           stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
           <circle cx="12" cy="12" r="5" />
@@ -157,14 +155,40 @@
   </nav>
 
   <header class="hero">
-    <p class="hero-eyebrow">Análisis, pasión y cultura del anime</p>
-    <h1>El Mundo<br>del <em>Anime</em></h1>
-    <p class="hero-sub">Análisis, reflexiones y pasión por One Piece, Hunter x Hunter, Vinland Saga y todo el universo
-      del manga.</p>
-    <div class="hero-cta" style="position:relative;z-index:2;">
-      <a href="#articulos" class="btn btn-primary">Leer artículos</a>
-      <button id="btn-roulette" class="btn btn-roulette">🎲 Sorpréndeme</button>
-      <a href="#sobre-mi" class="btn btn-outline">Sobre mí</a>
+    <div class="hero-bg" aria-hidden="true">
+      <img src="img/articles/hunter-x-hunter-portada.jpg" alt="">
+      <div class="hero-bg-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-eyebrow-badge">
+        <span class="hero-dot" aria-hidden="true"></span>
+        <p class="hero-eyebrow">DESTACADO · ANÁLISIS PROFUNDO</p>
+      </div>
+      <h1>El mundo del<br><em>anime</em> como<br>nunca lo viste.</h1>
+      <p class="hero-sub">Análisis, reflexiones y pasión por <strong>One Piece</strong>, Hunter x Hunter, Vinland Saga y todo el universo del manga.</p>
+      <div class="hero-cta">
+        <a href="#articulos" class="btn btn-primary">
+          <svg class="btn-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="6,3 20,12 6,21"/></svg>
+          <span class="btn-label">Leer artículos</span>
+        </a>
+        <button id="btn-roulette" class="btn btn-roulette">
+          <span class="btn-label">🎲 Sorpréndeme</span>
+        </button>
+        <a href="#sobre-mi" class="btn btn-outline">
+          <svg class="btn-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          <span class="btn-label">Sobre mí</span>
+        </a>
+      </div>
+      <div class="hero-stats" aria-label="Estadísticas">
+        <span class="hero-stat">
+          <svg class="hero-stat-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12,2 15,9 22,9.5 17,14.5 18.5,22 12,18 5.5,22 7,14.5 2,9.5 9,9"/></svg>
+          <strong>9.6</strong> <span class="hero-stat-label hero-stat-rating-label">rating</span>
+        </span>
+        <span class="hero-stat-sep" aria-hidden="true"></span>
+        <span class="hero-stat"><strong>1100+</strong> <span class="hero-stat-label hero-stat-eps-label">episodios</span></span>
+        <span class="hero-stat-sep" aria-hidden="true"></span>
+        <span class="hero-stat">Toei Animation</span>
+      </div>
     </div>
     <div class="scroll-hint">Scroll</div>
   </header>
@@ -201,7 +225,7 @@
         <h2>Por Qué One Piece es la Mayor Obra Literaria que Ha Creado el Ser Humano</h2>
         <p>25 años de construcción de mundo, personajes con alma y una narrativa que habla de esclavitud, racismo y
           poder. Un análisis sin spoilers para los que aún no han empezado.</p>
-        <button class="btn btn-primary" onclick="openArticle('op-obra')">Leer ahora</button>
+        <button class="btn btn-primary" id="featured-read-btn">Leer ahora</button>
       </div>
       <div class="featured-visual">⚓</div>
     </div>
@@ -244,7 +268,7 @@
       </div>
 
       <div class="articles-grid" id="articles-grid">
-        <p id="no-results" data-i18n="no_results">No se encontraron artículos para "<span id="no-results-term"></span>"
+        <p id="no-results">No se encontraron artículos para "<span id="no-results-term"></span>"
         </p>
 
         <a class="card" href="article.html?id=op-esclavitud" data-category="One Piece"
@@ -356,7 +380,7 @@
         <a class="card" href="article.html?id=berserk-nihilismo" data-category="Berserk"
           data-title="Berserk: El Claroscuro del Alma Humana y la Rebelión contra el Destino"
           data-id="berserk-nihilismo">
-          <div class="card-thumb ber"><img src="img/articles/berserk-portada.jpg" alt="Berserk portada"
+          <div class="card-thumb ber"><img src="img/articles/Berserk-portada.jpg" alt="Berserk portada"
               class="card-thumb-img"></div>
           <div class="card-body">
             <span class="card-tag">Berserk</span>
@@ -370,7 +394,7 @@
         <a class="card" href="article.html?id=punpun-psicologia" data-category="Oyasumi Punpun"
           data-title="Oyasumi Punpun: La Desoladora Verdad de Crecer en la Narrativa Visual de Asano"
           data-id="punpun-psicologia">
-          <div class="card-thumb pun"><img src="img/articles/punpun-portada.jpg" alt="Punpun portada"
+          <div class="card-thumb pun"><img src="img/articles/oyasumy-punpun-portada.jpg" alt="Oyasumi Punpun portada"
               class="card-thumb-img"></div>
           <div class="card-body">
             <span class="card-tag">Oyasumi Punpun</span>
@@ -396,7 +420,7 @@
 
         <a class="card" href="article.html?id=kimetsu-ukiyo" data-category="Kimetsu no Yaiba"
           data-title="Kimetsu no Yaiba: La Estructura Clásica Elevada por el Arte Ukiyo-e" data-id="kimetsu-ukiyo">
-          <div class="card-thumb kny"><img src="img/articles/kimetsu-portada.jpg" alt="Kimetsu no Yaiba portada"
+          <div class="card-thumb kny"><img src="img/articles/Kimetsu-no-yaiba-portada.jpg" alt="Kimetsu no Yaiba portada"
               class="card-thumb-img"></div>
           <div class="card-body">
             <span class="card-tag">Kimetsu no Yaiba</span>
@@ -518,7 +542,7 @@
 
   <!-- ROULETTE MODAL -->
   <div class="modal-overlay" id="roulette-overlay" onclick="closeRouletteOnOverlay(event)">
-    <div class="modal" id="roulette-box" style="text-align:center; max-width: 650px; padding: 3rem 2rem;">
+    <div class="modal" id="roulette-box">
       <button class="modal-close" onclick="closeRoulette()" aria-label="Cerrar ruleta">✕</button>
       <h2 class="roulette-title">✨ DESCUBRE TU PRÓXIMO ANIME ✨</h2>
       <div class="roulette-wrapper">

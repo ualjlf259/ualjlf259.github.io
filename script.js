@@ -111,7 +111,19 @@ function applyLang(lang) {
   });
 
   const si = document.getElementById('search-input');
-  if (si && t.search_placeholder) si.placeholder = t.search_placeholder;
+  if (si && t.search_placeholder) {
+    si.placeholder = t.search_placeholder;
+    si.setAttribute('aria-label', t.search_placeholder);
+  }
+
+  // Actualiza el texto de no-resultados sin destruir el <span> interior
+  const noResultsEl = document.getElementById('no-results');
+  if (noResultsEl && t.no_results) {
+    const firstChild = noResultsEl.firstChild;
+    if (firstChild && firstChild.nodeType === Node.TEXT_NODE) {
+      firstChild.textContent = t.no_results + ' "';
+    }
+  }
 
   // Hero
   const ey = document.querySelector('.hero-eyebrow');
@@ -121,9 +133,20 @@ function applyLang(lang) {
   const hs = document.querySelector('.hero-sub');
   if (hs && t.hero_sub) hs.innerHTML = t.hero_sub;
   const ctaBtns = document.querySelectorAll('.hero-cta .btn');
-  if (ctaBtns[0] && t.btn_read)     ctaBtns[0].textContent = t.btn_read;
-  if (ctaBtns[1] && t.btn_roulette) ctaBtns[1].textContent = t.btn_roulette;
-  if (ctaBtns[2] && t.btn_about)    ctaBtns[2].textContent = t.btn_about;
+  const setBtnLabel = (btn, txt) => {
+    if (!btn || !txt) return;
+    const lbl = btn.querySelector('.btn-label');
+    if (lbl) lbl.textContent = txt; else btn.textContent = txt;
+  };
+  if (ctaBtns[0] && t.btn_read)     setBtnLabel(ctaBtns[0], t.btn_read);
+  if (ctaBtns[1] && t.btn_roulette) setBtnLabel(ctaBtns[1], t.btn_roulette);
+  if (ctaBtns[2] && t.btn_about)    setBtnLabel(ctaBtns[2], t.btn_about);
+
+  // Hero stats labels
+  const statRating = document.querySelector('.hero-stat-rating-label');
+  if (statRating && t.hero_stat_rating) statRating.textContent = t.hero_stat_rating;
+  const statEps = document.querySelector('.hero-stat-eps-label');
+  if (statEps && t.hero_stat_episodes) statEps.textContent = t.hero_stat_episodes;
 
   // Featured banner
   const fb = document.querySelector('.featured-badge');
@@ -604,6 +627,12 @@ window.closeArticle   = closeArticle;
 window.closeOnOverlay = closeOnOverlay;
 window.copyArticleLink = copyArticleLink;
 
+// Featured banner button
+const featuredReadBtn = document.getElementById('featured-read-btn');
+if (featuredReadBtn) {
+  featuredReadBtn.addEventListener('click', () => openArticle('op-obra'));
+}
+
 // Cerrar modal con Escape
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape' && currentModalData) closeArticle();
@@ -740,9 +769,11 @@ if (btnSpin && rouletteWheel) {
     setTimeout(() => {
       isSpinning = false;
       btnSpin.disabled = false;
-      closeRoulette();
       const id = rouletteItems[randomItemIndex];
-      openArticle(id);
+      setTimeout(() => {
+        closeRoulette();
+        openArticle(id);
+      }, 1500);
     }, 2800);
   });
 }

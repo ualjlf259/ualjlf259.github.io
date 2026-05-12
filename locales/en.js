@@ -9,12 +9,14 @@ window.LANG_EN = {
   nav_about    : "About me",
 
   /* ── Hero ── */
-  hero_eyebrow : "Analysis, passion and anime culture",
-  hero_h1      : "The World<br>of <em>Anime</em>",
-  hero_sub     : "Analysis, reflections and passion for One Piece, Hunter x Hunter, Vinland Saga and the entire manga universe.",
+  hero_eyebrow : "FEATURED · DEEP ANALYSIS",
+  hero_h1      : "The world of<br><em>anime</em> like<br>never before.",
+  hero_sub     : "Analysis, reflections and passion for <strong>One Piece</strong>, Hunter x Hunter, Vinland Saga and the entire manga universe.",
   btn_read     : "Read articles",
   btn_about    : "About me",
   btn_roulette : "🎲 Surprise me",
+  hero_stat_rating    : "rating",
+  hero_stat_episodes  : "episodes",
 
   /* ── Motivational strip ── */
   motiv_phrase : "Never give up and pursue your dreams ❤️",

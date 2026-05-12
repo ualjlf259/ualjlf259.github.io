@@ -9,12 +9,14 @@ window.LANG_JA = {
   nav_about    : "自己紹介",
 
   /* ── ヒーロー ── */
-  hero_eyebrow : "アニメの分析・情熱・文化",
-  hero_h1      : "<em>アニメ</em>の<br>世界",
-  hero_sub     : "ワンピース、HUNTER×HUNTER、ヴィンランド・サガ、そしてマンガ全体への情熱と考察。",
+  hero_eyebrow : "特集・深い分析",
+  hero_h1      : "今までにない<br><em>アニメ</em>の<br>世界。",
+  hero_sub     : "<strong>ワンピース</strong>、HUNTER×HUNTER、ヴィンランド・サガ、そしてマンガ全体への情熱と考察。",
   btn_read     : "記事を読む",
   btn_about    : "自己紹介",
   btn_roulette : "🎲 驚かせて",
+  hero_stat_rating    : "評価",
+  hero_stat_episodes  : "エピソード",
 
   /* ── モチベーションストリップ ── */
   motiv_phrase : "夢を諦めず、追い続けよう ❤️",
