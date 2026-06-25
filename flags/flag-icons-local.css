@@ -1,0 +1,40 @@
+/*!
+ * Flag icons — subconjunto local (de, es, fr, gb, it, jp, pt, ru)
+ * Basado en flag-icons de Panayiotis Lipiridis (Lipis) — Licencia MIT.
+ * https://github.com/lipis/flag-icons · texto completo en flags/LICENSE
+ *
+ * Sustituye al CDN para servir solo las 8 banderas usadas en el selector de
+ * idioma. Mantiene la API de clases (.fi, .fi-xx, .fis) que usan el HTML y el
+ * langMeta de script.js, por lo que es un reemplazo directo (drop-in).
+ */
+.fi {
+  position: relative;
+  display: inline-block;
+  width: 1.3333333333em;
+  line-height: 1em;
+  background-size: contain;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+.fi:before { content: "\00a0"; }
+
+/* Variante cuadrada (1:1) */
+.fi.fis { width: 1em; }
+
+/* 4:3 por defecto; 1:1 cuando lleva .fis */
+.fi-de { background-image: url(4x3/de.svg); }
+.fi-de.fis { background-image: url(1x1/de.svg); }
+.fi-es { background-image: url(4x3/es.svg); }
+.fi-es.fis { background-image: url(1x1/es.svg); }
+.fi-fr { background-image: url(4x3/fr.svg); }
+.fi-fr.fis { background-image: url(1x1/fr.svg); }
+.fi-gb { background-image: url(4x3/gb.svg); }
+.fi-gb.fis { background-image: url(1x1/gb.svg); }
+.fi-it { background-image: url(4x3/it.svg); }
+.fi-it.fis { background-image: url(1x1/it.svg); }
+.fi-jp { background-image: url(4x3/jp.svg); }
+.fi-jp.fis { background-image: url(1x1/jp.svg); }
+.fi-pt { background-image: url(4x3/pt.svg); }
+.fi-pt.fis { background-image: url(1x1/pt.svg); }
+.fi-ru { background-image: url(4x3/ru.svg); }
+.fi-ru.fis { background-image: url(1x1/ru.svg); }
