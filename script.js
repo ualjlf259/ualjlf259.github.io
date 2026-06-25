@@ -257,7 +257,7 @@ function renderCards(index) {
 
     const thumb = item.thumb || {};
     const visual = thumb.type === 'img'
-      ? `<img src="${thumb.src}" alt="${thumb.alt || ''}" class="card-thumb-img">`
+      ? `<img src="${thumb.src}" alt="${thumb.alt || ''}" class="card-thumb-img" loading="lazy" decoding="async">`
       : (thumb.value || '');
 
     const title = (item.title && item.title[currentLang]) || '';
@@ -504,10 +504,14 @@ function renderArticleImg(src, caption, type) {
   const captionHtml = caption ? `<p class="article-img-caption">${caption}</p>` : '';
   const wrapCls = isHero ? 'article-img-block article-img-block-hero'
                          : 'article-img-block article-img-block-inline';
+  // Hero = imagen principal (LCP en article.html): carga inmediata y prioritaria.
+  // Inline = bajo el pliegue: carga diferida.
+  const loadAttrs = isHero ? 'loading="eager" fetchpriority="high" decoding="async"'
+                           : 'loading="lazy" decoding="async"';
 
   return `
     <div class="${wrapCls}">
-      <img src="${src}" alt="${caption || ''}" class="${imgCls}" loading="lazy"
+      <img src="${src}" alt="${caption || ''}" class="${imgCls}" ${loadAttrs}
            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
       <div class="${phCls}" style="display:none;">
         <svg width="44" height="44" viewBox="0 0 24 24" fill="none"

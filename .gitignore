@@ -31,3 +31,24 @@ package-lock.json.bak
 
 # Backups de scripts PowerShell
 *.ps1.bak
+
+# Documentación interna / bitácora (no se versiona)
+CLAUDE.md
+PROJECT_CONTEXT.md
+
+# Secretos / llaves / certificados (preventivo)
+*.pem
+*.key
+*.p12
+*.pfx
+*.cer
+*.crt
+id_rsa
+id_rsa.pub
+secrets.json
+*.secret
+credentials.json
+
+# Python (preventivo — scripts de utilidad puntuales)
+__pycache__/
+*.pyc

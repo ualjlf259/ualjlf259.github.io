@@ -1658,7 +1658,7 @@
        que el huevo dorado no vuelva a aparecer.
   ───────────────────────────────────────────────── */
 
-  // Archivo de recompensa final (imagen con mensaje oculto vía steghide)
+  // Archivo de recompensa final que se descarga al completar todos los easter eggs.
   var FINAL_REWARD_FILE     = 'img/articles/leeme.jpg';
   var FINAL_REWARD_FILENAME = 'leeme.jpg';
 
