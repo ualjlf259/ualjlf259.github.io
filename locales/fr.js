@@ -3,6 +3,20 @@
  * Textes d'interface uniquement. Le contenu des articles vit dans /articles/*.json.
  */
 window.LANG_FR = {
+  /* ── Welcome modal ── */
+  welcome_eyebrow: "Bienvenue",
+  welcome_title: "L'anime comme <em class='wm-grad'>œuvre d'art</em>.",
+  welcome_sub: "Essais culturels sur les grandes œuvres du manga — avec un <strong>point de vue personnel</strong>, de la rigueur et zéro spoiler pour commencer.",
+  welcome_feat1_t: "Analyses avec un point de vue",
+  welcome_feat1_d: "One Piece, Vinland Saga, HxH, Berserk…",
+  welcome_feat2_t: "Mon classement personnel",
+  welcome_feat2_d: "Subjectif et sans excuses.",
+  welcome_feat3_t: "La thèse One Piece",
+  welcome_feat3_d: "L'œuvre audiovisuelle majeure de la planète.",
+  welcome_eggs_t: "Easter eggs cachés",
+  welcome_eggs_d: "Trouve-les tous et débloque une récompense incroyable.",
+  welcome_cta: "Commencer à lire",
+
   /* ── Navigation ── */
   nav_articles: "Articles",
   nav_ranking: "Classement",

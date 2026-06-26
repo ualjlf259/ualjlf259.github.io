@@ -2,6 +2,20 @@
  * locales/de.js — Deutsch
  */
 window.LANG_DE = {
+  /* ── Welcome modal ── */
+  welcome_eyebrow: "Willkommen",
+  welcome_title: "Anime als <em class='wm-grad'>Kunstwerk</em>.",
+  welcome_sub: "Kulturelle Essays über die großen Werke des Manga — mit <strong>eigener Meinung</strong>, Sorgfalt und null Spoilern zum Einstieg.",
+  welcome_feat1_t: "Analysen mit Haltung",
+  welcome_feat1_d: "One Piece, Vinland Saga, HxH, Berserk…",
+  welcome_feat2_t: "Mein persönliches Ranking",
+  welcome_feat2_d: "Subjektiv und ohne Entschuldigung.",
+  welcome_feat3_t: "Die One-Piece-These",
+  welcome_feat3_d: "Das größte audiovisuelle Werk des Planeten.",
+  welcome_eggs_t: "Versteckte Easter Eggs",
+  welcome_eggs_d: "Finde sie alle und schalte eine unglaubliche Belohnung frei.",
+  welcome_cta: "Lesen beginnen",
+
   nav_articles : "Artikel",
   nav_ranking  : "Rangliste",
   nav_about    : "Über mich",

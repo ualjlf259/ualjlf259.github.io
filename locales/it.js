@@ -2,6 +2,20 @@
  * locales/it.js — Italiano
  */
 window.LANG_IT = {
+  /* ── Welcome modal ── */
+  welcome_eyebrow: "Benvenuto",
+  welcome_title: "L'anime come <em class='wm-grad'>opera d'arte</em>.",
+  welcome_sub: "Saggi culturali sulle grandi opere del manga — con <strong>opinione personale</strong>, rigore e zero spoiler per iniziare.",
+  welcome_feat1_t: "Analisi con opinione",
+  welcome_feat1_d: "One Piece, Vinland Saga, HxH, Berserk…",
+  welcome_feat2_t: "La mia classifica personale",
+  welcome_feat2_d: "Soggettiva e senza scuse.",
+  welcome_feat3_t: "La tesi One Piece",
+  welcome_feat3_d: "L'opera audiovisiva suprema del pianeta.",
+  welcome_eggs_t: "Easter egg nascosti",
+  welcome_eggs_d: "Trovali tutti e sblocca una ricompensa incredibile.",
+  welcome_cta: "Inizia a leggere",
+
   nav_articles : "Articoli",
   nav_ranking  : "Classifica",
   nav_about    : "Chi sono",

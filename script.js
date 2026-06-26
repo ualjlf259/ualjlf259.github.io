@@ -992,3 +992,75 @@ if (shareCpBtn && onArticlePage) {
 })();
 
 // Easter Eggs gestionados por easter-eggs/easter-eggs.js
+
+/* ═══════════════════════════════════════════════════
+   WELCOME MODAL (bienvenida — solo primera visita)
+   Se muestra solo si no existe la marca en localStorage.
+   El contenido va en el DOM (no bloquea SEO); el modal es una capa.
+═══════════════════════════════════════════════════ */
+(function initWelcome() {
+  const overlay = document.getElementById('welcome-overlay');
+  if (!overlay || !onIndexPage) return;
+
+  const SEEN_KEY = 'welcome_seen';
+  const startBtn = document.getElementById('welcome-start');
+  const diceBtn  = document.getElementById('welcome-dice');
+  const closeBtn = document.getElementById('welcome-close');
+  let lastFocus = null;
+
+  function closeWelcome() {
+    overlay.classList.remove('open');
+    overlay.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    try { localStorage.setItem(SEEN_KEY, '1'); } catch (e) { /* noop */ }
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+
+  function openWelcome() {
+    lastFocus = document.activeElement;
+    overlay.classList.add('open');
+    overlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    if (startBtn) startBtn.focus();
+  }
+
+  if (closeBtn) closeBtn.addEventListener('click', closeWelcome);
+  if (startBtn) startBtn.addEventListener('click', () => {
+    closeWelcome();
+    const el = document.getElementById('articulos');
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  });
+  if (diceBtn) diceBtn.addEventListener('click', () => {
+    closeWelcome();
+    if (typeof openRoulette === 'function') openRoulette();
+  });
+  overlay.addEventListener('click', (e) => { if (e.target === overlay) closeWelcome(); });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && overlay.classList.contains('open')) closeWelcome();
+  });
+
+  let seen = false;
+  try { seen = localStorage.getItem(SEEN_KEY) === '1'; } catch (e) { /* noop */ }
+  if (!seen) openWelcome();
+})();
+
+/* ═══════════════════════════════════════════════════
+   NAV: transparente sobre el hero, sólida al hacer scroll
+   (solo en páginas con hero; en article.html la nav no lleva .at-hero)
+═══════════════════════════════════════════════════ */
+(function navOnScroll() {
+  const nav = document.querySelector('nav');
+  const hero = document.querySelector('.hero');
+  if (!nav || !hero || !nav.classList.contains('at-hero')) return;
+
+  let ticking = false;
+  function update() {
+    const threshold = hero.offsetHeight - nav.offsetHeight - 40;
+    nav.classList.toggle('at-hero', window.scrollY <= threshold);
+    ticking = false;
+  }
+  window.addEventListener('scroll', () => {
+    if (!ticking) { requestAnimationFrame(update); ticking = true; }
+  }, { passive: true });
+  update();
+})();

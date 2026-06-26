@@ -3,6 +3,20 @@
  * UI文字列のみ。記事の内容は /articles/*.json にあります。
  */
 window.LANG_JA = {
+  /* ── Welcome modal ── */
+  welcome_eyebrow: "ようこそ",
+  welcome_title: "芸術としての<em class='wm-grad'>アニメ</em>。",
+  welcome_sub: "マンガの偉大な作品を巡る文化論 — <strong>独自の視点</strong>と厳密さ、そしてネタバレなしで始められます。",
+  welcome_feat1_t: "意見のある分析",
+  welcome_feat1_d: "ワンピース、ヴィンランド・サガ、HxH、ベルセルク…",
+  welcome_feat2_t: "個人的ランキング",
+  welcome_feat2_d: "主観的で、言い訳なし。",
+  welcome_feat3_t: "ワンピース論",
+  welcome_feat3_d: "地球上で最高の映像作品。",
+  welcome_eggs_t: "隠しイースターエッグ",
+  welcome_eggs_d: "すべて見つけて、すごい報酬を解除しよう。",
+  welcome_cta: "読み始める",
+
   /* ── ナビゲーション ── */
   nav_articles : "記事",
   nav_ranking  : "ランキング",

@@ -1,4 +1,18 @@
 window.LANG_PT = {
+  /* ── Welcome modal ── */
+  welcome_eyebrow: "Bem-vindo",
+  welcome_title: "O anime como <em class='wm-grad'>obra de arte</em>.",
+  welcome_sub: "Ensaios culturais sobre as grandes obras do mangá — com <strong>opinião própria</strong>, rigor e zero spoilers para começar.",
+  welcome_feat1_t: "Análise com opinião",
+  welcome_feat1_d: "One Piece, Vinland Saga, HxH, Berserk…",
+  welcome_feat2_t: "Meu ranking pessoal",
+  welcome_feat2_d: "Subjetivo e sem desculpas.",
+  welcome_feat3_t: "A tese One Piece",
+  welcome_feat3_d: "A maior obra audiovisual do planeta.",
+  welcome_eggs_t: "Easter eggs ocultos",
+  welcome_eggs_d: "Encontre todos e desbloqueie uma recompensa incrível.",
+  welcome_cta: "Começar a ler",
+
   /* ── Navegação ── */
   nav_articles: "Artigos",
   nav_ranking: "Ranking",

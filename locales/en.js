@@ -3,6 +3,20 @@
  * UI strings only. Article content lives in /articles/*.json.
  */
 window.LANG_EN = {
+  /* ── Welcome modal ── */
+  welcome_eyebrow: "Welcome",
+  welcome_title: "Anime as <em class='wm-grad'>a work of art</em>.",
+  welcome_sub: "Cultural essays on the great works of manga — with <strong>a personal take</strong>, rigor and zero spoilers to start.",
+  welcome_feat1_t: "Opinionated analysis",
+  welcome_feat1_d: "One Piece, Vinland Saga, HxH, Berserk…",
+  welcome_feat2_t: "My personal ranking",
+  welcome_feat2_d: "Subjective and unapologetic.",
+  welcome_feat3_t: "The One Piece thesis",
+  welcome_feat3_d: "The greatest audiovisual work on the planet.",
+  welcome_eggs_t: "Hidden easter eggs",
+  welcome_eggs_d: "Find them all and unlock an incredible reward.",
+  welcome_cta: "Start reading",
+
   /* ── Navigation ── */
   nav_articles : "Articles",
   nav_ranking  : "Ranking",

@@ -3,6 +3,20 @@
  * Solo textos de interfaz. El contenido de los artículos vive en /articles/*.json.
  */
 window.LANG_ES = {
+  /* ── Welcome modal (bienvenida) ── */
+  welcome_eyebrow: "Bienvenido",
+  welcome_title: "El anime como <em class='wm-grad'>obra de arte</em>.",
+  welcome_sub: "Ensayos culturales sobre las grandes obras del manga — con <strong>opinión propia</strong>, rigor y cero spoilers para empezar.",
+  welcome_feat1_t: "Análisis con opinión",
+  welcome_feat1_d: "One Piece, Vinland Saga, HxH, Berserk…",
+  welcome_feat2_t: "Mi ranking personal",
+  welcome_feat2_d: "Subjetivo y sin disculpas.",
+  welcome_feat3_t: "La tesis One Piece",
+  welcome_feat3_d: "La obra magna audiovisual del planeta.",
+  welcome_eggs_t: "Easter eggs ocultos",
+  welcome_eggs_d: "Encuéntralos todos y desbloquea una recompensa increíble.",
+  welcome_cta: "Empezar a leer",
+
   /* ── Navegación ── */
   nav_articles: "Artículos",
   nav_ranking: "Ranking",
@@ -10,7 +24,7 @@ window.LANG_ES = {
 
   /* ── Hero ── */
   hero_eyebrow: "DESTACADO · ANÁLISIS PROFUNDO",
-  hero_h1: "El mundo del<br><em>anime</em> como<br>nunca lo viste.",
+  hero_h1: "El mundo del<br><em>anime</em><br>como nunca<br><u class='hero-ul'>lo viste.</u>",
   hero_sub: "Análisis, reflexiones y pasión por <strong>One Piece</strong>, Hunter x Hunter, Vinland Saga y todo el universo del manga.",
   btn_read: "Leer artículos",
   btn_about: "Sobre mí",

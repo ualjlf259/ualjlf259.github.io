@@ -124,7 +124,7 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/"/>
   </url>
 
-  <!-- ── Artículos (18 × 8 idiomas) ── -->
+  <!-- ── Artículos (18 × 8 idiomas) — generado desde articles/*.json ── -->
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=aot-libertad</loc>
     <lastmod>2026-05-06</lastmod>
@@ -139,6 +139,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=aot-libertad&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=aot-libertad"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=aot-libertad&amp;lang=en</loc>
     <lastmod>2026-05-06</lastmod>
@@ -153,6 +154,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=aot-libertad&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=aot-libertad"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=aot-libertad&amp;lang=fr</loc>
     <lastmod>2026-05-06</lastmod>
@@ -167,6 +169,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=aot-libertad&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=aot-libertad"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=aot-libertad&amp;lang=it</loc>
     <lastmod>2026-05-06</lastmod>
@@ -181,6 +184,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=aot-libertad&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=aot-libertad"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=aot-libertad&amp;lang=de</loc>
     <lastmod>2026-05-06</lastmod>
@@ -195,6 +199,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=aot-libertad&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=aot-libertad"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=aot-libertad&amp;lang=ru</loc>
     <lastmod>2026-05-06</lastmod>
@@ -209,6 +214,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=aot-libertad&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=aot-libertad"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=aot-libertad&amp;lang=ja</loc>
     <lastmod>2026-05-06</lastmod>
@@ -223,6 +229,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=aot-libertad&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=aot-libertad"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=aot-libertad&amp;lang=pt</loc>
     <lastmod>2026-05-06</lastmod>
@@ -252,6 +259,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=berserk-nihilismo&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=berserk-nihilismo"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=berserk-nihilismo&amp;lang=en</loc>
     <lastmod>2026-05-06</lastmod>
@@ -266,6 +274,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=berserk-nihilismo&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=berserk-nihilismo"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=berserk-nihilismo&amp;lang=fr</loc>
     <lastmod>2026-05-06</lastmod>
@@ -280,6 +289,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=berserk-nihilismo&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=berserk-nihilismo"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=berserk-nihilismo&amp;lang=it</loc>
     <lastmod>2026-05-06</lastmod>
@@ -294,6 +304,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=berserk-nihilismo&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=berserk-nihilismo"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=berserk-nihilismo&amp;lang=de</loc>
     <lastmod>2026-05-06</lastmod>
@@ -308,6 +319,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=berserk-nihilismo&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=berserk-nihilismo"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=berserk-nihilismo&amp;lang=ru</loc>
     <lastmod>2026-05-06</lastmod>
@@ -322,6 +334,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=berserk-nihilismo&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=berserk-nihilismo"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=berserk-nihilismo&amp;lang=ja</loc>
     <lastmod>2026-05-06</lastmod>
@@ -336,6 +349,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=berserk-nihilismo&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=berserk-nihilismo"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=berserk-nihilismo&amp;lang=pt</loc>
     <lastmod>2026-05-06</lastmod>
@@ -365,6 +379,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=black-clover-voluntad&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=black-clover-voluntad"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=black-clover-voluntad&amp;lang=en</loc>
     <lastmod>2026-05-06</lastmod>
@@ -379,6 +394,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=black-clover-voluntad&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=black-clover-voluntad"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=black-clover-voluntad&amp;lang=fr</loc>
     <lastmod>2026-05-06</lastmod>
@@ -393,6 +409,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=black-clover-voluntad&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=black-clover-voluntad"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=black-clover-voluntad&amp;lang=it</loc>
     <lastmod>2026-05-06</lastmod>
@@ -407,6 +424,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=black-clover-voluntad&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=black-clover-voluntad"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=black-clover-voluntad&amp;lang=de</loc>
     <lastmod>2026-05-06</lastmod>
@@ -421,6 +439,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=black-clover-voluntad&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=black-clover-voluntad"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=black-clover-voluntad&amp;lang=ru</loc>
     <lastmod>2026-05-06</lastmod>
@@ -435,6 +454,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=black-clover-voluntad&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=black-clover-voluntad"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=black-clover-voluntad&amp;lang=ja</loc>
     <lastmod>2026-05-06</lastmod>
@@ -449,6 +469,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=black-clover-voluntad&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=black-clover-voluntad"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=black-clover-voluntad&amp;lang=pt</loc>
     <lastmod>2026-05-06</lastmod>
@@ -478,6 +499,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=chainsaw-caos&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=chainsaw-caos"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=chainsaw-caos&amp;lang=en</loc>
     <lastmod>2026-05-06</lastmod>
@@ -492,6 +514,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=chainsaw-caos&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=chainsaw-caos"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=chainsaw-caos&amp;lang=fr</loc>
     <lastmod>2026-05-06</lastmod>
@@ -506,6 +529,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=chainsaw-caos&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=chainsaw-caos"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=chainsaw-caos&amp;lang=it</loc>
     <lastmod>2026-05-06</lastmod>
@@ -520,6 +544,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=chainsaw-caos&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=chainsaw-caos"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=chainsaw-caos&amp;lang=de</loc>
     <lastmod>2026-05-06</lastmod>
@@ -534,6 +559,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=chainsaw-caos&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=chainsaw-caos"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=chainsaw-caos&amp;lang=ru</loc>
     <lastmod>2026-05-06</lastmod>
@@ -548,6 +574,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=chainsaw-caos&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=chainsaw-caos"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=chainsaw-caos&amp;lang=ja</loc>
     <lastmod>2026-05-06</lastmod>
@@ -562,6 +589,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=chainsaw-caos&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=chainsaw-caos"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=chainsaw-caos&amp;lang=pt</loc>
     <lastmod>2026-05-06</lastmod>
@@ -591,6 +619,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=db-esfuerzo&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=db-esfuerzo"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=db-esfuerzo&amp;lang=en</loc>
     <lastmod>2026-05-06</lastmod>
@@ -605,6 +634,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=db-esfuerzo&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=db-esfuerzo"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=db-esfuerzo&amp;lang=fr</loc>
     <lastmod>2026-05-06</lastmod>
@@ -619,6 +649,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=db-esfuerzo&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=db-esfuerzo"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=db-esfuerzo&amp;lang=it</loc>
     <lastmod>2026-05-06</lastmod>
@@ -633,6 +664,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=db-esfuerzo&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=db-esfuerzo"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=db-esfuerzo&amp;lang=de</loc>
     <lastmod>2026-05-06</lastmod>
@@ -647,6 +679,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=db-esfuerzo&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=db-esfuerzo"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=db-esfuerzo&amp;lang=ru</loc>
     <lastmod>2026-05-06</lastmod>
@@ -661,6 +694,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=db-esfuerzo&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=db-esfuerzo"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=db-esfuerzo&amp;lang=ja</loc>
     <lastmod>2026-05-06</lastmod>
@@ -675,6 +709,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=db-esfuerzo&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=db-esfuerzo"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=db-esfuerzo&amp;lang=pt</loc>
     <lastmod>2026-05-06</lastmod>
@@ -704,6 +739,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=death-note-justicia&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=death-note-justicia"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=death-note-justicia&amp;lang=en</loc>
     <lastmod>2026-05-06</lastmod>
@@ -718,6 +754,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=death-note-justicia&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=death-note-justicia"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=death-note-justicia&amp;lang=fr</loc>
     <lastmod>2026-05-06</lastmod>
@@ -732,6 +769,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=death-note-justicia&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=death-note-justicia"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=death-note-justicia&amp;lang=it</loc>
     <lastmod>2026-05-06</lastmod>
@@ -746,6 +784,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=death-note-justicia&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=death-note-justicia"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=death-note-justicia&amp;lang=de</loc>
     <lastmod>2026-05-06</lastmod>
@@ -760,6 +799,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=death-note-justicia&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=death-note-justicia"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=death-note-justicia&amp;lang=ru</loc>
     <lastmod>2026-05-06</lastmod>
@@ -774,6 +814,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=death-note-justicia&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=death-note-justicia"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=death-note-justicia&amp;lang=ja</loc>
     <lastmod>2026-05-06</lastmod>
@@ -788,6 +829,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=death-note-justicia&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=death-note-justicia"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=death-note-justicia&amp;lang=pt</loc>
     <lastmod>2026-05-06</lastmod>
@@ -817,6 +859,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=haikyu-equipo&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=haikyu-equipo"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=haikyu-equipo&amp;lang=en</loc>
     <lastmod>2026-05-06</lastmod>
@@ -831,6 +874,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=haikyu-equipo&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=haikyu-equipo"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=haikyu-equipo&amp;lang=fr</loc>
     <lastmod>2026-05-06</lastmod>
@@ -845,6 +889,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=haikyu-equipo&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=haikyu-equipo"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=haikyu-equipo&amp;lang=it</loc>
     <lastmod>2026-05-06</lastmod>
@@ -859,6 +904,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=haikyu-equipo&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=haikyu-equipo"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=haikyu-equipo&amp;lang=de</loc>
     <lastmod>2026-05-06</lastmod>
@@ -873,6 +919,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=haikyu-equipo&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=haikyu-equipo"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=haikyu-equipo&amp;lang=ru</loc>
     <lastmod>2026-05-06</lastmod>
@@ -887,6 +934,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=haikyu-equipo&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=haikyu-equipo"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=haikyu-equipo&amp;lang=ja</loc>
     <lastmod>2026-05-06</lastmod>
@@ -901,6 +949,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=haikyu-equipo&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=haikyu-equipo"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=haikyu-equipo&amp;lang=pt</loc>
     <lastmod>2026-05-06</lastmod>
@@ -930,6 +979,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=hxh-capitalismo&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=hxh-capitalismo"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=hxh-capitalismo&amp;lang=en</loc>
     <lastmod>2026-05-06</lastmod>
@@ -944,6 +994,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=hxh-capitalismo&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=hxh-capitalismo"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=hxh-capitalismo&amp;lang=fr</loc>
     <lastmod>2026-05-06</lastmod>
@@ -958,6 +1009,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=hxh-capitalismo&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=hxh-capitalismo"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=hxh-capitalismo&amp;lang=it</loc>
     <lastmod>2026-05-06</lastmod>
@@ -972,6 +1024,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=hxh-capitalismo&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=hxh-capitalismo"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=hxh-capitalismo&amp;lang=de</loc>
     <lastmod>2026-05-06</lastmod>
@@ -986,6 +1039,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=hxh-capitalismo&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=hxh-capitalismo"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=hxh-capitalismo&amp;lang=ru</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1000,6 +1054,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=hxh-capitalismo&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=hxh-capitalismo"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=hxh-capitalismo&amp;lang=ja</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1014,6 +1069,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=hxh-capitalismo&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=hxh-capitalismo"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=hxh-capitalismo&amp;lang=pt</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1043,6 +1099,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=jjk-maldicion&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=jjk-maldicion"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=jjk-maldicion&amp;lang=en</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1057,6 +1114,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=jjk-maldicion&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=jjk-maldicion"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=jjk-maldicion&amp;lang=fr</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1071,6 +1129,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=jjk-maldicion&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=jjk-maldicion"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=jjk-maldicion&amp;lang=it</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1085,6 +1144,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=jjk-maldicion&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=jjk-maldicion"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=jjk-maldicion&amp;lang=de</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1099,6 +1159,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=jjk-maldicion&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=jjk-maldicion"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=jjk-maldicion&amp;lang=ru</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1113,6 +1174,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=jjk-maldicion&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=jjk-maldicion"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=jjk-maldicion&amp;lang=ja</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1127,6 +1189,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=jjk-maldicion&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=jjk-maldicion"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=jjk-maldicion&amp;lang=pt</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1156,6 +1219,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=kimetsu-ukiyo&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=kimetsu-ukiyo"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=kimetsu-ukiyo&amp;lang=en</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1170,6 +1234,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=kimetsu-ukiyo&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=kimetsu-ukiyo"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=kimetsu-ukiyo&amp;lang=fr</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1184,6 +1249,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=kimetsu-ukiyo&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=kimetsu-ukiyo"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=kimetsu-ukiyo&amp;lang=it</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1198,6 +1264,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=kimetsu-ukiyo&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=kimetsu-ukiyo"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=kimetsu-ukiyo&amp;lang=de</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1212,6 +1279,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=kimetsu-ukiyo&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=kimetsu-ukiyo"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=kimetsu-ukiyo&amp;lang=ru</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1226,6 +1294,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=kimetsu-ukiyo&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=kimetsu-ukiyo"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=kimetsu-ukiyo&amp;lang=ja</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1240,6 +1309,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=kimetsu-ukiyo&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=kimetsu-ukiyo"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=kimetsu-ukiyo&amp;lang=pt</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1269,6 +1339,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=mha-heroes&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=mha-heroes"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=mha-heroes&amp;lang=en</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1283,6 +1354,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=mha-heroes&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=mha-heroes"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=mha-heroes&amp;lang=fr</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1297,6 +1369,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=mha-heroes&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=mha-heroes"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=mha-heroes&amp;lang=it</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1311,6 +1384,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=mha-heroes&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=mha-heroes"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=mha-heroes&amp;lang=de</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1325,6 +1399,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=mha-heroes&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=mha-heroes"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=mha-heroes&amp;lang=ru</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1339,6 +1414,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=mha-heroes&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=mha-heroes"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=mha-heroes&amp;lang=ja</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1353,6 +1429,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=mha-heroes&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=mha-heroes"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=mha-heroes&amp;lang=pt</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1382,6 +1459,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=mob-psycho-identidad&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=mob-psycho-identidad"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=mob-psycho-identidad&amp;lang=en</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1396,6 +1474,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=mob-psycho-identidad&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=mob-psycho-identidad"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=mob-psycho-identidad&amp;lang=fr</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1410,6 +1489,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=mob-psycho-identidad&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=mob-psycho-identidad"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=mob-psycho-identidad&amp;lang=it</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1424,6 +1504,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=mob-psycho-identidad&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=mob-psycho-identidad"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=mob-psycho-identidad&amp;lang=de</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1438,6 +1519,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=mob-psycho-identidad&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=mob-psycho-identidad"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=mob-psycho-identidad&amp;lang=ru</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1452,6 +1534,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=mob-psycho-identidad&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=mob-psycho-identidad"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=mob-psycho-identidad&amp;lang=ja</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1466,6 +1549,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=mob-psycho-identidad&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=mob-psycho-identidad"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=mob-psycho-identidad&amp;lang=pt</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1495,6 +1579,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=naruto-ciclo-odio&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=naruto-ciclo-odio"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=naruto-ciclo-odio&amp;lang=en</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1509,6 +1594,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=naruto-ciclo-odio&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=naruto-ciclo-odio"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=naruto-ciclo-odio&amp;lang=fr</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1523,6 +1609,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=naruto-ciclo-odio&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=naruto-ciclo-odio"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=naruto-ciclo-odio&amp;lang=it</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1537,6 +1624,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=naruto-ciclo-odio&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=naruto-ciclo-odio"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=naruto-ciclo-odio&amp;lang=de</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1551,6 +1639,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=naruto-ciclo-odio&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=naruto-ciclo-odio"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=naruto-ciclo-odio&amp;lang=ru</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1565,6 +1654,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=naruto-ciclo-odio&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=naruto-ciclo-odio"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=naruto-ciclo-odio&amp;lang=ja</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1579,6 +1669,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=naruto-ciclo-odio&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=naruto-ciclo-odio"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=naruto-ciclo-odio&amp;lang=pt</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1608,6 +1699,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=op-esclavitud&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=op-esclavitud"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=op-esclavitud&amp;lang=en</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1622,6 +1714,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=op-esclavitud&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=op-esclavitud"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=op-esclavitud&amp;lang=fr</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1636,6 +1729,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=op-esclavitud&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=op-esclavitud"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=op-esclavitud&amp;lang=it</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1650,6 +1744,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=op-esclavitud&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=op-esclavitud"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=op-esclavitud&amp;lang=de</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1664,6 +1759,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=op-esclavitud&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=op-esclavitud"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=op-esclavitud&amp;lang=ru</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1678,6 +1774,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=op-esclavitud&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=op-esclavitud"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=op-esclavitud&amp;lang=ja</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1692,6 +1789,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=op-esclavitud&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=op-esclavitud"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=op-esclavitud&amp;lang=pt</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1721,6 +1819,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=op-obra&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=op-obra"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=op-obra&amp;lang=en</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1735,6 +1834,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=op-obra&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=op-obra"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=op-obra&amp;lang=fr</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1749,6 +1849,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=op-obra&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=op-obra"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=op-obra&amp;lang=it</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1763,6 +1864,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=op-obra&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=op-obra"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=op-obra&amp;lang=de</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1777,6 +1879,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=op-obra&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=op-obra"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=op-obra&amp;lang=ru</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1791,6 +1894,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=op-obra&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=op-obra"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=op-obra&amp;lang=ja</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1805,6 +1909,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=op-obra&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=op-obra"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=op-obra&amp;lang=pt</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1834,6 +1939,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=punpun-psicologia&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=punpun-psicologia"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=punpun-psicologia&amp;lang=en</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1848,6 +1954,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=punpun-psicologia&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=punpun-psicologia"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=punpun-psicologia&amp;lang=fr</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1862,6 +1969,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=punpun-psicologia&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=punpun-psicologia"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=punpun-psicologia&amp;lang=it</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1876,6 +1984,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=punpun-psicologia&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=punpun-psicologia"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=punpun-psicologia&amp;lang=de</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1890,6 +1999,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=punpun-psicologia&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=punpun-psicologia"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=punpun-psicologia&amp;lang=ru</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1904,6 +2014,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=punpun-psicologia&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=punpun-psicologia"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=punpun-psicologia&amp;lang=ja</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1918,6 +2029,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=punpun-psicologia&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=punpun-psicologia"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=punpun-psicologia&amp;lang=pt</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1947,6 +2059,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=vagabond-existencialismo&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=vagabond-existencialismo"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=vagabond-existencialismo&amp;lang=en</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1961,6 +2074,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=vagabond-existencialismo&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=vagabond-existencialismo"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=vagabond-existencialismo&amp;lang=fr</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1975,6 +2089,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=vagabond-existencialismo&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=vagabond-existencialismo"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=vagabond-existencialismo&amp;lang=it</loc>
     <lastmod>2026-05-06</lastmod>
@@ -1989,6 +2104,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=vagabond-existencialismo&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=vagabond-existencialismo"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=vagabond-existencialismo&amp;lang=de</loc>
     <lastmod>2026-05-06</lastmod>
@@ -2003,6 +2119,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=vagabond-existencialismo&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=vagabond-existencialismo"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=vagabond-existencialismo&amp;lang=ru</loc>
     <lastmod>2026-05-06</lastmod>
@@ -2017,6 +2134,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=vagabond-existencialismo&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=vagabond-existencialismo"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=vagabond-existencialismo&amp;lang=ja</loc>
     <lastmod>2026-05-06</lastmod>
@@ -2031,6 +2149,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=vagabond-existencialismo&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=vagabond-existencialismo"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=vagabond-existencialismo&amp;lang=pt</loc>
     <lastmod>2026-05-06</lastmod>
@@ -2060,6 +2179,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=vinland-guerra&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=vinland-guerra"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=vinland-guerra&amp;lang=en</loc>
     <lastmod>2026-05-06</lastmod>
@@ -2074,6 +2194,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=vinland-guerra&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=vinland-guerra"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=vinland-guerra&amp;lang=fr</loc>
     <lastmod>2026-05-06</lastmod>
@@ -2088,6 +2209,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=vinland-guerra&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=vinland-guerra"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=vinland-guerra&amp;lang=it</loc>
     <lastmod>2026-05-06</lastmod>
@@ -2102,6 +2224,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=vinland-guerra&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=vinland-guerra"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=vinland-guerra&amp;lang=de</loc>
     <lastmod>2026-05-06</lastmod>
@@ -2116,6 +2239,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=vinland-guerra&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=vinland-guerra"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=vinland-guerra&amp;lang=ru</loc>
     <lastmod>2026-05-06</lastmod>
@@ -2130,6 +2254,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=vinland-guerra&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=vinland-guerra"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=vinland-guerra&amp;lang=ja</loc>
     <lastmod>2026-05-06</lastmod>
@@ -2144,6 +2269,7 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=vinland-guerra&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=vinland-guerra"/>
   </url>
+
   <url>
     <loc>https://ualjlf259.github.io/article.html?id=vinland-guerra&amp;lang=pt</loc>
     <lastmod>2026-05-06</lastmod>
@@ -2158,5 +2284,4 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/article.html?id=vinland-guerra&amp;lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/article.html?id=vinland-guerra"/>
   </url>
-
 </urlset>

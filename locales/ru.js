@@ -2,6 +2,20 @@
  * locales/ru.js — Русский
  */
 window.LANG_RU = {
+  /* ── Welcome modal ── */
+  welcome_eyebrow: "Добро пожаловать",
+  welcome_title: "Аниме как <em class='wm-grad'>произведение искусства</em>.",
+  welcome_sub: "Культурные эссе о великих произведениях манги — с <strong>личным взглядом</strong>, строгостью и без спойлеров для начала.",
+  welcome_feat1_t: "Анализ с мнением",
+  welcome_feat1_d: "One Piece, Vinland Saga, HxH, Berserk…",
+  welcome_feat2_t: "Мой личный рейтинг",
+  welcome_feat2_d: "Субъективно и без извинений.",
+  welcome_feat3_t: "Тезис One Piece",
+  welcome_feat3_d: "Величайшее аудиовизуальное произведение планеты.",
+  welcome_eggs_t: "Скрытые пасхалки",
+  welcome_eggs_d: "Найди их все и открой невероятную награду.",
+  welcome_cta: "Начать читать",
+
   nav_articles : "Статьи",
   nav_ranking  : "Рейтинг",
   nav_about    : "Обо мне",
