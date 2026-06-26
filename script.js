@@ -170,21 +170,42 @@ function applyLang(lang) {
   const rankClasses = ['rank-1','rank-2','rank-3','rank-4','rank-5','rank-other','rank-other','rank-other','rank-other','rank-other','rank-other','rank-other','rank-other','rank-other','rank-other','rank-other','rank-other'];
   const rankingList = document.querySelector('.ranking-list');
   if (rankingList && t.ranking_items) {
-    rankingList.innerHTML = t.ranking_items.map((item, i) => {
-      const imgHtml = item.img
-        ? `<div class="rank-cover"><img src="${item.img}" alt="${item.name}" loading="lazy"></div>`
-        : `<div class="rank-cover rank-cover-placeholder">${rankingEmojis[i] || '★'}</div>`;
+    const items = t.ranking_items;
+    const ratingOf = (i) => (rankBars[i] != null ? (rankBars[i] / 10).toFixed(1) : '');
+    const authorOf = (it) => (it.desc ? it.desc.split('·')[0].trim() : '');
+    const place = (i) => String(i + 1).padStart(2, '0');
+
+    // Podio: top 3 en orden visual 2 · 1 · 3 (el #1 va elevado)
+    const podium = [1, 0, 2].filter((idx) => items[idx]).map((idx) => {
+      const it = items[idx];
+      const cover = it.img
+        ? `<img src="${it.img}" alt="${it.name}" loading="lazy">`
+        : `<span class="rank-pod-emoji">${rankingEmojis[idx] || '★'}</span>`;
       return `
-      <div class="ranking-item" style="--rank-delay:${i * 40}ms">
-        <span class="rank-num ${rankClasses[i] || 'rank-other'}">${i+1}</span>
-        ${imgHtml}
-        <div class="rank-info">
-          <strong>${item.name}</strong>
-          <span>${item.desc}</span>
-          <div class="rank-bar-wrap"><div class="rank-bar" style="width:${rankBars[i] || 20}%"></div></div>
-        </div>
+      <div class="rank-pod rank-pod-${idx + 1}">
+        <div class="rank-pod-cover">${cover}<span class="rank-pod-badge">★ ${ratingOf(idx)}</span></div>
+        <div class="rank-pod-place">${place(idx)}</div>
+        <div class="rank-pod-name">${it.name}</div>
       </div>`;
     }).join('');
+
+    // Lista: del 4º en adelante
+    const rows = items.slice(3).map((it, j) => {
+      const i = j + 3;
+      const author = authorOf(it);
+      return `
+      <div class="rank-row" style="--rank-delay:${j * 45}ms">
+        <span class="rank-row-num">${place(i)}</span>
+        <div class="rank-row-info">
+          <div class="rank-row-title"><strong>${it.name}</strong>${author ? `<span>· ${author}</span>` : ''}</div>
+          <div class="rank-bar-wrap"><div class="rank-bar" style="width:${rankBars[i] || 20}%"></div></div>
+        </div>
+        <span class="rank-row-rating">${ratingOf(i)}</span>
+      </div>`;
+    }).join('');
+
+    rankingList.innerHTML =
+      `<div class="rank-podium">${podium}</div><div class="rank-rows">${rows}</div>`;
   }
 
   // About
