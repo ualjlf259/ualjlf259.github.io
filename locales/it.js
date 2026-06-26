@@ -2,6 +2,15 @@
  * locales/it.js — Italiano
  */
 window.LANG_IT = {
+  /* ── Chi sono ── */
+  about_eyebrow: "Chi sono · L'autore",
+  about_subtitle: "Critico culturale di anime e manga · Almería, Spagna",
+  about_stat_articles: "articoli",
+  about_stat_langs: "lingue",
+  about_stat_eggs: "easter egg",
+  about_stat_years: "anni da fan",
+  about_works_title: "Opere che hanno segnato il cammino",
+
   /* ── Welcome modal ── */
   welcome_eyebrow: "Benvenuto",
   welcome_title: "L'anime come <em class='wm-grad'>opera d'arte</em>.",

@@ -2,6 +2,15 @@
  * locales/ru.js — Русский
  */
 window.LANG_RU = {
+  /* ── Обо мне ── */
+  about_eyebrow: "Обо мне · Автор",
+  about_subtitle: "Культурный критик аниме и манги · Альмерия, Испания",
+  about_stat_articles: "статьи",
+  about_stat_langs: "языки",
+  about_stat_eggs: "пасхалки",
+  about_stat_years: "лет фанат",
+  about_works_title: "Произведения, определившие путь",
+
   /* ── Welcome modal ── */
   welcome_eyebrow: "Добро пожаловать",
   welcome_title: "Аниме как <em class='wm-grad'>произведение искусства</em>.",

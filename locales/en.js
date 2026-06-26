@@ -3,6 +3,15 @@
  * UI strings only. Article content lives in /articles/*.json.
  */
 window.LANG_EN = {
+  /* ── About ── */
+  about_eyebrow: "About · The author",
+  about_subtitle: "Cultural critic of anime and manga · Almería, Spain",
+  about_stat_articles: "articles",
+  about_stat_langs: "languages",
+  about_stat_eggs: "easter eggs",
+  about_stat_years: "years a fan",
+  about_works_title: "Works that shaped the journey",
+
   /* ── Welcome modal ── */
   welcome_eyebrow: "Welcome",
   welcome_title: "Anime as <em class='wm-grad'>a work of art</em>.",

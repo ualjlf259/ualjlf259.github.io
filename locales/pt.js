@@ -1,4 +1,13 @@
 window.LANG_PT = {
+  /* ── Sobre mim ── */
+  about_eyebrow: "Sobre mim · O autor",
+  about_subtitle: "Crítico cultural de anime e mangá · Almería, Espanha",
+  about_stat_articles: "artigos",
+  about_stat_langs: "idiomas",
+  about_stat_eggs: "easter eggs",
+  about_stat_years: "anos de fã",
+  about_works_title: "Obras que marcaram o caminho",
+
   /* ── Welcome modal ── */
   welcome_eyebrow: "Bem-vindo",
   welcome_title: "O anime como <em class='wm-grad'>obra de arte</em>.",

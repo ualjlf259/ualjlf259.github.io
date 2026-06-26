@@ -216,11 +216,10 @@ function applyLang(lang) {
   const aboutTextDiv = document.querySelector('.about-text-content');
   if (aboutTextDiv && t.about_p1) {
     aboutTextDiv.innerHTML = `
-      <h3>${t.about_h3 || 'Jose Jesus Lopez Fernandez'}</h3>
       <p>${t.about_p1}</p>
       <p>${t.about_p2}</p>
       <p>${t.about_p3}</p>
-      <p style="margin-top:1.2rem;"><a href="https://github.com/ualjlf259" style="color:var(--gold);text-decoration:none;font-size:.85rem;letter-spacing:.05em;font-weight:600;">→ GitHub: ualjlf259</a></p>`;
+      <p style="margin-top:1.1rem;"><a href="https://github.com/ualjlf259" target="_blank" rel="noopener">→ GitHub: ualjlf259</a></p>`;
   }
 
   // Footer

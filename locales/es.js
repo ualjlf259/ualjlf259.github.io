@@ -3,6 +3,15 @@
  * Solo textos de interfaz. El contenido de los artículos vive en /articles/*.json.
  */
 window.LANG_ES = {
+  /* ── Sobre mí ── */
+  about_eyebrow: "Sobre mí · El autor",
+  about_subtitle: "Crítico cultural de anime y manga · Almería, España",
+  about_stat_articles: "artículos",
+  about_stat_langs: "idiomas",
+  about_stat_eggs: "easter eggs",
+  about_stat_years: "años de fan",
+  about_works_title: "Obras que marcaron el camino",
+
   /* ── Welcome modal (bienvenida) ── */
   welcome_eyebrow: "Bienvenido",
   welcome_title: "El anime como <em class='wm-grad'>obra de arte</em>.",

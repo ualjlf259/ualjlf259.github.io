@@ -3,6 +3,15 @@
  * UI文字列のみ。記事の内容は /articles/*.json にあります。
  */
 window.LANG_JA = {
+  /* ── 著者について ── */
+  about_eyebrow: "著者について",
+  about_subtitle: "アニメ・マンガの文化批評 · スペイン、アルメリア",
+  about_stat_articles: "記事",
+  about_stat_langs: "言語",
+  about_stat_eggs: "イースターエッグ",
+  about_stat_years: "ファン歴",
+  about_works_title: "道を刻んだ作品",
+
   /* ── Welcome modal ── */
   welcome_eyebrow: "ようこそ",
   welcome_title: "芸術としての<em class='wm-grad'>アニメ</em>。",

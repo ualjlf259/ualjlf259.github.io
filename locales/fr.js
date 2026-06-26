@@ -3,6 +3,15 @@
  * Textes d'interface uniquement. Le contenu des articles vit dans /articles/*.json.
  */
 window.LANG_FR = {
+  /* ── À propos ── */
+  about_eyebrow: "À propos · L'auteur",
+  about_subtitle: "Critique culturel d'anime et manga · Almería, Espagne",
+  about_stat_articles: "articles",
+  about_stat_langs: "langues",
+  about_stat_eggs: "easter eggs",
+  about_stat_years: "ans de fan",
+  about_works_title: "Œuvres qui ont marqué le chemin",
+
   /* ── Welcome modal ── */
   welcome_eyebrow: "Bienvenue",
   welcome_title: "L'anime comme <em class='wm-grad'>œuvre d'art</em>.",
