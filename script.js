@@ -167,7 +167,6 @@ function applyLang(lang) {
   if (rs && t.ranking_sub) rs.textContent = t.ranking_sub;
   const rankingEmojis = ['⚓','✨','⚔️','🍀','🪓','⚡','🗡️','🍃','📓','💥','😴','🐉','👁️','🔥','🏐','🌀','⛓️'];
   const rankBars = [100,94,88,83,79,75,71,67,63,59,55,51,48,44,41,37,33];
-  const rankClasses = ['rank-1','rank-2','rank-3','rank-4','rank-5','rank-other','rank-other','rank-other','rank-other','rank-other','rank-other','rank-other','rank-other','rank-other','rank-other','rank-other','rank-other'];
   const rankingList = document.querySelector('.ranking-list');
   if (rankingList && t.ranking_items) {
     const items = t.ranking_items;
@@ -1083,4 +1082,142 @@ if (shareCpBtn && onArticlePage) {
     if (!ticking) { requestAnimationFrame(update); ticking = true; }
   }, { passive: true });
   update();
+})();
+
+/* ═══════════════════════════════════════════════════
+   BUSCADOR command-palette: Ctrl/⌘+K, resultados instantáneos,
+   iluminación que sigue al cursor y placeholder dinámico.
+   (No reemplaza el filtrado del grid; lo complementa.)
+═══════════════════════════════════════════════════ */
+(function initSearchCmd() {
+  if (!onIndexPage) return;
+  const cmd     = document.getElementById('search-cmd');
+  const input   = document.getElementById('search-input');
+  const results = document.getElementById('search-results');
+  if (!cmd || !input || !results) return;
+  const card = cmd.querySelector('.search-cmd-card');
+  const kbd  = document.getElementById('search-kbd');
+
+  /* ── Atajo Ctrl/⌘ + K ── */
+  const isMac = /Mac|iPhone|iPad|iPod/.test(navigator.platform || navigator.userAgent || '');
+  if (kbd && kbd.firstElementChild) kbd.firstElementChild.textContent = isMac ? '⌘' : 'Ctrl';
+  document.addEventListener('keydown', (e) => {
+    if ((e.metaKey || e.ctrlKey) && (e.key === 'k' || e.key === 'K')) {
+      e.preventDefault();
+      input.focus();
+      input.select();
+    }
+  });
+
+  /* ── Iluminación que sigue al cursor ── */
+  if (card) {
+    card.addEventListener('pointermove', (e) => {
+      const r = card.getBoundingClientRect();
+      card.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 100).toFixed(1) + '%');
+      card.style.setProperty('--my', ((e.clientY - r.top) / r.height * 100).toFixed(1) + '%');
+    });
+  }
+
+  /* ── Resultados instantáneos ── */
+  let current = [];
+  let activeIdx = -1;
+
+  function search(q) {
+    const idx = articleStore.index || [];
+    const term = (q || '').trim().toLowerCase();
+    if (!term) return [];
+    return idx.filter((it) => {
+      const t = (pickLang(it.title, currentLang) || '').toLowerCase();
+      const d = (pickLang(it.desc, currentLang) || '').toLowerCase();
+      const c = (it.category || '').toLowerCase();
+      return t.includes(term) || d.includes(term) || c.includes(term);
+    }).slice(0, 6);
+  }
+
+  function render() {
+    const t = i18n[currentLang] || {};
+    if (!current.length) {
+      results.innerHTML = `<div class="search-result-empty">${t.no_results || 'Sin resultados'}</div>`;
+    } else {
+      results.innerHTML = current.map((it, i) => {
+        const title = pickLang(it.title, currentLang) || '';
+        const thumb = (it.thumb && it.thumb.src)
+          ? `<img src="${it.thumb.src}" alt="" loading="lazy" decoding="async">` : '';
+        return `<a class="search-result${i === activeIdx ? ' is-active' : ''}" role="option"
+          data-id="${it.id}" href="article.html?id=${it.id}">
+          <span class="search-result-thumb">${thumb}</span>
+          <span class="search-result-main">
+            <span class="search-result-title">${title}</span>
+            <span class="search-result-meta"><span class="search-result-cat">${it.category}</span><span>${it.mins} ${t.read_min || ''}</span></span>
+          </span>
+        </a>`;
+      }).join('');
+    }
+    results.hidden = false;
+    input.setAttribute('aria-expanded', 'true');
+  }
+
+  function open(list) { current = list; activeIdx = -1; render(); }
+  function close() {
+    results.hidden = true;
+    input.setAttribute('aria-expanded', 'false');
+    activeIdx = -1;
+  }
+  function go(id) {
+    close();
+    input.value = '';
+    if (typeof openArticle === 'function') openArticle(id);
+  }
+
+  input.addEventListener('input', () => {
+    const q = input.value;
+    if (!q.trim()) { close(); return; }
+    open(search(q));
+  });
+  input.addEventListener('focus', () => {
+    const t = i18n[currentLang] || {};
+    if (t.search_placeholder) input.placeholder = t.search_placeholder;
+    if (input.value.trim()) open(search(input.value));
+  });
+
+  input.addEventListener('keydown', (e) => {
+    if (results.hidden || !current.length) {
+      if (e.key === 'Escape') { close(); input.blur(); }
+      return;
+    }
+    if (e.key === 'ArrowDown') { e.preventDefault(); activeIdx = Math.min(activeIdx + 1, current.length - 1); render(); }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); activeIdx = Math.max(activeIdx - 1, 0); render(); }
+    else if (e.key === 'Enter' && activeIdx >= 0 && current[activeIdx]) { e.preventDefault(); go(current[activeIdx].id); }
+    else if (e.key === 'Escape') { close(); input.blur(); }
+  });
+
+  results.addEventListener('click', (e) => {
+    const a = e.target.closest && e.target.closest('.search-result');
+    if (!a) return;
+    e.preventDefault();
+    go(a.dataset.id);
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!cmd.contains(e.target)) close();
+  });
+
+  /* ── Placeholder dinámico (typewriter; estático si reduced-motion) ── */
+  const LEAD = { es: 'Busca', en: 'Search', fr: 'Cherche', ja: '検索:', it: 'Cerca', de: 'Suche', ru: 'Найти', pt: 'Busca' };
+  const SAMPLES = ['One Piece', 'Vinland Saga', 'Hunter x Hunter', 'Berserk', 'Chainsaw Man'];
+  const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let phTimer = null, phSi = 0, phCi = 0, phDir = 1;
+
+  function phFull() { return `${LEAD[currentLang] || LEAD.es} "${SAMPLES[phSi % SAMPLES.length]}"…`; }
+  function phTick() {
+    if (document.activeElement === input || input.value) { phTimer = setTimeout(phTick, 800); return; }
+    const full = phFull();
+    phCi += phDir;
+    input.placeholder = full.slice(0, phCi);
+    let delay = phDir > 0 ? 60 : 26;
+    if (phCi >= full.length) { phDir = -1; delay = 1500; }
+    else if (phCi <= 0) { phDir = 1; phSi++; delay = 420; }
+    phTimer = setTimeout(phTick, delay);
+  }
+  if (!reduceMotion) phTimer = setTimeout(phTick, 1400);
 })();

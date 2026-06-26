@@ -68,6 +68,14 @@
 
 <body>
 
+  <!-- Fondo ambiente: slideshow de img/fondo (capa fija detrás de todo; CSS .bg-stage) -->
+  <div class="bg-stage" aria-hidden="true">
+    <div class="bg-slide bg-slide-1"></div>
+    <div class="bg-slide bg-slide-2"></div>
+    <div class="bg-slide bg-slide-3"></div>
+    <div class="bg-veil"></div>
+  </div>
+
   <nav class="at-hero">
     <a class="nav-logo" href="#">NAKAMA<span>.</span>BLOG</a>
     <ul class="nav-links">
@@ -158,7 +166,7 @@
 
   <header class="hero">
     <div class="hero-bg" aria-hidden="true">
-      <img src="img/articles/hero-aura.webp" alt="" fetchpriority="high" decoding="async">
+      <img src="img/fondo/hero-aura.webp" alt="" fetchpriority="high" decoding="async">
       <div class="hero-bg-overlay"></div>
     </div>
     <div class="hero-content">
@@ -240,17 +248,21 @@
         <span data-i18n="articles_sub">— análisis &amp; reflexiones</span>
       </div>
 
-      <!-- Search & Filter bar -->
-      <div class="search-filters-bar">
-        <div class="search-wrap">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="11" cy="11" r="8" />
-            <line x1="21" y1="21" x2="16.65" y2="16.65" />
-          </svg>
-          <input type="text" id="search-input" placeholder="Buscar artículos…" autocomplete="off"
-            aria-label="Buscar artículos">
-        </div>
-        <div class="filter-chips" id="filter-chips">
+      <!-- Search & Filter — command palette (glass flotante, Ctrl+K, resultados) -->
+      <div class="search-filters-bar" id="search-cmd">
+        <div class="search-cmd-card">
+          <div class="search-cmd-spot" aria-hidden="true"></div>
+          <div class="search-cmd-bar">
+            <svg class="search-cmd-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+            <input type="text" id="search-input" autocomplete="off" role="combobox"
+              aria-expanded="false" aria-controls="search-results" aria-autocomplete="list"
+              placeholder="Buscar artículos…" aria-label="Buscar artículos">
+            <kbd class="search-kbd" id="search-kbd" aria-hidden="true"><span class="search-kbd-mod">Ctrl</span> K</kbd>
+          </div>
+          <div class="filter-chips" id="filter-chips">
           <button class="chip active" data-filter="all" data-i18n="filter_all">Todos</button>
           <button class="chip" data-filter="One Piece">One Piece</button>
           <button class="chip" data-filter="Hunter x Hunter">Hunter x Hunter</button>
@@ -266,7 +278,9 @@
           <button class="chip" data-filter="Chainsaw Man">Chainsaw Man</button>
           <button class="chip" data-filter="Kimetsu no Yaiba">Kimetsu no Yaiba</button>
           <button class="chip" data-filter="Black Clover">Black Clover</button>
+          </div>
         </div>
+        <div class="search-results" id="search-results" role="listbox" aria-label="Resultados" hidden></div>
       </div>
 
       <div class="articles-grid" id="articles-grid">
