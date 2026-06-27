@@ -1317,6 +1317,12 @@
       desc: "Descubre los secretos ocultos en la página.",
       discovered: "Descubiertos",
       final_title: "¡ENHORABUENA, HAS DESCUBIERTO TODOS LOS SECRETOS!",
+      reward_badge: "Recompensa desbloqueada",
+      reward_title: '¡Encontraste los <b>{n}</b> <span class="ee-final-grad">HUEVOS</span>!',
+      reward_sub: "Has explorado cada rincón del blog como un verdadero nakama. Esta es tu recompensa.",
+      reward_wallpaper: "Reclamar wallpaper",
+      reward_share: "Presumir logro",
+      reward_share_text: "He descubierto los {n} secretos ocultos de Nakama.blog 🥚 ¿Puedes encontrarlos todos?",
       claim: "Reclamar recompensa",
       names: ["Tatakae", "Sakura", "Rasengan", "Super Saiyan", "Joy Boy", "Tsukuyomi Infinito", "100%", "Gear 5", "Siglo Vacío", "Araña Fantasma"],
       hints: [
@@ -1337,6 +1343,12 @@
       desc: "Discover the hidden secrets on the page.",
       discovered: "Discovered",
       final_title: "CONGRATULATIONS, YOU'VE DISCOVERED ALL THE SECRETS!",
+      reward_badge: "Reward unlocked",
+      reward_title: 'You found all <b>{n}</b> <span class="ee-final-grad">EGGS</span>!',
+      reward_sub: "You've explored every corner of the blog like a true nakama. This is your reward.",
+      reward_wallpaper: "Claim wallpaper",
+      reward_share: "Show off",
+      reward_share_text: "I found all {n} hidden secrets of Nakama.blog 🥚 Can you find them all?",
       claim: "Claim your reward",
       names: ["Tatakae", "Sakura", "Rasengan", "Super Saiyan", "Joy Boy", "Infinite Tsukuyomi", "100%", "Gear 5", "Void Century", "Phantom Troupe"],
       hints: [
@@ -1357,6 +1369,12 @@
       desc: "Découvrez les secrets cachés de la page.",
       discovered: "Découverts",
       final_title: "FÉLICITATIONS, VOUS AVEZ DÉCOUVERT TOUS LES SECRETS !",
+      reward_badge: "Récompense débloquée",
+      reward_title: 'Tu as trouvé les <b>{n}</b> <span class="ee-final-grad">ŒUFS</span> !',
+      reward_sub: "Tu as exploré chaque recoin du blog comme un vrai nakama. Voici ta récompense.",
+      reward_wallpaper: "Réclamer le fond d'écran",
+      reward_share: "Frimer",
+      reward_share_text: "J'ai découvert les {n} secrets cachés de Nakama.blog 🥚 Saurez-vous tous les trouver ?",
       claim: "Réclamer la récompense",
       names: ["Tatakae", "Sakura", "Rasengan", "Super Saiyan", "Joy Boy", "Tsukuyomi Infini", "100%", "Gear 5", "Siècle Vide", "Brigade Fantôme"],
       hints: [
@@ -1377,6 +1395,12 @@
       desc: "ページに隠された秘密を発見しよう。",
       discovered: "発見",
       final_title: "おめでとう！すべての秘密を見つけ出した！",
+      reward_badge: "報酬を解放",
+      reward_title: '<b>{n}</b>個の<span class="ee-final-grad">タマゴ</span>を全部見つけた！',
+      reward_sub: "本物のナカマのようにブログの隅々まで探索した。これがその報酬だ。",
+      reward_wallpaper: "壁紙を受け取る",
+      reward_share: "自慢する",
+      reward_share_text: "Nakama.blogの隠された秘密を{n}個すべて見つけた 🥚 君は全部見つけられる？",
       claim: "報酬を受け取る",
       names: ["戦え", "桜", "螺旋丸", "超サイヤ人", "ジョイボーイ", "無限月読", "100%", "ギア5", "空白の100年", "幻影旅団"],
       hints: [
@@ -1394,6 +1418,12 @@
     },
     it: {
       final_title: "CONGRATULAZIONI, HAI SCOPERTO TUTTI I SEGRETI!",
+      reward_badge: "Ricompensa sbloccata",
+      reward_title: 'Hai trovato tutte le <b>{n}</b> <span class="ee-final-grad">UOVA</span>!',
+      reward_sub: "Hai esplorato ogni angolo del blog come un vero nakama. Questa è la tua ricompensa.",
+      reward_wallpaper: "Riscatta il wallpaper",
+      reward_share: "Vantati",
+      reward_share_text: "Ho trovato tutti i {n} segreti nascosti di Nakama.blog 🥚 Riesci a trovarli tutti?",
       claim: "Riscatta la ricompensa",
       title: "Easter Eggs",
       desc: "Scopri i segreti nascosti nella pagina.",
@@ -1417,6 +1447,12 @@
       desc: "Entdecke die verborgenen Geheimnisse der Seite.",
       discovered: "Entdeckt",
       final_title: "GLÜCKWUNSCH, DU HAST ALLE GEHEIMNISSE ENTDECKT!",
+      reward_badge: "Belohnung freigeschaltet",
+      reward_title: 'Du hast alle <b>{n}</b> <span class="ee-final-grad">EIER</span> gefunden!',
+      reward_sub: "Du hast jede Ecke des Blogs erkundet wie ein echter Nakama. Das ist deine Belohnung.",
+      reward_wallpaper: "Wallpaper einlösen",
+      reward_share: "Angeben",
+      reward_share_text: "Ich habe alle {n} versteckten Geheimnisse von Nakama.blog gefunden 🥚 Findest du sie alle?",
       claim: "Belohnung einfordern",
       names: ["Tatakae", "Sakura", "Rasengan", "Super Saiyajin", "Joy Boy", "Unendliches Tsukuyomi", "100%", "Gear 5", "Leeres Jahrhundert", "Phantom-Truppe"],
       hints: [
@@ -1437,6 +1473,12 @@
       desc: "Откройте скрытые секреты на странице.",
       discovered: "Открыто",
       final_title: "ПОЗДРАВЛЯЕМ, ВЫ ОТКРЫЛИ ВСЕ СЕКРЕТЫ!",
+      reward_badge: "Награда разблокирована",
+      reward_title: 'Ты нашёл все <b>{n}</b> <span class="ee-final-grad">ЯЙЦА</span>!',
+      reward_sub: "Ты исследовал каждый уголок блога как настоящий накама. Это твоя награда.",
+      reward_wallpaper: "Забрать обои",
+      reward_share: "Похвастаться",
+      reward_share_text: "Я нашёл все {n} скрытых секретов Nakama.blog 🥚 Сможешь найти их все?",
       claim: "Получить награду",
       names: ["Tatakae", "Sakura", "Rasengan", "Супер Сайян", "Джой Бой", "Бесконечное Цукуёми", "100%", "5 Гир", "Пустое Столетие", "Призрачная бригада"],
       hints: [
@@ -1457,6 +1499,12 @@
       desc: "Descubra os segredos ocultos na página.",
       discovered: "Descobertos",
       final_title: "PARABÉNS, VOCÊ DESCOBRIU TODOS OS SEGREDOS!",
+      reward_badge: "Recompensa desbloqueada",
+      reward_title: 'Você encontrou os <b>{n}</b> <span class="ee-final-grad">OVOS</span>!',
+      reward_sub: "Você explorou cada canto do blog como um verdadeiro nakama. Esta é a sua recompensa.",
+      reward_wallpaper: "Resgatar wallpaper",
+      reward_share: "Se gabar",
+      reward_share_text: "Descobri os {n} segredos ocultos do Nakama.blog 🥚 Você consegue achar todos?",
       claim: "Resgatar recompensa",
       names: ["Tatakae", "Sakura", "Rasengan", "Super Saiyajin", "Joy Boy", "Tsukuyomi Infinito", "100%", "Gear 5", "Século Perdido", "Tropa Fantasma"],
       hints: [
@@ -1693,92 +1741,130 @@
       b.classList.add('is-breaking');
     });
 
-    // Fase 2: tras la rotura → overlay con vídeo
+    // Fase 2: tras la rotura → cinemática épica + tarjeta de recompensa
     setTimeout(function() {
       btns.forEach(function(b) { b.classList.remove('is-breaking'); });
-      openFinalRewardOverlay();
+      openFinalReward();
     }, 850);
+  }
+
+  /* Decide el flujo: cinemática + tarjeta, o tarjeta directa si reduced-motion. */
+  function openFinalReward() {
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) { openFinalRewardOverlay(); return; }
+    openFinalCinematic();
+  }
+
+  /* Cinemática épica (runas → monolito → explosión → emblema) que reutiliza
+     videos/video-easter-eggs-completados.mp4. Al formarse el emblema, la tarjeta
+     de recompensa emerge de la luz. Saltable (botón / Escape). */
+  function openFinalCinematic() {
+    var lang = (typeof currentLang !== 'undefined' && currentLang) || localStorage.getItem('lang') || 'es';
+    var SKIP = { es: 'Saltar', en: 'Skip', fr: 'Passer', ja: 'スキップ', it: 'Salta', de: 'Überspringen', ru: 'Пропустить', pt: 'Pular' };
+
+    var stage = document.createElement('div');
+    stage.className = 'ee-final-cine';
+    stage.innerHTML =
+      '<video class="ee-final-cine-video" playsinline preload="auto" src="videos/video-easter-eggs-completados.mp4"></video>' +
+      '<button class="ee-final-cine-skip" type="button">' + (SKIP[lang] || SKIP.es) + ' ›</button>';
+    document.body.appendChild(stage);
+
+    var video   = stage.querySelector('.ee-final-cine-video');
+    var skipBtn = stage.querySelector('.ee-final-cine-skip');
+    var done = false, timer = null;
+
+    function reveal() {
+      if (done) return;
+      done = true;
+      clearTimeout(timer);
+      document.removeEventListener('keydown', onKey);
+      stage.classList.add('is-leaving');
+      setTimeout(function() { stage.remove(); }, 650);
+      openFinalRewardOverlay();
+    }
+    function onKey(e) { if (e.key === 'Escape') reveal(); }
+
+    document.addEventListener('keydown', onKey);
+    skipBtn.addEventListener('click', reveal);
+    video.addEventListener('ended', reveal);
+
+    // Intentar con sonido; si el navegador lo bloquea, reproducir en silencio
+    var p = video.play();
+    if (p && typeof p.catch === 'function') {
+      p.catch(function() { video.muted = true; video.play().catch(function() {}); });
+    }
+
+    // Revelar la tarjeta cuando el emblema ya se forma (solapa el último tramo)
+    timer = setTimeout(reveal, 6000);
   }
 
   function openFinalRewardOverlay() {
     var lang = (typeof currentLang !== 'undefined' && currentLang)
       || localStorage.getItem('lang') || 'es';
     var loc = EE_I18N[lang] || EE_I18N['es'];
-    var titleLabel = loc.final_title || '¡Has descubierto todos los secretos!';
-    var claimLabel = loc.claim || 'Reclamar recompensa';
+    var total = EGG_IDS.length;
+
+    var badge   = loc.reward_badge || 'Recompensa desbloqueada';
+    var titleTx = (loc.reward_title || '¡Encontraste los <b>{n}</b> <span class="ee-final-grad">HUEVOS</span>!').replace('{n}', total);
+    var subTx   = loc.reward_sub || '';
+    var progLbl = loc.discovered || 'Descubiertos';
+    var wallTx  = loc.reward_wallpaper || 'Reclamar wallpaper';
+    var shareTx = loc.reward_share || 'Presumir logro';
+    var quote   = tCurrent('motiv_phrase', '¡Nunca te rindas y persigue tus sueños!');
+
+    var tiles = '';
+    for (var i = 0; i < total; i++) {
+      tiles += '<span class="ee-final-egg-tile" style="--i:' + i + '"><span class="ee-final-egg-mini"></span></span>';
+    }
 
     var overlay = document.createElement('div');
     overlay.className = 'ee-final-overlay';
     overlay.innerHTML =
-      '<button class="ee-final-close" aria-label="Cerrar">×</button>' +
-      '<div class="ee-final-stage">' +
-        '<div class="ee-final-title">' + titleLabel + '</div>' +
-        '<div class="ee-final-video-wrap">' +
-          '<video class="ee-final-video" playsinline preload="auto">' +
-            '<source src="videos/video-easter-eggs-completados.mp4" type="video/mp4">' +
-          '</video>' +
+      '<div class="ee-final-card" role="dialog" aria-modal="true">' +
+        '<button class="ee-final-close" aria-label="Cerrar">×</button>' +
+        '<div class="ee-final-egg" aria-hidden="true"></div>' +
+        '<div class="ee-final-badge">✦ ' + badge + '</div>' +
+        '<h2 class="ee-final-title">' + titleTx + '</h2>' +
+        '<p class="ee-final-sub">' + subTx + '</p>' +
+        '<div class="ee-final-progress">' +
+          '<div class="ee-final-progress-head"><span>' + progLbl + '</span><span>' + total + ' / ' + total + '</span></div>' +
+          '<div class="ee-final-progress-track"><div class="ee-final-progress-fill"></div></div>' +
         '</div>' +
-        '<button class="ee-final-claim" type="button">' +
-          '<span class="ee-final-claim-icon">🎁</span>' +
-          '<span class="ee-final-claim-label">' + claimLabel + '</span>' +
-        '</button>' +
+        '<div class="ee-final-grid">' + tiles + '</div>' +
+        '<blockquote class="ee-final-quote">«' + quote + '»</blockquote>' +
+        '<div class="ee-final-actions">' +
+          '<button class="ee-final-wallpaper" type="button"><span class="ee-final-star">★</span>' + wallTx + '</button>' +
+          '<button class="ee-final-share" type="button">' +
+            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="13.5" x2="15.4" y2="17.5"/><line x1="15.4" y1="6.5" x2="8.6" y2="10.5"/></svg>' +
+            shareTx +
+          '</button>' +
+        '</div>' +
       '</div>';
     document.body.appendChild(overlay);
 
-    var video    = overlay.querySelector('.ee-final-video');
-    var claimBtn = overlay.querySelector('.ee-final-claim');
-    var closeBtn = overlay.querySelector('.ee-final-close');
-
-    // Congelar en el último frame: pausamos justo antes de que termine
-    function freezeNearEnd() {
-      if (!video.duration) return;
-      if (video.currentTime >= video.duration - 0.08) {
-        video.pause();
-        video.removeEventListener('timeupdate', freezeNearEnd);
-        claimBtn.classList.add('is-visible');
-      }
-    }
-    video.addEventListener('timeupdate', freezeNearEnd);
-
-    // Fallback: si llega a disparar 'ended' (algunos navegadores)
-    video.addEventListener('ended', function() {
-      try {
-        if (video.duration) video.currentTime = Math.max(0, video.duration - 0.05);
-        video.pause();
-      } catch (_) {}
-      claimBtn.classList.add('is-visible');
+    // Rellenar la barra de progreso al abrir (anima 0 -> 100%)
+    requestAnimationFrame(function () {
+      var fill = overlay.querySelector('.ee-final-progress-fill');
+      if (fill) fill.style.width = '100%';
     });
 
-    // Intentar autoplay
-    setTimeout(function() {
-      var p = video.play();
-      if (p && typeof p.catch === 'function') {
-        p.catch(function() {
-          // Autoplay bloqueado: mostramos el botón ya y dejamos que el usuario lo dispare
-          claimBtn.classList.add('is-visible');
-        });
-      }
-    }, 120);
+    var closeBtn = overlay.querySelector('.ee-final-close');
+    var wallBtn  = overlay.querySelector('.ee-final-wallpaper');
+    var shareBtn = overlay.querySelector('.ee-final-share');
 
     function closeFinalReward() {
       overlay.classList.add('is-leaving');
-      try { video.pause(); } catch (_) {}
-      setTimeout(function() {
-        overlay.remove();
-        finalRewardActive = false;
-      }, 500);
+      setTimeout(function () { overlay.remove(); finalRewardActive = false; }, 500);
       document.removeEventListener('keydown', escHandler);
     }
-
-    function escHandler(e) {
-      if (e.key === 'Escape') closeFinalReward();
-    }
+    function escHandler(e) { if (e.key === 'Escape') closeFinalReward(); }
     document.addEventListener('keydown', escHandler);
 
     closeBtn.addEventListener('click', closeFinalReward);
+    overlay.addEventListener('click', function (e) { if (e.target === overlay) closeFinalReward(); });
 
-    claimBtn.addEventListener('click', function() {
-      // Disparar la descarga
+    // Reclamar wallpaper -> descarga (el secreto va dentro del propio archivo)
+    wallBtn.addEventListener('click', function () {
       try {
         var a = document.createElement('a');
         a.href = FINAL_REWARD_FILE;
@@ -1788,10 +1874,20 @@
         a.click();
         document.body.removeChild(a);
       } catch (e) { console.warn('ee final download err', e); }
+      wallBtn.classList.add('is-claimed');
+    });
 
-      // Cerrar el overlay tras un instante
-      claimBtn.classList.add('is-claimed');
-      setTimeout(closeFinalReward, 700);
+    // Presumir logro -> Web Share API o, en su defecto, intent de X/Twitter
+    shareBtn.addEventListener('click', function () {
+      var url = 'https://ualjlf259.github.io/';
+      var text = (loc.reward_share_text || 'He descubierto los {n} secretos ocultos de Nakama.blog 🥚')
+        .replace('{n}', total);
+      if (navigator.share) {
+        navigator.share({ title: 'Nakama.blog', text: text, url: url }).catch(function () {});
+      } else {
+        window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text) +
+          '&url=' + encodeURIComponent(url), '_blank', 'noopener');
+      }
     });
   }
 

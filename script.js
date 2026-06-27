@@ -265,14 +265,10 @@ function renderCards(index) {
   index.forEach(item => {
     const a = document.createElement('a');
     a.className = 'card';
-    a.href = '#';
+    a.href = `article.html?id=${item.id}`;
     a.dataset.category = item.category;
     a.dataset.title = (item.title && item.title[currentLang]) || '';
     a.dataset.id = item.id;
-    a.addEventListener('click', (e) => {
-      e.preventDefault();
-      openArticle(item.id);
-    });
 
     const thumb = item.thumb || {};
     const visual = thumb.type === 'img'
@@ -653,7 +649,7 @@ window.copyArticleLink = copyArticleLink;
 // Featured banner button
 const featuredReadBtn = document.getElementById('featured-read-btn');
 if (featuredReadBtn) {
-  featuredReadBtn.addEventListener('click', () => openArticle('op-obra'));
+  featuredReadBtn.addEventListener('click', () => { window.location.href = 'article.html?id=op-obra'; });
 }
 
 // Cerrar modal con Escape
@@ -795,7 +791,7 @@ if (btnSpin && rouletteWheel) {
       const id = rouletteItems[randomItemIndex];
       setTimeout(() => {
         closeRoulette();
-        openArticle(id);
+        window.location.href = 'article.html?id=' + id;
       }, 1500);
     }, 2800);
   });
@@ -906,34 +902,123 @@ function updateArticleSEO(data, lang) {
 function renderArticlePage(data) {
   if (!onArticlePage) return;
   const lang = currentLang;
+  const t = i18n[lang] || {};
 
-  const tag   = pickLang(data.tag,     lang);
   const title = pickLang(data.title,   lang);
+  const desc  = pickLang(data.desc,    lang);
   const meta  = pickLang(data.meta,    lang);
+  const label = pickLang(data.label,   lang);
   const body  = pickLang(data.content, lang);
 
   const g = id => document.getElementById(id);
-  if (g('article-tag'))   g('article-tag').textContent   = tag;
-  if (g('article-title')) g('article-title').textContent = title;
-  if (g('article-meta'))  g('article-meta').textContent  = meta;
+
+  // Dos tags: categoría (rosa) + tema/label (cian)
+  if (g('article-tags')) {
+    g('article-tags').innerHTML =
+      `<span class="atag atag-cat">${data.category}</span>` +
+      (label ? `<span class="atag atag-topic">${label}</span>` : '');
+  }
+
+  // Título con realce en degradado de la parte tras ':' o guión
+  if (g('article-title')) g('article-title').innerHTML = emphasizeTitle(title);
+
+  // Subtítulo (extracto)
+  if (g('article-sub')) g('article-sub').textContent = desc || '';
+
+  // Fila de autor: avatar + nombre + tiempo de lectura (1er campo del meta)
+  if (g('article-author')) {
+    const readTime = (meta || '').split('·')[0].trim();
+    g('article-author').innerHTML =
+      '<img class="article-author-avatar" src="img/articles/sobre-mi-avatar.jpg" alt="" loading="lazy" decoding="async">' +
+      '<div class="article-author-info">' +
+        '<span class="article-author-name">Jose Jesus Lopez Fernandez</span>' +
+        (readTime ? '<span class="article-author-meta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg>' + readTime + '</span>' : '') +
+      '</div>';
+  }
+
+  // Hero
   if (g('article-img-top')) g('article-img-top').innerHTML = renderArticleImg(data.image, data.image_caption, 'hero');
 
+  // Cuerpo
   const midHtml = renderArticleImg(data.image_mid, data.image_mid_caption, 'inline');
   if (g('article-body')) g('article-body').innerHTML = applyMidImg(body, midHtml);
+
+  // Pie: tags hashtag (#categoría #tema) + compartir
+  if (g('article-foot')) {
+    const hash = s => '#' + String(s || '').replace(/[\s!¡?¿.·]/g, '');
+    g('article-foot').innerHTML =
+      '<div class="article-foot-tags">' +
+        `<span class="ftag">${hash(data.category)}</span>` +
+        (label ? `<span class="ftag">${hash(label)}</span>` : '') +
+      '</div>' +
+      '<button class="article-share-btn" id="article-share-btn" type="button">' +
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="13.5" x2="15.4" y2="17.5"/><line x1="15.4" y1="6.5" x2="8.6" y2="10.5"/></svg>' +
+        (t.share_label || 'Compartir') +
+      '</button>';
+    const sb = g('article-share-btn');
+    if (sb) sb.onclick = shareArticle;
+  }
 
   document.title = `${title} — Nakama Blog`;
   updateArticleSEO(data, lang);
 
-  const shareRow = document.getElementById('article-share-row');
-  if (shareRow) shareRow.style.display = '';
+  // Estado y acciones de la barra lateral
+  setupArticleRail(data.id);
+}
 
-  const articleUrl = window.location.href;
-  const text = encodeURIComponent(title + ' — NAKAMA.BLOG');
-  const url  = encodeURIComponent(articleUrl);
-  const tw = document.getElementById('share-tw');
-  const wa = document.getElementById('share-wa');
-  if (tw) tw.href = `https://twitter.com/intent/tweet?text=${text}&url=${url}`;
-  if (wa) wa.href = `https://wa.me/?text=${text}%20${url}`;
+/* Realza en degradado la parte del título tras el primer ':' o ' – ' */
+function emphasizeTitle(title) {
+  if (!title) return '';
+  const m = /[:：]|\s[–—-]\s/.exec(title);
+  if (!m || m.index < 3 || m.index > title.length - 4) return title;
+  const cut = m.index + m[0].length;
+  return title.slice(0, cut) + ' <span class="article-title-em">' + title.slice(cut).trim() + '</span>';
+}
+
+/* Barra de acciones: me gusta / guardar (persisten en localStorage) + compartir */
+function setupArticleRail(id) {
+  const bind = (btn, key) => {
+    if (!btn) return;
+    const isOn = () => { try { return localStorage.getItem(key) === '1'; } catch (e) { return false; } };
+    const paint = on => { btn.classList.toggle('is-active', on); btn.setAttribute('aria-pressed', on); };
+    paint(isOn());
+    btn.onclick = () => {
+      const now = !isOn();
+      try { localStorage.setItem(key, now ? '1' : '0'); } catch (e) {}
+      paint(now);
+      if (now) { btn.classList.remove('is-pop'); void btn.offsetWidth; btn.classList.add('is-pop'); }
+    };
+  };
+  bind(document.getElementById('rail-like'), 'liked_' + id);
+  bind(document.getElementById('rail-save'), 'saved_' + id);
+  const share = document.getElementById('rail-share');
+  if (share) share.onclick = shareArticle;
+}
+
+/* Compartir: Web Share API nativa o copiar enlace con toast de respaldo */
+function shareArticle() {
+  const url = window.location.href;
+  const t = i18n[currentLang] || {};
+  const title = currentArticleData ? pickLang(currentArticleData.title, currentLang) : document.title;
+  if (navigator.share) {
+    navigator.share({ title: title, url: url }).catch(() => {});
+  } else if (navigator.clipboard) {
+    navigator.clipboard.writeText(url).then(() => articleToast(t.share_copied || '¡Copiado!')).catch(() => {});
+  } else {
+    const ta = document.createElement('textarea');
+    ta.value = url; document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); articleToast(t.share_copied || '¡Copiado!'); } catch (e) {}
+    document.body.removeChild(ta);
+  }
+}
+
+function articleToast(msg) {
+  const el = document.createElement('div');
+  el.className = 'article-toast';
+  el.textContent = msg;
+  document.body.appendChild(el);
+  requestAnimationFrame(() => el.classList.add('is-show'));
+  setTimeout(() => { el.classList.remove('is-show'); setTimeout(() => el.remove(), 300); }, 1800);
 }
 
 function showArticleError(message) {
@@ -1165,8 +1250,7 @@ if (shareCpBtn && onArticlePage) {
   }
   function go(id) {
     close();
-    input.value = '';
-    if (typeof openArticle === 'function') openArticle(id);
+    window.location.href = 'article.html?id=' + id;
   }
 
   input.addEventListener('input', () => {

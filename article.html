@@ -146,39 +146,25 @@
   <main class="article-page-wrap">
     <a href="index.html#articulos" class="article-back" data-i18n="back_to_articles">← Volver a artículos</a>
 
-    <article class="modal" id="article-root">
-      <span class="modal-tag" id="article-tag"></span>
-      <h2 id="article-title">Cargando…</h2>
-      <div class="modal-meta" id="article-meta"></div>
+    <aside class="article-rail" id="article-rail" aria-label="Acciones del artículo">
+      <button class="rail-btn" id="rail-like" type="button" aria-pressed="false" aria-label="Me gusta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 1 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+      </button>
+      <button class="rail-btn" id="rail-save" type="button" aria-pressed="false" aria-label="Guardar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+      </button>
+      <button class="rail-btn" id="rail-share" type="button" aria-label="Compartir">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="13.5" x2="15.4" y2="17.5"/><line x1="15.4" y1="6.5" x2="8.6" y2="10.5"/></svg>
+      </button>
+    </aside>
+    <article class="article-doc" id="article-root">
+      <div class="article-tags" id="article-tags"></div>
+      <h1 class="article-title" id="article-title">Cargando…</h1>
+      <p class="article-sub" id="article-sub"></p>
+      <div class="article-author" id="article-author"></div>
       <div id="article-img-top"></div>
       <div class="modal-body" id="article-body"></div>
-
-      <div class="modal-share-row" id="article-share-row" style="display:none;">
-        <span class="share-label" data-i18n="share_label">Compartir</span>
-        <a class="share-btn tw" id="share-tw" href="#" target="_blank" rel="noopener">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.253 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z" />
-          </svg>
-          X / Twitter
-        </a>
-        <a class="share-btn wa" id="share-wa" href="#" target="_blank" rel="noopener">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
-            <path
-              d="M11.998 2C6.477 2 2 6.477 2 12.001a9.994 9.994 0 001.388 5.094L2 22l5.042-1.362A9.956 9.956 0 0011.998 22C17.523 22 22 17.523 22 12.001 22 6.477 17.523 2 11.998 2z" />
-          </svg>
-          WhatsApp
-        </a>
-        <button class="share-btn cp" id="share-cp">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="9" y="9" width="13" height="13" rx="2" />
-            <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" />
-          </svg>
-          <span data-i18n="share_copy">Copiar enlace</span>
-        </button>
-      </div>
+      <div class="article-foot" id="article-foot"></div>
     </article>
   </main>
 
