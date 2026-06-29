@@ -29,7 +29,7 @@ window.LANG_DE = {
   nav_ranking  : "Rangliste",
   nav_about    : "Über mich",
   hero_eyebrow : "EMPFOHLEN · TIEFGEHENDE ANALYSE",
-  hero_h1      : "Die Welt des<br><em>Anime</em> wie nie<br>zuvor gesehen.",
+  hero_h1      : "Die Welt des<br><em>Anime</em> wie nie<br><u class='hero-ul'>zuvor gesehen.</u>",
   hero_sub     : "Analysen, Reflexionen und Leidenschaft für <strong>One Piece</strong>, Hunter x Hunter, Vinland Saga und das gesamte Manga-Universum.",
   btn_read     : "Artikel lesen",
   btn_about    : "Über mich",

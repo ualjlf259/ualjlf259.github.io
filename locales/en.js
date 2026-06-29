@@ -33,7 +33,7 @@ window.LANG_EN = {
 
   /* ── Hero ── */
   hero_eyebrow : "FEATURED · DEEP ANALYSIS",
-  hero_h1      : "The world of<br><em>anime</em> like<br>never before.",
+  hero_h1      : "The world of<br><em>anime</em> like<br><u class='hero-ul'>never before.</u>",
   hero_sub     : "Analysis, reflections and passion for <strong>One Piece</strong>, Hunter x Hunter, Vinland Saga and the entire manga universe.",
   btn_read     : "Read articles",
   btn_about    : "About me",

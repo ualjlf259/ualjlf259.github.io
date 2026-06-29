@@ -33,7 +33,7 @@ window.LANG_JA = {
 
   /* ── ヒーロー ── */
   hero_eyebrow : "特集・深い分析",
-  hero_h1      : "今までにない<br><em>アニメ</em>の<br>世界。",
+  hero_h1      : "今までにない<br><em>アニメ</em>の<br><u class='hero-ul'>世界。</u>",
   hero_sub     : "<strong>ワンピース</strong>、HUNTER×HUNTER、ヴィンランド・サガ、そしてマンガ全体への情熱と考察。",
   btn_read     : "記事を読む",
   btn_about    : "自己紹介",

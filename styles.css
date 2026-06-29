@@ -581,9 +581,7 @@
       transition: color .15s;
     }
     .modal-close:hover { color: var(--bright); }
-    .modal-tag { font-size: .64rem; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: .8rem; display: block; }
     .modal h2 { font-family: 'Cinzel Decorative', 'Cinzel', serif; font-size: clamp(1.2rem, 3vw, 1.75rem); color: var(--gold); line-height: 1.2; margin-bottom: 1.4rem; font-weight: 700; letter-spacing: 0.02em; text-shadow: 0 0 32px rgba(192,132,252,0.35); }
-    .modal-meta { font-size: .75rem; color: var(--muted); letter-spacing: .06em; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
 
     /* â”€â”€ Article reading typography â”€â”€ */
     .modal-body { color: var(--text); font-family: 'EB Garamond', Georgia, serif; font-size: 1.18rem; line-height: 1.9; }
@@ -843,13 +841,6 @@
       margin-bottom: 2rem; padding: 1.2rem 1.5rem;
       background: var(--card); border: 1px solid var(--border); border-radius: 6px;
     }
-    .search-wrap {
-      flex: 1; min-width: 200px; position: relative;
-    }
-    .search-wrap svg {
-      position: absolute; left: .85rem; top: 50%; transform: translateY(-50%);
-      opacity: .4; pointer-events: none;
-    }
     #search-input {
       width: 100%; background: var(--deep); border: 1px solid var(--border);
       border-radius: 4px; padding: .6rem .9rem .6rem 2.4rem;
@@ -875,29 +866,6 @@
       padding: 3rem 1rem; color: var(--muted); font-size: 1.05rem;
     }
     #no-results span { color: var(--gold); }
-
-    /* â”€â”€ SHARE BUTTON in modal â”€â”€ */
-    .modal-share-row {
-      display: flex; gap: .6rem; flex-wrap: wrap; align-items: center;
-      margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border);
-    }
-    .share-label {
-      font-size: .72rem; letter-spacing: .15em; text-transform: uppercase;
-      color: var(--muted); font-weight: 600; margin-right: .2rem;
-    }
-    .share-btn {
-      display: inline-flex; align-items: center; gap: .4rem;
-      padding: .42rem 1rem; border-radius: 4px; font-size: .78rem;
-      font-weight: 600; letter-spacing: .06em; text-decoration: none;
-      border: 1px solid var(--border); background: var(--deep);
-      color: var(--text); cursor: pointer; transition: all .18s;
-      font-family: 'DM Sans', sans-serif;
-    }
-    .share-btn:hover { transform: translateY(-1px); }
-    .share-btn.tw:hover  { border-color: #1da1f2; color: #1da1f2; }
-    .share-btn.wa:hover  { border-color: #25d366; color: #25d366; }
-    .share-btn.cp:hover  { border-color: var(--gold); color: var(--gold); }
-    .share-btn.cp.copied { border-color: #4caf50; color: #4caf50; }
 
     @media (max-width: 768px) {
       .search-filters-bar { flex-direction: column; align-items: stretch; }
@@ -1253,7 +1221,6 @@
   --nav-bg: rgba(7, 7, 12, .82);
   --ranking-bg: rgba(10, 10, 18, .58);
   --rank-bar-bg: rgba(255, 255, 255, .08);
-  --rank-other-color: rgba(255, 255, 255, .34);
   --accent-grad: linear-gradient(135deg, #bf5cff 0%, #ff4dcb 50%, #34dbff 100%);
   --accent-grad-2: linear-gradient(135deg, #a64dff 0%, #ff4dcb 100%);
   --surface-glass: rgba(18, 17, 29, .72);
@@ -1284,7 +1251,6 @@ body.light-theme {
   --nav-bg: rgba(247, 244, 238, .68);
   --ranking-bg: rgba(239, 233, 222, .72);
   --rank-bar-bg: rgba(35, 31, 52, .1);
-  --rank-other-color: rgba(35, 31, 52, .42);
   --accent-grad: linear-gradient(135deg, #8a2be2 0%, #e0249a 54%, #0aa6cc 100%);
   --accent-grad-2: linear-gradient(135deg, #8a2be2 0%, #e0249a 100%);
   --surface-glass: rgba(255, 252, 246, .76);
@@ -1871,8 +1837,7 @@ body.light-theme .hero-sub {
 .btn-primary,
 .btn-outline,
 .btn-roulette,
-.btn-spin,
-.share-btn {
+.btn-spin {
   border-radius: var(--radius-pill);
   transition:
     transform var(--duration-fast) var(--ease-standard),
@@ -2562,11 +2527,6 @@ body.light-theme .modal-close:hover {
   background: rgba(18, 17, 32, .06);
 }
 
-.modal-tag {
-  color: var(--gold);
-  letter-spacing: .1em;
-}
-
 .modal h2 {
   color: var(--bright);
   font-family: 'Playfair Display', serif;
@@ -2574,11 +2534,6 @@ body.light-theme .modal-close:hover {
   line-height: 1.12;
   letter-spacing: 0;
   text-shadow: none;
-}
-
-.modal-meta {
-  color: var(--muted);
-  border-bottom-color: var(--border);
 }
 
 .modal-body {
@@ -2673,15 +2628,6 @@ body.light-theme .modal-close:hover {
 
 .article-img-caption {
   color: var(--muted);
-}
-
-.share-btn {
-  background: rgba(255, 255, 255, .04);
-  border-color: var(--border);
-}
-
-body.light-theme .share-btn {
-  background: rgba(18, 17, 32, .035);
 }
 
 /* ARTICLE PAGE */

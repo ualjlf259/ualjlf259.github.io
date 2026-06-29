@@ -1289,7 +1289,6 @@ body.ee-g5-active {
   --surface-raised: rgba(255, 249, 215, .94);
   --ranking-bg: rgba(255, 245, 200, 0.7);
   --rank-bar-bg: rgba(245, 158, 11, 0.12);
-  --rank-other-color: rgba(68, 35, 10, 0.25);
   background:
     radial-gradient(ellipse 80% 60% at 72% -10%, rgba(255, 210, 50, .16), transparent 60%),
     radial-gradient(ellipse 68% 54% at 8% 12%, rgba(255, 180, 0, .12), transparent 60%),

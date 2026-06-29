@@ -29,7 +29,7 @@ window.LANG_RU = {
   nav_ranking  : "Рейтинг",
   nav_about    : "Обо мне",
   hero_eyebrow : "ИЗБРАННОЕ · ГЛУБОКИЙ АНАЛИЗ",
-  hero_h1      : "Мир <em>аниме</em><br>как ты его<br>никогда не видел.",
+  hero_h1      : "Мир <em>аниме</em><br>как ты его<br><u class='hero-ul'>никогда не видел.</u>",
   hero_sub     : "Анализ, размышления и страсть к <strong>One Piece</strong>, Hunter x Hunter, Vinland Saga и всей вселенной манги.",
   btn_read     : "Читать статьи",
   btn_about    : "Обо мне",

@@ -236,11 +236,6 @@ function applyLang(lang) {
     renderCards(articleStore.index);
   }
 
-  // Re-render modal si está abierto
-  if (onIndexPage && currentModalData) {
-    fillModal(currentModalData, lang);
-  }
-
   // Re-render artículo (article.html)
   if (onArticlePage && currentArticleData) {
     renderArticlePage(currentArticleData);
@@ -556,119 +551,10 @@ function applyMidImg(body, midHtml) {
     .replace(/\{\{MID_IMG\}\}/g, '');
 }
 
-/* ═══════════════════════════════════════════════════
-   MODAL (index.html)
-═══════════════════════════════════════════════════ */
-let currentModalData = null;
-
-function fillModal(data, lang) {
-  const tag   = pickLang(data.tag,     lang);
-  const title = pickLang(data.title,   lang);
-  const meta  = pickLang(data.meta,    lang);
-  const body  = pickLang(data.content, lang);
-
-  const g = id => document.getElementById(id);
-  if (g('modal-tag'))   g('modal-tag').textContent   = tag;
-  if (g('modal-title')) g('modal-title').textContent = title;
-  if (g('modal-meta'))  g('modal-meta').textContent  = meta;
-  if (g('modal-img-top')) g('modal-img-top').innerHTML = renderArticleImg(data.image, data.image_caption, 'hero');
-
-  const midHtml = renderArticleImg(data.image_mid, data.image_mid_caption, 'inline');
-  if (g('modal-body')) g('modal-body').innerHTML = applyMidImg(body, midHtml);
-
-  const modalBox = document.getElementById('modal-box');
-  if (modalBox) modalBox.scrollTop = 0;
-
-  document.title = `${title} — Nakama Blog`;
-  updateShareLinks(data.id, title);
-}
-
-async function openArticle(id) {
-  try {
-    const data = await loadArticle(id);
-    currentModalData = data;
-    fillModal(data, currentLang);
-    const overlay = document.getElementById('modal-overlay');
-    if (overlay) {
-      overlay.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-  } catch (err) {
-    console.error('Error abriendo artículo:', err);
-  }
-}
-
-function closeArticle() {
-  const overlay = document.getElementById('modal-overlay');
-  if (overlay) overlay.classList.remove('open');
-  document.body.style.overflow = '';
-  currentModalData = null;
-}
-
-function closeOnOverlay(event) {
-  if (event.target === document.getElementById('modal-overlay')) {
-    closeArticle();
-  }
-}
-
-function copyArticleLink() {
-  const t = i18n[currentLang] || {};
-  const id = currentModalData ? currentModalData.id : '';
-  const url = id
-    ? `${location.origin}${location.pathname.replace(/\/[^/]*$/, '/')  }article.html?id=${id}`
-    : window.location.href;
-  const shareCpBtn = document.getElementById('share-cp');
-  const finish = () => {
-    if (shareCpBtn) {
-      shareCpBtn.classList.add('copied');
-      const spanEl = shareCpBtn.querySelector('[data-i18n]');
-      const original = spanEl ? spanEl.textContent : '';
-      if (spanEl && t.share_copied) spanEl.textContent = t.share_copied;
-      setTimeout(() => {
-        shareCpBtn.classList.remove('copied');
-        if (spanEl) spanEl.textContent = original;
-      }, 2000);
-    }
-  };
-  if (navigator.clipboard) {
-    navigator.clipboard.writeText(url).then(finish).catch(finish);
-  } else {
-    const ta = document.createElement('textarea');
-    ta.value = url; document.body.appendChild(ta);
-    ta.select(); document.execCommand('copy');
-    document.body.removeChild(ta);
-    finish();
-  }
-}
-
-window.openArticle    = openArticle;
-window.closeArticle   = closeArticle;
-window.closeOnOverlay = closeOnOverlay;
-window.copyArticleLink = copyArticleLink;
-
 // Featured banner button
 const featuredReadBtn = document.getElementById('featured-read-btn');
 if (featuredReadBtn) {
   featuredReadBtn.addEventListener('click', () => { window.location.href = 'article.html?id=op-obra'; });
-}
-
-// Cerrar modal con Escape
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape' && currentModalData) closeArticle();
-});
-
-/* ═══════════════════════════════════════════════════
-   SHARE (modal)
-═══════════════════════════════════════════════════ */
-function updateShareLinks(id, title) {
-  const articleUrl = `${location.origin}${location.pathname.replace(/\/[^/]*$/, '/')}article.html?id=${encodeURIComponent(id)}`;
-  const text = encodeURIComponent((title || '') + ' — NAKAMA.BLOG');
-  const url  = encodeURIComponent(articleUrl);
-
-  const tw = document.getElementById('share-tw');
-  const wa = document.getElementById('share-wa');
-  if (tw) tw.href = `https://twitter.com/intent/tweet?text=${text}&url=${url}`;
-  if (wa) wa.href = `https://wa.me/?text=${text}%20${url}`;
 }
 
 /* ═══════════════════════════════════════════════════
@@ -1045,34 +931,6 @@ async function initArticlePage() {
     console.error(err);
     showArticleError(`No se encontró el artículo "${id}".`);
   }
-}
-
-// Botón copiar en article.html
-const shareCpBtn = document.getElementById('share-cp');
-if (shareCpBtn && onArticlePage) {
-  shareCpBtn.addEventListener('click', () => {
-    const t = i18n[currentLang] || {};
-    const url = window.location.href;
-    const finish = () => {
-      shareCpBtn.classList.add('copied');
-      const spanEl = shareCpBtn.querySelector('[data-i18n]');
-      const original = spanEl ? spanEl.textContent : '';
-      if (spanEl && t.share_copied) spanEl.textContent = t.share_copied;
-      setTimeout(() => {
-        shareCpBtn.classList.remove('copied');
-        if (spanEl) spanEl.textContent = original;
-      }, 2000);
-    };
-    if (navigator.clipboard) {
-      navigator.clipboard.writeText(url).then(finish).catch(finish);
-    } else {
-      const ta = document.createElement('textarea');
-      ta.value = url; document.body.appendChild(ta);
-      ta.select(); document.execCommand('copy');
-      document.body.removeChild(ta);
-      finish();
-    }
-  });
 }
 
 /* ═══════════════════════════════════════════════════
