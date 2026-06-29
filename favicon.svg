@@ -1,6 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="12" fill="#0d0d0d"/>
-  <circle cx="32" cy="32" r="18" fill="#d10000"/>
-  <text x="32" y="40" font-family="Georgia, serif" font-size="22"
-        font-weight="bold" fill="#fff" text-anchor="middle">悟</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Nakama Blog">
+  <defs>
+    <linearGradient id="nkAura" gradientUnits="userSpaceOnUse" x1="6" y1="6" x2="58" y2="58">
+      <stop offset="0" stop-color="#b978f2"/>
+      <stop offset=".52" stop-color="#d86bbd"/>
+      <stop offset="1" stop-color="#65c8df"/>
+    </linearGradient>
+    <radialGradient id="nkStone" cx="50%" cy="16%" r="125%">
+      <stop offset="0" stop-color="#1c1929"/>
+      <stop offset="1" stop-color="#0b0a12"/>
+    </radialGradient>
+  </defs>
+  <rect x="1" y="1" width="62" height="62" rx="17" fill="url(#nkStone)" stroke="#ffffff" stroke-opacity=".11"/>
+  <g transform="translate(12.8 12.8) scale(.6)" fill="none" stroke="url(#nkAura)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20 13V51"/>
+    <path d="M44 13V51"/>
+    <path d="M20 13L44 51"/>
+    <path d="M32 24L40 32L32 40L24 32Z" fill="url(#nkAura)" stroke="none"/>
+  </g>
 </svg>
