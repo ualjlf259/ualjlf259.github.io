@@ -155,7 +155,11 @@
 /* ── Responsive ── */
 @media (max-width: 760px) {
   .welcome-modal { grid-template-columns: 1fr; max-height: 94vh; }
-  .welcome-art { height: 140px; }
+  .welcome-art { height: 150px; }
+  /* Lockup + crédito más compactos y separados sobre el arte corto */
+  .welcome-art-logo { bottom: 1.75rem; font-size: 1.05rem; gap: .4rem; }
+  .welcome-art-mark { width: 1.4rem; height: 1.4rem; }
+  .welcome-art-credit { bottom: .7rem; }
 }
 
 /* ── Vida: entrada escalonada + ambiente (el reset global de reduced-motion las neutraliza) ── */

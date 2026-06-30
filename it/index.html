@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Analisi approfondita di anime e manga: One Piece, Hunter x Hunter, Vinland Saga, L'Attacco dei Giganti e altro.">
+  <title>Nakama Blog — Anime &amp; Manga</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <link rel="canonical" href="https://ualjlf259.github.io/it/">
+
+  <!-- ── Open Graph ── -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ualjlf259.github.io/it/">
+  <meta property="og:title" content="Nakama Blog — Anime &amp; Manga">
+  <meta property="og:description" content="Analisi approfondita di anime e manga: One Piece, Hunter x Hunter, Vinland Saga, L'Attacco dei Giganti e altro.">
+  <meta property="og:image" content="https://ualjlf259.github.io/img/articles/oyasumy-punpun-portada.jpg">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:site_name" content="Nakama Blog">
+
+  <!-- ── Twitter Card ── -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://ualjlf259.github.io/it/">
+  <meta name="twitter:title" content="Nakama Blog — Anime &amp; Manga">
+  <meta name="twitter:description" content="Analisi approfondita di anime e manga: One Piece, Hunter x Hunter, Vinland Saga, L'Attacco dei Giganti e altro.">
+  <meta name="twitter:image" content="https://ualjlf259.github.io/img/articles/oyasumy-punpun-portada.jpg">
+
+  <!-- ── hreflang (home por idioma) ── -->
+  <link rel="alternate" hreflang="es" href="https://ualjlf259.github.io/">
+  <link rel="alternate" hreflang="en" href="https://ualjlf259.github.io/en/">
+  <link rel="alternate" hreflang="fr" href="https://ualjlf259.github.io/fr/">
+  <link rel="alternate" hreflang="ja" href="https://ualjlf259.github.io/ja/">
+  <link rel="alternate" hreflang="it" href="https://ualjlf259.github.io/it/">
+  <link rel="alternate" hreflang="de" href="https://ualjlf259.github.io/de/">
+  <link rel="alternate" hreflang="ru" href="https://ualjlf259.github.io/ru/">
+  <link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/pt/">
+  <link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/">
+
+  <!-- ── JSON-LD (WebSite) ── -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Nakama Blog","alternateName":"ualjlf259.github.io","url":"https://ualjlf259.github.io/it/","description":"Analisi approfondita di anime e manga: One Piece, Hunter x Hunter, Vinland Saga, L'Attacco dei Giganti e altro.","inLanguage":"it","author":{"@type":"Person","name":"Jose Jesus Lopez Fernandez"}}</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=Bebas+Neue&family=Cinzel:wght@700;900&family=Cinzel+Decorative:wght@400;700;900&family=EB+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <script defer src="/locales/es.js"></script>
+  <script defer src="/locales/en.js"></script>
+  <script defer src="/locales/fr.js"></script>
+  <script defer src="/locales/ja.js"></script>
+  <script defer src="/locales/it.js"></script>
+  <script defer src="/locales/de.js"></script>
+  <script defer src="/locales/ru.js"></script>
+  <script defer src="/locales/pt.js"></script>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/easter-eggs/easter-eggs.css">
+  <link rel="stylesheet" href="/welcome.css">
+  <link rel="stylesheet" href="/flags/flag-icons-local.css">
+
+  <!-- Home prerenderizado por idioma (SSG): fija el idioma de esta URL y hace que el selector navegue -->
+  <script>window.__PRERENDERED={"home":true,"lang":"it","langUrls":{"es":"/","en":"/en/","fr":"/fr/","ja":"/ja/","it":"/it/","de":"/de/","ru":"/ru/","pt":"/pt/"}};</script>
+</head>
+<body>
+
+
+  <!-- Fondo ambiente: slideshow de img/fondo (capa fija detrás de todo; CSS .bg-stage) -->
+  <div class="bg-stage" aria-hidden="true">
+    <div class="bg-slide bg-slide-1"></div>
+    <div class="bg-slide bg-slide-2"></div>
+    <div class="bg-slide bg-slide-3"></div>
+    <div class="bg-veil"></div>
+  </div>
+
+  <nav class="at-hero">
+    <a class="nav-logo" href="#">
+      <img class="nav-logo-mark" src="/favicon.svg" alt="" width="34" height="34" decoding="async">
+      <span class="nav-logo-text">NAKAMA<span class="nav-logo-dot">.</span>BLOG</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#articulos" data-i18n="nav_articles">Artículos</a></li>
+      <li><a href="#ranking" data-i18n="nav_ranking">Ranking</a></li>
+      <li><a href="#sobre-mi" data-i18n="nav_about">Sobre mí</a></li>
+    </ul>
+    <div class="nav-controls">
+      <!-- ── Easter Eggs Progress ── -->
+      <button id="ee-progress-btn" aria-label="Easter Eggs" title="Easter Eggs">
+        🥚
+      </button>
+      <!-- ── Selector de tema ── -->
+      <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema">
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+          <circle cx="12" cy="12" r="5" />
+          <line x1="12" y1="1" x2="12" y2="3" />
+          <line x1="12" y1="21" x2="12" y2="23" />
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+          <line x1="1" y1="12" x2="3" y2="12" />
+          <line x1="21" y1="12" x2="23" y2="12" />
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+        </svg>
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+        </svg>
+      </button>
+      <!-- ── Selector de idioma (dropdown) ── -->
+      <div class="lang-dropdown" id="lang-dropdown" aria-label="Cambiar idioma">
+        <button class="lang-toggle" id="lang-toggle" aria-haspopup="listbox" aria-expanded="false">
+          <span class="lang-flag-wrap" id="lang-flag"><span class="fi fi-es fis"></span></span>
+          <span class="lang-label" id="lang-label">Español</span>
+          <!-- Chevron -->
+          <svg class="chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2.5" stroke-linecap="round">
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </button>
+        <div class="lang-menu" role="listbox" id="lang-menu">
+          <button class="lang-option active" data-lang="es" role="option" aria-selected="true">
+            <span class="opt-flag"><span class="fi fi-es"></span></span>
+            <span class="opt-name">Español</span>
+            <span class="opt-check"></span>
+          </button>
+          <button class="lang-option" data-lang="en" role="option" aria-selected="false">
+            <span class="opt-flag"><span class="fi fi-gb"></span></span>
+            <span class="opt-name">English</span>
+            <span class="opt-check"></span>
+          </button>
+          <button class="lang-option" data-lang="fr" role="option" aria-selected="false">
+            <span class="opt-flag"><span class="fi fi-fr"></span></span>
+            <span class="opt-name">Français</span>
+            <span class="opt-check"></span>
+          </button>
+          <button class="lang-option" data-lang="it" role="option" aria-selected="false">
+            <span class="opt-flag"><span class="fi fi-it"></span></span>
+            <span class="opt-name">Italiano</span>
+            <span class="opt-check"></span>
+          </button>
+          <button class="lang-option" data-lang="de" role="option" aria-selected="false">
+            <span class="opt-flag"><span class="fi fi-de"></span></span>
+            <span class="opt-name">Deutsch</span>
+            <span class="opt-check"></span>
+          </button>
+          <button class="lang-option" data-lang="ru" role="option" aria-selected="false">
+            <span class="opt-flag"><span class="fi fi-ru"></span></span>
+            <span class="opt-name">Русский</span>
+            <span class="opt-check"></span>
+          </button>
+          <button class="lang-option" data-lang="ja" role="option" aria-selected="false">
+            <span class="opt-flag"><span class="fi fi-jp"></span></span>
+            <span class="opt-name">日本語</span>
+            <span class="opt-check"></span>
+          </button>
+          <button class="lang-option" data-lang="pt" role="option" aria-selected="false">
+            <span class="opt-flag"><span class="fi fi-pt"></span></span>
+            <span class="opt-name">Português</span>
+            <span class="opt-check"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <img src="/img/fondo/hero-aura.webp" alt="" fetchpriority="high" decoding="async">
+      <div class="hero-bg-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-eyebrow-badge">
+        <span class="hero-dot" aria-hidden="true"></span>
+        <p class="hero-eyebrow">DESTACADO · ANÁLISIS PROFUNDO</p>
+      </div>
+      <h1>El mundo del<br><em>anime</em> como<br>nunca lo viste.</h1>
+      <p class="hero-sub">Análisis, reflexiones y pasión por <strong>One Piece</strong>, Hunter x Hunter, Vinland Saga y todo el universo del manga.</p>
+      <div class="hero-cta">
+        <a href="#articulos" class="btn btn-primary">
+          <svg class="btn-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="6,3 20,12 6,21"/></svg>
+          <span class="btn-label">Leer artículos</span>
+        </a>
+        <button id="btn-roulette" class="btn btn-roulette">
+          <span class="btn-label">🎲 Sorpréndeme</span>
+        </button>
+        <a href="#sobre-mi" class="btn btn-outline">
+          <svg class="btn-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          <span class="btn-label">Sobre mí</span>
+        </a>
+      </div>
+      <div class="hero-stats" aria-label="Estadísticas">
+        <span class="hero-stat">
+          <svg class="hero-stat-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12,2 15,9 22,9.5 17,14.5 18.5,22 12,18 5.5,22 7,14.5 2,9.5 9,9"/></svg>
+          <strong>9.6</strong> <span class="hero-stat-label hero-stat-rating-label">rating</span>
+        </span>
+        <span class="hero-stat-sep" aria-hidden="true"></span>
+        <span class="hero-stat"><strong>1100+</strong> <span class="hero-stat-label hero-stat-eps-label">episodios</span></span>
+        <span class="hero-stat-sep" aria-hidden="true"></span>
+        <span class="hero-stat">Toei Animation</span>
+      </div>
+    </div>
+    <div class="scroll-hint">Scroll</div>
+  </header>
+
+  <!-- Franja motivacional -->
+  <div class="motiv-wrap">
+    <div class="about-video-card">
+      <div class="motiv-collage" aria-hidden="true">
+        <img src="/img/articles/one-piece-portada.jpg" alt="" loading="lazy" decoding="async">
+        <img src="/img/articles/hunter-x-hunter-portada.jpg" alt="" loading="lazy" decoding="async">
+        <img src="/img/articles/Berserk-portada.jpg" alt="" loading="lazy" decoding="async">
+        <img src="/img/articles/Shingeky-no-kyojin-portada.jpg" alt="" loading="lazy" decoding="async">
+        <img src="/img/articles/Vinland-portada.jpg" alt="" loading="lazy" decoding="async">
+        <img src="/img/articles/Naruto-portada.jpg" alt="" loading="lazy" decoding="async">
+        <img src="/img/articles/Death-note-portada.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <p class="about-video-phrase" data-i18n="motiv_phrase">Nunca te rindas y persigue tus sueños ❤️</p>
+      <button class="about-video-btn" id="motiv-play-btn" aria-label="Reproducir vídeo motivacional">
+        <span class="about-video-btn-circle">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <polygon points="6,3 20,12 6,21" />
+          </svg>
+        </span>
+        <span class="about-video-btn-label" data-i18n="motiv_play">Ver vídeo</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="featured-wrap">
+    <div class="featured-banner">
+      <span class="featured-badge">DESTACADO</span>
+      <div class="featured-content">
+        <span class="featured-tag">One Piece · Análisis profundo</span>
+        <h2>Por Qué One Piece es la Mayor Obra Literaria que Ha Creado el Ser Humano</h2>
+        <p>25 años de construcción de mundo, personajes con alma y una narrativa que habla de esclavitud, racismo y
+          poder. Un análisis sin spoilers para los que aún no han empezado.</p>
+        <button class="btn btn-primary" id="featured-read-btn">Leer ahora</button>
+      </div>
+      <div class="featured-visual">⚓</div>
+    </div>
+  </div>
+
+  <main id="articulos" role="main">
+    <div class="section-wrap">
+      <div class="section-header">
+        <h2 data-i18n="articles_title">Artículos</h2>
+        <span data-i18n="articles_sub">— análisis &amp; reflexiones</span>
+      </div>
+
+      <!-- Search & Filter — command palette (glass flotante, Ctrl+K, resultados) -->
+      <div class="search-filters-bar" id="search-cmd">
+        <div class="search-cmd-card">
+          <div class="search-cmd-spot" aria-hidden="true"></div>
+          <div class="search-cmd-bar">
+            <svg class="search-cmd-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+            <input type="search" id="search-input" autocomplete="off" autocorrect="off"
+              autocapitalize="off" spellcheck="false" inputmode="search" enterkeyhint="search"
+              role="combobox" aria-expanded="false" aria-controls="search-results"
+              aria-autocomplete="list" placeholder="Buscar artículos…" aria-label="Buscar artículos">
+            <kbd class="search-kbd" id="search-kbd" aria-hidden="true"><span class="search-kbd-mod">Ctrl</span> K</kbd>
+          </div>
+          <div class="filter-chips" id="filter-chips">
+          <button class="chip active" data-filter="all" data-i18n="filter_all">Todos</button>
+          <button class="chip" data-filter="One Piece">One Piece</button>
+          <button class="chip" data-filter="Hunter x Hunter">Hunter x Hunter</button>
+          <button class="chip" data-filter="Vinland Saga">Vinland Saga</button>
+          <button class="chip" data-filter="Shingeki no Kyojin">SNK</button>
+          <button class="chip" data-filter="Naruto">Naruto</button>
+          <button class="chip" data-filter="Death Note">Death Note</button>
+          <button class="chip" data-filter="Jujutsu Kaisen">JJK</button>
+          <button class="chip" data-filter="Boku no Hero">Boku no Hero</button>
+          <button class="chip" data-filter="Dragon Ball">Dragon Ball</button>
+          <button class="chip" data-filter="Berserk">Berserk</button>
+          <button class="chip" data-filter="Oyasumi Punpun">Oyasumi Punpun</button>
+          <button class="chip" data-filter="Chainsaw Man">Chainsaw Man</button>
+          <button class="chip" data-filter="Kimetsu no Yaiba">Kimetsu no Yaiba</button>
+          <button class="chip" data-filter="Black Clover">Black Clover</button>
+          </div>
+        </div>
+        <div class="search-results" id="search-results" role="listbox" aria-label="Resultados" hidden></div>
+      </div>
+
+      <div class="articles-grid" id="articles-grid">
+        <p id="no-results">No se encontraron artículos para "<span id="no-results-term"></span>"
+        </p>
+
+        <a class="card" href="/articulos/op-esclavitud/" data-category="One Piece"
+          data-title="La Esclavitud en One Piece: El Tema que Nadie Esperaba en un Manga" data-id="op-esclavitud">
+          <div class="card-thumb op"><img src="/img/articles/one-piece-portada.jpg" alt="One Piece portada"
+              class="card-thumb-img"></div>
+          <div class="card-body">
+            <span class="card-tag">One Piece</span>
+            <h3>La Esclavitud en One Piece: El Tema que Nadie Esperaba en un Manga</h3>
+            <p>Oda lleva décadas hablando de colonialismo y esclavitud con más honestidad que muchos libros de historia.
+            </p>
+            <div class="card-meta"><span>9 min lectura</span><span>Sociedad</span></div>
+          </div>
+        </a>
+
+        <a class="card" href="/articulos/hxh-capitalismo/" data-category="Hunter x Hunter"
+          data-title="El Arco de la Hormiga Quimera: Una Crítica al Capitalismo y la Humanidad"
+          data-id="hxh-capitalismo">
+          <div class="card-thumb hxh"><img src="/img/articles/hunter-x-hunter-portada.jpg" alt="Hunter x Hunter portada"
+              class="card-thumb-img"></div>
+          <div class="card-body">
+            <span class="card-tag">Hunter x Hunter</span>
+            <h3>El Arco de la Hormiga Quimera: Una Crítica al Capitalismo y la Humanidad</h3>
+            <p>Togashi usa hormigas gigantes para preguntarnos qué nos hace humanos. Y la respuesta incomoda.</p>
+            <div class="card-meta"><span>11 min lectura</span><span>Filosofía</span></div>
+          </div>
+        </a>
+
+        <a class="card" href="/articulos/vinland-guerra/" data-category="Vinland Saga"
+          data-title="Vinland Saga: El Manga que Más Honestamente Ha Retratado la Guerra" data-id="vinland-guerra">
+          <div class="card-thumb vs">🪓</div>
+          <div class="card-body">
+            <span class="card-tag">Vinland Saga</span>
+            <h3>Vinland Saga: El Manga que Más Honestamente Ha Retratado la Guerra</h3>
+            <p>No hay héroes ni villanos. Solo personas rotas por la violencia. Yukimura creó algo único.</p>
+            <div class="card-meta"><span>10 min lectura</span><span>Análisis</span></div>
+          </div>
+        </a>
+
+        <a class="card" href="/articulos/aot-libertad/" data-category="Shingeki no Kyojin"
+          data-title="Libertad y Prisión: Shingeki no Kyojin como Metáfora Política" data-id="aot-libertad">
+          <div class="card-thumb aot">⚔️</div>
+          <div class="card-body">
+            <span class="card-tag">Shingeki no Kyojin</span>
+            <h3>Libertad y Prisión: Shingeki no Kyojin como Metáfora Política</h3>
+            <p>¿Y si los muros no son para protegerte, sino para controlarte? AOT habla de Israel, Palestina y mucho
+              más.</p>
+            <div class="card-meta"><span>13 min lectura</span><span>Política</span></div>
+          </div>
+        </a>
+
+        <a class="card" href="/articulos/naruto-ciclo-odio/" data-category="Naruto"
+          data-title="El Ciclo del Odio en Naruto: ¿Por Qué No Podemos Parar las Guerras?" data-id="naruto-ciclo-odio">
+          <div class="card-thumb nar"><img src="/img/articles/Naruto-portada.jpg" alt="Naruto portada"
+              class="card-thumb-img"></div>
+          <div class="card-body">
+            <span class="card-tag">Naruto</span>
+            <h3>El Ciclo del Odio en Naruto: ¿Por Qué No Podemos Parar las Guerras?</h3>
+            <p>Pain le hace a Naruto la pregunta que los políticos llevan siglos evitando responder.</p>
+            <div class="card-meta"><span>10 min lectura</span><span>Sociedad</span></div>
+          </div>
+        </a>
+
+        <a class="card" href="/articulos/death-note-justicia/" data-category="Death Note"
+          data-title="Death Note y la Justicia: ¿Quién Tiene Derecho a Decidir Quién Vive?"
+          data-id="death-note-justicia">
+          <div class="card-thumb dn">📓</div>
+          <div class="card-body">
+            <span class="card-tag">Death Note</span>
+            <h3>Death Note y la Justicia: ¿Quién Tiene Derecho a Decidir Quién Vive?</h3>
+            <p>Light Yagami es el villano, sí. Pero sus preguntas sobre el sistema judicial siguen sin respuesta.</p>
+            <div class="card-meta"><span>8 min lectura</span><span>Filosofía</span></div>
+          </div>
+        </a>
+
+        <a class="card" href="/articulos/jjk-maldicion/" data-category="Jujutsu Kaisen"
+          data-title="Las Maldiciones de JJK son Nuestras Emociones: Una Lectura Psicológica" data-id="jjk-maldicion">
+          <div class="card-thumb jjk">👁️</div>
+          <div class="card-body">
+            <span class="card-tag">Jujutsu Kaisen</span>
+            <h3>Las Maldiciones de JJK son Nuestras Emociones: Una Lectura Psicológica</h3>
+            <p>En JJK los monstruos nacen del miedo, la vergüenza y el dolor humano. No es casualidad.</p>
+            <div class="card-meta"><span>7 min lectura</span><span>Psicología</span></div>
+          </div>
+        </a>
+
+        <a class="card" href="/articulos/mha-heroes/" data-category="Boku no Hero"
+          data-title="¿Qué Significa Ser un Héroe? Boku no Hero y la Trampa del Mérito" data-id="mha-heroes">
+          <div class="card-thumb mha">💥</div>
+          <div class="card-body">
+            <span class="card-tag">Boku no Hero</span>
+            <h3>¿Qué Significa Ser un Héroe? Boku no Hero y la Trampa del Mérito</h3>
+            <p>En un mundo donde el poder lo es todo, BnHA pregunta si una sociedad basada en el mérito es justa.</p>
+            <div class="card-meta"><span>8 min lectura</span><span>Sociedad</span></div>
+          </div>
+        </a>
+
+        <a class="card" href="/articulos/db-esfuerzo/" data-category="Dragon Ball"
+          data-title="Dragon Ball y el Culto al Esfuerzo: Cuándo Trabajar Duro Ya No Basta" data-id="db-esfuerzo">
+          <div class="card-thumb db">🐉</div>
+          <div class="card-body">
+            <span class="card-tag">Dragon Ball</span>
+            <h3>Dragon Ball y el Culto al Esfuerzo: Cuándo Trabajar Duro Ya No Basta</h3>
+            <p>Goku siempre gana con entrenamiento. Pero en la vida real, eso no siempre funciona.</p>
+            <div class="card-meta"><span>7 min lectura</span><span>Reflexión</span></div>
+          </div>
+        </a>
+
+        <a class="card" href="/articulos/berserk-nihilismo/" data-category="Berserk"
+          data-title="Berserk: El Claroscuro del Alma Humana y la Rebelión contra el Destino"
+          data-id="berserk-nihilismo">
+          <div class="card-thumb ber"><img src="/img/articles/Berserk-portada.jpg" alt="Berserk portada"
+              class="card-thumb-img"></div>
+          <div class="card-body">
+            <span class="card-tag">Berserk</span>
+            <h3>Berserk: El Claroscuro del Alma Humana y la Rebelión contra el Destino</h3>
+            <p>La obra maestra de Kentaro Miura es un tratado monumental sobre el existencialismo y el peso de la
+              causalidad.</p>
+            <div class="card-meta"><span>14 min lectura</span><span>Análisis</span></div>
+          </div>
+        </a>
+
+        <a class="card" href="/articulos/punpun-psicologia/" data-category="Oyasumi Punpun"
+          data-title="Oyasumi Punpun: La Desoladora Verdad de Crecer en la Narrativa Visual de Asano"
+          data-id="punpun-psicologia">
+          <div class="card-thumb pun"><img src="/img/articles/oyasumy-punpun-portada.jpg" alt="Oyasumi Punpun portada"
+              class="card-thumb-img"></div>
+          <div class="card-body">
+            <span class="card-tag">Oyasumi Punpun</span>
+            <h3>Oyasumi Punpun: La Desoladora Verdad de Crecer en la Narrativa Visual de Asano</h3>
+            <p>Un descenso psicológico a los abismos de la alienación y la pérdida de la inocencia a través de la lente
+              única de Asano.</p>
+            <div class="card-meta"><span>11 min lectura</span><span>Psicología</span></div>
+          </div>
+        </a>
+
+        <a class="card" href="/articulos/chainsaw-caos/" data-category="Chainsaw Man"
+          data-title="Chainsaw Man: El Caos Narrativo y la Deconstrucción del Héroe Shonen" data-id="chainsaw-caos">
+          <div class="card-thumb csm"><img src="/img/articles/chainsaw-portada.jpg" alt="Chainsaw Man portada"
+              class="card-thumb-img"></div>
+          <div class="card-body">
+            <span class="card-tag">Chainsaw Man</span>
+            <h3>Chainsaw Man: El Caos Narrativo y la Deconstrucción del Héroe Shonen</h3>
+            <p>Denji no quiere salvar el mundo, solo quiere tocar unos pechos y desayunar tostadas. Fujimoto destroza el
+              viaje del héroe.</p>
+            <div class="card-meta"><span>9 min lectura</span><span>Deconstrucción</span></div>
+          </div>
+        </a>
+
+        <a class="card" href="/articulos/kimetsu-ukiyo/" data-category="Kimetsu no Yaiba"
+          data-title="Kimetsu no Yaiba: La Estructura Clásica Elevada por el Arte Ukiyo-e" data-id="kimetsu-ukiyo">
+          <div class="card-thumb kny"><img src="/img/articles/Kimetsu-no-yaiba-portada.jpg" alt="Kimetsu no Yaiba portada"
+              class="card-thumb-img"></div>
+          <div class="card-body">
+            <span class="card-tag">Kimetsu no Yaiba</span>
+            <h3>Kimetsu no Yaiba: La Estructura Clásica Elevada por el Arte Ukiyo-e</h3>
+            <p>Una trama conservadora disfrazada de obra maestra gracias a un dinamismo visual sin precedentes en la
+              animación moderna.</p>
+            <div class="card-meta"><span>10 min lectura</span><span>Estética</span></div>
+          </div>
+        </a>
+
+        <a class="card" href="/articulos/mob-psycho-identidad/" data-category="Mob Psycho 100"
+          data-title="Mob Psycho 100: La Inutilidad del Poder como Medida del Valor Personal"
+          data-id="mob-psycho-identidad">
+          <div class="card-thumb mp"><img src="/img/articles/Mob-psycho-portada.jpg" alt="Mob Psycho 100 portada"
+              class="card-thumb-img"></div>
+          <div class="card-body">
+            <span class="card-tag">Mob Psycho 100</span>
+            <h3>Mob Psycho 100: La Inutilidad del Poder como Medida del Valor Personal</h3>
+            <p>ONE construye una psicología completa alrededor de un chico que podría destruir el mundo y solo quiere ser
+              una buena persona.</p>
+            <div class="card-meta"><span>10 min lectura</span><span>Psicología</span></div>
+          </div>
+        </a>
+
+        <a class="card" href="/articulos/haikyu-equipo/" data-category="Haikyu!!"
+          data-title="Haikyu!!: Por Qué el Deporte es el Mejor Maestro del Alma Humana" data-id="haikyu-equipo">
+          <div class="card-thumb hky"><img src="/img/articles/haikyu-portada.jpg" alt="Haikyu!! portada"
+              class="card-thumb-img"></div>
+          <div class="card-body">
+            <span class="card-tag">Haikyu!!</span>
+            <h3>Haikyu!!: Por Qué el Deporte es el Mejor Maestro del Alma Humana</h3>
+            <p>Furudate transforma el voleibol en una metáfora perfecta sobre crecer, fracasar y encontrar tu lugar en el
+              mundo.</p>
+            <div class="card-meta"><span>9 min lectura</span><span>Reflexión</span></div>
+          </div>
+        </a>
+
+        <a class="card" href="/articulos/black-clover-voluntad/" data-category="Black Clover"
+          data-title="Black Clover – La Voluntad Inquebrantable" data-id="black-clover-voluntad">
+          <div class="card-thumb bc"><img src="/img/articles/black-clover-portada.jpg" alt="Black Clover portada"
+              class="card-thumb-img"></div>
+          <div class="card-body">
+            <span class="card-tag">Black Clover</span>
+            <h3>Black Clover – La Voluntad Inquebrantable</h3>
+            <p>Asta no tiene magia. Pero tiene algo que ningún grimorio puede otorgar: una voluntad que ningún límite
+              puede romper.</p>
+            <div class="card-meta"><span>12 min lectura</span><span>Filosofía</span></div>
+          </div>
+        </a>
+
+        <a class="card" href="/articulos/vagabond-existencialismo/" data-category="Vagabond"
+          data-title="Vagabond: La Espada como Camino hacia la Iluminación y la Búsqueda del Propósito"
+          data-id="vagabond-existencialismo">
+          <div class="card-thumb vag"><img src="/img/articles/Vagabond-portada.jpg" alt="Vagabond portada"
+              class="card-thumb-img"></div>
+          <div class="card-body">
+            <span class="card-tag">Vagabond</span>
+            <h3>Vagabond: La Espada como Camino hacia la Iluminación y la Búsqueda del Propósito</h3>
+            <p>Inoue convierte la biografía de Musashi en un tratado existencialista donde matar es solo el principio de
+              la pregunta.</p>
+            <div class="card-meta"><span>13 min lectura</span><span>Filosofía</span></div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </main>
+
+  <div class="ranking-section" id="ranking">
+    <div class="ranking-inner">
+      <div class="section-header">
+        <h2 data-i18n="ranking_title">Mi Ranking Personal</h2>
+        <span data-i18n="ranking_sub">— 100% subjetivo y sin disculpas</span>
+      </div>
+      <div class="ranking-list" id="ranking-list">
+        <!-- populated by applyLang() in script.js -->
+      </div>
+    </div>
+  </div>
+
+  <section id="sobre-mi">
+    <div class="section-wrap">
+      <div class="about-wrap">
+        <div class="about-head">
+          <div class="about-avatar">
+            <img src="/img/articles/sobre-mi-avatar.jpg" alt="Foto de Jose Jesus Lopez Fernandez"
+              width="112" height="112" loading="lazy" decoding="async">
+          </div>
+          <div class="about-head-text">
+            <span class="about-eyebrow" data-i18n="about_eyebrow">Sobre mí · El autor</span>
+            <h3 class="about-name">Jose Jesus <span class="about-name-grad">Lopez</span></h3>
+            <p class="about-subtitle" data-i18n="about_subtitle">Crítico cultural de anime y manga · Almería, España</p>
+          </div>
+        </div>
+        <div class="about-card">
+          <div class="about-text-content">
+            <p>Estudiante universitario con una firme convicción: el anime, cuando alcanza su mayor expresión, trasciende el entretenimiento para convertirse en literatura, filosofía y documento social.</p>
+            <p>Si el objetivo del arte es hacernos mejores personas al obligarnos a ver el mundo desde otros ojos, pocas obras lo consiguen con tanta profundidad como One Piece, Vinland Saga o Hunter x Hunter.</p>
+            <p>Apasionado del análisis narrativo, la crítica sociopolítica en la ficción y la historia medieval vikinga.</p>
+            <p style="margin-top:1.1rem;"><a href="https://github.com/ualjlf259" target="_blank" rel="noopener">→ GitHub: ualjlf259</a></p>
+          </div>
+          <div class="about-stats">
+            <div class="about-stat"><strong>18</strong><span data-i18n="about_stat_articles">artículos</span></div>
+            <div class="about-stat"><strong>8</strong><span data-i18n="about_stat_langs">idiomas</span></div>
+            <div class="about-stat"><strong>10</strong><span data-i18n="about_stat_eggs">easter eggs</span></div>
+            <div class="about-stat"><strong>12+</strong><span data-i18n="about_stat_years">años de fan</span></div>
+          </div>
+        </div>
+        <div class="about-card about-works">
+          <h4 data-i18n="about_works_title">Obras que marcaron el camino</h4>
+          <div class="about-chips">
+            <span class="about-chip">♥ One Piece</span>
+            <span class="about-chip">♥ Vinland Saga</span>
+            <span class="about-chip">♥ Hunter x Hunter</span>
+            <span class="about-chip">♥ Berserk</span>
+            <span class="about-chip">♥ Vagabond</span>
+            <span class="about-chip">♥ Monster</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>Hecho con ❤️ y demasiadas horas de anime por <strong>Jose Jesus Lopez Fernandez</strong> ·
+      <strong>NAKAMA.BLOG</strong>
+    </p>
+    <p style="margin-top:.4rem;font-size:.75rem;opacity:.4;">© 2026 · ualjlf259.github.io</p>
+  </footer>
+
+  <!-- ROULETTE MODAL -->
+  <div class="modal-overlay" id="roulette-overlay" onclick="closeRouletteOnOverlay(event)">
+    <div class="modal" id="roulette-box">
+      <button class="modal-close" onclick="closeRoulette()" aria-label="Cerrar ruleta">✕</button>
+      <h2 class="roulette-title">✨ DESCUBRE TU PRÓXIMO ANIME ✨</h2>
+      <div class="roulette-wrapper">
+        <div class="roulette-pointer">▼</div>
+        <div class="roulette-container">
+          <div class="roulette-wheel" id="roulette-wheel"></div>
+        </div>
+      </div>
+      <button id="btn-spin" class="btn-spin">GIRAR</button>
+    </div>
+  </div>
+
+  <!-- Video Modal -->
+  <div id="vmodal" class="vmodal" aria-modal="true" role="dialog" aria-label="Reproductor de vídeo"
+    style="display:none;">
+    <div class="vmodal-backdrop" id="vmodal-backdrop"></div>
+    <div class="vmodal-box">
+      <button class="vmodal-close" id="vmodal-close" aria-label="Cerrar vídeo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+          stroke-linecap="round">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+      <div id="earphone-splash" class="earphone-splash ep-hidden">
+        <img src="/img/articles/earphones-splash.jpg" alt="Use earphones for better experience" class="ep-img" loading="lazy" decoding="async">
+        <span class="ep-skip">tap to skip</span>
+      </div>
+      <video id="vmodal-video" controls playsinline preload="none"></video>
+    </div>
+  </div>
+
+  <!-- WELCOME MODAL (bienvenida — solo 1ª visita; lógica en script.js) -->
+  <div class="welcome-overlay" id="welcome-overlay" aria-hidden="true">
+    <div class="welcome-modal" role="dialog" aria-modal="true" aria-labelledby="welcome-title">
+      <button class="welcome-close" id="welcome-close" aria-label="Cerrar bienvenida">✕</button>
+      <div class="welcome-art" aria-hidden="true">
+        <img src="/img/articles/Thorfinn.jpg" alt="" loading="lazy" decoding="async">
+        <span class="welcome-art-logo">
+          <img class="welcome-art-mark" src="/favicon.svg" alt="" width="28" height="28" decoding="async">
+          <span class="welcome-art-wm">NAKAMA<span class="welcome-art-dot">.</span>BLOG</span>
+        </span>
+        <span class="welcome-art-credit">Vinland Saga · Yukimura</span>
+      </div>
+      <div class="welcome-body">
+        <span class="welcome-eyebrow">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.2 6.6L21 11l-6.8 2.4L12 20l-2.2-6.6L3 11l6.8-2.4z"/></svg>
+          <span data-i18n="welcome_eyebrow">Bienvenido</span>
+        </span>
+        <h2 id="welcome-title" data-i18n="welcome_title">El anime como <em class="wm-grad">obra de arte</em>.</h2>
+        <p class="welcome-sub" data-i18n="welcome_sub">Ensayos culturales sobre las grandes obras del manga — con <strong>opinión propia</strong>, rigor y cero spoilers para empezar.</p>
+        <ul class="welcome-feats">
+          <li>
+            <span class="welcome-feat-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
+            <span class="welcome-feat-tx"><strong data-i18n="welcome_feat1_t">Análisis con opinión</strong><em data-i18n="welcome_feat1_d">One Piece, Vinland Saga, HxH, Berserk…</em></span>
+          </li>
+          <li>
+            <span class="welcome-feat-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>
+            <span class="welcome-feat-tx"><strong data-i18n="welcome_feat2_t">Mi ranking personal</strong><em data-i18n="welcome_feat2_d">Subjetivo y sin disculpas.</em></span>
+          </li>
+          <li>
+            <span class="welcome-feat-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></span>
+            <span class="welcome-feat-tx"><strong data-i18n="welcome_feat3_t">La tesis One Piece</strong><em data-i18n="welcome_feat3_d">La obra magna audiovisual del planeta.</em></span>
+          </li>
+        </ul>
+        <div class="welcome-eggs">
+          <span class="welcome-egg-ic" aria-hidden="true">🥚</span>
+          <span><strong data-i18n="welcome_eggs_t">Easter eggs ocultos</strong><em data-i18n="welcome_eggs_d">Encuéntralos todos y desbloquea una recompensa increíble.</em></span>
+        </div>
+        <div class="welcome-cta">
+          <button class="welcome-btn-start" id="welcome-start">
+            <span data-i18n="welcome_cta">Empezar a leer</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+          <button class="welcome-btn-dice" id="welcome-dice" aria-label="Sorpréndeme">🎲</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script defer src="/script.js"></script>
+  <script defer src="/easter-eggs/easter-eggs.js"></script>
+
+
+</body>
+</html>

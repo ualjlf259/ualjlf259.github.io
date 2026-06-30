@@ -12,6 +12,17 @@
   <!-- ── Canonical URL ── -->
   <link rel="canonical" href="https://ualjlf259.github.io/">
 
+  <!-- ── hreflang (home por idioma; ES en la raíz, resto en /<lang>/) ── -->
+  <link rel="alternate" hreflang="es" href="https://ualjlf259.github.io/">
+  <link rel="alternate" hreflang="en" href="https://ualjlf259.github.io/en/">
+  <link rel="alternate" hreflang="fr" href="https://ualjlf259.github.io/fr/">
+  <link rel="alternate" hreflang="ja" href="https://ualjlf259.github.io/ja/">
+  <link rel="alternate" hreflang="it" href="https://ualjlf259.github.io/it/">
+  <link rel="alternate" hreflang="de" href="https://ualjlf259.github.io/de/">
+  <link rel="alternate" hreflang="ru" href="https://ualjlf259.github.io/ru/">
+  <link rel="alternate" hreflang="pt" href="https://ualjlf259.github.io/pt/">
+  <link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/">
+
   <!-- ── Open Graph (Facebook, WhatsApp, LinkedIn, Discord, Telegram…) ── -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ualjlf259.github.io/">
@@ -64,6 +75,10 @@
   <link rel="stylesheet" href="welcome.css">
   <!-- ── Flag icons (SVG local, cross-platform) — subconjunto de 8 banderas, ver flags/ ── -->
   <link rel="stylesheet" href="flags/flag-icons-local.css">
+
+  <!-- Home prerenderizado por idioma (SSG): fija el idioma de esta URL y hace que el selector
+       NAVEGUE a la home hermana (/, /en/, …). El generador reescribe este marcador por idioma. -->
+  <script>window.__PRERENDERED={home:true,lang:'es',langUrls:{es:'/',en:'/en/',fr:'/fr/',ja:'/ja/',it:'/it/',de:'/de/',ru:'/ru/',pt:'/pt/'}};</script>
 </head>
 
 <body>
@@ -291,7 +306,7 @@
         <p id="no-results">No se encontraron artículos para "<span id="no-results-term"></span>"
         </p>
 
-        <a class="card" href="article.html?id=op-esclavitud" data-category="One Piece"
+        <a class="card" href="articulos/op-esclavitud/" data-category="One Piece"
           data-title="La Esclavitud en One Piece: El Tema que Nadie Esperaba en un Manga" data-id="op-esclavitud">
           <div class="card-thumb op"><img src="img/articles/one-piece-portada.jpg" alt="One Piece portada"
               class="card-thumb-img"></div>
@@ -304,7 +319,7 @@
           </div>
         </a>
 
-        <a class="card" href="article.html?id=hxh-capitalismo" data-category="Hunter x Hunter"
+        <a class="card" href="articulos/hxh-capitalismo/" data-category="Hunter x Hunter"
           data-title="El Arco de la Hormiga Quimera: Una Crítica al Capitalismo y la Humanidad"
           data-id="hxh-capitalismo">
           <div class="card-thumb hxh"><img src="img/articles/hunter-x-hunter-portada.jpg" alt="Hunter x Hunter portada"
@@ -317,7 +332,7 @@
           </div>
         </a>
 
-        <a class="card" href="article.html?id=vinland-guerra" data-category="Vinland Saga"
+        <a class="card" href="articulos/vinland-guerra/" data-category="Vinland Saga"
           data-title="Vinland Saga: El Manga que Más Honestamente Ha Retratado la Guerra" data-id="vinland-guerra">
           <div class="card-thumb vs">🪓</div>
           <div class="card-body">
@@ -328,7 +343,7 @@
           </div>
         </a>
 
-        <a class="card" href="article.html?id=aot-libertad" data-category="Shingeki no Kyojin"
+        <a class="card" href="articulos/aot-libertad/" data-category="Shingeki no Kyojin"
           data-title="Libertad y Prisión: Shingeki no Kyojin como Metáfora Política" data-id="aot-libertad">
           <div class="card-thumb aot">⚔️</div>
           <div class="card-body">
@@ -340,7 +355,7 @@
           </div>
         </a>
 
-        <a class="card" href="article.html?id=naruto-ciclo-odio" data-category="Naruto"
+        <a class="card" href="articulos/naruto-ciclo-odio/" data-category="Naruto"
           data-title="El Ciclo del Odio en Naruto: ¿Por Qué No Podemos Parar las Guerras?" data-id="naruto-ciclo-odio">
           <div class="card-thumb nar"><img src="img/articles/Naruto-portada.jpg" alt="Naruto portada"
               class="card-thumb-img"></div>
@@ -352,7 +367,7 @@
           </div>
         </a>
 
-        <a class="card" href="article.html?id=death-note-justicia" data-category="Death Note"
+        <a class="card" href="articulos/death-note-justicia/" data-category="Death Note"
           data-title="Death Note y la Justicia: ¿Quién Tiene Derecho a Decidir Quién Vive?"
           data-id="death-note-justicia">
           <div class="card-thumb dn">📓</div>
@@ -364,7 +379,7 @@
           </div>
         </a>
 
-        <a class="card" href="article.html?id=jjk-maldicion" data-category="Jujutsu Kaisen"
+        <a class="card" href="articulos/jjk-maldicion/" data-category="Jujutsu Kaisen"
           data-title="Las Maldiciones de JJK son Nuestras Emociones: Una Lectura Psicológica" data-id="jjk-maldicion">
           <div class="card-thumb jjk">👁️</div>
           <div class="card-body">
@@ -375,7 +390,7 @@
           </div>
         </a>
 
-        <a class="card" href="article.html?id=mha-heroes" data-category="Boku no Hero"
+        <a class="card" href="articulos/mha-heroes/" data-category="Boku no Hero"
           data-title="¿Qué Significa Ser un Héroe? Boku no Hero y la Trampa del Mérito" data-id="mha-heroes">
           <div class="card-thumb mha">💥</div>
           <div class="card-body">
@@ -386,7 +401,7 @@
           </div>
         </a>
 
-        <a class="card" href="article.html?id=db-esfuerzo" data-category="Dragon Ball"
+        <a class="card" href="articulos/db-esfuerzo/" data-category="Dragon Ball"
           data-title="Dragon Ball y el Culto al Esfuerzo: Cuándo Trabajar Duro Ya No Basta" data-id="db-esfuerzo">
           <div class="card-thumb db">🐉</div>
           <div class="card-body">
@@ -397,7 +412,7 @@
           </div>
         </a>
 
-        <a class="card" href="article.html?id=berserk-nihilismo" data-category="Berserk"
+        <a class="card" href="articulos/berserk-nihilismo/" data-category="Berserk"
           data-title="Berserk: El Claroscuro del Alma Humana y la Rebelión contra el Destino"
           data-id="berserk-nihilismo">
           <div class="card-thumb ber"><img src="img/articles/Berserk-portada.jpg" alt="Berserk portada"
@@ -411,7 +426,7 @@
           </div>
         </a>
 
-        <a class="card" href="article.html?id=punpun-psicologia" data-category="Oyasumi Punpun"
+        <a class="card" href="articulos/punpun-psicologia/" data-category="Oyasumi Punpun"
           data-title="Oyasumi Punpun: La Desoladora Verdad de Crecer en la Narrativa Visual de Asano"
           data-id="punpun-psicologia">
           <div class="card-thumb pun"><img src="img/articles/oyasumy-punpun-portada.jpg" alt="Oyasumi Punpun portada"
@@ -425,7 +440,7 @@
           </div>
         </a>
 
-        <a class="card" href="article.html?id=chainsaw-caos" data-category="Chainsaw Man"
+        <a class="card" href="articulos/chainsaw-caos/" data-category="Chainsaw Man"
           data-title="Chainsaw Man: El Caos Narrativo y la Deconstrucción del Héroe Shonen" data-id="chainsaw-caos">
           <div class="card-thumb csm"><img src="img/articles/chainsaw-portada.jpg" alt="Chainsaw Man portada"
               class="card-thumb-img"></div>
@@ -438,7 +453,7 @@
           </div>
         </a>
 
-        <a class="card" href="article.html?id=kimetsu-ukiyo" data-category="Kimetsu no Yaiba"
+        <a class="card" href="articulos/kimetsu-ukiyo/" data-category="Kimetsu no Yaiba"
           data-title="Kimetsu no Yaiba: La Estructura Clásica Elevada por el Arte Ukiyo-e" data-id="kimetsu-ukiyo">
           <div class="card-thumb kny"><img src="img/articles/Kimetsu-no-yaiba-portada.jpg" alt="Kimetsu no Yaiba portada"
               class="card-thumb-img"></div>
@@ -451,7 +466,7 @@
           </div>
         </a>
 
-        <a class="card" href="article.html?id=mob-psycho-identidad" data-category="Mob Psycho 100"
+        <a class="card" href="articulos/mob-psycho-identidad/" data-category="Mob Psycho 100"
           data-title="Mob Psycho 100: La Inutilidad del Poder como Medida del Valor Personal"
           data-id="mob-psycho-identidad">
           <div class="card-thumb mp"><img src="img/articles/Mob-psycho-portada.jpg" alt="Mob Psycho 100 portada"
@@ -465,7 +480,7 @@
           </div>
         </a>
 
-        <a class="card" href="article.html?id=haikyu-equipo" data-category="Haikyu!!"
+        <a class="card" href="articulos/haikyu-equipo/" data-category="Haikyu!!"
           data-title="Haikyu!!: Por Qué el Deporte es el Mejor Maestro del Alma Humana" data-id="haikyu-equipo">
           <div class="card-thumb hky"><img src="img/articles/haikyu-portada.jpg" alt="Haikyu!! portada"
               class="card-thumb-img"></div>
@@ -478,7 +493,7 @@
           </div>
         </a>
 
-        <a class="card" href="article.html?id=black-clover-voluntad" data-category="Black Clover"
+        <a class="card" href="articulos/black-clover-voluntad/" data-category="Black Clover"
           data-title="Black Clover – La Voluntad Inquebrantable" data-id="black-clover-voluntad">
           <div class="card-thumb bc"><img src="img/articles/black-clover-portada.jpg" alt="Black Clover portada"
               class="card-thumb-img"></div>
@@ -491,7 +506,7 @@
           </div>
         </a>
 
-        <a class="card" href="article.html?id=vagabond-existencialismo" data-category="Vagabond"
+        <a class="card" href="articulos/vagabond-existencialismo/" data-category="Vagabond"
           data-title="Vagabond: La Espada como Camino hacia la Iluminación y la Búsqueda del Propósito"
           data-id="vagabond-existencialismo">
           <div class="card-thumb vag"><img src="img/articles/Vagabond-portada.jpg" alt="Vagabond portada"

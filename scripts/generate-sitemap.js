@@ -35,11 +35,9 @@ const xmlEscape = (s) => String(s)
   .replace(/>/g, '&gt;')
   .replace(/"/g, '&quot;');
 
-const homeUrl = (lang) => (lang === DEFAULT_LANG ? `${SITE}/` : `${SITE}/?lang=${lang}`);
-const articleUrl = (id, lang) => {
-  const base = `${SITE}/article.html?id=${id}`;
-  return lang === DEFAULT_LANG ? base : `${base}&lang=${lang}`;
-};
+const homeUrl = (lang) => (lang === DEFAULT_LANG ? `${SITE}/` : `${SITE}/${lang}/`);
+// URLs estáticas (SSG, directorio limpio). Coincide con scripts/generate-articles.js.
+const articleUrl = (id, lang) => (lang === DEFAULT_LANG ? `${SITE}/articulos/${id}/` : `${SITE}/articulos/${id}/${lang}/`);
 
 function urlBlock({ loc, priority, changefreq, urlFor }) {
   const lines = ['  <url>', `    <loc>${xmlEscape(loc)}</loc>`, `    <lastmod>${LASTMOD}</lastmod>`];

@@ -4,6 +4,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Compatibilidad: las URLs antiguas article.html?id=… ahora viven en /articulos/<id>/ (SSG).
+       Redirige de inmediato conservando el idioma. (Este <head> NO se copia a las páginas generadas.) -->
+  <script>
+  (function () {
+    try {
+      var p = new URLSearchParams(location.search);
+      var id = p.get('id');
+      if (!id) return;
+      var lang = p.get('lang');
+      var base = '/articulos/' + id + '/';
+      location.replace(lang && lang !== 'es' ? base + lang + '/' : base);
+    } catch (e) { /* sin redirección, sigue la SPA */ }
+  })();
+  </script>
   <meta name="description" content="Nakama Blog — Análisis de anime y manga.">
   <title>Cargando… — Nakama Blog</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">

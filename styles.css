@@ -2812,6 +2812,28 @@ body.light-theme .atag-topic { color: #0aa6cc; background: rgba(10, 166, 204, .1
 .article-share-btn svg { width: 15px; height: 15px; }
 .article-share-btn:hover { transform: translateY(-2px); border-color: rgba(191, 92, 255, .5); box-shadow: 0 8px 20px rgba(191, 92, 255, .14); }
 
+/* Botonera de compartir por red (X / WhatsApp / Telegram / Discord / copiar) */
+.article-share-set { display: flex; align-items: center; flex-wrap: wrap; gap: .5rem; }
+.article-share-lbl {
+  font-size: .72rem; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--muted); font-weight: 700; margin-right: .2rem;
+}
+.ashare {
+  width: 2.35rem; height: 2.35rem; flex: 0 0 auto;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 50%; border: 1px solid var(--border);
+  background: var(--surface-glass); color: var(--text); cursor: pointer;
+  transition: transform .18s, background .2s, border-color .2s, color .2s, box-shadow .2s;
+}
+.ashare svg { width: 16px; height: 16px; }
+.ashare:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0, 0, 0, .18); }
+.ashare-x:hover  { background: #111; border-color: #111; color: #fff; }
+.ashare-wa:hover { background: #25d366; border-color: #25d366; color: #fff; }
+.ashare-tg:hover { background: #229ed9; border-color: #229ed9; color: #fff; }
+.ashare-dc:hover { background: #5865f2; border-color: #5865f2; color: #fff; }
+.ashare-cp:hover { background: var(--accent-grad-2); border-color: transparent; color: #fff; }
+.ashare.is-copied { background: #3ba55d; border-color: #3ba55d; color: #fff; }
+
 /* Toast de "copiado" */
 .article-toast {
   position: fixed; bottom: 1.5rem; left: 50%;
@@ -3019,7 +3041,8 @@ body:has(.error-container) {
   }
 
   .hero h1 {
-    font-size: clamp(2.55rem, 14vw, 4.25rem);
+    font-size: clamp(2.1rem, 11.5vw, 4.25rem);
+    overflow-wrap: break-word;
   }
 
   .hero-cta .btn {

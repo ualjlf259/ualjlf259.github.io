@@ -15,6 +15,8 @@ const i18n = {
 const SUPPORTED_LANGS = ['es', 'en', 'fr', 'ja', 'it', 'de', 'ru', 'pt'];
 
 function detectInitialLang() {
+  // 0. Página prerenderizada (SSG): el idioma lo fija el fichero estático.
+  if (typeof window !== 'undefined' && window.__PRERENDERED && window.__PRERENDERED.lang) return window.__PRERENDERED.lang;
   // 1. Parámetro ?lang=XX en la URL (máxima prioridad — para SEO/hreflang)
   const urlLang = new URLSearchParams(location.search).get('lang');
   if (urlLang && SUPPORTED_LANGS.includes(urlLang)) return urlLang;
@@ -57,6 +59,12 @@ function updateHreflangTags() {
 
 let currentLang = detectInitialLang();
 
+/* URL pública (SSG, directorio limpio) de un artículo respetando el idioma actual.
+   ES en la raíz; el resto bajo /<lang>/. Coincide con scripts/generate-articles.js. */
+function articleHref(id) {
+  return currentLang === 'es' ? `/articulos/${id}/` : `/articulos/${id}/${currentLang}/`;
+}
+
 /* ═══════════════════════════════════════════════════
    ARTICLE STORE
 ═══════════════════════════════════════════════════ */
@@ -67,7 +75,7 @@ const articleStore = {
 
 async function loadArticleIndex() {
   if (articleStore.index) return articleStore.index;
-  const res = await fetch('articles/index.json');
+  const res = await fetch('/articles/index.json');
   if (!res.ok) throw new Error('No se pudo cargar articles/index.json');
   articleStore.index = await res.json();
   return articleStore.index;
@@ -75,7 +83,7 @@ async function loadArticleIndex() {
 
 async function loadArticle(id) {
   if (articleStore.full[id]) return articleStore.full[id];
-  const res = await fetch(`articles/${id}.json`);
+  const res = await fetch(`/articles/${id}.json`);
   if (!res.ok) throw new Error(`No se pudo cargar el artículo "${id}"`);
   const data = await res.json();
   articleStore.full[id] = data;
@@ -95,12 +103,15 @@ function applyLang(lang) {
   currentLang = lang;
   localStorage.setItem('lang', lang);
 
-  // Actualizar URL con ?lang= (sin recargar) y refrescar hreflang
-  try {
-    const newUrl = buildLangUrl(lang);
-    history.replaceState(null, '', newUrl);
-  } catch (e) { /* no critico */ }
-  updateHreflangTags();
+  // En páginas prerenderizadas (SSG) la URL y los hreflang son estáticos por idioma → no tocarlos.
+  if (!window.__PRERENDERED) {
+    // Actualizar URL con ?lang= (sin recargar) y refrescar hreflang
+    try {
+      const newUrl = buildLangUrl(lang);
+      history.replaceState(null, '', newUrl);
+    } catch (e) { /* no critico */ }
+    updateHreflangTags();
+  }
 
   const t = i18n[lang];
   if (!t) return;
@@ -260,14 +271,14 @@ function renderCards(index) {
   index.forEach(item => {
     const a = document.createElement('a');
     a.className = 'card';
-    a.href = `article.html?id=${item.id}`;
+    a.href = articleHref(item.id);
     a.dataset.category = item.category;
     a.dataset.title = (item.title && item.title[currentLang]) || '';
     a.dataset.id = item.id;
 
     const thumb = item.thumb || {};
     const visual = thumb.type === 'img'
-      ? `<img src="${thumb.src}" alt="${thumb.alt || ''}" class="card-thumb-img" loading="lazy" decoding="async">`
+      ? `<img src="/${thumb.src}" alt="${thumb.alt || ''}" class="card-thumb-img" loading="lazy" decoding="async">`
       : (thumb.value || '');
 
     const title = (item.title && item.title[currentLang]) || '';
@@ -289,13 +300,13 @@ function renderCards(index) {
       </div>`;
 
     const videoMap = {
-      'op-esclavitud':  'videos/video-one-piece.mp4',
-      'jjk-maldicion':  'videos/video-jujutsu.mp4',
-      'mha-heroes':     'videos/video-boku-no-hero.mp4',
-      'vinland-guerra': 'videos/video-vinland.mp4',
-      'aot-libertad':          'videos/video-shingeki.mp4',
-      'chainsaw-caos':         'videos/video-chainsaw.mp4',
-      'black-clover-voluntad': 'videos/video-black-clover.mp4'
+      'op-esclavitud':  '/videos/video-one-piece.mp4',
+      'jjk-maldicion':  '/videos/video-jujutsu.mp4',
+      'mha-heroes':     '/videos/video-boku-no-hero.mp4',
+      'vinland-guerra': '/videos/video-vinland.mp4',
+      'aot-libertad':          '/videos/video-shingeki.mp4',
+      'chainsaw-caos':         '/videos/video-chainsaw.mp4',
+      'black-clover-voluntad': '/videos/video-black-clover.mp4'
     };
     if (videoMap[item.id]) {
       a.querySelector('.card-play-btn').addEventListener('click', (e) => {
@@ -373,7 +384,7 @@ function closeVideoModal() {
   const motivBtn  = document.getElementById('motiv-play-btn');
   if (closeBtn) closeBtn.addEventListener('click', closeVideoModal);
   if (backdrop) backdrop.addEventListener('click', closeVideoModal);
-  if (motivBtn) motivBtn.addEventListener('click', () => openVideoModal('videos/video-motivacion.mp4'));
+  if (motivBtn) motivBtn.addEventListener('click', () => openVideoModal('/videos/video-motivacion.mp4'));
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeVideoModal();
   });
@@ -414,6 +425,11 @@ if (langToggle && langMenu && langDropdown) {
   langMenu.querySelectorAll('.lang-option').forEach(opt => {
     opt.addEventListener('click', () => {
       const lang = opt.dataset.lang;
+      // En páginas prerenderizadas (SSG), cambiar de idioma NAVEGA a la URL hermana estática.
+      if (window.__PRERENDERED && window.__PRERENDERED.langUrls && window.__PRERENDERED.langUrls[lang]) {
+        window.location.href = window.__PRERENDERED.langUrls[lang];
+        return;
+      }
       applyLang(lang);
       langDropdown.classList.remove('open');
       langToggle.setAttribute('aria-expanded', 'false');
@@ -554,7 +570,7 @@ function applyMidImg(body, midHtml) {
 // Featured banner button
 const featuredReadBtn = document.getElementById('featured-read-btn');
 if (featuredReadBtn) {
-  featuredReadBtn.addEventListener('click', () => { window.location.href = 'article.html?id=op-obra'; });
+  featuredReadBtn.addEventListener('click', () => { window.location.href = articleHref('op-obra'); });
 }
 
 /* ═══════════════════════════════════════════════════
@@ -677,7 +693,7 @@ if (btnSpin && rouletteWheel) {
       const id = rouletteItems[randomItemIndex];
       setTimeout(() => {
         closeRoulette();
-        window.location.href = 'article.html?id=' + id;
+        window.location.href = articleHref(id);
       }, 1500);
     }, 2800);
   });
@@ -907,6 +923,29 @@ function articleToast(msg) {
   setTimeout(() => { el.classList.remove('is-show'); setTimeout(() => el.remove(), 300); }, 1800);
 }
 
+/* Cablea los botones de compartir que copian al portapapeles (Discord / enlace) en las páginas SSG. */
+function wireShareCopy() {
+  const t = i18n[currentLang] || {};
+  document.querySelectorAll('[data-share-copy]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const url = window.location.href;
+      const done = () => {
+        btn.classList.add('is-copied');
+        articleToast(t.share_copied || '¡Copiado!');
+        setTimeout(() => btn.classList.remove('is-copied'), 1600);
+      };
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(url).then(done).catch(done);
+      } else {
+        const ta = document.createElement('textarea');
+        ta.value = url; document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); } catch (e) {}
+        document.body.removeChild(ta); done();
+      }
+    });
+  });
+}
+
 function showArticleError(message) {
   const root = document.getElementById('article-root');
   if (!root) return;
@@ -918,6 +957,13 @@ function showArticleError(message) {
 }
 
 async function initArticlePage() {
+  // Página prerenderizada (SSG): el contenido ya está en el HTML. No re-renderizar;
+  // solo cablear la barra de acciones + el botón de compartir del pie.
+  if (window.__PRERENDERED) {
+    setupArticleRail(window.__PRERENDERED.id);
+    wireShareCopy();
+    return;
+  }
   const id = getQueryParam('id');
   if (!id) {
     showArticleError('No se ha indicado ningún artículo (?id=).');
@@ -1085,9 +1131,9 @@ async function initArticlePage() {
       results.innerHTML = current.map((it, i) => {
         const title = pickLang(it.title, currentLang) || '';
         const thumb = (it.thumb && it.thumb.src)
-          ? `<img src="${it.thumb.src}" alt="" loading="lazy" decoding="async">` : '';
+          ? `<img src="/${it.thumb.src}" alt="" loading="lazy" decoding="async">` : '';
         return `<a class="search-result${i === activeIdx ? ' is-active' : ''}" role="option"
-          data-id="${it.id}" href="article.html?id=${it.id}">
+          data-id="${it.id}" href="${articleHref(it.id)}">
           <span class="search-result-thumb">${thumb}</span>
           <span class="search-result-main">
             <span class="search-result-title">${title}</span>
@@ -1108,7 +1154,7 @@ async function initArticlePage() {
   }
   function go(id) {
     close();
-    window.location.href = 'article.html?id=' + id;
+    window.location.href = articleHref(id);
   }
 
   input.addEventListener('input', () => {
