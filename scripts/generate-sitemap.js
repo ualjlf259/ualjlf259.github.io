@@ -19,21 +19,11 @@
 const fs = require('fs');
 const path = require('path');
 
-const SITE = 'https://ualjlf259.github.io';
-const DEFAULT_LANG = 'es';
-// Orden de los <xhtml:link hreflang> (coincide con el sitemap previo; el orden no afecta al SEO).
-const LANGS = ['es', 'en', 'fr', 'it', 'de', 'ru', 'ja', 'pt'];
+const { SITE, DEFAULT_LANG, LANGS, ROOT, escHtml: xmlEscape } = require('./_shared');
 const LASTMOD = process.env.SITEMAP_LASTMOD || new Date().toISOString().slice(0, 10);
 
-const ROOT = path.resolve(__dirname, '..');
 const ARTICLES_DIR = path.join(ROOT, 'articles');
 const OUT = path.join(ROOT, 'sitemap.xml');
-
-const xmlEscape = (s) => String(s)
-  .replace(/&/g, '&amp;')
-  .replace(/</g, '&lt;')
-  .replace(/>/g, '&gt;')
-  .replace(/"/g, '&quot;');
 
 const homeUrl = (lang) => (lang === DEFAULT_LANG ? `${SITE}/` : `${SITE}/${lang}/`);
 // URLs estáticas (SSG, directorio limpio). Coincide con scripts/generate-articles.js.

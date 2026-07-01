@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, follow">
+  <meta name="description" content="Seus artigos salvos no Nakama Blog.">
+  <title>Seus salvos — Nakama Blog</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <link rel="canonical" href="https://ualjlf259.github.io/guardados/pt/">
+
+  <link rel="alternate" type="application/rss+xml" title="Nakama Blog · RSS" href="/feed.xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=Bebas+Neue&family=Cinzel:wght@700;900&family=Cinzel+Decorative:wght@400;700;900&family=EB+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <script defer src="/locales/es.js"></script>
+  <script defer src="/locales/en.js"></script>
+  <script defer src="/locales/fr.js"></script>
+  <script defer src="/locales/ja.js"></script>
+  <script defer src="/locales/it.js"></script>
+  <script defer src="/locales/de.js"></script>
+  <script defer src="/locales/ru.js"></script>
+  <script defer src="/locales/pt.js"></script>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/easter-eggs/easter-eggs.css">
+  <link rel="stylesheet" href="/flags/flag-icons-local.css">
+
+  <!-- Guardados prerenderizado por idioma (SSG): fija el idioma de esta URL y hace que el selector navegue -->
+  <script>window.__PRERENDERED={"saved":true,"lang":"pt","langUrls":{"es":"/guardados/","en":"/guardados/en/","fr":"/guardados/fr/","ja":"/guardados/ja/","it":"/guardados/it/","de":"/guardados/de/","ru":"/guardados/ru/","pt":"/guardados/pt/"}};</script>
+</head>
+<body>
+
+
+  <!-- Fondo ambiente: slideshow de img/fondo (capa fija detrás de todo; CSS .bg-stage) -->
+  <div class="bg-stage" aria-hidden="true">
+    <div class="bg-slide bg-slide-1"></div>
+    <div class="bg-slide bg-slide-2"></div>
+    <div class="bg-slide bg-slide-3"></div>
+    <div class="bg-veil"></div>
+  </div>
+
+  <nav>
+    <a class="nav-logo" href="/">
+      <img class="nav-logo-mark" src="/favicon.svg" alt="" width="34" height="34" decoding="async">
+      <span class="nav-logo-text">NAKAMA<span class="nav-logo-dot">.</span>BLOG</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/#articulos" data-i18n="nav_articles">Artículos</a></li>
+      <li><a href="/#ranking" data-i18n="nav_ranking">Ranking</a></li>
+      <li><a href="/#sobre-mi" data-i18n="nav_about">Sobre mí</a></li>
+      <li><a href="/guardados/" class="nav-link-active" aria-current="page" data-i18n="nav_saved">Guardados</a></li>
+    </ul>
+    <div class="nav-controls">
+      <!-- ── Easter Eggs Progress ── -->
+      <button id="ee-progress-btn" aria-label="Easter Eggs" title="Easter Eggs">
+        🥚
+      </button>
+      <!-- ── Selector de tema ── -->
+      <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema">
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+          <circle cx="12" cy="12" r="5" />
+          <line x1="12" y1="1" x2="12" y2="3" />
+          <line x1="12" y1="21" x2="12" y2="23" />
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+          <line x1="1" y1="12" x2="3" y2="12" />
+          <line x1="21" y1="12" x2="23" y2="12" />
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+        </svg>
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+        </svg>
+      </button>
+      <!-- ── Selector de idioma (dropdown) ── -->
+      <div class="lang-dropdown" id="lang-dropdown" aria-label="Cambiar idioma">
+        <button class="lang-toggle" id="lang-toggle" aria-haspopup="listbox" aria-expanded="false">
+          <span class="lang-flag-wrap" id="lang-flag"><span class="fi fi-es fis"></span></span>
+          <span class="lang-label" id="lang-label">Español</span>
+          <svg class="chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2.5" stroke-linecap="round">
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </button>
+        <div class="lang-menu" role="listbox" id="lang-menu">
+          <button class="lang-option active" data-lang="es" role="option" aria-selected="true">
+            <span class="opt-flag"><span class="fi fi-es"></span></span>
+            <span class="opt-name">Español</span>
+            <span class="opt-check"></span>
+          </button>
+          <button class="lang-option" data-lang="en" role="option" aria-selected="false">
+            <span class="opt-flag"><span class="fi fi-gb"></span></span>
+            <span class="opt-name">English</span>
+            <span class="opt-check"></span>
+          </button>
+          <button class="lang-option" data-lang="fr" role="option" aria-selected="false">
+            <span class="opt-flag"><span class="fi fi-fr"></span></span>
+            <span class="opt-name">Français</span>
+            <span class="opt-check"></span>
+          </button>
+          <button class="lang-option" data-lang="it" role="option" aria-selected="false">
+            <span class="opt-flag"><span class="fi fi-it"></span></span>
+            <span class="opt-name">Italiano</span>
+            <span class="opt-check"></span>
+          </button>
+          <button class="lang-option" data-lang="de" role="option" aria-selected="false">
+            <span class="opt-flag"><span class="fi fi-de"></span></span>
+            <span class="opt-name">Deutsch</span>
+            <span class="opt-check"></span>
+          </button>
+          <button class="lang-option" data-lang="ru" role="option" aria-selected="false">
+            <span class="opt-flag"><span class="fi fi-ru"></span></span>
+            <span class="opt-name">Русский</span>
+            <span class="opt-check"></span>
+          </button>
+          <button class="lang-option" data-lang="ja" role="option" aria-selected="false">
+            <span class="opt-flag"><span class="fi fi-jp"></span></span>
+            <span class="opt-name">日本語</span>
+            <span class="opt-check"></span>
+          </button>
+          <button class="lang-option" data-lang="pt" role="option" aria-selected="false">
+            <span class="opt-flag"><span class="fi fi-pt"></span></span>
+            <span class="opt-name">Português</span>
+            <span class="opt-check"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="saved-page-wrap">
+    <a href="/#articulos" class="article-back" data-i18n="back_to_articles">← Volver a artículos</a>
+
+    <header class="saved-head">
+      <span class="saved-head-ic" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+      </span>
+      <h1 class="saved-title" data-i18n="saved_title">Tus guardados</h1>
+      <p class="saved-sub"><span id="saved-count">0</span> <span data-i18n="saved_sub">artículos guardados</span></p>
+    </header>
+
+    <div class="articles-grid saved-grid" id="saved-grid" hidden></div>
+
+    <div class="saved-empty" id="saved-empty" hidden>
+      <span class="saved-empty-ic" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+      </span>
+      <h2 data-i18n="saved_empty_title">Aún no has guardado nada</h2>
+      <p data-i18n="saved_empty_text">Guarda artículos con el icono 🔖 mientras lees y aparecerán aquí, listos para volver a ellos.</p>
+      <a class="btn btn-primary" href="/#articulos" data-i18n="saved_empty_cta">Explorar artículos</a>
+    </div>
+
+    <noscript>
+      <p class="saved-noscript">Activa JavaScript para ver tus artículos guardados.</p>
+    </noscript>
+  </main>
+
+  <footer>
+    <p>Hecho con ❤️ y demasiadas horas de anime por <strong>Jose Jesus Lopez Fernandez</strong> ·
+      <strong>NAKAMA.BLOG</strong>
+    </p>
+    <p style="margin-top:.4rem;font-size:.75rem;opacity:.4;">© 2026 · ualjlf259.github.io</p>
+  </footer>
+
+  <script defer src="/script.js"></script>
+  <script defer src="/easter-eggs/easter-eggs.js"></script>
+
+
+</body>
+</html>

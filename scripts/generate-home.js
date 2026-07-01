@@ -16,11 +16,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const SITE = 'https://ualjlf259.github.io';
-const DEFAULT_LANG = 'es';
-const LANGS = ['es', 'en', 'fr', 'ja', 'it', 'de', 'ru', 'pt'];
-const LOCALE_TAG = { es: 'es_ES', en: 'en_US', fr: 'fr_FR', ja: 'ja_JP', de: 'de_DE', it: 'it_IT', ru: 'ru_RU', pt: 'pt_PT' };
-const ROOT = path.resolve(__dirname, '..');
+const { SITE, DEFAULT_LANG, LANGS, LOCALE_TAG, ROOT, escHtml: esc, absolutize } = require('./_shared');
 const OG_IMAGE = `${SITE}/img/articles/oyasumy-punpun-portada.jpg`;
 
 // SEO del home por idioma (marca + descripción). Título de marca común.
@@ -35,18 +31,8 @@ const HOME_SEO = {
   pt: { title: 'Nakama Blog — Anime & Manga', desc: 'Análise profunda de anime e mangá: One Piece, Hunter x Hunter, Vinland Saga, Attack on Titan e mais.' },
 };
 
-const esc = (s) => String(s == null ? '' : s)
-  .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-
 const homePath = (lang) => (lang === DEFAULT_LANG ? '/' : `/${lang}/`);
 const homeUrl = (lang) => SITE + homePath(lang);
-
-function absolutize(html) {
-  return html.replace(/(src|href)="(?!https?:|\/\/|\/|#|data:|mailto:|tel:)([^"]+)"/g, (m, attr, url) => {
-    if (/^index\.html/.test(url)) return `${attr}="${url.replace(/^index\.html/, '/')}"`;
-    return `${attr}="/${url}"`;
-  });
-}
 
 function buildHead(lang) {
   const seo = HOME_SEO[lang] || HOME_SEO.es;
@@ -71,6 +57,8 @@ function buildHead(lang) {
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
   <link rel="canonical" href="${esc(pageUrl)}">
+
+  <link rel="alternate" type="application/rss+xml" title="Nakama Blog · RSS" href="/feed.xml">
 
   <!-- ── Open Graph ── -->
   <meta property="og:type" content="website">

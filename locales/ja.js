@@ -30,6 +30,15 @@ window.LANG_JA = {
   nav_articles : "記事",
   nav_ranking  : "ランキング",
   nav_about    : "自己紹介",
+  nav_saved    : "保存済み",
+
+  /* ── 保存済み ── */
+  saved_title: "保存した記事",
+  saved_sub: "件の保存記事",
+  saved_empty_title: "まだ何も保存していません",
+  saved_empty_text: "読みながら🔖アイコンで記事を保存すると、ここに表示され、いつでも読み返せます。",
+  saved_empty_cta: "記事を見る",
+  saved_remove: "保存から削除",
 
   /* ── ヒーロー ── */
   hero_eyebrow : "特集・深い分析",

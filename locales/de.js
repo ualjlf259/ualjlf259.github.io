@@ -28,6 +28,16 @@ window.LANG_DE = {
   nav_articles : "Artikel",
   nav_ranking  : "Rangliste",
   nav_about    : "Über mich",
+  nav_saved    : "Gespeichert",
+
+  /* ── Gespeichert ── */
+  saved_title: "Gespeicherte Artikel",
+  saved_sub: "gespeicherte Artikel",
+  saved_empty_title: "Du hast noch nichts gespeichert",
+  saved_empty_text: "Speichere Artikel beim Lesen mit dem 🔖-Symbol und sie erscheinen hier, bereit zum Wiederlesen.",
+  saved_empty_cta: "Artikel entdecken",
+  saved_remove: "Aus Gespeicherten entfernen",
+
   hero_eyebrow : "EMPFOHLEN · TIEFGEHENDE ANALYSE",
   hero_h1      : "Die Welt des<br><em>Anime</em> wie nie<br><u class='hero-ul'>zuvor gesehen.</u>",
   hero_sub     : "Analysen, Reflexionen und Leidenschaft für <strong>One Piece</strong>, Hunter x Hunter, Vinland Saga und das gesamte Manga-Universum.",

@@ -30,6 +30,15 @@ window.LANG_FR = {
   nav_articles: "Articles",
   nav_ranking: "Classement",
   nav_about: "À propos",
+  nav_saved: "Enregistrés",
+
+  /* ── Enregistrés ── */
+  saved_title: "Vos articles enregistrés",
+  saved_sub: "articles enregistrés",
+  saved_empty_title: "Vous n'avez encore rien enregistré",
+  saved_empty_text: "Enregistrez des articles avec l'icône 🔖 pendant votre lecture et ils apparaîtront ici, prêts à être relus.",
+  saved_empty_cta: "Explorer les articles",
+  saved_remove: "Retirer des enregistrés",
 
   /* ── Hero ── */
   hero_eyebrow: "À LA UNE · ANALYSE APPROFONDIE",

@@ -2,91 +2,73 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 — Página no encontrada</title>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html,
-        body {
-            height: 100%;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background: #0d0d0d;
-            color: #f5e6d3;
-        }
-
-        body {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 24px;
-        }
-
-        .container {
-            max-width: 560px;
-        }
-
-        .code {
-            font-size: clamp(80px, 18vw, 160px);
-            font-weight: 800;
-            letter-spacing: -4px;
-            color: #d10000;
-            line-height: 1;
-            margin-bottom: 16px;
-        }
-
-        h1 {
-            font-size: clamp(22px, 4vw, 32px);
-            margin-bottom: 12px;
-            color: #f5e6d3;
-        }
-
-        p {
-            font-size: 16px;
-            line-height: 1.6;
-            color: #aaa;
-            margin-bottom: 32px;
-        }
-
-        .quote {
-            font-style: italic;
-            color: #d8b27a;
-            margin-bottom: 32px;
-            font-size: 15px;
-        }
-
-        a.btn {
-            display: inline-block;
-            padding: 12px 28px;
-            background: #d10000;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: 600;
-            transition: background 0.2s;
-        }
-
-        a.btn:hover {
-            background: #a00000;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Página no encontrada · Nakama Blog</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Bebas+Neue&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --grad: linear-gradient(135deg, #bf5cff 0%, #ff4dcb 52%, #34dbff 100%);
+    }
+    html, body { height: 100%; }
+    body {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #dedbed;
+      background:
+        radial-gradient(1100px 700px at 78% -8%, rgba(185, 120, 242, .18), transparent 60%),
+        radial-gradient(900px 600px at 12% 4%, rgba(101, 200, 223, .12), transparent 55%),
+        #07070c;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center; padding: 24px; -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 580px; }
+    .mark {
+      width: 76px; height: 76px; margin: 0 auto 1.4rem; display: block;
+      filter: drop-shadow(0 4px 22px rgba(185, 120, 242, .5));
+    }
+    .code {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(96px, 22vw, 180px); line-height: .9; letter-spacing: 2px;
+      background: var(--grad); -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent; color: transparent;
+    }
+    h1 {
+      font-family: 'Playfair Display', Georgia, serif; font-weight: 900;
+      font-size: clamp(24px, 5vw, 38px); line-height: 1.15; color: #fbf9ff; margin: .2rem 0 .9rem;
+    }
+    .quote { font-style: italic; color: #c9a0ff; font-size: 15px; margin-bottom: 1rem; }
+    p.lead { font-size: 16px; line-height: 1.65; color: #a5a2b8; margin-bottom: 2rem; }
+    .cta { display: flex; gap: .8rem; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: .5rem;
+      padding: .8rem 1.6rem; border-radius: 999px; text-decoration: none;
+      font-weight: 600; font-size: .82rem; letter-spacing: .06em; text-transform: uppercase;
+      transition: transform .18s, box-shadow .22s, border-color .2s, color .2s;
+    }
+    .btn-primary { color: #fff; background: var(--grad); box-shadow: 0 10px 26px rgba(191, 92, 255, .4); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 34px rgba(191, 92, 255, .55); }
+    .btn-outline { color: #dedbed; border: 1px solid rgba(255, 255, 255, .18); background: rgba(255, 255, 255, .04); }
+    .btn-outline:hover { transform: translateY(-2px); border-color: rgba(191, 92, 255, .5); color: #fff; }
+  </style>
 </head>
 
 <body>
-    <div class="container">
-        <div class="code">404</div>
-        <h1>Esta página se ha perdido en el Vacío</h1>
-        <p class="quote">"El que busca encuentra, pero a veces lo que encuentra no es lo que buscaba."</p>
-        <p>La URL a la que has intentado acceder no existe o ha sido movida.</p>
-        <a href="/" class="btn">Volver al inicio</a>
+  <div class="wrap">
+    <img class="mark" src="/favicon.svg" alt="Nakama Blog">
+    <div class="code">404</div>
+    <h1>Esta página se ha perdido en el Vacío</h1>
+    <p class="quote">«El que busca encuentra, pero a veces lo que encuentra no es lo que buscaba.»</p>
+    <p class="lead">La URL a la que has intentado acceder no existe o ha sido movida. Quizá el artículo que buscabas tenga otra dirección.</p>
+    <div class="cta">
+      <a href="/" class="btn btn-primary">Volver al inicio</a>
+      <a href="/#articulos" class="btn btn-outline">Ver artículos</a>
     </div>
+  </div>
 </body>
 
 </html>

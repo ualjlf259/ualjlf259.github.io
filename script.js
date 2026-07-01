@@ -95,6 +95,7 @@ async function loadArticle(id) {
 ═══════════════════════════════════════════════════ */
 const onArticlePage = !!document.getElementById('article-root');
 const onIndexPage   = !!document.getElementById('articles-grid');
+const onSavedPage   = !!document.getElementById('saved-grid');
 
 /* ═══════════════════════════════════════════════════
    APLICAR IDIOMA
@@ -252,74 +253,127 @@ function applyLang(lang) {
     renderArticlePage(currentArticleData);
   }
 
+  // Re-render tarjetas guardadas (guardados.html)
+  if (onSavedPage && articleStore.index) {
+    renderSavedCards();
+  }
+
   if (typeof updateLangUI === 'function') updateLangUI(lang);
   document.documentElement.lang = lang;
 }
 
 /* ═══════════════════════════════════════════════════
-   RENDER DE TARJETAS (index.html)
+   RENDER DE TARJETAS (index.html + guardados.html)
 ═══════════════════════════════════════════════════ */
+/* Artículos con tráiler: id → fichero de vídeo (botón ▶ en la portada). */
+const videoMap = {
+  'op-esclavitud':         '/videos/video-one-piece.mp4',
+  'jjk-maldicion':         '/videos/video-jujutsu.mp4',
+  'mha-heroes':            '/videos/video-boku-no-hero.mp4',
+  'vinland-guerra':        '/videos/video-vinland.mp4',
+  'aot-libertad':          '/videos/video-shingeki.mp4',
+  'chainsaw-caos':         '/videos/video-chainsaw.mp4',
+  'black-clover-voluntad': '/videos/video-black-clover.mp4'
+};
+
+/* ¿El artículo está guardado? (botón 🔖 del rail → localStorage saved_<id>). */
+function isSaved(id) {
+  try { return localStorage.getItem('saved_' + id) === '1'; } catch (e) { return false; }
+}
+
+/* Construye una tarjeta <a class="card"> a partir de un item de index.json.
+   opts.removable añade el botón ✕ para quitarla de Guardados. */
+function buildCard(item, opts) {
+  opts = opts || {};
+  const t = i18n[currentLang] || {};
+  const a = document.createElement('a');
+  a.className = 'card';
+  a.href = articleHref(item.id);
+  a.dataset.category = item.category;
+  a.dataset.title = (item.title && item.title[currentLang]) || '';
+  a.dataset.id = item.id;
+
+  const thumb = item.thumb || {};
+  const visual = thumb.type === 'img'
+    ? `<img src="/${thumb.src}" alt="${thumb.alt || ''}" class="card-thumb-img" loading="lazy" decoding="async">`
+    : (thumb.value || '');
+
+  const title = (item.title && item.title[currentLang]) || '';
+  const desc  = (item.desc  && item.desc[currentLang])  || '';
+  const label = (item.label && item.label[currentLang]) || '';
+
+  const playBtn = videoMap[item.id]
+    ? `<button class="card-play-btn" aria-label="Ver vídeo"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg></button>`
+    : '';
+
+  const removeBtn = opts.removable
+    ? `<button class="card-remove" type="button" aria-label="${t.saved_remove || 'Quitar'}" title="${t.saved_remove || 'Quitar'}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></button>`
+    : '';
+
+  a.innerHTML = `
+    <div class="card-thumb ${thumb.class || ''}">${visual}${playBtn}${removeBtn}</div>
+    <div class="card-body">
+      <span class="card-tag">${item.category}</span>
+      <h3>${title}</h3>
+      <p>${desc}</p>
+      <div class="card-meta"><span>${item.mins} ${t.read_min || ''}</span><span>${label}</span></div>
+    </div>`;
+
+  if (videoMap[item.id]) {
+    a.querySelector('.card-play-btn').addEventListener('click', (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      openVideoModal(videoMap[item.id]);
+    });
+  }
+
+  if (opts.removable) {
+    a.querySelector('.card-remove').addEventListener('click', (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      try { localStorage.setItem('saved_' + item.id, '0'); } catch (err) { /* noop */ }
+      renderSavedCards();
+    });
+  }
+
+  return a;
+}
+
 function renderCards(index) {
   const grid = document.getElementById('articles-grid');
   if (!grid) return;
-  const t = i18n[currentLang] || {};
   const noResults = document.getElementById('no-results');
 
   grid.innerHTML = '';
   if (noResults) grid.appendChild(noResults);
 
-  index.forEach(item => {
-    const a = document.createElement('a');
-    a.className = 'card';
-    a.href = articleHref(item.id);
-    a.dataset.category = item.category;
-    a.dataset.title = (item.title && item.title[currentLang]) || '';
-    a.dataset.id = item.id;
-
-    const thumb = item.thumb || {};
-    const visual = thumb.type === 'img'
-      ? `<img src="/${thumb.src}" alt="${thumb.alt || ''}" class="card-thumb-img" loading="lazy" decoding="async">`
-      : (thumb.value || '');
-
-    const title = (item.title && item.title[currentLang]) || '';
-    const desc  = (item.desc  && item.desc[currentLang])  || '';
-    const label = (item.label && item.label[currentLang]) || '';
-
-    const videoIds = ['op-esclavitud', 'jjk-maldicion', 'mha-heroes', 'vinland-guerra', 'aot-libertad', 'chainsaw-caos', 'black-clover-voluntad'];
-    const playBtn = videoIds.includes(item.id)
-      ? `<button class="card-play-btn" aria-label="Ver vídeo"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg></button>`
-      : '';
-
-    a.innerHTML = `
-      <div class="card-thumb ${thumb.class || ''}">${visual}${playBtn}</div>
-      <div class="card-body">
-        <span class="card-tag">${item.category}</span>
-        <h3>${title}</h3>
-        <p>${desc}</p>
-        <div class="card-meta"><span>${item.mins} ${t.read_min || ''}</span><span>${label}</span></div>
-      </div>`;
-
-    const videoMap = {
-      'op-esclavitud':  '/videos/video-one-piece.mp4',
-      'jjk-maldicion':  '/videos/video-jujutsu.mp4',
-      'mha-heroes':     '/videos/video-boku-no-hero.mp4',
-      'vinland-guerra': '/videos/video-vinland.mp4',
-      'aot-libertad':          '/videos/video-shingeki.mp4',
-      'chainsaw-caos':         '/videos/video-chainsaw.mp4',
-      'black-clover-voluntad': '/videos/video-black-clover.mp4'
-    };
-    if (videoMap[item.id]) {
-      a.querySelector('.card-play-btn').addEventListener('click', (e) => {
-        e.stopPropagation();
-        e.preventDefault();
-        openVideoModal(videoMap[item.id]);
-      });
-    }
-
-    grid.appendChild(a);
-  });
+  index.forEach(item => grid.appendChild(buildCard(item)));
 
   filterCards();
+}
+
+/* ═══════════════════════════════════════════════════
+   PÁGINA DE GUARDADOS (guardados.html)
+   Pinta las tarjetas que el usuario marcó con 🔖 (localStorage saved_<id>).
+═══════════════════════════════════════════════════ */
+function renderSavedCards() {
+  const grid = document.getElementById('saved-grid');
+  if (!grid || !articleStore.index) return;
+  const empty = document.getElementById('saved-empty');
+  const countEl = document.getElementById('saved-count');
+
+  const saved = articleStore.index.filter(it => isSaved(it.id));
+  if (countEl) countEl.textContent = saved.length;
+
+  grid.innerHTML = '';
+  if (!saved.length) {
+    if (empty) empty.hidden = false;
+    grid.hidden = true;
+    return;
+  }
+  if (empty) empty.hidden = true;
+  grid.hidden = false;
+  saved.forEach(item => grid.appendChild(buildCard(item, { removable: true })));
 }
 
 /* ═══════════════════════════════════════════════════
@@ -426,7 +480,9 @@ if (langToggle && langMenu && langDropdown) {
     opt.addEventListener('click', () => {
       const lang = opt.dataset.lang;
       // En páginas prerenderizadas (SSG), cambiar de idioma NAVEGA a la URL hermana estática.
+      // Guardamos el idioma antes de navegar para que la raíz / (adaptativa) lo respete al llegar.
       if (window.__PRERENDERED && window.__PRERENDERED.langUrls && window.__PRERENDERED.langUrls[lang]) {
+        try { localStorage.setItem('lang', lang); } catch (e) { /* noop */ }
         window.location.href = window.__PRERENDERED.langUrls[lang];
         return;
       }
@@ -946,6 +1002,98 @@ function wireShareCopy() {
   });
 }
 
+/* ═══════════════════════════════════════════════════
+   EXPERIENCIA DE LECTURA (solo páginas de artículo):
+   barra de progreso, índice (TOC) con sección activa y botón "volver arriba".
+═══════════════════════════════════════════════════ */
+const TOC_TITLE = { es: 'En este artículo', en: 'In this article', fr: 'Dans cet article', ja: 'この記事の内容', it: 'In questo articolo', de: 'In diesem Artikel', ru: 'В этой статье', pt: 'Neste artigo' };
+const TOP_LABEL = { es: 'Volver arriba', en: 'Back to top', fr: 'Haut de page', ja: 'トップへ戻る', it: 'Torna su', de: 'Nach oben', ru: 'Наверх', pt: 'Voltar ao topo' };
+
+function initReadingExperience() {
+  const articleBody = document.getElementById('article-body');
+  if (!articleBody) return; // solo en páginas de artículo
+  const wrap = document.querySelector('.article-page-wrap');
+  const t = i18n[currentLang] || {};
+
+  // 1. Barra de progreso de lectura (arriba)
+  const bar = document.createElement('div');
+  bar.className = 'reading-progress';
+  document.body.appendChild(bar);
+
+  // 2. Botón "volver arriba"
+  const toTop = document.createElement('button');
+  toTop.type = 'button';
+  toTop.className = 'to-top';
+  toTop.setAttribute('aria-label', TOP_LABEL[currentLang] || TOP_LABEL.es);
+  toTop.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>';
+  toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  document.body.appendChild(toTop);
+
+  // 3. Índice (TOC) a partir de los <h3> (asigna IDs en caliente)
+  const heads = Array.from(articleBody.querySelectorAll('h3'));
+  let toc = null;
+  if (heads.length >= 3 && wrap) {
+    const used = {};
+    const slug = (txt) => {
+      let s = String(txt || '').toLowerCase().normalize('NFD')
+        .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') || 'sec';
+      if (used[s]) { const n = used[s]++; s += '-' + n; } else { used[s] = 1; }
+      return s;
+    };
+    toc = document.createElement('nav');
+    toc.className = 'article-toc';
+    toc.setAttribute('aria-label', TOC_TITLE[currentLang] || TOC_TITLE.es);
+    const ul = document.createElement('ul');
+    heads.forEach((h) => {
+      if (!h.id) h.id = slug(h.textContent);
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = '#' + h.id;
+      a.textContent = h.textContent;
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        h.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        history.replaceState(null, '', '#' + h.id);
+      });
+      li.appendChild(a);
+      ul.appendChild(li);
+    });
+    const title = document.createElement('span');
+    title.className = 'article-toc-title';
+    title.textContent = TOC_TITLE[currentLang] || TOC_TITLE.es;
+    toc.appendChild(title);
+    toc.appendChild(ul);
+    wrap.appendChild(toc);
+
+    // Sección activa con IntersectionObserver
+    const links = new Map();
+    toc.querySelectorAll('a').forEach((a) => links.set(a.getAttribute('href').slice(1), a));
+    const spy = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (!en.isIntersecting) return;
+        const a = links.get(en.target.id);
+        if (!a) return;
+        toc.querySelectorAll('a.is-active').forEach((x) => x.classList.remove('is-active'));
+        a.classList.add('is-active');
+      });
+    }, { rootMargin: '-18% 0px -72% 0px', threshold: 0 });
+    heads.forEach((h) => spy.observe(h));
+  }
+
+  // 4. Scroll: progreso + visibilidad del botón
+  let ticking = false;
+  const update = () => {
+    const el = document.documentElement;
+    const max = (el.scrollHeight - el.clientHeight) || 1;
+    const p = Math.min(1, Math.max(0, (window.scrollY || el.scrollTop) / max));
+    bar.style.transform = 'scaleX(' + p.toFixed(4) + ')';
+    toTop.classList.toggle('is-show', (window.scrollY || el.scrollTop) > 600);
+    ticking = false;
+  };
+  window.addEventListener('scroll', () => { if (!ticking) { requestAnimationFrame(update); ticking = true; } }, { passive: true });
+  update();
+}
+
 function showArticleError(message) {
   const root = document.getElementById('article-root');
   if (!root) return;
@@ -962,6 +1110,7 @@ async function initArticlePage() {
   if (window.__PRERENDERED) {
     setupArticleRail(window.__PRERENDERED.id);
     wireShareCopy();
+    initReadingExperience();
     return;
   }
   const id = getQueryParam('id');
@@ -973,6 +1122,7 @@ async function initArticlePage() {
     const data = await loadArticle(id);
     currentArticleData = data;
     renderArticlePage(data);
+    initReadingExperience();
   } catch (err) {
     console.error(err);
     showArticleError(`No se encontró el artículo "${id}".`);
@@ -996,6 +1146,15 @@ async function initArticlePage() {
 
   if (onArticlePage) {
     await initArticlePage();
+  }
+
+  if (onSavedPage) {
+    try {
+      await loadArticleIndex();
+      renderSavedCards();
+    } catch (err) {
+      console.error('Error cargando articles/index.json:', err);
+    }
   }
 })();
 

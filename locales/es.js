@@ -30,6 +30,15 @@ window.LANG_ES = {
   nav_articles: "Artículos",
   nav_ranking: "Ranking",
   nav_about: "Sobre mí",
+  nav_saved: "Guardados",
+
+  /* ── Guardados ── */
+  saved_title: "Tus guardados",
+  saved_sub: "artículos guardados",
+  saved_empty_title: "Aún no has guardado nada",
+  saved_empty_text: "Guarda artículos con el icono 🔖 mientras lees y aparecerán aquí, listos para volver a ellos.",
+  saved_empty_cta: "Explorar artículos",
+  saved_remove: "Quitar de guardados",
 
   /* ── Hero ── */
   hero_eyebrow: "DESTACADO · ANÁLISIS PROFUNDO",

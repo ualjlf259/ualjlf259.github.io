@@ -28,22 +28,14 @@ const fs = require('fs');
 const path = require('path');
 const vm = require('vm');
 
-const SITE = 'https://ualjlf259.github.io';
-const DEFAULT_LANG = 'es';
-const LANGS = ['es', 'en', 'fr', 'ja', 'it', 'de', 'ru', 'pt'];
-const LOCALE_TAG = { es: 'es_ES', en: 'en_US', fr: 'fr_FR', ja: 'ja_JP', de: 'de_DE', it: 'it_IT', ru: 'ru_RU', pt: 'pt_PT' };
+const { SITE, DEFAULT_LANG, LANGS, LOCALE_TAG, ROOT, escHtml: esc, absolutize } = require('./_shared');
 
-const ROOT = path.resolve(__dirname, '..');
 const ARTICLES_DIR = path.join(ROOT, 'articles');
 const LOCALES_DIR = path.join(ROOT, 'locales');
 const OUT_DIR = path.join(ROOT, 'articulos');
 const AUTHOR = 'Jose Jesus Lopez Fernandez';
 
 /* ── utilidades ─────────────────────────────────────────── */
-const esc = (s) => String(s == null ? '' : s)
-  .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
-  .replace(/"/g, '&quot;');
-
 const pickLang = (field, lang) => {
   if (!field) return '';
   if (typeof field === 'string') return field;
@@ -104,14 +96,6 @@ function emphasizeTitle(title) {
   return esc(title.slice(0, cut)) + ' <span class="article-title-em">' + esc(title.slice(cut).trim()) + '</span>';
 }
 
-/* Pasa rutas relativas de assets a root-absolutas (la página vive en /articulos/<id>/...). */
-function absolutize(html) {
-  return html.replace(/(src|href)="(?!https?:|\/\/|\/|#|data:|mailto:|tel:)([^"]+)"/g, (m, attr, url) => {
-    if (/^index\.html/.test(url)) return `${attr}="${url.replace(/^index\.html/, '/')}"`;
-    return `${attr}="/${url}"`;
-  });
-}
-
 /* Botonera de compartir (enlaces de intent pre-rellenados — sin JS ni SDKs).
    Discord y "copiar enlace" copian al portapapeles (los cablea script.js vía [data-share-copy]). */
 const SHARE_SVG = {
@@ -170,6 +154,8 @@ function buildHead(data, lang) {
 
   <link rel="canonical" href="${esc(pageUrl)}">
 
+  <link rel="alternate" type="application/rss+xml" title="Nakama Blog · RSS" href="/feed.xml">
+
   <!-- ── Open Graph ── -->
   <meta property="og:type" content="article">
   <meta property="og:title" content="${esc(title)}">
@@ -205,8 +191,40 @@ ${localeScripts}
 </head>`;
 }
 
+// Etiqueta de la sección de artículos relacionados, por idioma.
+const RELATED_LABEL = {
+  es: 'También te puede interesar', en: 'You might also like', fr: 'À lire aussi',
+  ja: 'こちらもおすすめ', it: 'Potrebbe interessarti anche', de: 'Das könnte dir auch gefallen',
+  ru: 'Вам также может понравиться',
+  pt: 'Você também pode gostar',
+};
+
+/* Sección de artículos relacionados (misma categoría primero, luego otros). Enlaces internos reales. */
+function relatedHtml(data, lang, index) {
+  if (!Array.isArray(index) || !index.length) return '';
+  // Relacionar por TEMA (label), que varios artículos comparten — la categoría es única por anime.
+  const themeKey = (e) => (e.label && (e.label.es || e.label.en)) || e.category || '';
+  const myKey = themeKey(data);
+  const pool = index.filter((e) => e.id !== data.id);
+  const same = pool.filter((e) => themeKey(e) === myKey);
+  const rest = pool.filter((e) => themeKey(e) !== myKey);
+  const picks = same.concat(rest).slice(0, 3);
+  if (!picks.length) return '';
+  const cards = picks.map((e) => {
+    const url = artPath(e.id, lang);
+    const title = pickLang(e.title, lang);
+    const thumb = (e.thumb && e.thumb.src)
+      ? `<img src="/${String(e.thumb.src).replace(/^\/+/, '')}" alt="" loading="lazy" decoding="async">` : '';
+    return `<a class="rel-card" href="${url}">` +
+      `<span class="rel-thumb">${thumb}</span>` +
+      `<span class="rel-info"><span class="rel-cat">${esc(e.category)}</span><span class="rel-title">${esc(title)}</span></span>` +
+      `</a>`;
+  }).join('');
+  return `<section class="article-related"><h2 class="article-related-title">${esc(RELATED_LABEL[lang] || RELATED_LABEL.es)}</h2><div class="article-related-grid">${cards}</div></section>`;
+}
+
 /* Rellena los #article-* del shell con el contenido renderizado. */
-function fillBody(body, data, lang, i18n) {
+function fillBody(body, data, lang, i18n, index) {
   const t = i18n[lang] || {};
   const title = pickLang(data.title, lang);
   const desc = pickLang(data.desc, lang);
@@ -245,7 +263,7 @@ function fillBody(body, data, lang, i18n) {
     .replace('<div class="article-author" id="article-author"></div>', `<div class="article-author" id="article-author">${author}</div>`)
     .replace('<div id="article-img-top"></div>', `<div id="article-img-top">${heroImg}</div>`)
     .replace('<div class="modal-body" id="article-body"></div>', `<div class="modal-body" id="article-body">${content}</div>`)
-    .replace('<div class="article-foot" id="article-foot"></div>', `<div class="article-foot" id="article-foot">${foot}</div>`);
+    .replace('<div class="article-foot" id="article-foot"></div>', `<div class="article-foot" id="article-foot">${foot}</div>${relatedHtml(data, lang, index)}`);
 }
 
 function main() {
@@ -255,6 +273,9 @@ function main() {
   const bodyInner = bodyMatch[1];
 
   const i18n = loadLocales();
+  // Índice (tarjetas) para calcular artículos relacionados.
+  let index = [];
+  try { index = JSON.parse(fs.readFileSync(path.join(ARTICLES_DIR, 'index.json'), 'utf8')); } catch (e) { /* sin relacionados */ }
 
   const only = process.argv[2];
   let ids = fs.readdirSync(ARTICLES_DIR)
@@ -273,7 +294,7 @@ function main() {
     data.id = data.id || id;
     for (const lang of LANGS) {
       const head = buildHead(data, lang);
-      let body = fillBody(bodyInner, data, lang, i18n);
+      let body = fillBody(bodyInner, data, lang, i18n, index);
       body = absolutize(body);
       const html = `<!DOCTYPE html>\n<html lang="${lang}">\n${head}\n<body>\n${body}\n</body>\n</html>\n`;
       const dir = lang === DEFAULT_LANG ? path.join(OUT_DIR, id) : path.join(OUT_DIR, id, lang);

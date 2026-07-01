@@ -12,6 +12,9 @@
   <!-- ── Canonical URL ── -->
   <link rel="canonical" href="https://ualjlf259.github.io/">
 
+  <!-- ── Feed RSS ── -->
+  <link rel="alternate" type="application/rss+xml" title="Nakama Blog · RSS" href="/feed.xml">
+
   <!-- ── hreflang (home por idioma; ES en la raíz, resto en /<lang>/) ── -->
   <link rel="alternate" hreflang="es" href="https://ualjlf259.github.io/">
   <link rel="alternate" hreflang="en" href="https://ualjlf259.github.io/en/">
@@ -76,9 +79,10 @@
   <!-- ── Flag icons (SVG local, cross-platform) — subconjunto de 8 banderas, ver flags/ ── -->
   <link rel="stylesheet" href="flags/flag-icons-local.css">
 
-  <!-- Home prerenderizado por idioma (SSG): fija el idioma de esta URL y hace que el selector
-       NAVEGUE a la home hermana (/, /en/, …). El generador reescribe este marcador por idioma. -->
-  <script>window.__PRERENDERED={home:true,lang:'es',langUrls:{es:'/',en:'/en/',fr:'/fr/',ja:'/ja/',it:'/it/',de:'/de/',ru:'/ru/',pt:'/pt/'}};</script>
+  <!-- Home: la raíz / es ADAPTATIVA (recuerda el idioma guardado/navegador); NO se fija `lang` aquí.
+       `langUrls` hace que el selector NAVEGUE a la home hermana (/en/, /fr/, …). Las páginas /<lang>/
+       generadas SÍ llevan `lang` fijado (una URL = un idioma) vía scripts/generate-home.js. -->
+  <script>window.__PRERENDERED={home:true,langUrls:{es:'/',en:'/en/',fr:'/fr/',ja:'/ja/',it:'/it/',de:'/de/',ru:'/ru/',pt:'/pt/'}};</script>
 </head>
 
 <body>
@@ -100,6 +104,7 @@
       <li><a href="#articulos" data-i18n="nav_articles">Artículos</a></li>
       <li><a href="#ranking" data-i18n="nav_ranking">Ranking</a></li>
       <li><a href="#sobre-mi" data-i18n="nav_about">Sobre mí</a></li>
+      <li><a href="/guardados/" data-i18n="nav_saved">Guardados</a></li>
     </ul>
     <div class="nav-controls">
       <!-- ── Easter Eggs Progress ── -->

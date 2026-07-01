@@ -30,6 +30,15 @@ window.LANG_EN = {
   nav_articles : "Articles",
   nav_ranking  : "Ranking",
   nav_about    : "About me",
+  nav_saved    : "Saved",
+
+  /* ── Saved ── */
+  saved_title: "Saved articles",
+  saved_sub: "saved articles",
+  saved_empty_title: "You haven't saved anything yet",
+  saved_empty_text: "Save articles with the 🔖 icon while you read and they'll appear here, ready to revisit.",
+  saved_empty_cta: "Explore articles",
+  saved_remove: "Remove from saved",
 
   /* ── Hero ── */
   hero_eyebrow : "FEATURED · DEEP ANALYSIS",

@@ -26,6 +26,15 @@ window.LANG_PT = {
   nav_articles: "Artigos",
   nav_ranking: "Ranking",
   nav_about: "Sobre mim",
+  nav_saved: "Salvos",
+
+  /* ── Salvos ── */
+  saved_title: "Seus salvos",
+  saved_sub: "artigos salvos",
+  saved_empty_title: "Você ainda não salvou nada",
+  saved_empty_text: "Salve artigos com o ícone 🔖 enquanto lê e eles aparecerão aqui, prontos para reler.",
+  saved_empty_cta: "Explorar artigos",
+  saved_remove: "Remover dos salvos",
 
   /* ── Hero ── */
   hero_eyebrow: "DESTAQUE · ANÁLISE PROFUNDA",
