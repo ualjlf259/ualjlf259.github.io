@@ -186,3 +186,6 @@
 .welcome-overlay.open .welcome-cta { animation-delay: .46s; }
 
 .welcome-egg-ic { display: inline-block; animation: wm-egg-bob 2.8s var(--ease-standard) infinite; }
+
+/* NOTA: el CSS del preloader/intro cinemática (.intro-cine*) se movió a styles.css
+   (2026-07-01) para que sea universal en todas las páginas, no solo en el home. */

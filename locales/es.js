@@ -40,6 +40,11 @@ window.LANG_ES = {
   saved_empty_cta: "Explorar artículos",
   saved_remove: "Quitar de guardados",
 
+  /* ── Intro cinemática ── */
+  intro_tagline: "El anime como obra de arte.",
+  intro_skip: "Saltar intro",
+  intro_reopen: "Ver intro",
+
   /* ── Hero ── */
   hero_eyebrow: "DESTACADO · ANÁLISIS PROFUNDO",
   hero_h1: "El mundo del<br><em>anime</em><br>como nunca<br><u class='hero-ul'>lo viste.</u>",

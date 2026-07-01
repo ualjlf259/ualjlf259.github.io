@@ -38,6 +38,11 @@ window.LANG_IT = {
   saved_empty_cta: "Esplora gli articoli",
   saved_remove: "Rimuovi dai salvati",
 
+  /* ── Intro cinematografica ── */
+  intro_tagline: "L'anime come opera d'arte.",
+  intro_skip: "Salta l'intro",
+  intro_reopen: "Rivedi l'intro",
+
   hero_eyebrow : "IN EVIDENZA · ANALISI APPROFONDITA",
   hero_h1      : "Il mondo dell'<em>anime</em><br>come non l'hai<br><u class='hero-ul'>mai visto.</u>",
   hero_sub     : "Analisi, riflessioni e passione per <strong>One Piece</strong>, Hunter x Hunter, Vinland Saga e tutto l'universo del manga.",

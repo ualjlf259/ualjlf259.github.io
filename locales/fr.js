@@ -40,6 +40,11 @@ window.LANG_FR = {
   saved_empty_cta: "Explorer les articles",
   saved_remove: "Retirer des enregistrés",
 
+  /* ── Intro cinématique ── */
+  intro_tagline: "L'anime comme œuvre d'art.",
+  intro_skip: "Passer l'intro",
+  intro_reopen: "Revoir l'intro",
+
   /* ── Hero ── */
   hero_eyebrow: "À LA UNE · ANALYSE APPROFONDIE",
   hero_h1: "Le monde de<br>l'<em>anime</em> comme<br><u class='hero-ul'>jamais auparavant.</u>",

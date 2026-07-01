@@ -38,6 +38,11 @@ window.LANG_RU = {
   saved_empty_cta: "Смотреть статьи",
   saved_remove: "Убрать из сохранённых",
 
+  /* ── Кинематографическое интро ── */
+  intro_tagline: "Аниме как произведение искусства.",
+  intro_skip: "Пропустить интро",
+  intro_reopen: "Смотреть интро",
+
   hero_eyebrow : "ИЗБРАННОЕ · ГЛУБОКИЙ АНАЛИЗ",
   hero_h1      : "Мир <em>аниме</em><br>как ты его<br><u class='hero-ul'>никогда не видел.</u>",
   hero_sub     : "Анализ, размышления и страсть к <strong>One Piece</strong>, Hunter x Hunter, Vinland Saga и всей вселенной манги.",

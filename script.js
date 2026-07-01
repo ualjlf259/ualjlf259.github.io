@@ -1161,10 +1161,12 @@ async function initArticlePage() {
 // Easter Eggs gestionados por easter-eggs/easter-eggs.js
 
 /* ═══════════════════════════════════════════════════
-   WELCOME MODAL (bienvenida — solo primera visita)
-   Se muestra solo si no existe la marca en localStorage.
+   WELCOME MODAL (bienvenida)
    El contenido va en el DOM (no bloquea SEO); el modal es una capa.
+   La intro/preloader (initBrandScreen) decide cuándo abrirlo en la 1ª visita;
+   también lo reabre el enlace "Ver intro" del footer.
 ═══════════════════════════════════════════════════ */
+let openOnboardingModal = null; // lo asigna initWelcome; lo usa initBrandScreen
 (function initWelcome() {
   const overlay = document.getElementById('welcome-overlay');
   if (!overlay || !onIndexPage) return;
@@ -1190,6 +1192,7 @@ async function initArticlePage() {
     document.body.style.overflow = 'hidden';
     if (startBtn) startBtn.focus();
   }
+  openOnboardingModal = openWelcome;
 
   if (closeBtn) closeBtn.addEventListener('click', closeWelcome);
   if (startBtn) startBtn.addEventListener('click', () => {
@@ -1206,9 +1209,93 @@ async function initArticlePage() {
     if (e.key === 'Escape' && overlay.classList.contains('open')) closeWelcome();
   });
 
+})();
+
+/* ═══════════════════════════════════════════════════
+   PRELOADER + INTRO CINEMÁTICA (todas las páginas)
+   El overlay .intro-cine es visible desde el 1er pintado (loader) mientras carga
+   la página; se desvanece cuando la app está lista. En la 1ª visita del HOME actúa
+   además de intro y encadena con el welcome modal (openOnboardingModal). Reabrible
+   en el home con "Ver intro" del footer. CSS en styles.css (.intro-cine*, is-run/is-hidden).
+═══════════════════════════════════════════════════ */
+(function initBrandScreen() {
+  const overlay = document.getElementById('intro-cine');
+  if (!overlay) return;
+  const SEEN_KEY = 'welcome_seen';
+  const skipBtn = document.getElementById('intro-cine-skip');
+  const replay  = document.getElementById('intro-replay');
+  const REDUCE  = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   let seen = false;
   try { seen = localStorage.getItem(SEEN_KEY) === '1'; } catch (e) { /* noop */ }
-  if (!seen) openWelcome();
+
+  let timers = [];
+  let done = false;
+  const clearTimers = () => { timers.forEach(clearTimeout); timers = []; };
+
+  // Oculta el overlay (fundido) y ejecuta `then` al acabar. Idempotente.
+  function hide(then) {
+    if (done) return;
+    done = true;
+    clearTimers();
+    document.removeEventListener('keydown', onKey);
+    overlay.classList.add('is-hidden');
+    timers.push(setTimeout(() => {
+      overlay.style.display = 'none';
+      overlay.classList.remove('is-hidden', 'is-intro');
+      if (typeof then === 'function') then();
+    }, REDUCE ? 60 : 560));
+  }
+  function reveal() { hide(() => { document.body.style.overflow = ''; }); }
+  function toModal() {
+    hide(() => {
+      if (typeof openOnboardingModal === 'function') openOnboardingModal();
+      else document.body.style.overflow = '';
+    });
+  }
+
+  let endFn = reveal; // se ajusta según el modo (loader → reveal, intro → toModal)
+  function onKey(e) { if (e.key === 'Escape') endFn(); }
+
+  // Reproduce la intro de nuevo (enlace "Ver intro"): reinicia animaciones y encadena al modal.
+  function playIntro() {
+    done = false;
+    clearTimers();
+    endFn = toModal;
+    overlay.style.display = 'flex';
+    overlay.classList.remove('is-hidden');
+    overlay.classList.add('is-intro');
+    overlay.classList.remove('is-run');
+    void overlay.offsetWidth; // reflow: reinicia las animaciones de entrada
+    overlay.classList.add('is-run');
+    document.body.style.overflow = 'hidden';
+    document.addEventListener('keydown', onKey);
+    timers.push(setTimeout(toModal, REDUCE ? 1200 : 4200));
+  }
+
+  if (skipBtn) skipBtn.addEventListener('click', (e) => { e.stopPropagation(); endFn(); });
+  overlay.addEventListener('click', () => { if (overlay.classList.contains('is-intro')) toModal(); });
+  if (replay) replay.addEventListener('click', playIntro);
+
+  document.body.style.overflow = 'hidden';
+  document.addEventListener('keydown', onKey);
+
+  if (onIndexPage && !seen) {
+    // 1ª visita del home: el loader ES la intro → al terminar abre el welcome modal.
+    endFn = toModal;
+    overlay.classList.add('is-intro');
+    timers.push(setTimeout(toModal, REDUCE ? 1200 : 4200));
+  } else {
+    // Loader: desvanece cuando la app está lista (con un mínimo en pantalla).
+    endFn = reveal;
+    const MIN = REDUCE ? 250 : 650;
+    if (document.readyState === 'complete') {
+      timers.push(setTimeout(reveal, MIN));
+    } else {
+      window.addEventListener('load', () => { timers.push(setTimeout(reveal, MIN)); }, { once: true });
+    }
+    timers.push(setTimeout(reveal, REDUCE ? 1200 : 4000)); // salvaguarda
+  }
 })();
 
 /* ═══════════════════════════════════════════════════

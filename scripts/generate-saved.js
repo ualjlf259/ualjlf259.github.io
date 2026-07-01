@@ -67,6 +67,7 @@ ${localeScripts}
 
   <!-- Guardados prerenderizado por idioma (SSG): fija el idioma de esta URL y hace que el selector navegue -->
   <script>window.__PRERENDERED=${JSON.stringify(marker)};</script>
+  <noscript><style>#intro-cine{display:none!important}</style></noscript>
 </head>`;
 }
 

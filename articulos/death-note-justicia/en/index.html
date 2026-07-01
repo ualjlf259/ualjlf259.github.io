@@ -58,9 +58,25 @@
 
   <!-- Marcador de página prerenderizada: script.js no re-renderiza y el selector de idioma navega -->
   <script>window.__PRERENDERED={"id":"death-note-justicia","lang":"en","langUrls":{"es":"/articulos/death-note-justicia/","en":"/articulos/death-note-justicia/en/","fr":"/articulos/death-note-justicia/fr/","ja":"/articulos/death-note-justicia/ja/","it":"/articulos/death-note-justicia/it/","de":"/articulos/death-note-justicia/de/","ru":"/articulos/death-note-justicia/ru/","pt":"/articulos/death-note-justicia/pt/"}};</script>
+  <noscript><style>#intro-cine{display:none!important}</style></noscript>
 </head>
 <body>
 
+
+  <!-- PRELOADER (loader universal; CSS .intro-cine en styles.css, lógica en script.js) -->
+  <div class="intro-cine is-run" id="intro-cine" role="dialog" aria-label="Cargando" aria-hidden="true">
+    <div class="intro-cine-aura" aria-hidden="true"></div>
+    <div class="intro-cine-stage">
+      <span class="intro-cine-mark">
+        <span class="intro-cine-ring" aria-hidden="true"></span>
+        <img src="/favicon.svg" alt="" width="120" height="120" decoding="async">
+      </span>
+      <span class="intro-cine-wm">NAKAMA<span class="intro-cine-dot">.</span>BLOG</span>
+      <span class="intro-cine-tagline" data-i18n="intro_tagline">El anime como obra de arte.</span>
+    </div>
+    <button class="intro-cine-skip" id="intro-cine-skip" type="button" data-i18n="intro_skip">Saltar intro</button>
+  </div>
+  <script>setTimeout(function(){var e=document.getElementById('intro-cine');if(e&&e.style.display!=='none')e.classList.add('is-hidden');},6000);</script>
 
   <!-- Fondo ambiente: slideshow de img/fondo (capa fija detrás de todo; CSS .bg-stage) -->
   <div class="bg-stage" aria-hidden="true">

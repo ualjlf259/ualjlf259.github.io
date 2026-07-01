@@ -40,6 +40,11 @@ window.LANG_JA = {
   saved_empty_cta: "記事を見る",
   saved_remove: "保存から削除",
 
+  /* ── イントロ・シネマティック ── */
+  intro_tagline: "芸術としてのアニメ。",
+  intro_skip: "イントロをスキップ",
+  intro_reopen: "イントロを見る",
+
   /* ── ヒーロー ── */
   hero_eyebrow : "特集・深い分析",
   hero_h1      : "今までにない<br><em>アニメ</em>の<br><u class='hero-ul'>世界。</u>",

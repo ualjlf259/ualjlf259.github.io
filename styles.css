@@ -3328,3 +3328,106 @@ nav.at-hero .nav-link-active { color: #fff !important; }
 @media (max-width: 600px) {
   .saved-page-wrap { padding: 7rem 1.2rem 3rem; }
 }
+
+/* ═══════════════════════════════════════════════════
+   PRELOADER + INTRO CINEMÁTICA (universal, todas las páginas)
+   El overlay .intro-cine es VISIBLE desde el primer pintado (loader) mientras la
+   página carga; JS lo desvanece cuando la app está lista (initBrandScreen). En la
+   1ª visita del home actúa además de intro y encadena con el welcome modal.
+   Las animaciones de entrada van bajo `.is-run` (para poder reproducirlas de nuevo);
+   usan `forwards`, así que con reduced-motion (reset global animation-duration:.001ms)
+   saltan a su estado FINAL visible al instante.
+═══════════════════════════════════════════════════ */
+.intro-cine {
+  position: fixed; inset: 0; z-index: 100060;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden; background: #06060b;
+}
+.intro-cine.is-hidden {
+  opacity: 0; visibility: hidden; pointer-events: none;
+  transition: opacity .55s var(--ease-standard), visibility .55s;
+}
+
+.intro-cine-aura {
+  position: absolute; inset: -12%;
+  background:
+    radial-gradient(38% 46% at 32% 34%, rgba(191, 92, 255, .42), transparent 70%),
+    radial-gradient(40% 46% at 70% 64%, rgba(255, 77, 203, .30), transparent 72%),
+    radial-gradient(48% 52% at 52% 50%, rgba(52, 219, 255, .16), transparent 76%);
+  opacity: 0;
+}
+.intro-cine.is-run .intro-cine-aura { animation: ic-aura 1.4s var(--ease-standard) forwards; }
+
+.intro-cine-stage {
+  position: relative; z-index: 1;
+  display: flex; flex-direction: column; align-items: center;
+  gap: 1.1rem; text-align: center; padding: 2rem;
+}
+
+/* Marca N-Runa */
+.intro-cine-mark {
+  position: relative; display: grid; place-items: center;
+  width: 120px; height: 120px;
+  opacity: 0; transform: scale(.6);
+}
+.intro-cine.is-run .intro-cine-mark { animation: ic-mark 1.1s var(--ease-standard) .15s forwards; }
+.intro-cine-mark img {
+  width: 120px; height: 120px; display: block;
+  filter: drop-shadow(0 8px 34px rgba(191, 92, 255, .6));
+}
+/* Halo cónico que gira siempre (indicador de carga); su opacidad entra con is-run */
+.intro-cine-ring {
+  position: absolute; inset: -20px; border-radius: 50%;
+  background: conic-gradient(from 0deg, transparent, rgba(191, 92, 255, .55), rgba(255, 77, 203, .4), transparent 65%);
+  filter: blur(7px); opacity: 0;
+  animation: ic-spin 6s linear infinite;
+}
+.intro-cine.is-run .intro-cine-ring { animation: ic-ring 1s ease .3s forwards, ic-spin 6s linear infinite; }
+
+/* Wordmark */
+.intro-cine-wm {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.4rem, 8vw, 4.6rem);
+  letter-spacing: .14em; line-height: 1; color: #fff;
+  opacity: 0; transform: translateY(14px);
+}
+.intro-cine.is-run .intro-cine-wm { animation: ic-rise .7s var(--ease-standard) .8s forwards; }
+.intro-cine-dot { background: var(--accent-grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+/* Tagline */
+.intro-cine-tagline {
+  font-family: 'Playfair Display', serif; font-style: italic;
+  font-size: clamp(1rem, 3vw, 1.5rem); color: rgba(255, 255, 255, .82);
+  opacity: 0; transform: translateY(10px);
+}
+.intro-cine.is-run .intro-cine-tagline { animation: ic-rise .7s var(--ease-standard) 1.15s forwards; }
+
+/* Botón saltar: solo en modo intro (1ª visita del home / reapertura) */
+.intro-cine-skip {
+  position: absolute; right: 1.4rem; bottom: 1.3rem; z-index: 2;
+  display: none; padding: .5rem 1rem; cursor: pointer;
+  border-radius: var(--radius-pill); border: 1px solid rgba(255, 255, 255, .2);
+  background: rgba(255, 255, 255, .06); color: rgba(255, 255, 255, .8);
+  font-family: 'DM Sans', sans-serif; font-size: .72rem;
+  letter-spacing: .12em; text-transform: uppercase;
+  transition: background .2s, color .2s, border-color .2s;
+}
+.intro-cine.is-intro .intro-cine-skip { display: inline-flex; opacity: 0; animation: ic-fade .5s linear 1.4s forwards; }
+.intro-cine-skip:hover { background: rgba(255, 255, 255, .14); color: #fff; border-color: rgba(191, 92, 255, .6); }
+
+@keyframes ic-aura { to { opacity: .95; } }
+@keyframes ic-ring { 0% { opacity: 0; } 45% { opacity: .85; } 100% { opacity: .7; } }
+@keyframes ic-spin { to { transform: rotate(360deg); } }
+@keyframes ic-mark { 0% { opacity: 0; transform: scale(.6); } 60% { opacity: 1; transform: scale(1.06); } 100% { opacity: 1; transform: scale(1); } }
+@keyframes ic-rise { to { opacity: 1; transform: none; } }
+@keyframes ic-fade { to { opacity: 1; } }
+
+/* Enlace "Ver intro" del footer (home) */
+.intro-replay {
+  background: none; border: none; cursor: pointer; font: inherit;
+  color: var(--muted); font-size: .75rem; letter-spacing: .08em;
+  display: inline-flex; align-items: center; gap: .3rem;
+  padding: .3rem .6rem; border-radius: var(--radius-pill);
+  transition: color .2s, background .2s;
+}
+.intro-replay:hover { color: var(--bright); background: rgba(185, 120, 242, .1); }

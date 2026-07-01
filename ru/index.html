@@ -59,6 +59,7 @@
 
   <!-- Home prerenderizado por idioma (SSG): fija el idioma de esta URL y hace que el selector navegue -->
   <script>window.__PRERENDERED={"home":true,"lang":"ru","langUrls":{"es":"/","en":"/en/","fr":"/fr/","ja":"/ja/","it":"/it/","de":"/de/","ru":"/ru/","pt":"/pt/"}};</script>
+  <noscript><style>#intro-cine{display:none!important}</style></noscript>
 </head>
 <body>
 
@@ -566,6 +567,7 @@
       <strong>NAKAMA.BLOG</strong>
     </p>
     <p style="margin-top:.4rem;font-size:.75rem;opacity:.4;">© 2026 · ualjlf259.github.io</p>
+    <p style="margin-top:.6rem;"><button class="intro-replay" id="intro-replay" type="button"><span aria-hidden="true">✨</span> <span data-i18n="intro_reopen">Ver intro</span></button></p>
   </footer>
 
   <!-- ROULETTE MODAL -->
@@ -602,6 +604,21 @@
       <video id="vmodal-video" controls playsinline preload="none"></video>
     </div>
   </div>
+
+  <!-- PRELOADER + INTRO CINEMÁTICA (loader universal; en el home 1ª visita = intro → welcome modal; lógica en script.js) -->
+  <div class="intro-cine is-run" id="intro-cine" role="dialog" aria-label="Intro" aria-hidden="true">
+    <div class="intro-cine-aura" aria-hidden="true"></div>
+    <div class="intro-cine-stage">
+      <span class="intro-cine-mark">
+        <span class="intro-cine-ring" aria-hidden="true"></span>
+        <img src="/favicon.svg" alt="" width="120" height="120" decoding="async">
+      </span>
+      <span class="intro-cine-wm">NAKAMA<span class="intro-cine-dot">.</span>BLOG</span>
+      <span class="intro-cine-tagline" data-i18n="intro_tagline">El anime como obra de arte.</span>
+    </div>
+    <button class="intro-cine-skip" id="intro-cine-skip" type="button" data-i18n="intro_skip">Saltar intro</button>
+  </div>
+  <script>setTimeout(function(){var e=document.getElementById('intro-cine');if(e&&e.style.display!=='none')e.classList.add('is-hidden');},6000);</script>
 
   <!-- WELCOME MODAL (bienvenida — solo 1ª visita; lógica en script.js) -->
   <div class="welcome-overlay" id="welcome-overlay" aria-hidden="true">
