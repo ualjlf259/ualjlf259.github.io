@@ -142,6 +142,8 @@ function buildHead(data, lang) {
     publisher: { '@type': 'Organization', name: 'Nakama Blog', logo: { '@type': 'ImageObject', url: `${SITE}/favicon.svg` } },
     inLanguage: lang, mainEntityOfPage: pageUrl,
   };
+  if (data.date) { ld.datePublished = data.date; ld.dateModified = data.date; }
+  const pubTime = data.date ? `\n  <meta property="article:published_time" content="${esc(data.date)}">` : '';
 
   const localeScripts = LANGS.map((l) => `  <script defer src="/locales/${l}.js"></script>`).join('\n');
 
@@ -163,7 +165,7 @@ function buildHead(data, lang) {
   <meta property="og:image" content="${esc(imageUrl)}">
   <meta property="og:url" content="${esc(pageUrl)}">
   <meta property="og:locale" content="${LOCALE_TAG[lang] || 'es_ES'}">
-  <meta property="og:site_name" content="Nakama Blog">
+  <meta property="og:site_name" content="Nakama Blog">${pubTime}
 
   <!-- ── Twitter Card ── -->
   <meta name="twitter:card" content="summary_large_image">
@@ -239,11 +241,19 @@ function fillBody(body, data, lang, i18n, index) {
   const tags = `<span class="atag atag-cat">${esc(category)}</span>` +
     (label ? `<span class="atag atag-topic">${esc(label)}</span>` : '');
 
+  // Fecha de publicación formateada en el idioma de la página (campo `date` del JSON).
+  const dateTx = data.date
+    ? new Date(data.date + 'T00:00:00Z').toLocaleDateString((LOCALE_TAG[lang] || 'es_ES').replace('_', '-'), { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })
+    : '';
+  const metaBits = [];
+  if (readTime) metaBits.push('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg>' + esc(readTime));
+  if (dateTx) metaBits.push('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>' + esc(dateTx));
+
   const author =
     '<img class="article-author-avatar" src="img/articles/sobre-mi-avatar.jpg" alt="" loading="lazy" decoding="async">' +
     '<div class="article-author-info">' +
       `<span class="article-author-name">${esc(AUTHOR)}</span>` +
-      (readTime ? '<span class="article-author-meta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg>' + esc(readTime) + '</span>' : '') +
+      (metaBits.length ? '<span class="article-author-meta">' + metaBits.join('<span aria-hidden="true">·</span>') + '</span>' : '') +
     '</div>';
 
   const heroImg = renderArticleImg(data.image, data.image_caption, 'hero');

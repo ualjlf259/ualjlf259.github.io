@@ -220,10 +220,6 @@ function applyLang(lang) {
   }
 
   // About
-  const at = document.querySelector('#sobre-mi .section-header h2');
-  if (at && t.about_title) at.textContent = t.about_title;
-  const as_ = document.querySelector('#sobre-mi .section-header span');
-  if (as_ && t.about_sub) as_.textContent = t.about_sub;
   const aboutTextDiv = document.querySelector('.about-text-content');
   if (aboutTextDiv && t.about_p1) {
     aboutTextDiv.innerHTML = `
@@ -377,8 +373,31 @@ function renderSavedCards() {
 }
 
 /* ═══════════════════════════════════════════════════
+   FOCUS-TRAP LIGERO (modales): mantiene Tab dentro del
+   contenedor mientras está abierto. Devuelve la limpieza.
+═══════════════════════════════════════════════════ */
+function trapFocus(container) {
+  const SEL = 'a[href], button:not([disabled]), input:not([disabled]), select, textarea, video[controls], [tabindex]:not([tabindex="-1"])';
+  function onKey(e) {
+    if (e.key !== 'Tab') return;
+    const items = Array.from(container.querySelectorAll(SEL))
+      .filter(el => el.offsetWidth || el.offsetHeight || el.getClientRects().length);
+    if (!items.length) return;
+    const first = items[0];
+    const last  = items[items.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  }
+  container.addEventListener('keydown', onKey);
+  return () => container.removeEventListener('keydown', onKey);
+}
+
+/* ═══════════════════════════════════════════════════
    VIDEO MODAL
 ═══════════════════════════════════════════════════ */
+let vmodalLastFocus = null;
+let untrapVmodal = null;
+
 function openVideoModal(src) {
   const modal  = document.getElementById('vmodal');
   const video  = document.getElementById('vmodal-video');
@@ -388,6 +407,12 @@ function openVideoModal(src) {
   video.src = src;
   modal.style.display = 'flex';
   document.body.style.overflow = 'hidden';
+
+  // Foco al modal (y atrapado dentro) mientras esté abierto
+  vmodalLastFocus = document.activeElement;
+  untrapVmodal = trapFocus(modal);
+  const vClose = document.getElementById('vmodal-close');
+  if (vClose) vClose.focus();
 
   if (splash) {
     splash.classList.remove('ep-hidden', 'ep-exit', 'ep-visible');
@@ -417,7 +442,7 @@ function openVideoModal(src) {
 function closeVideoModal() {
   const modal  = document.getElementById('vmodal');
   const splash = document.getElementById('earphone-splash');
-  if (!modal) return;
+  if (!modal || modal.style.display === 'none') return; // ya cerrado (Escape global)
   const video = document.getElementById('vmodal-video');
   if (video) {
     video.pause();
@@ -430,6 +455,9 @@ function closeVideoModal() {
   }
   modal.style.display = 'none';
   document.body.style.overflow = '';
+  if (untrapVmodal) { untrapVmodal(); untrapVmodal = null; }
+  if (vmodalLastFocus && vmodalLastFocus.focus) vmodalLastFocus.focus();
+  vmodalLastFocus = null;
 }
 
 (function () {
@@ -668,11 +696,18 @@ const rouletteWheel   = document.getElementById('roulette-wheel');
 const btnSpin         = document.getElementById('btn-spin');
 let isSpinning = false;
 let rouletteItems = [];
+let rouletteLastFocus = null;
+let untrapRoulette = null;
 
 function openRoulette() {
   if (!rouletteOverlay || !rouletteWheel) return;
   rouletteOverlay.classList.add('open');
   document.body.style.overflow = 'hidden';
+
+  // Foco al modal (y atrapado dentro) mientras esté abierto
+  rouletteLastFocus = document.activeElement;
+  untrapRoulette = trapFocus(rouletteOverlay);
+  if (btnSpin) btnSpin.focus();
 
   if (rouletteWheel.innerHTML === '' && articleStore.index) {
     rouletteItems = articleStore.index.map(it => it.id);
@@ -702,9 +737,12 @@ function openRoulette() {
 
 function closeRoulette() {
   if (isSpinning) return;
-  if (!rouletteOverlay) return;
+  if (!rouletteOverlay || !rouletteOverlay.classList.contains('open')) return;
   rouletteOverlay.classList.remove('open');
   document.body.style.overflow = '';
+  if (untrapRoulette) { untrapRoulette(); untrapRoulette = null; }
+  if (rouletteLastFocus && rouletteLastFocus.focus) rouletteLastFocus.focus();
+  rouletteLastFocus = null;
 }
 
 function closeRouletteOnOverlay(e) {
@@ -717,6 +755,11 @@ window.closeRouletteOnOverlay = closeRouletteOnOverlay;
 if (btnRoulette) {
   btnRoulette.addEventListener('click', () => openRoulette());
 }
+
+// Escape cierra la ruleta (como el resto de modales); closeRoulette ignora si está girando
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && rouletteOverlay && rouletteOverlay.classList.contains('open')) closeRoulette();
+});
 
 if (btnSpin && rouletteWheel) {
   btnSpin.addEventListener('click', () => {
@@ -783,8 +826,10 @@ function updateArticleSEO(data, lang) {
                      ? rawDesc
                      : (pickLang(data.tag, lang) || title);
   const imageUrl = `${SITE_URL}/${data.image}`;
-  const baseUrl  = `${SITE_URL}/article.html?id=${encodeURIComponent(data.id)}`;
-  const pageUrl  = lang === 'es' ? baseUrl : `${baseUrl}&lang=${lang}`;
+  // Canonical = la página SSG limpia (esta ruta SPA es solo respaldo si fallara la redirección)
+  const pageUrl  = lang === 'es'
+    ? `${SITE_URL}/articulos/${encodeURIComponent(data.id)}/`
+    : `${SITE_URL}/articulos/${encodeURIComponent(data.id)}/${lang}/`;
   const locale   = localeMap[lang] || 'es_ES';
 
   const setMeta = (attr, value, content) => {
@@ -846,6 +891,7 @@ function updateArticleSEO(data, lang) {
     "inLanguage": lang,
     "mainEntityOfPage": pageUrl
   };
+  if (data.date) { ldData.datePublished = data.date; ldData.dateModified = data.date; }
 
   let ldScript = document.getElementById('article-jsonld');
   if (!ldScript) {
@@ -1176,12 +1222,14 @@ let openOnboardingModal = null; // lo asigna initWelcome; lo usa initBrandScreen
   const diceBtn  = document.getElementById('welcome-dice');
   const closeBtn = document.getElementById('welcome-close');
   let lastFocus = null;
+  let untrap = null;
 
   function closeWelcome() {
     overlay.classList.remove('open');
     overlay.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
     try { localStorage.setItem(SEEN_KEY, '1'); } catch (e) { /* noop */ }
+    if (untrap) { untrap(); untrap = null; }
     if (lastFocus && lastFocus.focus) lastFocus.focus();
   }
 
@@ -1190,6 +1238,7 @@ let openOnboardingModal = null; // lo asigna initWelcome; lo usa initBrandScreen
     overlay.classList.add('open');
     overlay.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
+    untrap = trapFocus(overlay);
     if (startBtn) startBtn.focus();
   }
   openOnboardingModal = openWelcome;
@@ -1239,6 +1288,7 @@ let openOnboardingModal = null; // lo asigna initWelcome; lo usa initBrandScreen
     done = true;
     clearTimers();
     document.removeEventListener('keydown', onKey);
+    overlay.setAttribute('aria-hidden', 'true'); // solo cuando deja de verse (contiene un botón enfocable)
     overlay.classList.add('is-hidden');
     timers.push(setTimeout(() => {
       overlay.style.display = 'none';
@@ -1263,6 +1313,7 @@ let openOnboardingModal = null; // lo asigna initWelcome; lo usa initBrandScreen
     clearTimers();
     endFn = toModal;
     overlay.style.display = 'flex';
+    overlay.removeAttribute('aria-hidden');
     overlay.classList.remove('is-hidden');
     overlay.classList.add('is-intro');
     overlay.classList.remove('is-run');

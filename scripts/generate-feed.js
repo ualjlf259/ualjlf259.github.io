@@ -5,8 +5,8 @@
  *
  * Orden: el de articles/index.json (orden curado del home) y, al final, los
  * artículos que tienen fichero pero no tarjeta (p. ej. op-obra, el destacado).
- * No hay campo `date` en los artículos → se omite <pubDate> por ítem; el canal
- * lleva <lastBuildDate> con la fecha de generación.
+ * Cada ítem lleva <pubDate> a partir del campo `date` (YYYY-MM-DD) del artículo;
+ * el canal lleva <lastBuildDate> con la fecha de generación.
  *
  * Sin dependencias (Node puro). Uso:
  *   node scripts/generate-feed.js
@@ -62,11 +62,14 @@ function main() {
     const rawDesc = pickLang(data.desc, DEFAULT_LANG);
     const desc = (rawDesc && rawDesc.trim()) ? rawDesc : (pickLang(data.tag, DEFAULT_LANG) || title);
     const category = pickLang(data.label, DEFAULT_LANG) || data.category || '';
+    // Campo `date` (YYYY-MM-DD) → pubDate RFC 822 (los lectores RSS ordenan por él).
+    const pub = data.date ? new Date(data.date + 'T00:00:00Z').toUTCString() : '';
     items.push(
       '    <item>\n' +
       `      <title>${esc(title)}</title>\n` +
       `      <link>${esc(url)}</link>\n` +
       `      <guid isPermaLink="true">${esc(url)}</guid>\n` +
+      (pub ? `      <pubDate>${pub}</pubDate>\n` : '') +
       (category ? `      <category>${esc(category)}</category>\n` : '') +
       `      <description>${esc(desc)}</description>\n` +
       '    </item>'

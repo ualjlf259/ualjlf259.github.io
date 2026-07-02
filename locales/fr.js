@@ -79,8 +79,6 @@ window.LANG_FR = {
   ranking_sub: "— 100% subjectif et sans excuses",
 
   /* ── À propos ── */
-  about_title: "À Propos",
-  about_sub: "— l'humain derrière le blog",
   about_h3: "Jose Jesus Lopez Fernandez",
   about_p1: "Étudiant universitaire avec une conviction profonde : l'anime, à sa plus haute expression, transcende le divertissement pour devenir littérature, philosophie et document social. Ce blog est l'espace où ces idées prennent forme — des analyses écrites avec rigueur, passion et la perspective de quelqu'un qui a grandi en compagnie de ces histoires.",
   about_p2: "Si l'objectif de l'art est de nous rendre meilleurs en nous forçant à voir le monde à travers d'autres yeux, peu d'œuvres y parviennent avec autant de profondeur que One Piece, Vinland Saga ou Hunter x Hunter. Ici j'essaie d'articuler pourquoi ces histoires comptent au-delà de l'écran.",

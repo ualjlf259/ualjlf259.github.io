@@ -455,7 +455,8 @@
 
       const video = document.createElement('video');
       video.className = 'ee-tsu-video';
-      video.src = 'videos/easter-egg-tsukuyomi.mp4';
+      // Ruta root-absoluta: las páginas SSG viven en subdirectorios (/articulos/<id>/, /<lang>/…)
+      video.src = '/videos/easter-egg-tsukuyomi.mp4';
       video.autoplay = true;
       video.playsInline = true;
       videoWrap.appendChild(video);
@@ -883,6 +884,10 @@
       en: "🔒 You need Robin's key",
       fr: '🔒 Il vous faut la clé de Robin',
       ja: '🔒 ロビンの鍵が必要だ',
+      it: '🔒 Ti serve la chiave di Robin',
+      de: '🔒 Du brauchst Robins Schlüssel',
+      ru: '🔒 Тебе нужен ключ Робин',
+      pt: '🔒 Você precisa da chave da Robin',
     };
     var hint = document.createElement('div');
     hint.className = 'ee-pg-lock-hint';
@@ -973,6 +978,10 @@
       en: ['🗝️', 'You have unlocked the ability to read the Poneglyphs', '— Nico Robin —'],
       fr: ['🗝️', 'Vous avez débloqué la capacité à lire les Ponéglyphes', '— Nico Robin —'],
       ja: ['🗝️', 'ポーネグリフを読む能力を解放した', '— ニコ・ロビン —'],
+      it: ['🗝️', 'Hai sbloccato la capacità di leggere i Poneglyph', '— Nico Robin —'],
+      de: ['🗝️', 'Du hast die Fähigkeit freigeschaltet, die Poneglyphen zu lesen', '— Nico Robin —'],
+      ru: ['🗝️', 'Вы разблокировали способность читать Понеглифы', '— Нико Робин —'],
+      pt: ['🗝️', 'Você desbloqueou a capacidade de ler os Poneglyphs', '— Nico Robin —'],
     };
     var m = msgs[lang] || msgs.es;
     var toast = document.createElement('div');
@@ -1080,6 +1089,54 @@
         ],
         quote: '過去の支配は現在の支配のもっとも洗練された形態である。',
         close: '閉じる',
+      },
+      it: {
+        eyebrow: 'SECOLO VUOTO — DECLASSIFICATO',
+        title: 'La Storia che il Potere non è Riuscito a Distruggere',
+        rows: [
+          ['Biblioteca di Alessandria, ~391 d.C.', 'Parzialmente bruciata per ordine di chi temeva il sapere che custodiva. Non distrussero libri; distrussero domande.'],
+          ['Manoscritto Voynich (MS408), c. 1404–1438', "Un codice di 240 pagine scritto in un alfabeto che nessuno è riuscito a decifrare in sei secoli. Piante inesistenti, diagrammi astronomici impossibili, figure immerse in liquidi verdi. Custodito a Yale, resta l'unico libro che la conoscenza umana si rifiuta di ammettere."],
+          ["L'Arca dell'Alleanza, ~587 a.C.", "Scomparve quando Nabucodonosor rase al suolo Gerusalemme. Nessun esercito la catturò, nessun cronista la descrive in seguito. L'Etiopia afferma di custodirla ad Axum; il Vaticano tace. La reliquia più cercata dell'Occidente sfugge al potere da 2.600 anni."],
+          ['Casa della Saggezza, Baghdad 1258', "Quando i Mongoli presero la città, gettarono nel Tigri così tanti manoscritti che il fiume scorse nero d'inchiostro per giorni. Con essi affondò l'Età dell'Oro islamica — secoli di matematica, medicina e astronomia cancellati in una settimana."],
+        ],
+        quote: 'Il controllo del passato è la forma più sofisticata di controllo del presente.',
+        close: 'Chiudi',
+      },
+      de: {
+        eyebrow: 'LEERES JAHRHUNDERT — FREIGEGEBEN',
+        title: 'Die Geschichte, die die Macht nicht zerstören konnte',
+        rows: [
+          ['Bibliothek von Alexandria, ~391 n. Chr.', 'Teilweise verbrannt auf Befehl derer, die das dort versammelte Wissen fürchteten. Sie zerstörten keine Bücher; sie zerstörten Fragen.'],
+          ['Voynich-Manuskript (MS408), ca. 1404–1438', 'Ein 240-seitiger Kodex in einem Alphabet, das seit sechs Jahrhunderten niemand entschlüsseln konnte. Pflanzen, die nicht existieren, unmögliche astronomische Diagramme, Gestalten, die in grünen Flüssigkeiten baden. Aufbewahrt in Yale, bleibt es das einzige Buch, das das menschliche Wissen sich weigert anzuerkennen.'],
+          ['Die Bundeslade, ~587 v. Chr.', 'Verschwand, als Nebukadnezar Jerusalem niederbrannte. Kein Heer erbeutete sie, kein Chronist beschreibt sie danach. Äthiopien behauptet, sie in Aksum zu hüten; der Vatikan schweigt. Die meistgesuchte Reliquie des Westens ist seit 2.600 Jahren außerhalb der Reichweite der Macht.'],
+          ['Haus der Weisheit, Bagdad 1258', 'Als die Mongolen die Stadt einnahmen, warfen sie so viele Handschriften in den Tigris, dass der Fluss tagelang schwarz von Tinte floss. Mit ihnen versank das Goldene Zeitalter des Islam — Jahrhunderte an Mathematik, Medizin und Astronomie, ausgelöscht in einer Woche.'],
+        ],
+        quote: 'Die Kontrolle über die Vergangenheit ist die raffinierteste Form der Kontrolle über die Gegenwart.',
+        close: 'Schließen',
+      },
+      ru: {
+        eyebrow: 'ПУСТОЕ СТОЛЕТИЕ — РАССЕКРЕЧЕНО',
+        title: 'История, которую власть не смогла уничтожить',
+        rows: [
+          ['Александрийская библиотека, ~391 г. н. э.', 'Частично сожжена по приказу тех, кто боялся собранных в ней знаний. Они уничтожали не книги — они уничтожали вопросы.'],
+          ['Манускрипт Войнича (MS408), ок. 1404–1438', 'Кодекс на 240 страниц, написанный алфавитом, который никто не смог расшифровать за шесть веков. Несуществующие растения, невозможные астрономические схемы, фигуры, купающиеся в зелёных жидкостях. Хранится в Йеле и остаётся единственной книгой, которую человеческое знание отказывается признать.'],
+          ['Ковчег Завета, ~587 г. до н. э.', 'Исчез, когда Навуходоносор разрушил Иерусалим. Ни одна армия его не захватила, ни один летописец больше его не описывает. Эфиопия утверждает, что хранит его в Аксуме; Ватикан молчит. Самая разыскиваемая реликвия Запада уже 2600 лет недосягаема для власти.'],
+          ['Дом мудрости, Багдад, 1258', 'Когда монголы взяли город, они бросили в Тигр столько рукописей, что река несколько дней текла чёрной от чернил. Вместе с ними утонул исламский Золотой век — столетия математики, медицины и астрономии, стёртые за неделю.'],
+        ],
+        quote: 'Контроль над прошлым — самая изощрённая форма контроля над настоящим.',
+        close: 'Закрыть',
+      },
+      pt: {
+        eyebrow: 'SÉCULO PERDIDO — DESCLASSIFICADO',
+        title: 'A História que o Poder Não Conseguiu Destruir',
+        rows: [
+          ['Biblioteca de Alexandria, ~391 d.C.', 'Parcialmente queimada por ordem de quem temia o conhecimento que ela concentrava. Não destruíram livros; destruíram perguntas.'],
+          ['Manuscrito Voynich (MS408), c. 1404–1438', 'Um códice de 240 páginas escrito em um alfabeto que ninguém conseguiu decifrar em seis séculos. Plantas inexistentes, diagramas astronômicos impossíveis, figuras banhando-se em líquidos verdes. Guardado em Yale, continua sendo o único livro que o conhecimento humano se recusa a admitir.'],
+          ['A Arca da Aliança, ~587 a.C.', 'Desapareceu quando Nabucodonosor arrasou Jerusalém. Nenhum exército a capturou, nenhum cronista a descreve depois. A Etiópia afirma guardá-la em Axum; o Vaticano se cala. A relíquia mais procurada do Ocidente está fora do alcance do poder há 2.600 anos.'],
+          ['Casa da Sabedoria, Bagdá 1258', 'Quando os mongóis tomaram a cidade, jogaram tantos manuscritos no Tigre que o rio correu negro de tinta por dias. Com eles afundou a Era de Ouro islâmica — séculos de matemática, medicina e astronomia apagados em uma semana.'],
+        ],
+        quote: 'O controle do passado é a forma mais sofisticada de controle do presente.',
+        close: 'Fechar',
       },
     };
     var c = content[lang] || content.es;
@@ -1707,7 +1764,7 @@
   ───────────────────────────────────────────────── */
 
   // Archivo de recompensa final que se descarga al completar todos los easter eggs.
-  var FINAL_REWARD_FILE     = 'img/articles/leeme.jpg';
+  var FINAL_REWARD_FILE     = '/img/articles/leeme.jpg';
   var FINAL_REWARD_FILENAME = 'leeme.jpg';
 
   var finalRewardActive = false;
@@ -1765,7 +1822,7 @@
     var stage = document.createElement('div');
     stage.className = 'ee-final-cine';
     stage.innerHTML =
-      '<video class="ee-final-cine-video" playsinline preload="auto" src="videos/video-easter-eggs-completados.mp4"></video>' +
+      '<video class="ee-final-cine-video" playsinline preload="auto" src="/videos/video-easter-eggs-completados.mp4"></video>' +
       '<button class="ee-final-cine-skip" type="button">' + (SKIP[lang] || SKIP.es) + ' ›</button>';
     document.body.appendChild(stage);
 

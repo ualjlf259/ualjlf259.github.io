@@ -6,7 +6,7 @@
     <atom:link href="https://ualjlf259.github.io/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Análisis profundo de anime y manga: filosofía, sociedad y psicología a través de las grandes obras del género.</description>
     <language>es-ES</language>
-    <lastBuildDate>Wed, 01 Jul 2026 00:10:21 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 01 Jul 2026 23:28:13 GMT</lastBuildDate>
     <image>
       <url>https://ualjlf259.github.io/img/articles/oyasumy-punpun-portada.jpg</url>
       <title>Nakama Blog — Anime &amp; Manga</title>
@@ -16,6 +16,7 @@
       <title>La Esclavitud en One Piece: El Tema que Nadie Esperaba en un Manga</title>
       <link>https://ualjlf259.github.io/articulos/op-esclavitud/</link>
       <guid isPermaLink="true">https://ualjlf259.github.io/articulos/op-esclavitud/</guid>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
       <category>Sociedad</category>
       <description>Oda lleva décadas hablando de colonialismo y esclavitud con más honestidad que muchos libros de historia.</description>
     </item>
@@ -23,6 +24,7 @@
       <title>El Arco de la Hormiga Quimera: Una Crítica al Capitalismo y la Humanidad</title>
       <link>https://ualjlf259.github.io/articulos/hxh-capitalismo/</link>
       <guid isPermaLink="true">https://ualjlf259.github.io/articulos/hxh-capitalismo/</guid>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
       <category>Filosofía</category>
       <description>Togashi usa hormigas gigantes para preguntarnos qué nos hace humanos. Y la respuesta incomoda.</description>
     </item>
@@ -30,6 +32,7 @@
       <title>Vinland Saga: El Manga que Más Honestamente Ha Retratado la Guerra</title>
       <link>https://ualjlf259.github.io/articulos/vinland-guerra/</link>
       <guid isPermaLink="true">https://ualjlf259.github.io/articulos/vinland-guerra/</guid>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
       <category>Análisis</category>
       <description>No hay héroes ni villanos. Solo personas rotas por la violencia. Yukimura creó algo único.</description>
     </item>
@@ -37,6 +40,7 @@
       <title>Libertad y Prisión: Shingeki no Kyojin como Metáfora Política</title>
       <link>https://ualjlf259.github.io/articulos/aot-libertad/</link>
       <guid isPermaLink="true">https://ualjlf259.github.io/articulos/aot-libertad/</guid>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
       <category>Política</category>
       <description>¿Y si los muros no son para protegerte, sino para controlarte? AOT habla de Israel, Palestina y mucho más.</description>
     </item>
@@ -44,6 +48,7 @@
       <title>El Ciclo del Odio en Naruto: ¿Por Qué No Podemos Parar las Guerras?</title>
       <link>https://ualjlf259.github.io/articulos/naruto-ciclo-odio/</link>
       <guid isPermaLink="true">https://ualjlf259.github.io/articulos/naruto-ciclo-odio/</guid>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
       <category>Sociedad</category>
       <description>Pain le hace a Naruto la pregunta que los políticos llevan siglos evitando responder.</description>
     </item>
@@ -51,6 +56,7 @@
       <title>Death Note y la Justicia: ¿Quién Tiene Derecho a Decidir Quién Vive?</title>
       <link>https://ualjlf259.github.io/articulos/death-note-justicia/</link>
       <guid isPermaLink="true">https://ualjlf259.github.io/articulos/death-note-justicia/</guid>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
       <category>Filosofía</category>
       <description>Light Yagami es el villano, sí. Pero sus preguntas sobre el sistema judicial siguen sin respuesta.</description>
     </item>
@@ -58,6 +64,7 @@
       <title>Las Maldiciones de JJK son Nuestras Emociones: Una Lectura Psicológica</title>
       <link>https://ualjlf259.github.io/articulos/jjk-maldicion/</link>
       <guid isPermaLink="true">https://ualjlf259.github.io/articulos/jjk-maldicion/</guid>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
       <category>Psicología</category>
       <description>En JJK los monstruos nacen del miedo, la vergüenza y el dolor humano. No es casualidad.</description>
     </item>
@@ -65,6 +72,7 @@
       <title>¿Qué Significa Ser un Héroe? Boku no Hero y la Trampa del Mérito</title>
       <link>https://ualjlf259.github.io/articulos/mha-heroes/</link>
       <guid isPermaLink="true">https://ualjlf259.github.io/articulos/mha-heroes/</guid>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
       <category>Sociedad</category>
       <description>En un mundo donde el poder lo es todo, BnHA pregunta si una sociedad basada en el mérito es justa.</description>
     </item>
@@ -72,6 +80,7 @@
       <title>Dragon Ball y el Culto al Esfuerzo: Cuándo Trabajar Duro Ya No Basta</title>
       <link>https://ualjlf259.github.io/articulos/db-esfuerzo/</link>
       <guid isPermaLink="true">https://ualjlf259.github.io/articulos/db-esfuerzo/</guid>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
       <category>Reflexión</category>
       <description>Goku siempre gana con entrenamiento. Pero en la vida real, eso no siempre funciona.</description>
     </item>
@@ -79,6 +88,7 @@
       <title>Berserk: El Claroscuro del Alma Humana y la Rebelión contra el Destino</title>
       <link>https://ualjlf259.github.io/articulos/berserk-nihilismo/</link>
       <guid isPermaLink="true">https://ualjlf259.github.io/articulos/berserk-nihilismo/</guid>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
       <category>Análisis</category>
       <description>La obra maestra de Kentaro Miura es un tratado monumental sobre el existencialismo y el peso de la causalidad.</description>
     </item>
@@ -86,6 +96,7 @@
       <title>Oyasumi Punpun: La Desoladora Verdad de Crecer en la Narrativa Visual de Asano</title>
       <link>https://ualjlf259.github.io/articulos/punpun-psicologia/</link>
       <guid isPermaLink="true">https://ualjlf259.github.io/articulos/punpun-psicologia/</guid>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
       <category>Psicología</category>
       <description>Un descenso psicológico a los abismos de la alienación y la pérdida de la inocencia a través de la lente única de Asano.</description>
     </item>
@@ -93,6 +104,7 @@
       <title>Chainsaw Man: El Caos Narrativo y la Deconstrucción del Héroe Shonen</title>
       <link>https://ualjlf259.github.io/articulos/chainsaw-caos/</link>
       <guid isPermaLink="true">https://ualjlf259.github.io/articulos/chainsaw-caos/</guid>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
       <category>Deconstrucción</category>
       <description>Denji no quiere salvar el mundo, solo quiere tocar unos pechos y desayunar tostadas. Fujimoto destroza el viaje del héroe.</description>
     </item>
@@ -100,6 +112,7 @@
       <title>Kimetsu no Yaiba: La Estructura Clásica Elevada por el Arte Ukiyo-e</title>
       <link>https://ualjlf259.github.io/articulos/kimetsu-ukiyo/</link>
       <guid isPermaLink="true">https://ualjlf259.github.io/articulos/kimetsu-ukiyo/</guid>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
       <category>Estética</category>
       <description>Una trama conservadora disfrazada de obra maestra gracias a un dinamismo visual sin precedentes en la animación moderna.</description>
     </item>
@@ -107,6 +120,7 @@
       <title>Mob Psycho 100: La Inutilidad del Poder como Medida del Valor Personal</title>
       <link>https://ualjlf259.github.io/articulos/mob-psycho-identidad/</link>
       <guid isPermaLink="true">https://ualjlf259.github.io/articulos/mob-psycho-identidad/</guid>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
       <category>Psicología</category>
       <description>ONE construye una psicología completa alrededor de un chico que podría destruir el mundo y solo quiere ser una buena persona.</description>
     </item>
@@ -114,6 +128,7 @@
       <title>Haikyu!!: Por Qué el Deporte es el Mejor Maestro del Alma Humana</title>
       <link>https://ualjlf259.github.io/articulos/haikyu-equipo/</link>
       <guid isPermaLink="true">https://ualjlf259.github.io/articulos/haikyu-equipo/</guid>
+      <pubDate>Wed, 29 Apr 2026 00:00:00 GMT</pubDate>
       <category>Reflexión</category>
       <description>Furudate transforma el voleibol en una metáfora perfecta sobre crecer, fracasar y encontrar tu lugar en el mundo.</description>
     </item>
@@ -121,6 +136,7 @@
       <title>Black Clover – La Voluntad Inquebrantable</title>
       <link>https://ualjlf259.github.io/articulos/black-clover-voluntad/</link>
       <guid isPermaLink="true">https://ualjlf259.github.io/articulos/black-clover-voluntad/</guid>
+      <pubDate>Fri, 01 May 2026 00:00:00 GMT</pubDate>
       <category>Filosofía</category>
       <description>Asta no tiene magia. Pero tiene algo que ningún grimorio puede otorgar: una voluntad que ningún límite puede romper.</description>
     </item>
@@ -128,6 +144,7 @@
       <title>Vagabond: La Espada como Camino hacia la Iluminación y la Búsqueda del Propósito</title>
       <link>https://ualjlf259.github.io/articulos/vagabond-existencialismo/</link>
       <guid isPermaLink="true">https://ualjlf259.github.io/articulos/vagabond-existencialismo/</guid>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
       <category>Filosofía</category>
       <description>Inoue convierte la biografía de Musashi en un tratado existencialista donde matar es solo el principio de la pregunta.</description>
     </item>
@@ -135,8 +152,9 @@
       <title>Por Qué One Piece es la Mayor Obra Literaria que Ha Creado el Ser Humano</title>
       <link>https://ualjlf259.github.io/articulos/op-obra/</link>
       <guid isPermaLink="true">https://ualjlf259.github.io/articulos/op-obra/</guid>
-      <category>One Piece</category>
-      <description>One Piece · Análisis profundo</description>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
+      <category>Análisis</category>
+      <description>25 años de construcción de mundo, personajes con alma y una narrativa que habla de esclavitud, racismo y poder. Un análisis sin spoilers para los que aún no han empezado.</description>
     </item>
   </channel>
 </rss>

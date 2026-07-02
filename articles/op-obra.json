@@ -1,5 +1,6 @@
 {
   "id": "op-obra",
+  "date": "2026-04-28",
   "category": "One Piece",
   "mins": null,
   "thumb": {
@@ -19,10 +20,14 @@
     "pt": "Por que One Piece é a maior obra literária que o ser humano já criou"
   },
   "desc": {
-    "es": "",
-    "en": "",
-    "fr": "",
-    "ja": ""
+    "es": "25 años de construcción de mundo, personajes con alma y una narrativa que habla de esclavitud, racismo y poder. Un análisis sin spoilers para los que aún no han empezado.",
+    "en": "25 years of world-building, characters with soul, and a narrative about slavery, racism and power. A spoiler-free analysis for those who haven't started yet.",
+    "fr": "25 ans de construction d'univers, des personnages avec une âme et un récit sur l'esclavage, le racisme et le pouvoir. Une analyse sans spoilers pour ceux qui n'ont pas encore commencé.",
+    "ja": "25年にわたる世界構築、魂を持つキャラクターたち、そして奴隷制、人種差別、権力を語る物語。まだ始めていない方へのネタバレなし分析。",
+    "it": "25 anni di costruzione del mondo, personaggi con un'anima e una narrativa sulla schiavitù, il razzismo e il potere. Un'analisi senza spoiler per chi non ha ancora iniziato.",
+    "de": "25 Jahre Weltaufbau, Charaktere mit Seele und eine Erzählung über Sklaverei, Rassismus und Macht. Eine spoilerfreie Analyse für diejenigen, die noch nicht angefangen haben.",
+    "ru": "25 лет построения мира, персонажи с душой и повествование о рабстве, расизме и власти. Анализ без спойлеров для тех, кто ещё не начал.",
+    "pt": "25 anos de construção de mundo, personagens com alma e uma narrativa que fala de escravidão, racismo e poder. Uma análise sem spoilers para quem ainda não começou."
   },
   "tag": {
     "es": "One Piece · Análisis profundo",
@@ -45,10 +50,14 @@
     "pt": "17 min de leitura · Análise · José Jesus Lopez Fernandez"
   },
   "label": {
-    "es": "",
-    "en": "",
-    "fr": "",
-    "ja": ""
+    "es": "Análisis",
+    "en": "Analysis",
+    "fr": "Analyse",
+    "ja": "分析",
+    "de": "Analyse",
+    "it": "Analisi",
+    "ru": "Анализ",
+    "pt": "Análise"
   },
   "image": "img/articles/op-obra-top.jpg",
   "image_caption": "One Piece — Eiichiro Oda, 1997–presente.",

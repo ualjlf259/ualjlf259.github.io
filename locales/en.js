@@ -79,8 +79,6 @@ window.LANG_EN = {
   ranking_sub   : "— 100% subjective and unapologetic",
 
   /* ── About ── */
-  about_title : "About Me",
-  about_sub   : "— the human behind the blog",
   about_h3    : "Jose Jesus Lopez Fernandez",
   about_p1    : "University student with a firm conviction: anime, at its highest expression, transcends entertainment to become literature, philosophy and social document. This blog is where those ideas take shape — essays written with rigor, passion and the perspective of someone who grew up alongside these stories.",
   about_p2    : "If art's purpose is to make us better people by forcing us to see the world through other eyes, few works achieve it as deeply as One Piece, Vinland Saga or Hunter x Hunter. Here I try to articulate why those stories matter beyond the screen.",
