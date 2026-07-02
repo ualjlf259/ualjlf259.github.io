@@ -139,7 +139,7 @@ function buildHead(data, lang) {
     '@context': 'https://schema.org', '@type': 'BlogPosting',
     headline: title, description: desc, image: imageUrl, url: pageUrl,
     author: { '@type': 'Person', name: AUTHOR },
-    publisher: { '@type': 'Organization', name: 'Nakama Blog', logo: { '@type': 'ImageObject', url: `${SITE}/favicon.svg` } },
+    publisher: { '@type': 'Organization', name: 'Nakama Blog', logo: { '@type': 'ImageObject', url: `${SITE}/img/pwa/icon-512.png` } },
     inLanguage: lang, mainEntityOfPage: pageUrl,
   };
   if (data.date) { ld.datePublished = data.date; ld.dateModified = data.date; }
@@ -153,6 +153,11 @@ function buildHead(data, lang) {
   <meta name="description" content="${esc(desc)}">
   <title>${esc(docTitle)}</title>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <!-- ── PWA ── -->
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#07070c">
+  <link rel="apple-touch-icon" href="/img/pwa/apple-touch-icon.png">
 
   <link rel="canonical" href="${esc(pageUrl)}">
 

@@ -1,0 +1,32 @@
+{
+  "id": "/",
+  "name": "Nakama Blog — Anime & Manga",
+  "short_name": "Nakama Blog",
+  "description": "Análisis profundo de anime y manga: One Piece, Hunter x Hunter, Vinland Saga, Shingeki no Kyojin y más.",
+  "lang": "es",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#07070c",
+  "theme_color": "#07070c",
+  "icons": [
+    {
+      "src": "/img/pwa/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/img/pwa/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/img/pwa/maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

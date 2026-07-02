@@ -548,6 +548,12 @@ function updateLangUI(lang) {
 /* ═══════════════════════════════════════════════════
    SEARCH & FILTER (solo en index.html)
 ═══════════════════════════════════════════════════ */
+/* Pliega acentos y mayúsculas para buscar ("Alejandría" → "alejandria") */
+const fold = (s) => String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+/* Texto completo plegado por id — lo rellena el buscador (initSearchCmd) al cargar
+   su índice; el filtro del grid lo usa para que ambos coincidan. */
+let ftFoldedById = null;
+
 let activeFilter = 'all';
 let searchQuery  = '';
 
@@ -555,6 +561,7 @@ function filterCards() {
   const cards = document.querySelectorAll('#articles-grid .card');
   const noResults = document.getElementById('no-results');
   const term = document.getElementById('no-results-term');
+  const fq = fold(searchQuery);
   let visible = 0;
 
   cards.forEach(card => {
@@ -562,7 +569,8 @@ function filterCards() {
     const cardText = card.textContent.toLowerCase();
 
     const matchFilter = activeFilter === 'all' || cat === activeFilter;
-    const matchSearch = searchQuery === '' || cardText.includes(searchQuery);
+    const matchSearch = fq === '' || fold(cardText).includes(fq) ||
+      !!(ftFoldedById && ftFoldedById[card.dataset.id] && ftFoldedById[card.dataset.id].includes(fq));
 
     if (matchFilter && matchSearch) {
       card.style.display = '';
@@ -885,7 +893,7 @@ function updateArticleSEO(data, lang) {
       "name": "Nakama Blog",
       "logo": {
         "@type": "ImageObject",
-        "url": `${SITE_URL}/favicon.svg`
+        "url": `${SITE_URL}/img/pwa/icon-512.png`
       }
     },
     "inLanguage": lang,
@@ -1204,6 +1212,16 @@ async function initArticlePage() {
   }
 })();
 
+/* ═══════════════════════════════════════════════════
+   PWA: registro del service worker (sw.js, ámbito raíz).
+   Solo corre en contextos seguros (https / localhost); en file:// no hace nada.
+═══════════════════════════════════════════════════ */
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').catch(() => { /* sin PWA, la web sigue igual */ });
+  });
+}
+
 // Easter Eggs gestionados por easter-eggs/easter-eggs.js
 
 /* ═══════════════════════════════════════════════════
@@ -1288,6 +1306,7 @@ let openOnboardingModal = null; // lo asigna initWelcome; lo usa initBrandScreen
     done = true;
     clearTimers();
     document.removeEventListener('keydown', onKey);
+    document.body.style.overflow = ''; // desbloquea el scroll ya (el overlay deja de interceptar)
     overlay.setAttribute('aria-hidden', 'true'); // solo cuando deja de verse (contiene un botón enfocable)
     overlay.classList.add('is-hidden');
     timers.push(setTimeout(() => {
@@ -1314,7 +1333,7 @@ let openOnboardingModal = null; // lo asigna initWelcome; lo usa initBrandScreen
     endFn = toModal;
     overlay.style.display = 'flex';
     overlay.removeAttribute('aria-hidden');
-    overlay.classList.remove('is-hidden');
+    overlay.classList.remove('is-hidden', 'is-wait');
     overlay.classList.add('is-intro');
     overlay.classList.remove('is-run');
     void overlay.offsetWidth; // reflow: reinicia las animaciones de entrada
@@ -1333,17 +1352,20 @@ let openOnboardingModal = null; // lo asigna initWelcome; lo usa initBrandScreen
 
   if (onIndexPage && !seen) {
     // 1ª visita del home: el loader ES la intro → al terminar abre el welcome modal.
+    // (el script inline ya quitó is-wait al no haber welcome_seen; esto es cinturón y tirantes)
     endFn = toModal;
+    overlay.classList.remove('is-wait');
     overlay.classList.add('is-intro');
     timers.push(setTimeout(toModal, REDUCE ? 1200 : 4200));
   } else {
-    // Loader: desvanece cuando la app está lista (con un mínimo en pantalla).
+    // Loader "solo si tarda": el script inline lo revela a los ~300 ms si la carga sigue en curso.
+    // Si nunca llegó a verse (is-wait), se retira sin mínimo; si se vio, un mínimo digno.
     endFn = reveal;
-    const MIN = REDUCE ? 250 : 650;
+    const minDelay = () => (overlay.classList.contains('is-wait') ? 0 : (REDUCE ? 250 : 350));
     if (document.readyState === 'complete') {
-      timers.push(setTimeout(reveal, MIN));
+      timers.push(setTimeout(reveal, minDelay()));
     } else {
-      window.addEventListener('load', () => { timers.push(setTimeout(reveal, MIN)); }, { once: true });
+      window.addEventListener('load', () => { timers.push(setTimeout(reveal, minDelay())); }, { once: true });
     }
     timers.push(setTimeout(reveal, REDUCE ? 1200 : 4000)); // salvaguarda
   }
@@ -1404,20 +1426,80 @@ let openOnboardingModal = null; // lo asigna initWelcome; lo usa initBrandScreen
     });
   }
 
+  /* ── Índice de TEXTO COMPLETO (build: scripts/generate-search-index.js) ──
+     Se carga perezosamente al primer uso; permite buscar DENTRO del contenido
+     de los 18 artículos (con snippet resaltado) además de título/desc/categoría. */
+  let ftIndex = null;   // entradas {id,title,cat,mins,thumb,text} del idioma actual
+  let ftNorm = null;    // copias plegadas (minúsculas sin acentos) para comparar
+  let ftLoading = null;
+
+  const escSnip = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+  function loadFtIndex() {
+    if (ftIndex || ftLoading) return;
+    ftLoading = fetch(`/articles/search/${currentLang}.json`)
+      .then((r) => { if (!r.ok) throw new Error('sin índice'); return r.json(); })
+      .then((data) => {
+        ftIndex = data;
+        ftNorm = data.map((e) => ({ title: fold(e.title), text: fold(e.text) }));
+        // Comparte el texto plegado con el filtro del grid (ftFoldedById, nivel módulo)
+        ftFoldedById = {};
+        data.forEach((e, i) => { ftFoldedById[e.id] = ftNorm[i].text; });
+        // Si el usuario ya escribió algo, re-lanza búsqueda y filtro con el índice cargado
+        if (!results.hidden && input.value.trim()) open(search(input.value));
+        if (searchQuery) filterCards();
+      })
+      .catch(() => { ftIndex = []; ftNorm = []; }); // sin índice → sigue la búsqueda de metadatos
+  }
+
+  /* Snippet con el término resaltado (posición sobre el texto plegado ≈ original) */
+  function makeSnippet(text, pos, len) {
+    const start = Math.max(0, pos - 44);
+    const end = Math.min(text.length, pos + len + 64);
+    const pre = (start > 0 ? '…' : '') + text.slice(start, pos);
+    const hit = text.slice(pos, pos + len);
+    const post = text.slice(pos + len, end) + (end < text.length ? '…' : '');
+    return escSnip(pre) + '<mark>' + escSnip(hit) + '</mark>' + escSnip(post);
+  }
+
   /* ── Resultados instantáneos ── */
   let current = [];
   let activeIdx = -1;
 
   function search(q) {
     const idx = articleStore.index || [];
-    const term = (q || '').trim().toLowerCase();
+    const term = (q || '').trim();
     if (!term) return [];
-    return idx.filter((it) => {
-      const t = (pickLang(it.title, currentLang) || '').toLowerCase();
-      const d = (pickLang(it.desc, currentLang) || '').toLowerCase();
-      const c = (it.category || '').toLowerCase();
-      return t.includes(term) || d.includes(term) || c.includes(term);
-    }).slice(0, 6);
+    const nterm = fold(term);
+    const out = [];
+    const seen = {};
+
+    // 1) Metadatos (título/desc/categoría) del índice de tarjetas — instantáneo
+    idx.forEach((it) => {
+      const title = pickLang(it.title, currentLang) || '';
+      const desc = pickLang(it.desc, currentLang) || '';
+      const cat = it.category || '';
+      if (fold(title).includes(nterm) || fold(desc).includes(nterm) || fold(cat).includes(nterm)) {
+        seen[it.id] = 1;
+        out.push({ id: it.id, title, cat, mins: it.mins, thumb: (it.thumb && it.thumb.src) || '' });
+      }
+    });
+
+    // 2) Texto completo (se carga al primer uso; incluye artículos sin tarjeta como op-obra)
+    if (!ftIndex) loadFtIndex();
+    if (ftIndex && ftNorm) {
+      ftIndex.forEach((e, i) => {
+        if (seen[e.id]) return;
+        const n = ftNorm[i];
+        const pos = n.text.indexOf(nterm);
+        if (pos === -1 && !n.title.includes(nterm)) return;
+        out.push({
+          id: e.id, title: e.title, cat: e.cat, mins: e.mins, thumb: e.thumb,
+          snip: pos !== -1 ? makeSnippet(e.text, pos, nterm.length) : '',
+        });
+      });
+    }
+    return out.slice(0, 8);
   }
 
   function render() {
@@ -1426,15 +1508,16 @@ let openOnboardingModal = null; // lo asigna initWelcome; lo usa initBrandScreen
       results.innerHTML = `<div class="search-result-empty">${t.no_results || 'Sin resultados'}</div>`;
     } else {
       results.innerHTML = current.map((it, i) => {
-        const title = pickLang(it.title, currentLang) || '';
-        const thumb = (it.thumb && it.thumb.src)
-          ? `<img src="/${it.thumb.src}" alt="" loading="lazy" decoding="async">` : '';
+        const thumb = it.thumb
+          ? `<img src="/${it.thumb}" alt="" loading="lazy" decoding="async">` : '';
+        const minsTx = (it.mins !== '' && it.mins != null) ? `<span>${it.mins} ${t.read_min || ''}</span>` : '';
         return `<a class="search-result${i === activeIdx ? ' is-active' : ''}" role="option"
           data-id="${it.id}" href="${articleHref(it.id)}">
           <span class="search-result-thumb">${thumb}</span>
           <span class="search-result-main">
-            <span class="search-result-title">${title}</span>
-            <span class="search-result-meta"><span class="search-result-cat">${it.category}</span><span>${it.mins} ${t.read_min || ''}</span></span>
+            <span class="search-result-title">${it.title}</span>
+            ${it.snip ? `<span class="search-result-snip">${it.snip}</span>` : ''}
+            <span class="search-result-meta"><span class="search-result-cat">${it.cat}</span>${minsTx}</span>
           </span>
         </a>`;
       }).join('');
@@ -1462,6 +1545,7 @@ let openOnboardingModal = null; // lo asigna initWelcome; lo usa initBrandScreen
   input.addEventListener('focus', () => {
     const t = i18n[currentLang] || {};
     if (t.search_placeholder) input.placeholder = t.search_placeholder;
+    loadFtIndex(); // precarga el índice full-text al enfocar (antes de la 1ª tecla)
     if (input.value.trim()) open(search(input.value));
   });
 

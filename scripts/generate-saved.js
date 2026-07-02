@@ -53,6 +53,11 @@ function buildHead(lang) {
   <title>${esc(docTitle)}</title>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
+  <!-- ── PWA ── -->
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#07070c">
+  <link rel="apple-touch-icon" href="/img/pwa/apple-touch-icon.png">
+
   <link rel="canonical" href="${esc(pageUrl)}">
 
   <link rel="alternate" type="application/rss+xml" title="Nakama Blog · RSS" href="/feed.xml">

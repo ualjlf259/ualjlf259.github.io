@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sin conexión · Nakama Blog</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#07070c">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <!-- Autocontenida (CSS inline, sin fuentes externas): debe renderizar SIN red. -->
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --grad: linear-gradient(135deg, #bf5cff 0%, #ff4dcb 52%, #34dbff 100%);
+    }
+    html, body { height: 100%; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #dedbed;
+      background:
+        radial-gradient(1100px 700px at 78% -8%, rgba(185, 120, 242, .18), transparent 60%),
+        radial-gradient(900px 600px at 12% 4%, rgba(101, 200, 223, .12), transparent 55%),
+        #07070c;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center; padding: 24px; -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 560px; }
+    .mark {
+      width: 76px; height: 76px; margin: 0 auto 1.4rem; display: block;
+      filter: drop-shadow(0 4px 22px rgba(185, 120, 242, .5));
+    }
+    .eyebrow {
+      font-size: .72rem; letter-spacing: .22em; text-transform: uppercase;
+      color: #c9a0ff; margin-bottom: .8rem;
+    }
+    h1 {
+      font-family: Georgia, 'Times New Roman', serif; font-weight: 900;
+      font-size: clamp(26px, 5vw, 40px); line-height: 1.15; color: #fbf9ff; margin-bottom: .9rem;
+    }
+    p.lead { font-size: 16px; line-height: 1.65; color: #a5a2b8; margin-bottom: 1.1rem; }
+    p.hint { font-size: 13.5px; line-height: 1.6; color: #78748c; margin-bottom: 2rem; }
+    .cta { display: flex; gap: .8rem; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: .5rem; border: none; cursor: pointer;
+      padding: .8rem 1.6rem; border-radius: 999px; text-decoration: none;
+      font-weight: 600; font-size: .82rem; letter-spacing: .06em; text-transform: uppercase;
+      transition: transform .18s, box-shadow .22s, border-color .2s, color .2s;
+    }
+    .btn-primary { color: #fff; background: var(--grad); box-shadow: 0 10px 26px rgba(191, 92, 255, .4); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 34px rgba(191, 92, 255, .55); }
+    .btn-outline { color: #dedbed; border: 1px solid rgba(255, 255, 255, .18); background: rgba(255, 255, 255, .04); }
+    .btn-outline:hover { transform: translateY(-2px); border-color: rgba(191, 92, 255, .5); color: #fff; }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <img class="mark" src="/favicon.svg" alt="Nakama Blog">
+    <p class="eyebrow">Sin conexión</p>
+    <h1>El Grand Line no responde</h1>
+    <p class="lead">Parece que ahora mismo no hay internet. Esta página no está guardada en tu dispositivo,
+      pero los artículos que ya hayas leído sí siguen disponibles sin conexión.</p>
+    <p class="hint">Vuelve a intentarlo cuando recuperes la señal — el rumbo sigue marcado. ⚓</p>
+    <div class="cta">
+      <button class="btn btn-primary" onclick="location.reload()">Reintentar</button>
+      <a href="/" class="btn btn-outline">Ir al inicio</a>
+    </div>
+  </div>
+</body>
+
+</html>

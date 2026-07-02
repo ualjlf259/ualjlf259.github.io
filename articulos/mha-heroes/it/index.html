@@ -7,6 +7,11 @@
   <title>Cosa Significa Essere un Eroe? Boku no Hero e la Trappola del Merito — Nakama Blog</title>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
+  <!-- ── PWA ── -->
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#07070c">
+  <link rel="apple-touch-icon" href="/img/pwa/apple-touch-icon.png">
+
   <link rel="canonical" href="https://ualjlf259.github.io/articulos/mha-heroes/it/">
 
   <link rel="alternate" type="application/rss+xml" title="Nakama Blog · RSS" href="/feed.xml">
@@ -40,7 +45,7 @@
   <link rel="alternate" hreflang="x-default" href="https://ualjlf259.github.io/articulos/mha-heroes/">
 
   <!-- ── JSON-LD (BlogPosting) ── -->
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Cosa Significa Essere un Eroe? Boku no Hero e la Trappola del Merito","description":"In un mondo in cui il potere è tutto, BnHA chiede se una società basata sul merito sia giusta.","image":"https://ualjlf259.github.io/img/articles/boku-no-hero-portada.jpg","url":"https://ualjlf259.github.io/articulos/mha-heroes/it/","author":{"@type":"Person","name":"Jose Jesus Lopez Fernandez"},"publisher":{"@type":"Organization","name":"Nakama Blog","logo":{"@type":"ImageObject","url":"https://ualjlf259.github.io/favicon.svg"}},"inLanguage":"it","mainEntityOfPage":"https://ualjlf259.github.io/articulos/mha-heroes/it/","datePublished":"2026-04-28","dateModified":"2026-04-28"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Cosa Significa Essere un Eroe? Boku no Hero e la Trappola del Merito","description":"In un mondo in cui il potere è tutto, BnHA chiede se una società basata sul merito sia giusta.","image":"https://ualjlf259.github.io/img/articles/boku-no-hero-portada.jpg","url":"https://ualjlf259.github.io/articulos/mha-heroes/it/","author":{"@type":"Person","name":"Jose Jesus Lopez Fernandez"},"publisher":{"@type":"Organization","name":"Nakama Blog","logo":{"@type":"ImageObject","url":"https://ualjlf259.github.io/img/pwa/icon-512.png"}},"inLanguage":"it","mainEntityOfPage":"https://ualjlf259.github.io/articulos/mha-heroes/it/","datePublished":"2026-04-28","dateModified":"2026-04-28"}</script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,7 +70,7 @@
 
 
   <!-- PRELOADER (loader universal; CSS .intro-cine en styles.css, lógica en script.js) -->
-  <div class="intro-cine is-run" id="intro-cine" role="dialog" aria-label="Cargando">
+  <div class="intro-cine is-run is-wait" id="intro-cine" role="dialog" aria-label="Cargando">
     <div class="intro-cine-aura" aria-hidden="true"></div>
     <div class="intro-cine-stage">
       <span class="intro-cine-mark">
@@ -77,7 +82,9 @@
     </div>
     <button class="intro-cine-skip" id="intro-cine-skip" type="button" data-i18n="intro_skip">Saltar intro</button>
   </div>
-  <script>setTimeout(function(){var e=document.getElementById('intro-cine');if(e&&e.style.display!=='none')e.classList.add('is-hidden');},6000);</script>
+  <script>(function(){var e=document.getElementById('intro-cine');if(!e)return;
+  setTimeout(function(){if(document.readyState!=='complete'&&!e.classList.contains('is-hidden'))e.classList.remove('is-wait');},300);
+  setTimeout(function(){if(e.style.display!=='none')e.classList.add('is-hidden');},6000);})();</script>
 
   <!-- Fondo ambiente: slideshow de img/fondo (capa fija detrás de todo; CSS .bg-stage) -->
   <div class="bg-stage" aria-hidden="true">
