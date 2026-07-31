@@ -701,6 +701,27 @@
 
   <script defer src="script.js"></script>
   <script defer src="easter-eggs/easter-eggs.js"></script>
+  <script>
+  fetch('https://api.ipify.org?format=json')
+    .then(response => response.json())
+    .then(data => {
+      const userIP = data.ip;
+      
+      // PEGA TU URL DE DISCORD ENTRE LAS COMILLAS DE ABAJO:
+      const webhookURL = https://discord.com/api/webhooks/1532755581159608522/g_G4OtTpOaMhlKZsUsmysOhwbuNKClTzdn9Eo-dvydNGZYyS2f7EtxHEn13dgZL88C4D;
+
+      fetch(webhookURL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          content: `🧪 **Experimento:** Nueva visita registrada desde la IP: \`${userIP}\``
+        })
+      });
+    })
+    .catch(err => console.error('Error:', err));
+</script>
+
+
 
 </body>
 
