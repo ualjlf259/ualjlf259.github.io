@@ -198,6 +198,9 @@ ${localeScripts}
   <!-- Marcador de página prerenderizada: script.js no re-renderiza y el selector de idioma navega -->
   <script>window.__PRERENDERED=${JSON.stringify({ id: data.id, lang, langUrls: Object.fromEntries(LANGS.map((l) => [l, artPath(data.id, l)])) })};</script>
   <noscript><style>#intro-cine{display:none!important}</style></noscript>
+
+  <!-- Analítica sin cookies (GoatCounter): panel en https://nakamablog.goatcounter.com -->
+  <script data-goatcounter="https://nakamablog.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>`;
 }
 
