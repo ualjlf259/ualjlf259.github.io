@@ -20,12 +20,13 @@ function detectInitialLang() {
   // 1. Parámetro ?lang=XX en la URL (máxima prioridad — para SEO/hreflang)
   const urlLang = new URLSearchParams(location.search).get('lang');
   if (urlLang && SUPPORTED_LANGS.includes(urlLang)) return urlLang;
-  // 2. Idioma guardado en localStorage
+  // 2. Idioma guardado en localStorage (el visitante ya eligió/visitó un idioma)
   const saved = localStorage.getItem('lang');
   if (saved && SUPPORTED_LANGS.includes(saved)) return saved;
-  // 3. Idioma del navegador como respaldo
-  const nav = (navigator.language || 'es').slice(0, 2).toLowerCase();
-  return SUPPORTED_LANGS.includes(nav) ? nav : 'es';
+  // 3. Por defecto ES. NO se usa navigator.language: Googlebot renderiza con en-US y sin
+  //    localStorage, así que la raíz (hreflang="es") se indexaba traducida al INGLÉS.
+  //    Cada idioma tiene su URL propia (/en/, /fr/…) y el selector navega a ella.
+  return 'es';
 }
 
 /* Genera URL absoluta con o sin ?lang= según el idioma (es = default sin param) */

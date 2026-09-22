@@ -51,7 +51,9 @@ function buildHead(lang) {
   <meta name="robots" content="noindex, follow">
   <meta name="description" content="${esc(seo.desc)}">
   <title>${esc(docTitle)}</title>
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="192x192" href="/img/pwa/icon-192.png">
 
   <!-- ── PWA ── -->
   <link rel="manifest" href="/manifest.webmanifest">

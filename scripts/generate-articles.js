@@ -152,7 +152,9 @@ function buildHead(data, lang) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="${esc(desc)}">
   <title>${esc(docTitle)}</title>
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="192x192" href="/img/pwa/icon-192.png">
 
   <!-- ── PWA ── -->
   <link rel="manifest" href="/manifest.webmanifest">
